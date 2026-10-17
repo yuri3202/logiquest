@@ -1,0 +1,177 @@
+{
+  "modules": [
+    {
+      "id": "mod8",
+      "badge": "Módulo 8 • Cap. 1 e 2 Alencar Filho",
+      "title": "Proposições e Operações Lógicas",
+      "desc": "Niegue, classifique e traduza as frases originais do capítulo 1 e 2, com word bank e Migo.",
+      "color": "emerald",
+      "char": "bit",
+      "lessons": ["c1_proposicoes", "c2_operacoes", "c2_traducao_simbolos", "boss_m8"]
+    },
+    {
+      "id": "mod9",
+      "badge": "Módulo 9 • Cap. 3 e 4 Alencar Filho",
+      "title": "Construção de Tabelas-Verdade",
+      "desc": "Monte coluna por coluna, leia a linha pedida e classifique tautologia, contradição ou contingência.",
+      "color": "sky",
+      "char": "turing",
+      "lessons": ["c3_tabelas_construcao", "g3_tabela_mestra", "g4_classificar", "c4_tautologias", "boss_m9"]
+    },
+    {
+      "id": "mod10",
+      "badge": "Módulo 10 • Cap. 5, 6 e 7 Alencar Filho",
+      "title": "Implicação, Equivalência e Álgebra",
+      "desc": "Quem segue de quem, provas de equivalência linha a linha, De Morgan, Scheffer e formas normais.",
+      "color": "violet",
+      "char": "boole",
+      "lessons": ["g5_implicacao", "c5_implicacao", "g6_equivalencias", "c6_equivalencia", "c7_algebra", "g7_portas", "boss_m10"]
+    },
+    {
+      "id": "mod11",
+      "badge": "Módulo 11 • Cap. 8, 9 e 10 Alencar Filho + listas IFES",
+      "title": "Método Dedutivo e Argumentos",
+      "desc": "Regras de inferência, testes de validade em lógica de programação e as questões das listas.",
+      "color": "orange",
+      "char": "turing",
+      "lessons": ["c8_metodo_dedutivo", "c9_argumentos", "c9_regras_inferencia", "c8_testes_logica_prog", "c10_argumentos_listas", "boss_m11"]
+    },
+    {
+      "id": "mod12",
+      "badge": "Módulo 12 • Cap. 11, 12 e 13 Alencar Filho",
+      "title": "Dedução por regras, Substituição, DC e DI",
+      "desc": "Prova linha a linha com as regras de inferência, equivalências dentro da dedução, demonstração condicional e indireta.",
+      "color": "rose",
+      "char": "ada",
+      "lessons": ["c11_validade_regras", "c12_substituicao", "c13_dc_di", "boss_m12"]
+    },
+    {
+      "id": "mod13",
+      "badge": "Módulo 13 • Cap. 14 e 15 Alencar Filho",
+      "title": "Sentenças Abertas e Conjunto-Verdade",
+      "desc": "Vp na reta, operações entre sentenças abertas e os contra-exemplos de Euler.",
+      "color": "cyan",
+      "char": "sofia",
+      "lessons": ["c14_sentencas_abertas", "c15_operacoes_abertas", "boss_m13"]
+    },
+    {
+      "id": "mod14",
+      "badge": "Módulo 14 • Cap. 16 e 17 Alencar Filho + Profa. Kelly Gazolli",
+      "title": "Quantificadores ∀ e ∃ • Negação e Escopo",
+      "desc": "Todo, algum, nenhum e existe único; negação de quantificados e as duas variáveis do capítulo 17.",
+      "color": "indigo",
+      "char": "memo",
+      "lessons": ["c16_quantificadores", "c17_quant_multi", "c17_quant_multi_traducao", "boss_m14"]
+    },
+    {
+      "id": "mod15",
+      "badge": "Módulo 15 • Revisão AVA IFES (Listas I, II e III)",
+      "title": "Revisão Geral para a Prova",
+      "desc": "O que mais cai na lista do curso: tradução de conectivos, equivalências notáveis e validade por tabela.",
+      "color": "amber",
+      "char": "migo",
+      "lessons": ["ava_revisao_conectivos", "ava_revisao_equiv", "ava_revisao_tabelas", "boss_m15"]
+    }
+  ],
+  "ava": [
+    {
+      "title": "Cap. 3 • Construa a coluna final",
+      "sub": "Tabelas de 2 e 3 variáveis conferidas linha a linha",
+      "lessonId": "g3_tabela_mestra",
+      "badge": "Alencar Filho"
+    },
+    {
+      "title": "Cap. 4 • Tautologia, contradição, contingência",
+      "sub": "Classifique pela tabela inteira",
+      "lessonId": "g4_classificar",
+      "badge": "Alencar Filho"
+    },
+    {
+      "title": "Cap. 5 • Implicação lógica (⊨)",
+      "sub": "Nenhuma linha V de φ com F de ψ",
+      "lessonId": "g5_implicacao",
+      "badge": "Alencar Filho"
+    },
+    {
+      "title": "Cap. 6-7 • Equivalências e De Morgan",
+      "sub": "O app aceita qualquer fórmula equivalente",
+      "lessonId": "g6_equivalencias",
+      "badge": "Alencar Filho"
+    },
+    {
+      "title": "Cap. 2 • Portas NAND e NOR",
+      "sub": "Conectivos de Scheffer em circuito",
+      "lessonId": "g7_portas",
+      "badge": "Alencar Filho"
+    },
+    {
+      "title": "Tradução PT ⇄ símbolos",
+      "sub": "Word bank com as frases do livro",
+      "lessonId": "c2_traducao_simbolos",
+      "badge": "Mimo style"
+    },
+    {
+      "title": "Cap. 16 • Niegue ∀ e ∃",
+      "sub": "~(todo x) vira algum x não — e o contrário",
+      "lessonId": "c16_quantificadores",
+      "badge": "Alencar Filho"
+    },
+    {
+      "title": "Cap. 17 • Duas variáveis, ordem importa",
+      "sub": "∀x∃y não é ∃y∀x",
+      "lessonId": "c17_quant_multi",
+      "badge": "Profa. Kelly Gazolli"
+    }
+  ],
+  "flashcards": [
+    {
+      "cat": "Cap. 1",
+      "front": "Proposição",
+      "back": "Sentença declarativa que é V ou F, nunca ambas. Perguntas, ordens e frases abertas não são proposições.",
+      "rule": "Definição — Cap. 1"
+    },
+    {
+      "cat": "Cap. 2",
+      "front": "Negação (~p)",
+      "back": "Inverte o valor de p. Dupla negação: ~~p ≡ p.",
+      "rule": "Negação"
+    },
+    {
+      "cat": "Cap. 5",
+      "front": "p → q só é F quando…",
+      "back": "p = V e q = F. Nas outras três linhas a condicional é V (o falso antecedente 'vale tudo').",
+      "rule": "Condicional",
+      "tip": "É a linha VF — a mais cobrada em prova."
+    },
+    {
+      "cat": "Cap. 6",
+      "front": "Contrapositiva",
+      "back": "~q → ~p equivale a p → q. A recíproca (~p → ~q) e a inversa (q → p) NÃO equivalem.",
+      "rule": "Equivalências notáveis"
+    },
+    {
+      "cat": "Cap. 6",
+      "front": "p → q em OU",
+      "back": "p → q ≡ ~p v q. E ~(p → q) ≡ p ^ ~q — a negação mantém o antecedente e nega o consequente.",
+      "rule": "Implicação material / De Morgan"
+    },
+    {
+      "cat": "Cap. 2",
+      "front": "Scheffer (↑) e Pierce (↓)",
+      "back": "p ↑ q ≡ ~(p ^ q) (NAND); p ↓ q ≡ ~(p v q) (NOR). Cada uma sozinho é funcionalmente completo.",
+      "rule": "Conectivos de Scheffer"
+    },
+    {
+      "cat": "Cap. 14",
+      "front": "Sentença aberta",
+      "back": "p(x) com variável sobre um conjunto A. O conjunto-verdade Vp = {x em A | p(x) é V} é que tem valor, não a frase.",
+      "rule": "Cap. 14"
+    },
+    {
+      "cat": "Cap. 16",
+      "front": "Negar quantificador",
+      "back": "~(∀x p(x)) ≡ ∃x ~p(x) e ~(∃x p(x)) ≡ ∀x ~p(x). A negação atravessa o quantificador e vira o dual.",
+      "rule": "Cap. 16"
+    }
+  ]
+}

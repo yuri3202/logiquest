@@ -1,0 +1,66 @@
+                                                                Lógica
+                                                      Lista de Exercícios I
+
+1) Dadas as fórmulas:
+
+    P: (p →q) ^ (q→r) ^ (r→s)
+    Q: p → s
+
+Utilizando tabelas verdade, verifique se:
+
+    a) P => Q
+    b) P <=> Q
+
+2) Utilizando tabelas verdade, verifique se:
+
+   a) p => p v q
+   b) p ^ q => p
+   c) (p v q) ^ ~q => p
+   d) (p ^ ~r → ~q) ^ p ^ ~r => ~q
+   e) (p → q) ^ (r → ~q) => r → ~p
+   f) ~p → q ^ ~q => ~p
+
+3) Indique o antecedente e o consequente em cada uma das seguintes sentenças:
+
+    a) Se a chuva continuar, o rio vai transbordar.
+    b) Uma condição suficiente para a falha de uma rede é que a chave geral para de funcionar.
+    c) Os abacates só estão maduros quando estão escuros e macios.
+    d) Uma boa dieta é uma condição necessária para um gato saudável.
+
+4) Apresente a negação de cada uma das sentenças abaixo:
+
+    a) Júlia adora manteira, mas detesta nata.
+    b) A resposta é 4 ou 5.
+    c) Pepinos são verdes e têm sementes.
+    d) 2 < 7 e 3 é ímpar.
+
+5) Dadas as proposições:
+
+    p: Rosas são vermelhas.
+    q: Violetas são azuis
+    r: Açúcar é doce.
+
+Traduza as seguintes sentenças para a notação simbólica:
+
+    a) Rosas são vermelhas e violetas são azuis.
+    b) Rosas são vermelhas, ou bem violetas são azuis ou bem açúcar é doce.
+    c) Sempre que violetas são azuis, as rosas são vermelhas e o açúcar é doce.
+    d) Rosas são vermelhas apenas se as violetas não forem azuis e o açúcar não for amargo.
+    e) Rosas são vermelhas e, se o açúcar for amargo, então as violetas não são azuis ou o açúcar é
+    doce.
+
+                                                          1/2
+6) Com p, q e r definidos no exercício anterior, traduza as seguintes fórmulas para o português.
+    a) (r ^ ~p) ↔ q
+    b) (p v q) ^ ~r
+    c) p v (q ^ ~r)
+
+7) Construa as tabelas verdade para as seguintes proposições, classifique-as como tautologia,
+contradição ou contingência.
+
+    a) ((p v q) v ~r) → ~p v r
+    b) (p ^ q) v r → p ^ (q v ~r)
+    c) ((~p v q) ↔ (p → q)) v p
+
+                                                          2/2
+

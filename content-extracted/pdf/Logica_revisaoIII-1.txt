@@ -1,0 +1,113 @@
+                                      Lógica
+
+                 Exercícios Revisão Primeira Avaliação
+
+1. Utilizando tabela verdade, verifique se p ^ q → ∼p => ~p ∨ q.
+2. Verifique se a proposição a seguir é uma tautologia, contradição ou contingência, através
+
+     da tabela verdade.
+                                                              (p ↔ q) ∧ p → q
+
+3. Utilizando tabelas verdade, verifique as seguintes relações de equivalência:
+a) ~(p → q) ≡ p ∧ ~q
+b) (p ∨ q) ∧ ( p ∧ q ) ≡ (p ∧ q)
+c) p → ~q ≡ ~(p ∧ q)
+
+4. Negue em linguagem corrente as seguintes proposições:
+
+     a. Atlético é alvi-verde e Coritiba é rubro-negro.
+     b. As vendas diminuem e os preços aumentam.
+     c. É falso que está frio ou que está chovendo.
+     d. Se João passar em Física então se formará.
+     e. Não tenho carro e não tenho moto.
+
+5. Traduza os itens do exercício anterior para a linguagem simbólica.
+6. Demonstre as relações abaixo utilizando as equivalências notáveis:
+a) p → q ∧ r ⇔ ( p → q ) ∧ ( p → r )
+
+b) p → q ∨ r ⇔ ( p → q ) ∨ ( p → r )
+
+c) p ∧ q → r ⇔ p → ( q → r )
+
+d) ~( ~p → ~q ) ⇔ ~p ∧ q
+
+e) ~~(p v q) ^ ~(r → ~p) ⇔ p ^(p v q) ^ r
+
+7. Reescreva os testes abaixo reduzindo as condições através das relações de equivalência,
+     conforme o exemplo:
+
+a) SE fluxo_ext > fluxo_int ∧ ~( fluxo_ext > fluxo_int ∧ pressão < 1000 ) ENTÃO
+           faça bloco de comandos A
+
+     SENÃO
+          faça bloco de comandos B
+
+Fazendo p: fluxo_ext > fluxo_int e q: pressão < 1000 tem-se:
+
+p ∧ ~(p ∧ q) ⇔
+
+p ∧ (~p ∨ ~q) ⇔  (De Morgan)
+
+(p ∧ ~p) ∨ (p ∧ ~q) ⇔(Distrib.)
+
+F ∨ (p ∧ ~q) ⇔   (Complem.)
+
+p ∧ ~q
+Se fluxo_ext > fluxo_int ∧ pressão ≥ 1000
+      faça bloco A
+
+Senão
+      faça bloco B
+
+b) SE ~(idade > 21 ∨ sexo="F") ∨ ( ~(idade > 21) ∧ sexo="F") ENTÃO
+           faça bloco de comandos A
+
+     SENÃO
+          faça bloco de comandos B
+
+c) SE (cab="loiro" ∧ pele="morena") ∨ (cab="loiro" ∧ pele="branca") ENTÃO
+          faça bloco de comandos A
+
+     SENÃO
+          faça bloco de comandos B
+
+d) SE (cab="loiro" ∨ pele="morena") ∨ (cab="loiro" ∨ pele="branca") ENTÃO
+          faça bloco de comandos A
+
+     SENÃO
+          faça bloco de comandos B
+
+8. Reescreva os testes abaixo negando as condições, conforme o exemplo:
+
+a) SE i > 8 ∧ estado="OFF" ENTÃO
+           faça bloco de comandos A
+
+     SENÃO
+          faça bloco de comandos B
+
+Fazendo p: i > 8 e q: estado="OFF" tem-se que a negação do teste é:
+
+~( p ∧ q) ⇔
+
+~p ∨ ~q      (DM)
+
+Reescrevendo o teste condicional (note a inversão entre os blocos de comando A e B):
+Se i ≤ 8 ∨ estado ≠ "OFF"
+
+      faça bloco B
+Senão
+
+      faça bloco A
+
+b) SE título_livro="Cortiço" ∨ autor="Machado de Assis" ∨ editora="LTC" ENTÃO
+           faça bloco de comandos A
+
+     SENÃO
+          faça bloco de comandos B
+
+c) SE (assunto="redes" ∨ assunto="teleinformática") ∧ data_public > 20/12/1998
+          faça bloco de comandos A
+
+     SENÃO
+          faça bloco de comandos B
+

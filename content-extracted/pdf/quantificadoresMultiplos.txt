@@ -1,0 +1,114 @@
+Quantificação
+        Múltipla
+
+        Sistemas de Informação
+                                Lógica
+
+          Profa. Kelly Gazolli
+Quantificação Múltipla
+
+• Algumas sentenças utilizam mais de um quantificador.
+• Podemos tomar dois enunciados categóricos e fazer a sua
+
+  conjunção
+     • Ex. Todos os gatos são pardos e Algumas rãs são verdes.
+     • Representação:
+     • Ɐx (gato(x) → pardo(x)) ^Ǝx(rã(x) ^ verde(x))
+Quantificação Múltipla
+
+• Podemos tomar quaisquer sentenças gerais e com elas,
+  através de operadores e quantificadores formar sentenças
+  mais complexas. (Mortari,2001)
+     • Se todos os gatos são brancos, então não existem gatos
+        amarelos.
+     • Ɐx (gato(x) → branco(x)) → ~Ǝx(gato(x) ^ amarelo(x))
+Quantificação Múltipla
+
+Nem todos os gatos são brancos, nem há gatos maiores do que
+Miau.
+~Ɐx (gato(x) → branco(x)) ^ ~Ǝx(gato(x) ^ maior(x, Miau))
+Quantificação Múltipla
+
+• Os casos mais interessantes ocorrem quando há mais de um
+    quantificador e um ocorre dentro do escopo do outro.
+Quantificação Múltipla
+
+• E se quisermos representar " Todos gostam de alguém"?
+• Isso significa que, para qualquer que seja o x, há um y de
+
+    quem ele gosta.
+       • ⱯxƎy (gosta(x,y))
+Quantificação Múltipla
+
+• E se quisermos representar " Todos gostam de alguém"?
+• Isso significa que, para qualquer que seja o x, há um y de
+
+    quem ele gosta.
+       • ⱯxƎy (gosta(x,y))
+
+ • Como traduzir: ƎyⱯx (gosta(x,y))?
+       • Existe alguém de quem todo mundo gosta.
+Quantificação Múltipla
+
+ • ⱯxƎy (gosta(x,y))
+      • Todos gostam de alguém.
+
+ • ƎyⱯx (gosta(x,y))?
+       • Existe alguém de quem todo mundo gosta.
+
+• A ordem dos quantificadores é importante.
+• Apenas quando os quantificadores são diferentes.
+• ƎxƎy (gosta(x,y)) e ƎyƎx (gosta(y,x)) significam a mesma
+
+  coisa.
+Quantificação Múltipla
+
+• Há alguém que não gosta de ninguém
+      • Ǝx~Ǝy(gosta(x,y)) ou ƎxⱯy(~gosta(x,y))
+
+• Há alguém que não gosta de algumas pessoas.
+      • ƎxƎy(~gosta(x,y))
+
+• Dados três indivíduos quaisquer, se o primeiro é pai do
+  segundo e o segundo é pai do terceiro, então o primeiro é avô
+  do terceiro.
+      • ⱯxⱯyⱯz(pai(x,y) ^ pai(y,z) → avô(x, z))
+Quantificação Múltipla
+
+• Se um indivíduo é avô de outro, então há um terceiro de quem
+  o primeiro é pai, e que é pai do segundo.
+      • ⱯxⱯy(avô(x,y) → Ǝz(pai(x,z) ^pai(z, y))) ≡
+      • ⱯxⱯyƎz(avô(x,y) → (pai(x,z) ^pai(z, y)))
+       Quantificação Múltipla
+
+• É importante notar que:
+      • O nome da variável não interfere no significado.
+          • ⱯxƎy (gosta(x,y)) ≡ⱯyƎx (gosta(y,x)) ≡
+          • ⱯwƎz (gosta(w,z))
+      • Variáveis diferentes não classificam necessariamente objetos
+        diferentes.
+          • ⱯxⱯy (gosta(x,y)) não afirma apenas que todos gostam de
+             todos, mas que todos gostam de si próprios.
+               Quantificação Múltipla
+
+• É importante notar que:
+     • Quando dois ou mais quantificadores justapõem-se na mesma parte da
+        fórmula, uma variável diferente deve ser utilizadas para cada quantificador.
+          • ⱯxƎX (gosta(x,x)) está incorreto.
+          • ⱯxƎy (gosta(x,y)) está correto.
+     • A mesma variável utilizada em vários quantificadores não se refere
+        necessariamente ao mesmo objeto.
+           • ƎX(gosta(Maria, X)) ^ ƎX(gosta(João, X))
+Exemplos
+
+• Todos os homens gostam de alguma mulher feliz.
+
+• Todos os homens elegantes gostam de todas as
+  mulheres ricas.
+Exemplos
+
+• Algumas mulheres gostam de todos os homens elegantes.
+
+• Algumas mulheres inteligentes gostam de alguns homens
+  trabalhadores e simpáticos.
+

@@ -1,0 +1,24 @@
+                                      BSI - Lógica – Lista de Exercícios
+                                                     Quantificadores
+
+Traduza as sentenças abaixo para linguagem simbólica utilizando os quantificadores
+apropriados:
+
+     a) Todas os gatos são pardos
+     b) Nenhum gato é pardo
+     c) Alguns gatos são pardos
+     d) Há gatos que não são pardos
+     e) Qualquer coisa é um gato
+     f) Nada é um gato
+     g) Existem gatos pardos
+     h) Qualquer coisa ou é gato ou é pássaro.
+     i) Está chovendo e alguns gatos estão caçando.
+     j) Se está chovendo, então todos os gatos estão caçando.
+     k) Qualquer coisa é um gato ou nada é um gato
+     l) Qualquer coisa é um gato ou não é.
+     m) Alguns gatos pardos não estão caçando
+     n) Não é verdade que há gatos pardos caçando.
+     o) Se nada é pardo, então não existem gatos pardos
+     p) Todos os gatos pardos caçam se e somente se a lua está cheia.
+     q) Está chovendo e alguns gatos estão caçando.
+

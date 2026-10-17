@@ -1,0 +1,592 @@
+  Lógica
+
+Profa. Kelly Gazolli
+O que é Lógica
+
+Lógica é a ciência que estuda princípios e
+métodos de inferência tendo o objetivo
+principal de determinar em que condições
+certas coisa se seguem, ou não, de outras.
+(Mortari, 2001)
+O que é um argumento?
+
+Argumento pode ser entendido como um
+ conjunto de fatos e uma única conclusão.
+ (Coelho, 2014)
+Dedução x Indução
+
+Seja o argumento:
+Todo gato caça ratos. Miau é um gato. Logo, Miau
+caça ratos
+O conjunto de fatos (premissas) apresentados é
+suficiente para saber que a conclusão é
+verdadeira.
+Esse tipo de argumento é conhecido como
+Argumento Dedutivo.
+Dedução x Indução
+
+Seja o argumento:
+
+É comum o sistema não funcionar após uma
+atualização. O sistema foi atualizado. Logo, o sistema
+não funcionará.
+Saber que é comum não nos dá a garantia total de que o
+sistema não vai funcionar após a atualização. Assim, não
+podemos afirmar com 100% de certeza que o
+argumento é válido.
+Nesse caso, o argumento é chamado de Indutivo
+    Príncipios da Lógica
+
+Princípio da não contradição:
+
+      Uma sentença não pode ser falsa e verdadeira
+      ao mesmo tempo. (Alencar Filho, 2002)
+      Assim, uma sentença e sua negação não podem
+      ser verdadeiras ao mesmo tempo.
+
+Princípio do terceiro excluído
+
+      Toda sentença é verdadeira ou falsa, isto é,
+      verifica-se sempre um destes casos e nunca um
+      terceiro. (Alencar Filho, 2002)
+Paradoxo
+
+          Esta afirmação é falsa.
+Paradoxo (Farjado, 2016)
+
+Havia em Servilha um barbeiro que só cortava o
+cabelo de todas as pessoas que não cortavam o
+próprio cabelo.
+
+O barbeiro de Servilha cortava o próprio
+cabelo? Se sim, então ele não podia cortar, pois
+ele só cortava o cabelo de quem não cortava o
+próprio cabelo. Se não cortava, ele deveria, pois
+cortava o cabelo de todas as pessoas que não
+cortavam o próprio cabelo.
+    Tipos de Lógica
+
+Logica proposicional (ou calculo
+  proposicional):
+
+• É o mais elementar exemplo de lógica simbólica.
+Sua semântica tem como base os princípios do
+terceiro excluído e da não-contradição, sendo,
+assim, a primeira referência de lógica clássica.
+• Sua linguagem é formada pelas fórmulas
+atômicas e não possui quantificadores.
+    Tipos de Lógica
+
+Lógica fuzzy (ou lógica difusa):
+
+• permite valorar uma fórmula com qualquer valor
+real no intervalo [0; 1], permitindo "verdades
+parciais".
+• Se aproxima de alguns problemas reais, que
+necessitam lidar com incertezas.
+• Pode ser interpretada do ponto de vista estatístico,
+onde a valoração das fórmulas representam a
+probabilidade de um evento ocorrer.
+    Tipos de Lógica
+
+Lógica de primeira ordem (ou cálculo dos
+predicados):
+
+• É a lógica usada para formalizar a matemática.
+Sua sintaxe também apresenta os conectivos da
+lógica proposicional, mas acrescenta os
+quantificadores ("para todo" e "existe") e as
+variáveis, além de outros símbolos específicos.
+        Proposições e
+Conectivos Lógicos
+
+          Profa. Kelly Gazolli
+Proposição  É uma declaração a qual podemos
+                  atribuir um valor lógico
+
+                    (verdadeiro ou falso).
+São Proposições
+
+• 2 é par.
+• 36 é divisível por 15.
+• 2 é par e o sol é uma estrela
+Não São Proposições
+
+• Que horas são?
+• Desligue o celular.
+• Esta afirmação é falsa.
+• Que dia lindo!
+Proposições Simples
+
+▪ São elementos atômicos, ou seja, indivisíveis.
+▪ São geralmente designadas por letras minúsculas
+
+  p, q, r, s, ..., chamadas letras proposicionais.
+Proposições Simples
+
+p: Serra é a capital do Espírito Santo.
+q: O Brasil é um país da América Latina.
+r : O número 25 é um quadrado perfeito.
+Proposições Compostas
+
+• Formadas pela combinação de duas ou mais
+  proposições.
+
+▪ São habitualmente designadas pelas letras
+  maiúsculas P, Q, R, S, .….
+Proposições Compostas
+
+P: Vitória é a capital do Brasil e a França é um país da América do Sul.
+Q: Se Cabral descobriu o Brasil, então o Brasil é pentacampeão.
+Conectivos Lógicos
+
+▪ São operações que nos permitem construir novas
+  proposições a partir de outras.
+
+Representação Conectivo  Leitura
+                         Não​
+~, ¬​  Negação​          e​
+                         ou​
+^​     Conjunção​        Se..então
+                         Se, e somente
+v​     Disjunção​        se​
+
+→​     Condicional
+
+       Bicondicional
+Gramática da Lógica
+         Proposicional
+Gramática da Lógica Proposicional
+
+• São as regras que determinam quando uma
+  sequência de símbolos forma uma expressão com
+  significado.
+
+• As sequências que são formadas de acordo com
+  essas regras são chamadas de Fórmulas bem
+  Formadas (fbf ou wff).
+Regras de Formação das Fórmulas
+
+1. As fórmulas atômicas (proposições simples) são
+fórmulas.
+2. Se A é uma fórmula ¬A é uma fórmula.
+3. Se A e B são fórmulas, (A ^ B), (A v B), (A → B) e
+(A B) também são fórmulas.
+4. Não há outras fórmulas além das obtidas pelo
+uso das regras 1 a 3.
+Omissão de Parênteses
+
+• Os parênteses mais externos de uma fórmula podem
+    ser omitidos.
+
+• Ex.: (p ^ (q v r)) é escrito como p ^ (q v r)
+
+• Em sequências com apenas conjunções ou com
+    apenas disjunções omitimos os parênteses consecutivos.
+
+• Ex.: (p ^(q ^ r)) ^ s pode ser escrito como:
+                             p ^ q ^ r^ s.
+Omissão de Parêntesis
+
+⚫ Em fórmulas forma ¬(¬A) escrevemos simplesmente ¬¬A.
+⚫ Omitimos parênteses em subfórmulas da forma (¬A),
+
+  escrevendo, simplesmente, ¬A.
+⚫ Assim, fica convencionado que ¬p ^ q significa (¬p) ^ q e
+
+  não, ¬(p ^ q).
+   Omissão de Parêntesis
+
+Nas fórmulas em que há uma combinação de conectivos, existe uma
+precedência entre eles, dada pela ordem: 1. ¬, 2. ^ e v, 3. → e 4.
+
+   .
+Dessa forma:
+
+      • ¬p ^q representa (¬p ^ q)
+      • p → q r representa (p → q) r
+      • p v ¬q → r representa (p v ¬q) → r
+Conectivos
+  Lógicos
+  Conectivos Lógicos - Negação
+
+Representação: ~; '; ¬
+Lê-se: Não. Não é verdade que... É falso que...
+
+p  ~p
+
+V  F
+
+F  V
+
+• p: o sol é uma estrela.
+• ~p: o sol não é uma estrela.
+  Conectivos Lógicos - Conjunção
+
+Representação: ^
+Lê-se: "e"
+ p: Miau é branco
+ q: Miau é preto
+
+ p ^ q: Miau é branco e preto.
+ Conectivos Lógicos - Conjunção
+
+p ^ q: Miau é branco e preto.
+ Conectivos Lógicos - Conjunção
+
+p ^ q: Miau é branco e preto.
+
+                          Fonte: https://pixabay.com
+ Conectivos Lógicos - Conjunção
+
+p ^ q: Miau é branco e preto.
+
+                            Fonte: https://pixabay.com
+ Conectivos Lógicos - Conjunção
+
+p ^ q: Miau é branco e preto.
+
+                          Fonte: https://pixabay.com
+Conectivos Lógicos - Conjunção
+
+p  q  p^q
+
+V  V  V
+
+V  F  F
+
+F  V  F
+
+F  F  F
+   Conectivos Lógicos - Conjunção
+
+p: o sol é uma estrela
+q: A lua é um satélite
+p ^ q : o sol é uma estrela e a lua é um satélite
+ Conectivos Lógicos - Disjunção
+
+Representação: v.
+Lê-se: "ou"
+p: Miau é branco
+q: Miau é preto
+
+p v q: Miau é branco ou preto.
+ Conectivos Lógicos - Conjunção
+
+p v q: Miau é branco ou preto.
+ Conectivos Lógicos - Conjunção
+
+p v q: Miau é branco ou preto.
+
+                          Fonte: https://pixabay.com
+ Conectivos Lógicos - Conjunção
+
+p v q: Miau é branco ou preto.
+
+                            Fonte: https://pixabay.com
+ Conectivos Lógicos - Conjunção
+
+p v q: Miau é branco ou preto.
+
+                          Fonte: https://pixabay.com
+Conectivos Lógicos - Disjunção
+
+p  q  pvq
+
+V  V  V
+
+V  F  V
+
+F  V  V
+
+F  F  F
+   Conectivos Lógicos - Disjunção
+
+p: O Sol é uma planeta
+q: A Terra é um satélite
+p v q : o Sol é uma planeta ou a Terra é um satélite
+   Conectivos Lógicos - Disjunção
+
+p: O Sol é uma estrela
+q: A Terra é um satélite
+p v q : o Sol é uma estrela ou a Terra é um satélite
+   Conectivos Lógicos - Condicional
+
+Representação: →
+Lê-se: se..então
+
+p: João é juiz federal
+q: João cursou direito
+
+p→q: Se João é juiz federal, então cursou direito.
+Conectivos Lógicos - Condicional
+
+p  q  p→q
+
+V  V  V
+
+V  F  F
+
+F  V  V
+
+F  F  V
+   Conectivos Lógicos - Condicional
+
+p: O Sol é uma planeta
+q: A Terra é um satélite
+p → q : Se Sol é uma planeta então a Terra é um satélite
+   Conectivos Lógicos - Condicional
+
+p: o Sol é uma estrela
+q: A Terra é um satélite
+p → q : Se o sol é uma estrela então a Terra é um satélite
+Conectivos Lógicos - Condicional
+
+A notação “p → q” pode ser lida da seguinte maneira:
+          • p é condição suficiente para q.
+          • q é condição necessária para p.
+
+Diz-se que p é o antecedente e q, o consequente.
+  Conectivos Lógicos - Bicondicional
+
+Representação:
+Lê-se: se, e somente se
+
+p: Juca é um fazendeiro
+q: Juca tem uma fazenda.
+
+p q: Juca é um fazendeiro se, e somente se, tem uma fazenda.
+Conectivos Lógicos - Bicondicional
+
+Representação:               q  pq
+
+                          p  V  V
+                          V
+                          V  F  F
+                          F
+                          F  V  F
+
+                             F  V
+   Conectivos Lógicos - Condicional
+
+p: O Sol é uma planeta
+q: A Terra é um satélite
+p q : O Sol é uma planeta se, e somente se, a Terra é
+um satélite
+   Conectivos Lógicos - Bicondicional
+
+p: o Sol é uma estrela
+q: A Terra é um satélite
+p q : O sol é uma estrela se, e somente se, a Terra é um
+satélite
+Conectivos Lógicos - Bicondicional
+
+Indica-se pela notação p q:
+          • p é condição necessária e suficiente para q.
+          • q é condição necessária e suficiente para p.
+Linguagem Natural x
+Linguagem Simbólica
+   Linguagem Natural x Linguagem
+   Simbólica
+
+• Não há regras fixas e bem determinadas que permitam a
+    tradução entre linguagem natural e simbólica (e vice-versa).
+
+• Muitas sentenças em linguagem natural são ambíguas.
+• Expressões no passado ou futuro são transformadas em
+
+    sentenças no presente.
+• Simplificações análogas são consideradas no que diz respeito ao
+
+    plural, flexões de verbos, etc.
+   Linguagem Natural x Linguagem
+   Simbólica
+
+Ex.1: Gauss foi um matemático e Maradona não era atleta
+de natação.
+   Linguagem Natural x Linguagem
+   Simbólica
+
+Ex.1: Gauss foi um matemático e Maradona não era atleta
+de natação.
+p: Gauss é um matemático
+   Linguagem Natural x Linguagem
+   Simbólica
+
+Ex.1: Gauss foi um matemático e Maradona não era atleta
+de natação.
+p: Gauss é um matemático
+q: Maradona é atleta de natação.
+   Linguagem Natural x Linguagem
+   Simbólica
+
+Ex.1: Gauss foi um matemático e Maradona não era atleta
+de natação.
+p: Gauss é um matemático
+q: Maradona é atleta de natação.
+
+   p ^ ~q
+   Linguagem Natural x Linguagem
+   Simbólica
+
+Ex.2: Gauss ser um matemático e condição suficiente para que
+  Maradona seja atleta de natação.
+   Linguagem Natural x Linguagem
+   Simbólica
+
+Ex.2: Gauss ser um matemático e condição suficiente para que
+  Maradona seja atleta de natação.
+
+é o mesmo que
+Se Gauss foi um matemático, então Maradona era atleta de
+
+  natação.
+   Linguagem Natural x Linguagem
+   Simbólica
+
+Ex.2: Se Gauss foi um matemático, então Maradona era atleta de
+  natação.
+
+p: Gauss é um matemático
+   Linguagem Natural x Linguagem
+   Simbólica
+
+Ex.2: Se Gauss foi um matemático, então Maradona era atleta de
+  natação.
+
+p: Gauss é um matemático
+q: Maradona é atleta de natação.
+   Linguagem Natural x Linguagem
+   Simbólica
+
+Ex.2: Se Gauss foi um matemático, então Maradona era atleta de
+  natação.
+
+p: Gauss é um matemático
+q: Maradona é atleta de natação.
+
+   p→q
+   Linguagem Natural x Linguagem
+   Simbólica
+
+Ex.3: Se Gauss foi um matemático ou um dançarino,
+  então Maradona não era atleta de natação.
+   Linguagem Natural x Linguagem
+   Simbólica
+
+Ex.3: Se Gauss foi um matemático ou um dançarino,
+  então Maradona não era atleta de natação.
+
+p: Gauss é um matemático
+   Linguagem Natural x Linguagem
+   Simbólica
+
+Ex.3: Se Gauss foi um matemático ou um dançarino,
+  então Maradona não era atleta de natação.
+
+p: Gauss é um matemático
+q: Gauss é um dançarino
+   Linguagem Natural x Linguagem
+   Simbólica
+
+Ex.3: Se Gauss foi um matemático ou um dançarino,
+  então Maradona não era atleta de natação.
+
+p: Gauss é um matemático
+q: Gauss é um dançarino
+r: Maradona é atleta de natação.
+   Linguagem Natural x Linguagem
+   Simbólica
+
+Ex.3: Se Gauss foi um matemático ou um dançarino,
+  então Maradona não era atleta de natação.
+
+p: Gauss é um matemático
+q: Gauss é um dançarino
+r: Maradona é atleta de natação.
+
+               ( p v q) → ~r
+   Linguagem Natural x Linguagem
+   Simbólica
+
+Ex. 4: Gauss foi um matemático ou um dançarino, se e somente se,
+  Maradona não era atleta de natação.
+   Linguagem Natural x Linguagem
+   Simbólica
+
+Ex. 4: Gauss foi um matemático ou um dançarino, se e somente se,
+  Maradona não era atleta de natação.
+
+p: Gauss é um matemático
+   Linguagem Natural x Linguagem
+   Simbólica
+
+Ex. 4: Gauss foi um matemático ou um dançarino, se e somente se,
+  Maradona não era atleta de natação.
+
+p: Gauss é um matemático
+q: Gauss é um dançarino
+   Linguagem Natural x Linguagem
+   Simbólica
+
+Ex. 4: Gauss foi um matemático ou um dançarino, se e somente se,
+  Maradona não era atleta de natação.
+
+p: Gauss é um matemático
+q: Gauss é um dançarino
+r: Maradona é atleta de natação.
+   Linguagem Natural x Linguagem
+   Simbólica
+
+Ex. 4: Gauss foi um matemático ou um dançarino, se e somente se,
+  Maradona não era atleta de natação.
+
+p: Gauss é um matemático
+q: Gauss é um dançarino
+r: Maradona é atleta de natação.
+
+( p v q) ~r
+   Tradução para Linguagem Natural
+
+p: Gauss é um matemático
+q: Maradona é atleta de natação.
+r: Gauss é um dançarino
+a) p v ~p
+b) p v q ~r
+c) p v (q → r ^ ~p)
+   Tradução para Linguagem Natural
+
+p: Gauss é um matemático
+q: Maradona é atleta de natação.
+r: Gauss é um dançarino
+a) p v ~p : Gauss é um matemático ou Gauss não é um
+matemático.
+b) p v q ~r
+c) p v (q → r ^ ~p)
+   Tradução para Linguagem Natural
+
+p: Gauss é um matemático
+q: Maradona é atleta de natação.
+r: Gauss é um dançarino
+a) p v ~p : p v ~p : Gauss é um matemático ou Gauss não é um
+matemático.
+b) p v q ~r: Gauss é um matemático ou Maradona é atleta de
+natação se, e somente se, Gauss não é um dançarino.
+c) p v (q → r ^ ~p)
+   Tradução para Linguagem Natural
+
+p: Gauss é um matemático
+q: Maradona é atleta de natação.
+r: Gauss é um dançarino
+a) p v ~p : Gauss é um matemático ou Gauss não é um matemático.
+b) p v q ~r: Gauss é um matemático ou Maradona é atleta de
+natação se, e somente se, Gauss não é um dançarino.
+c) p v (q → r ^ ~p) : Gauss é um matemático ou se Maradona é
+
+  atleta de natação, então Gauss é um dançarino e não é
+  matemático.
+                        Exercícios
+
+Livro Iniciação à Lógica Matemática.
+Pág. 25 (1,2,4,5,7, 10, 16, 18 e 19)
+

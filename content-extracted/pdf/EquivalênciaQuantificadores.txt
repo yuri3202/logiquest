@@ -1,0 +1,62 @@
+Equivalência entre
+    Quantificadores
+
+Sistemas de Informação
+                       Lógica
+
+  Profa. Kelly Gazolli
+               Equivalência de Sentenças Quantificadas
+
+• Ninguém é feliz ≡ Todos são infelizes.
+      * considerando que ser infeliz é a negação de ser feliz.
+
+• Seja F(x) = x é feliz.
+     • ~Ǝx(F(x)) ≡ Ɐx(~F(x))
+
+• Nem todos são felizes ≡ Pelo menos uma pessoa é infeliz
+     • ~Ɐx(F(x)) ≡ Ǝx(~F(x))
+               Equivalência de Sentenças Quantificadas
+
+• Todos são felizes ≡ Ninguém é infeliz.
+     • Ɐx(F(x)) ≡ ~Ǝx(~F(x))
+
+• Algumas pessoas são felizes ≡ Nem todo mundo é infeliz.
+     • Ǝx(F(x)) ≡ ~Ɐx(~F(x))
+               Equivalência de Sentenças Quantificadas
+
+• Os quantificadores Universal e Existencial estão relacionados entre si através da
+  negação. De modo geral:
+
+     • Ǝx(P(x)) ≡ ~Ɐx(~P(x))
+     • Ɐx(P(x)) ≡ ~Ǝx(~P(x))
+     • ~Ɐx(P(x)) ≡ Ǝx(~P(x))
+     • Ɐx(~P(x)) ≡ ~Ǝx(P(x))
+               Equivalência de Sentenças Quantificadas
+
+• Nem tudo que brilha é ouro
+     • Existe alguma coisa que brilha e não é ouro.
+
+     • ~Ɐx(brilha(x) → ouro(x)) ou
+     • Ǝx(brilha(x) ^ ~ouro(x))
+
+     • ~Ɐx(brilha(x) → ouro(x)) ≡
+          • Ǝx~(brilha(x) → ouro(x)) ≡ cond
+          • Ǝx~(~brilha(x) v ouro(x)) ≡DM
+          • Ǝx(brilha(x) ^ ~ouro(x))
+               Equivalência de Sentenças Quantificadas
+
+• Existem cobras venenosas ≡ Nem toda cobra não é venenosa.
+
+     • Ǝx(cobra(x) ^ venenosa(x)) ≡
+          • ~Ɐx~(cobra(x) ^ venenosa(x)) ≡ DM
+          • ~Ɐx(~cobra(x) v ~venenosa(x)) ≡ COND
+          • ~Ɐx(cobra(x) → ~venenosa(x))
+               Equivalência de Sentenças Quantificadas
+
+• Toda pedra preciosa é cara ≡ Não existe pedra preciosa que não seja cara.
+
+     • Ɐx(PedraPreciosa(x) → Cara(x)) ≡
+          • ~Ǝx~(PedraPreciosa(x) → Cara(x)) ≡ COND
+          • ~Ǝx~(~PedraPreciosa(x) v Cara(x)) ≡ DM
+          • ~Ǝx(PedraPreciosa(x) ^ ~Cara(x))
+

@@ -1,0 +1,29 @@
+                                                                    Lógica
+                              Argumentos e Regras de Inferência – Lista de Exercícios
+
+Utilizando regras de inferência, prove a validade dos argumentos seguintes:
+
+a)Se o programa é eficiente, executa rapidamente: ou o programa é eficiente ou tem algum
+bug. No entanto, o programa não executa rapidamente. Logo, ele tem um bug.
+
+b) A colheita é boa mas não há água suficiente. Se houver muita chuva ou se não houver
+muito sol, então haverá água suficiente. Portanto, a colheita é boa e há muito sol.
+
+c) A Rússia era uma potência superior e, ou a França não era suficientemente poderosa ou
+Napoleão fez um erro. Napoleão não fez um erro, mas, se o exército não perdeu, então a
+França era poderosa. Portanto, o exército perdeu e a Rússia era uma potência superior.
+
+d) Se José levou as joias ou a Sra. Krasov mentiu, então foi cometido um crime. O Sr. Krasov
+não estava na cidade. Se um crime foi cometido, então o Sr. Krasov estava na cidade.
+Portanto, José não levou as joias.
+
+e) Se meu cliente fosse culpado, a faca estaria na gaveta. Ou a faca não estava na gaveta ou
+Jason viu a faca. Se a faca não estava lá no dia 10 de outubro, segue que Jason não viu a faca.
+Além disso, se a faca estava lá no dia 10 de outubro, então a faca estava na gaveta e o
+martelo estava no celeiro. Mas todos sabemos que o martelo não estava no celeiro. Portanto,
+senhoras e senhores do júri, meu cliente é inocente.
+
+f) Há três suspeitos de um crime: o mordomo, a governanta e a cozinheiro. Se o cozinheiro é
+inocente, então a governanta é a culpada; ou o mordomo é culpado ou a governanta é
+culpada, mas não os dois; o mordomo não é inocente. Logo, o cozinheiro é culpado.
+

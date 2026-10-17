@@ -1,0 +1,50 @@
+Linguagem Natural x Linguagem Simbólica
+
+    Expressão em Português           Conectivo Lógico           Expressão Lógica
+                                          Conjunção                    A^B
+E, mas, também, além disso                Disjunção                    AvB
+                                         Condicional                   A→B
+Ou
+                               Bicondicional (Equivalência)            A↔B
+Se A, então B                              Negação                       ~A
+A implica B
+A, logo B
+A só se B
+A somente se B
+B segue de A
+Basta A para B
+A é uma condição suficiente
+para B
+B é uma condição necessária
+para A.
+
+A se, e somente se, B
+A é uma condição necessária e
+suficiente para B.
+
+Não A
+É falso que A
+Não é verdade que A
+
+Retirado de [1]
+
+Ex. O fogo é uma condição necessária para fumaça. = Se há fumaça, então há fogo.
+
+Negação de uma Proposição Composta
+
+             Proposição                Negação Correta                 Negação Incorreta
+Vai chover amanhã                                               -
+Rui é alto e magro             Não vai chover amanhã            Pedro é baixo e gordo
+                                                                Rui
+O rio é raso ou poluído        É falso que Rui é alto e magro.
+                               Rui não é alto ou não é magro.   O rio não é raso ou não está
+Retirado de [1]                Rui é baixo ou é gordo.          poluído.
+
+                               É falso que o rio seja raso ou
+                               poluído.
+                               O rio não é raso nem poluído.
+                               O rio é fundo e não está
+                               poluído.
+
+[1] Gersting, J. L. Fundamentos Matemáticos para Ciência da Computação. 5ª Edição. LTC. 2005
+

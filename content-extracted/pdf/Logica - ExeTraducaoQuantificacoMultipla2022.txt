@@ -1,0 +1,31 @@
+                                       Lógica – Quantificação Múltipla
+                                                Lista de Exercícios
+
+Traduza as senteças abaixo para a linguagem simbólica. O domínio é todo o mundo.
+    a) Todos amam alguém.
+    b) Alguém ama alguém.
+    c) Todos são amados por alguém.
+    d) Alguém é amado por todos.
+    e) Todos são amados por todos.
+    f) Alguém não ama todos.
+    g) Alguém não é amado por todos.
+    h) Se todos gostam de Miau, Miau gosta de todos.
+    i) Alguém gosta de alguém, se Miau gosta de todos.
+    j) Todos gostam de Miau, mas Miau não gosta de ninguém.
+    k) Todos amam alguém que não os ama.
+    l) Todos amam alguém que não gosta de ninguém.
+    m) Todos amam alguém, mas ninguém ama todos.
+    n) Todo homem ama uma mulher que o ama.
+    o) Nem todo homem ama uma mulher que o ama.
+    p) Todo homem ama uma mulher que ama alguém.
+    q) Todo filósofo gosta de algum livro.
+    r) Há um livro do qual todos os filósofos gostam.
+    s) Os filósofos gostam de todos os livros.
+    t) Há um livro do qual nenhum psicólogo gosta.
+    u) Nenhum estudante gosta de livros.
+    v) Cachorros não gostam de gatos.
+    w) Nem os cantores nem os atores gostam de si mesmos.
+
+Referência:
+Mortari, C. A. Introdução à Lógica. Editora Unesp, 2001.
+

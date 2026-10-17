@@ -1,0 +1,44 @@
+                                                                                   Curso: Sistemas de Informação
+                                                                                                   Profa. Kelly Gazolli
+
+                                            Lógica – Lista de Exercícios
+                                        Equivalência de Quantificadores
+
+1) Traduza as sentenças abaixo para linguagem simbólica utilizando os dois quantificadores.
+
+Ex. Algum número par é natural.
+    • Ǝx(par(x) ^ natural(x))
+    • ~Ɐx(par(x) → ~ natural(x))
+
+    a) Todo número é natural.
+    b) Toda função é uma relação.
+    c) Todo número racional é real.
+    d) Algum mamífero é roedor.
+    e) Qualquer homem não é imortal.
+    f) Nenhum número fracionário é menor do que 5.
+    g) Existem gatos que não são amarelos.
+    h) Todos os remédios são perigosos.
+    i) Nenhuma bruxa é bela.
+    j) Não existe bêbado feliz.
+    k) Algumas pedras são preciosas.
+    l) Existem plantas que são carnívoras.
+    m) Há políticos não são honestos
+    n) Há aves que voam.
+
+2) Escreva a negação dos itens do exercício anterior em português. Apresente duas formas, uma
+para cada quantificador.
+
+Ex.: Algum número par é natural.
+Neg.: Nenhum número par é natural.
+Neg.: Todos os números pares não são naturais.
+
+Explicação:
+ Algum número par é natural.
+
+    • Ǝx(par(x) ^ natural(x))
+Não é verdade que algum número par é natural.
+
+    • ~Ǝx(par(x) ^ natural(x)) ≡ Ɐx(par(x) → ~ natural(x))
+~Ǝx(par(x) ^ natural(x)) Em português: Nenhum número par é natural.
+Ɐx(par(x) → ~ natural(x)) Em português: Todos os números pares não são naturais.
+

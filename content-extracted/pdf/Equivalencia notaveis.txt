@@ -1,0 +1,26 @@
+Equivalências Notáveis                                     Curso: Sistemas de Informação
+1. Idempotência (ID):                                      Disciplina: Lógica
+
+     • P ^ P ≡ P;                  7. Distributiva (DIST):
+     • PvP≡P                           • P ^ (Q v R) ≡ (P ^ Q) v (P ^ R);
+                                       • P v (Q ^ R) ≡ (P v Q) ^ ( P v R)
+2. Comutação (COM):
+     • P ^ Q ≡ Q ^ P;              8. De Morgan (DM):
+     • PVQ≡QvP                         • ~(P ^Q) ≡ ~P v ~Q;
+                                       • ~(P v Q) ≡ ~P ^ ~Q
+3. Associação (ASSOC):
+     • (P ^ Q) ^ R ≡ P ^ (Q ^ R);  9. Condicional (COND): P → Q ≡ ~P v Q
+     • (P v Q) v R ≡ P v (Q v R)   10.. Bicondicional (BICOND):
+
+4. Identidade (IDENT):                 • P ↔ Q ≡ (P → Q) ^ (Q → P);
+     • P ^ F ≡ F;                      • P ↔ Q ≡ ( P ^ Q ) v (~P ^ ~Q)
+     • P ^ V ≡ P;                  11. Dupla negação (DN): ~~P ≡ P
+     • P v F ≡ P;                  12. Contraposição: P → Q ≡ ~Q → ~P
+     • PvV≡V                       13. Importação-Exportação (IE)
+                                       • p → (q → r)≡ p ^q → r
+5. Tautologia
+P v ~P ≡ T
+
+6.Contradição:
+P ^ ~P ≡ F
+

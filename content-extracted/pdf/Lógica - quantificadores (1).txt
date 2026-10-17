@@ -1,0 +1,476 @@
+Quantificadores
+
+               Sistemas de Informação
+                                      Lógica
+
+                 Profa. Kelly Gazolli
+Lógica Proposicional - Limitações
+
+⚫ Há expressões que não podem ser representadas pela lógica
+  proposicional.
+Lógica Proposicional - Limitações
+
+⚫ Há expressões que não podem ser representadas pela lógica
+  proposicional.
+
+⚫ Exemplo: Todos os humanos são mortais.
+Lógica Proposicional - Limitações
+
+                            Atletas são saudáveis
+
+Interpretações possíveis:
+• Todos os atletas são saudáveis
+• Alguns atletas são saudáveis
+Lógica Proposicional - Limitações
+
+                          Pássaros comem insetos
+Interpretações possíveis:
+• Todos os pássaros comem insetos
+• Alguns pássaros comem insetos
+Lógica Proposicional - Limitações
+
+                   Todo filho é mais jovem que a mãe
+         Filho(Marcos, Maria) ^ maisJovem(Marcos, Maria)
+
+               A representação acima não é satisfatória
+Lógica de Predicados
+
+• Além dos conectivos lógicos (~, ^,v, →, ), as fórmulas bem
+  formadas da lógica de predicados são compostas por objetos,
+  predicados, variáveis e quantificadores.
+Lógica de Predicados
+
+• Objeto: é qualquer coisa sobre o qual precisamos dizer algo.
+• Predicado: é o que se declara sobre o objeto.
+
+     • Ex: Maria é estudiosa
+     • Objeto: Maria
+     • Predicado: é estudiosa.
+Lógica de Predicados
+
+• Variáveis: permitem estabelecer fatos a respeito de objetos
+    de um determinado contexto de discurso, sem ter que
+    nomear explicitamente esses objetos.
+Quantificadores
+
+ Quantificadores são operadores lógicos que indicam quantos
+             objetos tem uma determinada propriedade.
+Quantificaores: Universal e Existencial
+
+• Com o quantificador universal (Ɐ), podemos estabelecer fatos
+  a respeito de todos os objetos de um contexto, sem termos
+  que enumerar explicitamente todos eles. (Pereira, 2016).
+
+• Com quantificador existencial (Ǝ) podemos estabelecer a
+  existência de um objeto sem ter que identificar esse objeto
+  explicitamente. (Pereira, 2016)
+Quantificador Universal
+
+• Utilizado para representar frases contendo como:
+     • Para todos; Todos;
+     • Para cada;
+     • Para qualquer, Qualquer.
+Quantificador Existencial
+
+• Utilizado para representar frases contendo como:
+     • Existe;
+     • Pelo menos um;
+     • Algum.
+    Enunciados Categóricos
+
+Universal Afirmativo ou Afirmação Universal:
+da forma Ɐx (P(x) → Q(x)), ou seja, P é um subconjunto de Q.
+Ex. Todos os humanos são mortais.
+    Enunciados Categóricos
+
+Universal Negativo ou Negação Universal:
+da forma Ɐx (P(x) → ~Q(x)), ou seja, P e Q são disjuntos.
+Ex. Todos os humanos não são extraterestres.
+     Enunciados Categóricos
+
+Particular Afirmativo ou Afirmação Existencial:
+da forma Ǝx(P(x) ^ Q(x)), ou seja, P e Q tem uma interseção não-vazia.
+Ex. Alguns humanos são cultos
+         Enunciados Categóricos
+
+Particular Negativo ou Negação Existencial:
+da forma Ǝx(P(x) ^ ~Q(x)), ou seja, existem elementos que pertencem a P,
+
+  mas não a Q.
+Ex. Alguns humanos não são cultos
+Representação Formal - Sentenças
+
+Atleta(x)    Quem é x?
+Saudável(x)
+
+Os quantificadores transformam sentenças abertas em
+                       sentenças fechadas
+              Representação Formal - Exemplo
+
+Todos os atletas são saudáveis
+Ɐx (atleta(x) → saudável(x))
+
+Ou seja se x pertence a A, então x pertence a S єєpara adicionar
+texto
+              Representação Formal - Exemplo
+
+Alguns atletas são saudáveis
+Ǝx (atleta(x) ^ saudável(x))
+Exemplo de Quantificadores
+
+• Afirmação Universal
+      Todos os atletas são saudáveis.
+
+• Negação Universal
+      Nenhum atleta é saudável.
+
+• Afirmação Existencial
+      Alguns atletas são saudáveis ou
+      Existem atletas saudáveis.
+Exemplo de Quantificadores
+
+• Negação Existencial
+      Alguns atletas não são saudáveis ou
+      Existem alguns atletas que não são saudáveis.
+Exemplo de Quantificadores
+
+• Todos os produtos importados são caros.
+• Alguns produtos importados não são caros.
+• Nenhum indígena é careca
+• Não é verdade que todos os alunos gostam de estudar.
+Exemplo de Quantificadores
+
+• Todo aluno estudioso passa em lógica.
+• Alguns alunos gostam de estudar
+Quantificação
+        Múltipla
+
+        Sistemas de Informação
+                                Lógica
+
+          Profa. Kelly Gazolli
+Quantificação Múltipla
+
+• Algumas sentenças utilizam mais de um quantificador.
+• Podemos tomar dois enunciados categóricos e fazer a sua
+
+  conjunção
+     • Ex. Todos os gatos são pardos e Algumas rãs são verdes.
+     • Representação:
+     • Ɐx (gato(x) → pardo(x)) ^Ǝx(rã(x) ^ verde(x))
+Quantificação Múltipla
+
+• Podemos tomar quaisquer sentenças gerais e com elas,
+  através de operadores e quantificadores formar sentenças
+  mais complexas. (Mortari,2001)
+     • Se todos os gatos são brancos, então não existem gatos
+        amarelos.
+     • Ɐx (gato(x) → branco(x)) → ~Ǝx(gato(x) ^ amarelo(x))
+Quantificação Múltipla
+
+Nem todos os gatos são brancos, nem há gatos maiores do que
+Miau.
+~Ɐx (gato(x) → branco(x)) ^ ~Ǝx(gato(x) ^ maior(x, Miau))
+Quantificação Múltipla
+
+• Os casos mais interessantes ocorrem quando há mais de um
+    quantificador e um ocorre dentro do escopo do outro.
+Quantificação Múltipla
+
+• E se quisermos representar " Todos gostam de alguém"?
+Quantificação Múltipla
+
+• E se quisermos representar " Todos gostam de alguém"?
+• Isso significa que, para qualquer que seja o x, há um y de
+
+    quem ele gosta.
+Quantificação Múltipla
+
+• E se quisermos representar " Todos gostam de alguém"?
+• Isso significa que, para qualquer que seja o x, há um y de
+
+    quem ele gosta.
+       • ⱯxƎy (gosta(x,y))
+Quantificação Múltipla
+
+• E se quisermos representar " Todos gostam de alguém"?
+• Isso significa que, para qualquer que seja o x, há um y de
+
+    quem ele gosta.
+       • ⱯxƎy (gosta(x,y))
+
+ • Como traduzir: ƎyⱯx (gosta(x,y))?
+Quantificação Múltipla
+
+• E se quisermos representar " Todos gostam de alguém"?
+• Isso significa que, para qualquer que seja o x, há um y de
+
+    quem ele gosta.
+       • ⱯxƎy (gosta(x,y))
+
+ • Como traduzir: ƎyⱯx (gosta(x,y))?
+       • Existe alguém de quem todo mundo gosta.
+Quantificação Múltipla
+
+ • ⱯxƎy (gosta(x,y))
+      • Todos gostam de alguém.
+
+ • ƎyⱯx (gosta(x,y))?
+       • Existe alguém de quem todo mundo gosta.
+
+• A ordem dos quantificadores é importante.
+• Apenas quando os quantificadores são diferentes.
+• ƎxƎy (gosta(x,y)) e ƎyƎx (gosta(y,x)) significam a mesma
+
+  coisa.
+Quantificação Múltipla
+
+• Há alguém que não gosta de ninguém
+      • Ǝx~Ǝy(gosta(x,y)) ou ƎxⱯy(~gosta(x,y))
+
+• Há alguém que não gosta de algumas pessoas.
+      • ƎxƎy(~gosta(x,y))
+
+• Dados três indivíduos quaisquer, se o primeiro é pai do
+  segundo e o segundo é pai do terceiro, então o primeiro é avô
+  do terceiro.
+      • ⱯxⱯyⱯz(pai(x,y) ^ pai(y,z) → avô(x, z))
+Quantificação Múltipla
+
+• Dados três indivíduos quaisquer, se o primeiro é pai do
+  segundo e o segundo é pai do terceiro, então o primeiro é avô
+  do terceiro.
+Quantificação Múltipla
+
+• Dados três indivíduos quaisquer, se o primeiro é pai do
+  segundo e o segundo é pai do terceiro, então o primeiro é avô
+  do terceiro.
+      • ⱯxⱯyⱯz(pai(x,y) ^ pai(y,z) → avô(x, z))
+Quantificação Múltipla
+
+• Se um indivíduo é avô de outro, então há um terceiro de quem
+  o primeiro é pai, e que é pai do segundo.
+Quantificação Múltipla
+
+• Se um indivíduo é avô de outro, então há um terceiro de quem
+  o primeiro é pai, e que é pai do segundo.
+      • ⱯxⱯy(avô(x,y) → Ǝz(pai(x,z) ^pai(z, y))) ≡
+      • ⱯxⱯyƎz(avô(x,y) → (pai(x,z) ^pai(z, y)))
+       Quantificação Múltipla
+
+• É importante notar que:
+      • O nome da variável não interfere no significado.
+          • ⱯxƎy (gosta(x,y)) ≡ⱯyƎx (gosta(y,x)) ≡
+          • ⱯwƎz (gosta(w,z))
+      • Variáveis diferentes não classificam necessariamente objetos
+        diferentes.
+          • ⱯxⱯy (gosta(x,y)) não afirma apenas que todos gostam de
+             todos, mas que todos gostam de si próprios.
+               Quantificação Múltipla
+
+• É importante notar que:
+     • Quando dois ou mais quantificadores justapõem-se na mesma parte da
+        fórmula, uma variável diferente deve ser utilizadas para cada quantificador.
+          • ⱯxƎX (gosta(x,x)) está incorreto.
+          • ⱯxƎy (gosta(x,y)) está correto.
+     • A mesma variável utilizada em vários quantificadores não se refere
+        necessariamente ao mesmo objeto.
+           • ƎX(gosta(Maria, X)) ^ ƎX(gosta(João, X))
+Exemplos
+
+• Todos os homens são amigos de alguma mulher feliz.
+
+• Todos os homens elegantes são amigos de todas as
+  mulheres ricas.
+Exemplos
+
+• Algumas mulheres são amigas de todos os homens elegantes.
+
+• Algumas mulheres inteligentes são amigas de alguns homens
+  trabalhadores e simpáticos.
+Interpretação
+de Predicados
+
+         Sistemas de Informação
+                                Lógica
+
+           Profa. Kelly Gazolli
+Interpretação de Predicados
+
+• Há símbolos na Lógica de Predicados que não estão
+   presentes na Lógica Proposicional, fazendo com que a
+   determinação do valor lógico (verdadeiro ou falso) seja
+   feita de maneira diferente.
+
+• Assim, para determinarmos o valor lógico de um
+   enunciado, além de observarmos os símbolos lógicos
+   envolvidos, é necessária a atribuição de um domínio
+   (conjunto).
+Interpretação de Predicados
+
+Dada a fórmula: Ɐx(P(x)), onde P(x): x é par.
+Considerando o domínio U={2,4,6}. Essa fórmula é
+
+  verdadeira, pois:
+• o valor lógico de P(2) é Verdadeiro, (É verdade que 2 é
+
+   par)
+• o valor lógico de P(4) é Verdadeiro
+• o valor lógico de P(6) é Verdadeiro
+Assim, todos os elementos do conjunto tornam o
+
+  predicado P(x) verdadeiro, em outras palavras, todos os
+  elementos do conjunto satisfazem P(x).
+Interpretação de Predicados
+
+Dada a fórmula: Ɐx(P(x)), onde P(x): x é par.
+Considerando o domínio U={2,5,6}. Essa fórmula é falsa,
+
+  pois:
+• o valor lógico de P(2) é Verdadeiro.
+• o valor lógico de P(5) é Falso.
+• o valor lógico de P(6) é Verdadeiro
+Assim, não é verdade que todos os elementos do conjunto
+
+  tornam o predicado P(x) verdadeiro.
+Interpretação de Predicados
+
+Dada a fórmula: Ǝx(P(x)), onde P(x): x é par.
+Considerando o domínio U={2,5,7}. Essa fórmula é
+
+  verdadeira, pois:
+
+• o valor lógico de P(2) é Verdadeiro.
+
+Assim, é verdade que pelo menos um elemento do
+conjunto torna o predicado P(x) verdadeiro.
+Interpretação de Predicados
+
+Dada a fórmula: Ǝx(P(x)), onde P(x): x é par.
+Considerando o domínio U={5,7}. Essa fórmula é falsa,
+
+  pois:
+
+• o valor lógico de P(5) é Falso.
+• o valor lógico de P(7) é Falso.
+
+Assim, é não é verdade que pelo menos um elemento do
+conjunto torna o predicado P(x) verdadeiro.
+Interpretação de Predicados
+
+De acordo com Gersting (2004), a interpretação de um
+predicado consiste em:
+
+• um conjunto de objetos chamado o domínio da
+    interpretação, que não pode ser vazio.
+
+• Atribuição de um propriedade dos objetos do domínio
+    para cada predicado na expressão.
+
+• Atribuição de um objeto particular no domínio a cada
+    símbolo constante na expressão.
+Interpretação de Predicados - Exemplos
+
+• Ǝx(A(x) ^ B(x))
+
+• Na interpretação onde U = {1, 2,10, 13} e A(x) = x é
+   divisível por 2 e B(x) =x é divisível por 5. A fórmula é
+   verdadeira.
+
+• Na interpretação onde U = {1, 2,18, 13} e A(x) = x é
+   divisível por 2 e B(x) =x é divisível por 5. A fórmula é
+   Falsa.
+ Interpretação de Predicados - Exemplos
+
+• ⱯxƎy (P(x,y) ^ Q(x,y))
+
+• Fazendo U = Conjunto dos números inteiros positivos e
+  P(x,y) = x ≤ y e Q(x,y) = x divide y, a fórmula é verdadeira.
+
+• Fazendo U = Conjunto dos números primos e P(x,y) = x <
+   y e Q(x,y) = x divide y, a fórmula é falsa. Um número
+   primo é divido somente por 1 e por ele mesmo.
+Fórmula Válida
+
+          Verdadeira para qualquer interpretação.
+Fórmula Válida - Exemplo
+
+                       Ɐx(Q(x) v ~Q(x))
+ Fórmula Válida - Exemplo
+
+                         Ɐx(Q(x) v ~Q(x))
+Para qualquer especificação de propriedade atribuída
+a Q e para qualquer domínio, cada elemento satisfará
+Q ou não satisfará.
+ Fórmula Válida - Exemplos
+
+• Verifique a validade das seguintes fórmulas:
+• ⱯxP(x) → ƎxP(x)
+• ⱯxP(x) → P(a), onde a é um membro particular do
+
+  domínio.
+• Ɐx(P(x) ^ Q(x)) ⱯxP(x) ^ ⱯxQ(x)
+• ƎxP(x) → ⱯxP(x)
+Proposições x Predicados
+Equivalência entre
+    Quantificadores
+
+Sistemas de Informação
+                       Lógica
+
+  Profa. Kelly Gazolli
+               Equivalência de Sentenças Quantificadas
+
+• Ninguém é feliz ≡ Todos são infelizes.
+      * considerando que ser infeliz é a negação de ser feliz.
+
+• Seja F(x) = x é feliz.
+     • ~Ǝx(F(x)) ≡ Ɐx(~F(x))
+
+• Nem todos são felizes ≡ Pelo menos uma pessoa é infeliz
+     • ~Ɐx(F(x)) ≡ Ǝx(~F(x))
+               Equivalência de Sentenças Quantificadas
+
+• Todos são felizes ≡ Ninguém é infeliz.
+     • Ɐx(F(x)) ≡ ~Ǝx(~F(x))
+
+• Algumas pessoas são felizes ≡ Nem todo mundo é infeliz.
+     • Ǝx(F(x)) ≡ ~Ɐx(~F(x))
+               Equivalência de Sentenças Quantificadas
+
+• Os quantificadores Universal e Existencial estão relacionados entre si através da
+  negação. De modo geral:
+
+     • Ǝx(P(x)) ≡ ~Ɐx~(P(x))
+     • Ɐx(P(x)) ≡ ~Ǝx~(P(x))
+     • ~Ɐx(P(x)) ≡ Ǝx~(P(x))
+     • Ɐx~(P(x)) ≡ ~Ǝx(P(x))
+               Equivalência de Sentenças Quantificadas
+
+• Nem tudo que brilha é ouro
+     • Existe alguma coisa que brilha e não é ouro.
+
+     • ~Ɐx(brilha(x) → ouro(x)) ou
+     • Ǝx(brilha(x) ^ ~ouro(x))
+
+     • ~Ɐx(brilha(x) → ouro(x)) ≡
+          • Ǝx~(brilha(x) → ouro(x)) ≡ cond
+          • Ǝx~(~brilha(x) v ouro(x)) ≡DM
+          • Ǝx(brilha(x) ^ ~ouro(x))
+               Equivalência de Sentenças Quantificadas
+
+• Existem cobras venenosas ≡ Nem toda cobra não é venenosa.
+
+     • Ǝx(cobra(x) ^ venenosa(x)) ≡
+          • ~Ɐx~(cobra(x) ^ venenosa(x)) ≡ DM
+          • ~Ɐx(~cobra(x) v ~venenosa(x)) ≡ COND
+          • ~Ɐx(cobra(x) → ~venenosa(x))
+               Equivalência de Sentenças Quantificadas
+
+• Toda pedra preciosa é cara ≡ Não existe pedra preciosa que não seja cara.
+
+     • Ɐx(PedraPreciosa(x) → Cara(x)) ≡
+          • ~Ǝx~(PedraPreciosa(x) → Cara(x)) ≡ COND
+          • ~Ǝx~(~PedraPreciosa(x) v Cara(x)) ≡ DM
+          • ~Ǝx(PedraPreciosa(x) ^ ~Cara(x))
+

@@ -1,0 +1,412 @@
+{
+  "lessons": [
+    {
+      "id": "c12_substituicao",
+      "title": "Regra de substituição e equivalências notáveis",
+      "unitTitle": "Capítulo 12 — Regras de inferência e equivalências",
+      "char": "boole",
+      "icon": "shuffle",
+      "steps": [
+        {
+          "kind": "theory",
+          "title": "Regra de substituição",
+          "content": "Muitos argumentos não saem só com as dez regras de inferência do Cap. 9/11. O Cap. 12 acrescenta a <b>Regra de substituição</b>: <i>uma proposição qualquer P, ou apenas uma parte de P, pode ser substituída por uma proposição equivalente; a proposição Q que se obtém é equivalente a P.</i> A grande diferença: as dez regras de inferência antigas só se aplicam a <b>linhas completas</b> da dedução, enquanto as equivalências (regras de substituição) valem também para <b>partes de uma linha</b>.",
+          "table": null,
+          "instruction": null,
+          "explanation": null,
+          "source": "Alencar Filho, Cap. 12, §1 Regra de substituição",
+          "art": "lawsLadder"
+        },
+        {
+          "kind": "theory",
+          "title": "As equivalências notáveis",
+          "content": "Estas equivalências são as \"dez regras de inferência adicionais\" do Cap. 12. Use a sigla como justificativa na coluna de regras da dedução, marcando sempre a equivalência usada.",
+          "table": [
+            ["Equivalência", "Sigla", "Forma"],
+            ["Idempotência", "ID", "p ^ p ≡ p · p v p ≡ p"],
+            ["Comutação", "COM", "p ^ q ≡ q ^ p · p v q ≡ q v p"],
+            ["Associação", "ASSOC", "p ^ (q ^ r) ≡ (p ^ q) ^ r · p v (q v r) ≡ (p v q) v r"],
+            ["Distribuição", "DIST", "p ^ (q v r) ≡ (p ^ q) v (p ^ r) · p v (q ^ r) ≡ (p v q) ^ (p v r)"],
+            ["Dupla negação", "DN", "p ≡ ~~p"],
+            ["De Morgan", "DM", "~(p ^ q) ≡ ~p v ~q · ~(p v q) ≡ ~p ^ ~q"],
+            ["Condicional", "COND", "p → q ≡ ~p v q"],
+            ["Bicondicional", "BICOND", "p ↔ q ≡ (p → q) ^ (q → p)"],
+            ["Contraposição", "CP", "p → q ≡ ~q → ~p"],
+            ["Exportação", "EI", "p → (q → r) ≡ (p ^ q) → r"]
+          ],
+          "instruction": null,
+          "explanation": null,
+          "source": "Alencar Filho, Cap. 12, §2 Equivalências notáveis",
+          "art": "inferenceRules"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Qual é a diferença de aplicação entre as dez regras de inferência antigas e as equivalências notáveis (regra de substituição)?",
+          "options": [
+            { "text": "As regras de inferência só se aplicam a linhas completas; as equivalências podem ser aplicadas a linhas completas ou a partes de uma linha.", "isCorrect": true },
+            { "text": "As equivalências só valem para linhas completas, e as regras de inferência para qualquer parte.", "isCorrect": false },
+            { "text": "Não há diferença: as duas coisas se aplicam igualmente a fragmentos de fórmula.", "isCorrect": false },
+            { "text": "As regras de inferência substituem qualquer subfórmula por uma equivalente.", "isCorrect": false }
+          ],
+          "explanation": "É exatamente a observação do Cap. 12: as dez primeiras regras de inferência exigem a linha inteira, enquanto a regra de substituição permite trocar <b>uma parte</b> de P por uma fórmula equivalente.",
+          "source": "Alencar Filho, Cap. 12, §2 nota sobre o modo de aplicar",
+          "art": "argForm"
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Complete a equivalência Condicional (COND): <b>p → q ≡ ___</b>. Monte o lado direito com os blocos.",
+          "promptBox": "p → q ≡",
+          "tokens": ["~", "p", "v", "q", "^", "↔"],
+          "correctSequence": ["~", "p", "v", "q"],
+          "hint": "Uma condicional vira disjunção: negue só o antecedente.",
+          "explanation": "Equivalência usada: Condicional (COND): p → q ≡ ~p v q. O ~ incide apenas sobre o antecedente p.",
+          "source": "Alencar Filho, Cap. 12, §2 VII Condicional"
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Complete a equivalência Contraposição (CP): <b>p → q ≡ ___</b>. Monte o lado direito.",
+          "promptBox": "p → q ≡",
+          "tokens": ["~", "q", "→", "~", "p", "v"],
+          "correctSequence": ["~", "q", "→", "~", "p"],
+          "hint": "Negue os dois lados e troque a ordem.",
+          "explanation": "Equivalência usada: Contraposição (CP): p → q ≡ ~q → ~p. A seta inverte e o ~ vai nos dois termos.",
+          "source": "Alencar Filho, Cap. 12, §2 IX Contraposição"
+        },
+        {
+          "kind": "multi",
+          "instruction": "Uma dedução contém a linha <b>p → q</b>. Marque TODAS as fórmulas que podem substituí-la pela regra de substituição (equivalentes a ela).",
+          "formula": "p → q",
+          "options": ["~p v q", "~q → ~p", "q → p", "p ^ q", "~p → ~q"],
+          "correct": [0, 1],
+          "explanation": "Equivalência usada: em 0, Condicional (COND): p → q ≡ ~p v q; em 1, Contraposição (CP): p → q ≡ ~q → ~p. As demais são a inversa (4), a recíproca (2) e uma conjunção (3) — nenhuma equivalente.",
+          "source": "adaptado de: Alencar Filho, Cap. 12, §2 VII e IX",
+          "mascot": "boole",
+          "say": "Cuidado: recíproca e inversa NÃO são equivalentes."
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Esta justificativa é válida?",
+          "statement": "A linha (3) (p v q) ^ (p v r) foi obtida de (1) p v (q ^ r) pela equivalência Associação (ASSOC).",
+          "subtext": "Cap. 12, exemplificação (3)",
+          "isTrue": false,
+          "explanation": "Equivalência usada: na verdade é <b>Distribuição (DIST (ii))</b>: p v (q ^ r) ≡ (p v q) ^ (p v r). Associação apenas muda o agrupamento de um mesmo conectivo, e aqui o conectivo muda de v para ^.",
+          "source": "Alencar Filho, Cap. 12, exemplificação (3)"
+        },
+        {
+          "kind": "proof-step",
+          "title": "Reescrevendo uma parte da linha",
+          "instruction": "Na dedução de p a partir de ~p → ~q e q, a linha (3) ficou ~~p v ~q. Complete a linha (4), reescrevendo apenas uma parte de (3).",
+          "proofState": [
+            { "line": 1, "text": "~p → ~q", "rule": "P" },
+            { "line": 2, "text": "q", "rule": "P" },
+            { "line": 3, "text": "~~p v ~q", "rule": "1 COND" }
+          ],
+          "exprOptions": ["p v ~q", "~p v ~q", "p ^ ~q", "~~p v q"],
+          "ruleOptions": ["De Morgan (DM)", "Dupla negação (DN)", "Condicional (COND)", "Idempotência (ID)"],
+          "correctExpr": 0,
+          "correctRule": 1,
+          "explanation": "Equivalência usada: <b>Dupla negação (DN)</b> aplicada só à parte ~~p da linha (3): ~~p v ~q passa a p v ~q. Depois, com ~~q (DN de (2)), o Silogismo disjuntivo (SD) elimina ~q e sobe p.",
+          "source": "Alencar Filho, Cap. 12, exemplificação (5)",
+          "art": "proofColumns"
+        },
+        {
+          "kind": "proof-step",
+          "title": "Reescrevendo a linha inteira",
+          "instruction": "Na dedução de p v s (premissas p v (q ^ r) e (p v q) → s), complete a linha (3), obtida reescrevendo a premissa (1) inteira.",
+          "proofState": [
+            { "line": 1, "text": "p v (q ^ r)", "rule": "P" },
+            { "line": 2, "text": "(p v q) → s", "rule": "P" }
+          ],
+          "exprOptions": ["(p v q) ^ (p v r)", "(p ^ q) v (p ^ r)", "p v (q ^ r)", "(p v q) v (p v r)"],
+          "ruleOptions": ["Comutação (COM)", "Associação (ASSOC)", "Distribuição (DIST)", "De Morgan (DM)"],
+          "correctExpr": 0,
+          "correctRule": 2,
+          "explanation": "Equivalência usada: <b>Distribuição (DIST (ii))</b>: p v (q ^ r) ≡ (p v q) ^ (p v r). Simplificação extrai p v q (linha 4); MP com (2) dá s; Adição fecha p v s.",
+          "source": "Alencar Filho, Cap. 12, exemplificação (3)"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Pela equivalência Exportação-Importação (EI), por que fórmula se pode substituir <b>p → (q → r)</b>?",
+          "options": [
+            { "text": "(p ^ q) → r", "isCorrect": true },
+            { "text": "(p v q) → r", "isCorrect": false },
+            { "text": "p ^ (q → r)", "isCorrect": false },
+            { "text": "(p → q) → r", "isCorrect": false }
+          ],
+          "explanation": "Equivalência usada: Exportação (EI): p → (q → r) ≡ (p ^ q) → r. O antecedente \"exportado\" da condicional aninhada vira conjunção no antecedente de uma única condicional.",
+          "source": "Alencar Filho, Cap. 12, §2 X Exportação-Importação"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Esta justificativa é válida?",
+          "statement": "De ~p → ~q (linha 1) passou-se a escrever ~~p v ~q (linha 3) usando a equivalência Condicional (COND).",
+          "subtext": "Cap. 12, exemplificação (5)",
+          "isTrue": true,
+          "explanation": "Equivalência usada: <b>Condicional (COND)</b>: p → q ≡ ~p v q. Aplicando com p := ~p e q := ~q, fica ~p → ~q ≡ ~~p v ~q. O ~ a mais vem de negar o antecedente ~p.",
+          "source": "Alencar Filho, Cap. 12, exemplificação (5)"
+        },
+        {
+          "kind": "multi",
+          "instruction": "Uma linha contém <b>p ^ (q v r)</b>. Marque TODAS as fórmulas que podem substituí-la pela regra de substituição.",
+          "formula": "p ^ (q v r)",
+          "options": ["(p ^ q) v (p ^ r)", "(q v r) ^ p", "(p v q) ^ (p v r)", "p v (q ^ r)"],
+          "correct": [0, 1],
+          "explanation": "Equivalência usada: em 0, <b>Distribuição (DIST (i))</b>: p ^ (q v r) ≡ (p ^ q) v (p ^ r); em 1, <b>Comutação (COM)</b>. As opções 2 e 3 trocam ^ por v (são a outra face da DIST) e não são equivalentes.",
+          "source": "adaptado de: Alencar Filho, Cap. 12, §2 I a IV"
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Complete a equivalência De Morgan (DM): <b>~(p ^ q) ≡ ___</b>. Monte o lado direito.",
+          "promptBox": "~(p ^ q) ≡",
+          "tokens": ["~", "p", "v", "~", "q", "^"],
+          "correctSequence": ["~", "p", "v", "~", "q"],
+          "hint": "A negação entra em cada termo e o ^ vira v.",
+          "explanation": "Equivalência usada: <b>De Morgan (DM (i))</b>: ~(p ^ q) ≡ ~p v ~q. A negação distribui e inverte o conectivo.",
+          "source": "Alencar Filho, Cap. 12, §2 VI De Morgan",
+          "art": "demorgan",
+          "mascot": "boole",
+          "say": "De Morgan: nega tudo e vira o conectivo."
+        },
+        {
+          "kind": "proof-step",
+          "title": "Contrapositiva no meio da prova",
+          "instruction": "Na dedução de p → ~r (premissas p → q e r → ~q), complete a linha (3): a contrapositiva da premissa (2).",
+          "proofState": [
+            { "line": 1, "text": "p → q", "rule": "P" },
+            { "line": 2, "text": "r → ~q", "rule": "P" }
+          ],
+          "exprOptions": ["~~q → ~r", "~r → ~q", "~q → ~r", "q → ~r"],
+          "ruleOptions": ["De Morgan (DM)", "Contraposição (CP)", "Condicional (COND)", "Exportação (EI)"],
+          "correctExpr": 0,
+          "correctRule": 1,
+          "explanation": "Equivalência usada: <b>Contraposição (CP)</b> na linha (2): r → ~q ≡ ~~q → ~r (nega-se e inverte-se; aparece ~~ porque o consequente já era ~q). A linha (4) limpa o ~~ por DN (fica q → ~r) e Silogismo hipotético (SH) com (1) conclui p → ~r.",
+          "source": "Alencar Filho, Cap. 12, exemplificação (2)"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Uma linha da dedução diz ~~p; na linha seguinte escreve-se apenas p. Qual equivalência autorizou essa substituição?",
+          "options": [
+            { "text": "Dupla negação (DN)", "isCorrect": true },
+            { "text": "De Morgan (DM)", "isCorrect": false },
+            { "text": "Idempotência (ID)", "isCorrect": false },
+            { "text": "Condicional (COND)", "isCorrect": false }
+          ],
+          "explanation": "Equivalência usada: <b>Dupla negação (DN)</b>: p ≡ ~~p. Como é uma equivalência, pode trocar só o fragmento ~~p dentro de uma linha maior.",
+          "source": "Alencar Filho, Cap. 12, §2 V Dupla negação"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Esta justificativa é válida?",
+          "statement": "A equivalência Bicondicional (BICOND) escreve p ↔ q como (p → q) ^ (q → p).",
+          "subtext": "Cap. 12, §2 VIII",
+          "isTrue": true,
+          "explanation": "Equivalência usada: <b>Bicondicional (BICOND (i))</b>: p ↔ q ≡ (p → q) ^ (q → p). Numa dedução, isso permite extrair q → s da linha q ↔ s (linha 8 do exemplo (5)).",
+          "source": "Alencar Filho, Cap. 12, §2 VIII Bicondicional"
+        }
+      ]
+    },
+    {
+      "id": "c13_dc_di",
+      "title": "Demonstração condicional e indireta",
+      "unitTitle": "Capítulo 13 — Demonstração condicional e indireta",
+      "char": "turing",
+      "icon": "key",
+      "steps": [
+        {
+          "kind": "theory",
+          "title": "Demonstração condicional (DC)",
+          "content": "Quando a conclusão tem forma condicional A → B, a <b>DC</b> diz: introduza A como <b>premissa adicional</b> (marcada PA) e dedza B. Por que funciona — pela Regra de Importação, a condicional associada (P₁ ^ … ^ Pₙ) → (A → B) é equivalente a (P₁ ^ … ^ Pₙ ^ A) → B. Logo P₁, …, Pₙ ⊢ A → B é válido sse P₁, …, Pₙ, A ⊢ B é válido. As linhas derivadas sob A passam a <b>depender</b> da suposição; ao final A é <b>descarregada</b> e sobe a conclusão A → B.",
+          "table": null,
+          "instruction": null,
+          "explanation": null,
+          "source": "Alencar Filho, Cap. 13, §1 Demonstração condicional",
+          "art": "proofColumns"
+        },
+        {
+          "kind": "theory",
+          "title": "Demonstração indireta (DI / por absurdo)",
+          "content": "Para provar P₁, …, Pₙ ⊢ Q por <b>DI</b>, admita a negação ~Q da conclusão (marcada PA) e dedza uma <b>contradição</b> C, tipicamente do tipo A ^ ~A. Pela DC obter-se-ia P₁, …, Pₙ ⊢ ~Q → C; como (~Q → C) ≡ ~(~Q) v C ≡ Q v C ≡ Q (C é contradição), o argumento original é válido. A DI serve para <b>qualquer</b> forma de conclusão, não só condicionais.",
+          "table": null,
+          "instruction": null,
+          "explanation": null,
+          "source": "Alencar Filho, Cap. 13, §3 Demonstração indireta",
+          "art": "argForm",
+          "mascot": "turing",
+          "say": "DI: supõe o contrário e explode em contradição."
+        },
+        {
+          "kind": "choice",
+          "instruction": "Quando o método da demonstração condicional (DC) pode ser empregado?",
+          "options": [
+            { "text": "Somente quando a conclusão do argumento tem forma condicional A → B.", "isCorrect": true },
+            { "text": "Sempre, qualquer que seja a forma da conclusão.", "isCorrect": false },
+            { "text": "Apenas quando todas as premissas são verdadeiras.", "isCorrect": false },
+            { "text": "Só quando a conclusão é uma conjunção.", "isCorrect": false }
+          ],
+          "explanation": "A DC exige conclusão condicional: toma-se o antecedente A como premissa suposta (PA) e deduz-se o consequente B. Para conclusões não condicionais usa-se a DI.",
+          "source": "Alencar Filho, Cap. 13, §1"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Julgue.",
+          "statement": "A linha marcada PA (premissa adicional) é uma das premissas originais do argumento.",
+          "subtext": "Cap. 13, §1 e §3",
+          "isTrue": false,
+          "explanation": "Falso. A PA é uma suposição temporária: na DC é o antecedente da conclusão; na DI é a negação da conclusão. Ela é descarregada ao final e não pertencia ao conjunto original de premissas.",
+          "source": "Alencar Filho, Cap. 13, §1 e §3"
+        },
+        {
+          "kind": "order",
+          "instruction": "Ordene as linhas da demonstração condicional de s → q a partir de p → q, r → p, s → r.",
+          "items": [
+            "Premissas: p → q, r → p, s → r. Conclusão: s → q",
+            "Suposição DC: s (PA — o antecedente da conclusão)",
+            "r — de (3) s → r e da suposição s, por MP",
+            "p — de (2) r → p e r, por MP",
+            "q — de (1) p → q e p, por MP",
+            "Descarga: s → q (DC sobre a suposição s)"
+          ],
+          "explanation": "A DC vale porque as linhas r, p, q derivam q usando justamente a suposição s. As linhas intermediárias dependem de s; ao descarregar, a conclusão s → q deixa de depender dela.",
+          "source": "Alencar Filho, Cap. 13, exercício 1 (d)",
+          "art": "inferenceRules"
+        },
+        {
+          "kind": "proof-step",
+          "title": "DC com reescrita por equivalência",
+          "instruction": "Na demonstração condicional de p → t (premissas p → q, q ↔ s, t v (r ^ ~s)), já se tem a suposição (4) p e a linha (8) s. Complete a linha (9), reescrevendo a premissa (3) por uma equivalência.",
+          "proofState": [
+            { "line": 1, "text": "p → q", "rule": "P" },
+            { "line": 2, "text": "q ↔ s", "rule": "P" },
+            { "line": 3, "text": "t v (r ^ ~s)", "rule": "P" },
+            { "line": 4, "text": "p", "rule": "PA (DC)" },
+            { "line": 5, "text": "q", "rule": "1,4 MP" },
+            { "line": 6, "text": "(q → s) ^ (s → q)", "rule": "2 BICOND" },
+            { "line": 7, "text": "q → s", "rule": "6 SIMP" },
+            { "line": 8, "text": "s", "rule": "5,7 MP" }
+          ],
+          "exprOptions": ["(t v r) ^ (t v ~s)", "(t ^ r) v (t ^ ~s)", "(t v r) v (t v ~s)", "t v (~s ^ r)"],
+          "ruleOptions": ["Comutação (COM)", "Associação (ASSOC)", "Distribuição (DIST)", "De Morgan (DM)"],
+          "correctExpr": 0,
+          "correctRule": 2,
+          "explanation": "Equivalência usada: <b>Distribuição (DIST (ii))</b>: t v (r ^ ~s) ≡ (t v r) ^ (t v ~s). SIMP tira t v ~s (linha 10); DN dá ~~s (11); SD com t v ~s conclui t; DC fecha p → t.",
+          "source": "Alencar Filho, Cap. 13, §2 exemplificação (5)",
+          "art": "proofColumns"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Numa demonstração condicional, o que acontece com a premissa suposta A ao final da prova?",
+          "options": [
+            { "text": "A é descarregada: a conclusão A → B já não depende de A, apenas das premissas originais.", "isCorrect": true },
+            { "text": "A vira premissa permanente e a conclusão ainda depende dela.", "isCorrect": false },
+            { "text": "A é negada e usada como contradição.", "isCorrect": false },
+            { "text": "A é substituída por ~A via De Morgan.", "isCorrect": false }
+          ],
+          "explanation": "O poder da DC está em descarregar a suposição: enquanto as linhas intermediárias dependiam de A, a condicional final A → B depende só de P₁, …, Pₙ.",
+          "source": "Alencar Filho, Cap. 13, §1"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Julgue.",
+          "statement": "A demonstração indireta pode ser usada para qualquer forma de conclusão, não apenas para conclusões condicionais.",
+          "subtext": "Cap. 13, §3",
+          "isTrue": true,
+          "explanation": "Verdadeiro. Diferente da DC, a DI não exige conclusão condicional: basta supor ~Q e chegar a uma contradição A ^ ~A.",
+          "source": "Alencar Filho, Cap. 13, §3"
+        },
+        {
+          "kind": "order",
+          "instruction": "Ordene as linhas da demonstração indireta de ~(p ^ r) a partir de p → ~q e r → q.",
+          "items": [
+            "Premissas: p → ~q, r → q. Conclusão: ~(p ^ r)",
+            "Suposição DI: p ^ r (PA — a negação da conclusão)",
+            "p — por SIMP da suposição",
+            "~q — de (1) p → ~q e p, por MP",
+            "r — por SIMP da suposição",
+            "q — de (2) r → q e r, por MP",
+            "q ^ ~q — CONJ: a contradição atingida",
+            "Logo ~(p ^ r), por demonstração indireta"
+          ],
+          "explanation": "Da suposição p ^ r saem p e r (SIMP); MP com as premissas produz ~q e q; CONJ forma a contradição q ^ ~q. Como ~Q leva a absurdo, a conclusão Q = ~(p ^ r) é válida.",
+          "source": "Alencar Filho, Cap. 13, §4 exemplificação (1)",
+          "art": "proofColumns"
+        },
+        {
+          "kind": "proof-step",
+          "title": "Qual linha se supõe numa DI?",
+          "instruction": "Vai-se provar ~(p ^ r) por demonstração indireta a partir de p → ~q e r → q. Complete a linha (3): a premissa suposta de uma DI.",
+          "proofState": [
+            { "line": 1, "text": "p → ~q", "rule": "P" },
+            { "line": 2, "text": "r → q", "rule": "P" }
+          ],
+          "exprOptions": ["p ^ r", "~(p ^ r)", "~p ^ ~r", "p v r"],
+          "ruleOptions": ["PA — negação da conclusão (DI)", "PA — antecedente (DC)", "Simplificação (SIMP)", "De Morgan (DM)"],
+          "correctExpr": 0,
+          "correctRule": 0,
+          "explanation": "Na DI a linha suposta é a negação da conclusão: ~(~(p ^ r)) ≡ p ^ r (dupla negação). Daqui em diante as linhas passam a depender dessa suposição, que será descarregada ao final.",
+          "source": "Alencar Filho, Cap. 13, §4 exemplificação (1)"
+        },
+        {
+          "kind": "proof-step",
+          "title": "Fechando a DI pela contradição",
+          "instruction": "Continue a DI de ~(p ^ r). Já se têm (5) ~q e (7) q. Complete a linha (8), que encerra a demonstração.",
+          "proofState": [
+            { "line": 1, "text": "p → ~q", "rule": "P" },
+            { "line": 2, "text": "r → q", "rule": "P" },
+            { "line": 3, "text": "p ^ r", "rule": "PA (DI)" },
+            { "line": 4, "text": "p", "rule": "3 SIMP" },
+            { "line": 5, "text": "~q", "rule": "1,4 MP" },
+            { "line": 6, "text": "r", "rule": "3 SIMP" },
+            { "line": 7, "text": "q", "rule": "2,6 MP" }
+          ],
+          "exprOptions": ["q ^ ~q", "p ^ ~p", "~(p ^ r)", "r ^ ~r"],
+          "ruleOptions": ["Conjunção (CONJ)", "Modus ponens (MP)", "Silogismo disjuntivo (SD)", "Dupla negação (DN)"],
+          "correctExpr": 0,
+          "correctRule": 0,
+          "explanation": "A contradição vem por <b>Conjunção (CONJ)</b> das linhas (7) q e (5) ~q: (8) q ^ ~q, do tipo C ^ ~C. Alcançada a contradição a partir de ~Q, a DI conclui Q = ~(p ^ r).",
+          "source": "Alencar Filho, Cap. 13, §4 exemplificação (1)"
+        },
+        {
+          "kind": "multi",
+          "instruction": "Considere a DI de ~p a partir das premissas (1) p → q e (2) p → ~q, com a suposição (3) p (PA). Marque TODAS as linhas que dependem da suposição p e são descarregadas ao final.",
+          "options": ["(4) q — MP 1,3", "(5) ~q — MP 2,3", "(6) q ^ ~q — CONJ 4,5", "(1) p → q — premissa original"],
+          "correct": [0, 1, 2],
+          "explanation": "As linhas derivadas depois da suposição — (4) q, (5) ~q e (6) q ^ ~q — dependem dela e desaparecem quando se conclui ~p. A premissa (1) é original e independe da suposição. O argumento é válido: p levaria simultaneamente a q e ~q.",
+          "source": "adaptado de: Alencar Filho, Cap. 13, §4"
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Para provar uma condicional p → q por demonstração indireta, supõe-se a negação da conclusão. Monte ~ (p → q), equivalente a ___ .",
+          "promptBox": "~(p → q) ≡",
+          "tokens": ["p", "^", "~", "q", "v", "→"],
+          "correctSequence": ["p", "^", "~", "q"],
+          "hint": "Negar uma condicional deixa o antecedente e nega o consequente.",
+          "explanation": "~(p → q) ≡ p ^ ~q. DeCOND + De Morgan + dupla negação: p → q ≡ ~p v q, logo ~(p → q) ≡ ~(~p v q) ≡ ~~p ^ ~q ≡ p ^ ~q. É essa fórmula que se toma como PA numa DI de uma condicional.",
+          "source": "adaptado de: Alencar Filho, Cap. 13, §3 + Cap. 12, VI e VII",
+          "mascot": "turing",
+          "say": "DI de condicional: supõe p ^ ~q."
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Julgue.",
+          "statement": "Na demonstração condicional pode-se escolher livremente qualquer fórmula como premissa suposta.",
+          "subtext": "Cap. 13, §1",
+          "isTrue": false,
+          "explanation": "Falso. Na DC a premissa suposta é fixa: exatamente o <b>antecedente</b> da conclusão condicional A → B. Não se pode supor uma fórmula arbitrária.",
+          "source": "Alencar Filho, Cap. 13, §1"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Que tipo de fórmula precisa ser alcançada numa demonstração indireta?",
+          "options": [
+            { "text": "Uma contradição, isto é, uma fórmula do tipo C ^ ~C.", "isCorrect": true },
+            { "text": "Uma tautologia, como p v ~p.", "isCorrect": false },
+            { "text": "A negação de cada uma das premissas originais.", "isCorrect": false },
+            { "text": "A própria conclusão Q, diretamente.", "isCorrect": false }
+          ],
+          "explanation": "A DI supõe ~Q e deduz uma contradição C (p. ex. q ^ ~q). Como ~Q leva a absurdo, conclui-se Q. No exemplo, a contradição é q ^ ~q obtida por CONJ.",
+          "source": "Alencar Filho, Cap. 13, §3 e §4 exemplificação (1)"
+        }
+      ]
+    }
+  ]
+}

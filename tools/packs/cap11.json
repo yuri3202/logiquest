@@ -1,0 +1,235 @@
+{
+  "lessons": [
+    {
+      "id": "c11_validade_regras",
+      "title": "Validade pelas regras de inferência",
+      "unitTitle": "Capítulo 11 — Validade mediante regras de inferência",
+      "char": "turing",
+      "icon": "diagramProject",
+      "steps": [
+        {
+          "kind": "theory",
+          "title": "Por que deduzir em vez de tabelar",
+          "content": "Com cinco proposições simples a tabela-verdade teria 2⁵ = 32 linhas — o livro chama isso de 'perspectiva nada animadora'. O caminho mais curto é <b>deduzir a conclusão das premissas</b>, linha por linha, justificando cada linha.",
+          "table": null,
+          "instruction": null,
+          "art": "inferenceRules",
+          "mascot": "turing",
+          "say": "Trinta e duas linhas? Nem pensar.",
+          "source": "Alencar Filho, Cap. 11, item 1"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Na derivação (1), qual regra justifica a linha (3) p a partir de (2) p ^ r?",
+          "options": [
+            { "text": "Simplificação (SIMP)", "isCorrect": true },
+            { "text": "Modus ponens (MP)", "isCorrect": false },
+            { "text": "Adição (AD)", "isCorrect": false },
+            { "text": "Conjunção (CONJ)", "isCorrect": false }
+          ],
+          "explanation": "Simplificação: de uma conjunção você colhe qualquer um dos lados, aqui p. MP exigiria uma condicional, AD acrescentaria um disjuntante e CONJ juntaria duas linhas já obtidas.",
+          "art": "proofColumns",
+          "source": "Alencar Filho, Cap. 11, exemplificação (1), linha (3)"
+        },
+        {
+          "kind": "proof-step",
+          "instruction": "Complete a linha (4) da derivação (1): p → q, p ^ r ⊢ q",
+          "proofState": [
+            { "line": 1, "text": "p → q", "rule": "P" },
+            { "line": 2, "text": "p ^ r", "rule": "P" },
+            { "line": 3, "text": "p", "rule": "2 — SIMP" }
+          ],
+          "exprOptions": ["q", "~q", "r", "p → q"],
+          "ruleOptions": ["1, 3 — MP", "2, 3 — SIMP", "1, 2 — MT", "3 — AD"],
+          "correctExpr": 0,
+          "correctRule": 0,
+          "explanation": "Com p (linha 3) e p → q (linha 1), Modus ponens entrega q — exatamente a conclusão pedida, então a prova termina aí.",
+          "source": "Alencar Filho, Cap. 11, exemplificação (1), linha (4)"
+        },
+        {
+          "kind": "order",
+          "instruction": "Coloque as linhas da derivação (2) na ordem em que o livro as escreve.",
+          "items": [
+            "(1) p ^ q — premissa",
+            "(2) p v r → s — premissa",
+            "(3) p — 1, SIMP",
+            "(4) p v r — 3, AD",
+            "(5) s — 2, 4, MP",
+            "(6) p ^ s — 3, 5, CONJ"
+          ],
+          "explanation": "Primeiro se colhe p da conjunção; com Adição nasce p v r; Modus ponens com a segunda premissa dá s; por fim Conjunção junta p com s.",
+          "source": "Alencar Filho, Cap. 11, exemplificação (2)"
+        },
+        {
+          "kind": "theory",
+          "title": "As sete regras que aparecem o capítulo inteiro",
+          "content": "Cada linha de uma prova é <b>fórmula + justificativa</b> no formato 'linhas usadas — regra'. Se a justificativa não fecha, a linha não existe.",
+          "table": [
+            ["Regra", "Esquema", "Lê-se como"],
+            ["MP", "p → q, p / ∴ q", "afirmando a antecedente, afirma-se a consequente"],
+            ["MT", "p → q, ~q / ∴ ~p", "negando a consequente, nega-se a antecedente"],
+            ["SIMP", "p ^ q / ∴ p", "da conjunção colhe-se um dos lados"],
+            ["AD", "p / ∴ p v q", "o verdadeiro autoriza qualquer disjunção que o contenha"],
+            ["SD", "p v q, ~p / ∴ q", "um dos disjuntantes caiu, sobrou o outro"],
+            ["SH", "p → q, q → r / ∴ p → r", "corrente de condicionais"],
+            ["CONJ", "p, q / ∴ p ^ q", "duas verdades viram uma conjunção"]
+          ],
+          "instruction": null,
+          "source": "Alencar Filho, Cap. 11, exemplificações (1) a (17)"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Verdadeiro ou falso?",
+          "statement": "A regra Adição permite inferir p v r a partir de p, sem saber nada sobre r.",
+          "subtext": "É o passo da linha (4) da exemplificação (2).",
+          "isTrue": true,
+          "explanation": "De verdade. Se p é verdadeiro, toda disjunção que contém p é verdadeira — por isso a linha (4) p v r vale mesmo sem informação sobre r.",
+          "mascot": "boole",
+          "say": "Verdadeiro autoriza qualquer 'ou'.",
+          "source": "Alencar Filho, Cap. 11, exemplificação (2), linha (4)"
+        },
+        {
+          "kind": "proof-step",
+          "instruction": "Complete a linha (4) da derivação (3): p → (q → r), p → q, p ⊢ r",
+          "proofState": [
+            { "line": 1, "text": "p → (q → r)", "rule": "P" },
+            { "line": 2, "text": "p → q", "rule": "P" },
+            { "line": 3, "text": "p", "rule": "P" }
+          ],
+          "exprOptions": ["q → r", "q", "r", "p → r"],
+          "ruleOptions": ["1, 3 — MP", "2, 3 — MP", "1, 2 — SH", "3 — AD"],
+          "correctExpr": 0,
+          "correctRule": 0,
+          "explanation": "MP entre a linha 1 e a linha 3 corta o antecedente p e deixa q → r. As duas linhas seguintes repetem o mesmo golpe para chegar a r.",
+          "source": "Alencar Filho, Cap. 11, exemplificação (3), linha (4)"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Nessa mesma derivação, q sai da linha (5) e r da linha (6). Quais pares de linhas as justificam?",
+          "options": [
+            { "text": "q vem de 2 e 3; r vem de 4 e 5", "isCorrect": true },
+            { "text": "q vem de 1 e 3; r vem de 2 e 4", "isCorrect": false },
+            { "text": "q vem de 4 e 5; r vem de 2 e 3", "isCorrect": false },
+            { "text": "q vem de 3 sozinha; r vem de 5 sozinha", "isCorrect": false }
+          ],
+          "explanation": "A justificativa sempre cita a condicional e o antecedente: q vem de p → q (2) com p (3); r vem de q → r (4) com q (5).",
+          "source": "Alencar Filho, Cap. 11, exemplificação (3), linhas (5) e (6)"
+        },
+        {
+          "kind": "multi",
+          "instruction": "Marque tudo o que segue por silogismo disjuntivo (SD).",
+          "options": [
+            "~s, de ~s v u e ~u",
+            "p, de p v q e ~q",
+            "q, de p → q e p",
+            "~q, de p → q e ~p",
+            "p ^ r, de p e de r"
+          ],
+          "correct": [0, 1],
+          "explanation": "SD só mexe em disjunção: ~s v u com ~u sobra ~s; p v q com ~q sobra p. O terceiro item é MP, o quarto nega a antecedente (nada segue) e o quinto é CONJ.",
+          "art": "lawsLadder",
+          "source": "Alencar Filho, Cap. 11, exemplificação (7), linhas (5) e (7)"
+        },
+        {
+          "kind": "proof-step",
+          "instruction": "Complete a linha (7) da derivação (7): p ^ q → r, r → s, t → ~u, t, ~s v u ⊢ ~(p ^ q)",
+          "proofState": [
+            { "line": 1, "text": "p ^ q → r", "rule": "P" },
+            { "line": 2, "text": "r → s", "rule": "P" },
+            { "line": 3, "text": "t → ~u", "rule": "P" },
+            { "line": 4, "text": "t", "rule": "P" },
+            { "line": 5, "text": "~s v u", "rule": "P" },
+            { "line": 6, "text": "~u", "rule": "3, 4 — MP" }
+          ],
+          "exprOptions": ["~s", "s", "~t", "u"],
+          "ruleOptions": ["5, 6 — SD", "3, 4 — MT", "5 — SIMP", "6 — AD"],
+          "correctExpr": 0,
+          "correctRule": 0,
+          "explanation": "A disjunção ~s v u está na linha 5 e a linha 6 matou o u; por SD sobra ~s.",
+          "source": "Alencar Filho, Cap. 11, exemplificação (7), linha (7)"
+        },
+        {
+          "kind": "proof-step",
+          "instruction": "Complete a conclusão, linha (9) da mesma derivação.",
+          "proofState": [
+            { "line": 1, "text": "p ^ q → r", "rule": "P" },
+            { "line": 2, "text": "r → s", "rule": "P" },
+            { "line": 3, "text": "t → ~u", "rule": "P" },
+            { "line": 4, "text": "t", "rule": "P" },
+            { "line": 5, "text": "~s v u", "rule": "P" },
+            { "line": 6, "text": "~u", "rule": "3, 4 — MP" },
+            { "line": 7, "text": "~s", "rule": "5, 6 — SD" },
+            { "line": 8, "text": "~r", "rule": "2, 7 — MT" }
+          ],
+          "exprOptions": ["~(p ^ q)", "p ^ q", "~p", "~q"],
+          "ruleOptions": ["1, 8 — MT", "1, 8 — MP", "2, 7 — MT", "8 — DN"],
+          "correctExpr": 0,
+          "correctRule": 0,
+          "explanation": "A linha 1 diz p ^ q → r e a linha 8 negou r. Negando a consequente, Modus tollens nega a antecedente inteira: ~(p ^ q).",
+          "art": "inferenceRules",
+          "mascot": "migo",
+          "say": "O ~ cai sobre a conjunção toda.",
+          "source": "Alencar Filho, Cap. 11, exemplificação (7), linha (9)"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Um aluno escreveu: 'de p → q e ~p, concluo ~q'. O que aconteceu?",
+          "options": [
+            { "text": "Nada segue: é a falácia de negar a antecedente", "isCorrect": true },
+            { "text": "Está certo, é Modus tollens", "isCorrect": false },
+            { "text": "Está certo, é silogismo disjuntivo", "isCorrect": false },
+            { "text": "Falta uma conjunção, mas ~q é alcançável", "isCorrect": false }
+          ],
+          "explanation": "Modus tollens nega a consequente para negar a antecedente — não o contrário. Com p=F e q=V a premissa p → q é verdadeira e ~q é falsa, então a 'dedução' não é válida.",
+          "mascot": "migo",
+          "say": "Cuidado: ~p não puxa ~q.",
+          "source": "Alencar Filho, Cap. 11 (uso de MT) e Cap. 10 — testes de validade"
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Monte a linha (6) da derivação (16): o silogismo hipotético entre (1) e (2).",
+          "promptBox": "(1) x = y → x = z   (2) x = z → x = t",
+          "tokens": ["x = y", "→", "x = t", "x = z", "^", "~"],
+          "correctSequence": ["x = y", "→", "x = t"],
+          "hint": "Duas peças só: o primeiro antecedente e a última consequente.",
+          "explanation": "SH encadeia as duas condicionais e descarta o termo do meio: x = y → x = t. É exatamente a linha (6) do livro.",
+          "source": "Alencar Filho, Cap. 11, exemplificação (16), linha (6)"
+        },
+        {
+          "kind": "input",
+          "instruction": "Digite a sigla da regra que justifica: de (1) p → q e (8) ~q, inferimos ~p.",
+          "prompt": "p → q, ~q / ∴ ~p",
+          "accepted": ["MT", "M T", "modus tollens", "tollendo tollens"],
+          "hint": "É a mesma regra das linhas (8) e (9) da exemplificação (7).",
+          "placeholder": "ex.: MP",
+          "explanation": "Modus tollens: negando a consequente (~q) nega-se a antecedente (~p). Nas listas do curso ela costuma vir escrita 'MT'.",
+          "source": "Alencar Filho, Cap. 11, exemplificações (6) e (7)"
+        },
+        {
+          "kind": "match",
+          "instruction": "Ligue cada regra ao seu esquema.",
+          "pairs": [
+            { "left": "Modus ponens", "right": "p → q, p / ∴ q" },
+            { "left": "Modus tollens", "right": "p → q, ~q / ∴ ~p" },
+            { "left": "Simplificação", "right": "p ^ q / ∴ p" },
+            { "left": "Adição", "right": "p / ∴ p v q" },
+            { "left": "Silogismo disjuntivo", "right": "p v q, ~p / ∴ q" },
+            { "left": "Silogismo hipotético", "right": "p → q, q → r / ∴ p → r" }
+          ],
+          "explanation": "São as seis regras que sustentam as deduções do capítulo 11. Decorá-las é o que separa uma prova de três linhas de uma tabela de 32.",
+          "art": "proofColumns",
+          "source": "Alencar Filho, Cap. 11; esquemas conforme o Cap. 9"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Verdadeiro ou falso?",
+          "statement": "Uma dedução pelas regras de inferência dispensa a tabela-verdade e continua valendo quando a tabela teria 32 linhas.",
+          "subtext": null,
+          "isTrue": true,
+          "explanation": "O capítulo abre dizendo isso: o método das tabelas fica trabalhoso com muitas proposições simples, e deduzir a conclusão das premissas por regras de inferência é o método mais eficiente.",
+          "source": "Alencar Filho, Cap. 11, item 1"
+        }
+      ]
+    }
+  ]
+}

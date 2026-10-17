@@ -1,0 +1,398 @@
+{
+  "lessons": [
+    {
+      "id": "c8_metodo_dedutivo",
+      "title": "Método dedutivo, FNC, FND e dualidade",
+      "unitTitle": "Capítulo 8 — Método dedutivo",
+      "char": "ada",
+      "icon": "listCheck",
+      "steps": [
+        {
+          "kind": "theory",
+          "title": "O método dedutivo",
+          "instruction": null,
+          "content": "Até aqui o livro provou implicações e equivalências com tabelas-verdade. O <b>método dedutivo</b> é o caminho mais eficiente: parte de um dos lados da relação e transforma a fórmula linha a linha, usando apenas as equivalências e implicações da Álgebra das Proposições (dupla negação, De Morgan, comutativa, associativa, distributiva, idempotência, complemento, dominação, condicional p → q ≡ ~p v q), até chegar a uma tautologia ou à própria outra fórmula.<br/><br/>As equivalências continuam valendo quando p, q, r, t são substituídas por proposições compostas P, Q, R, I e c (contradição) e t (tautologia) pelas constantes. Exemplo do livro: c → p ≡ ~c v p ≡ t v p ≡ t.",
+          "table": null,
+          "art": "proofColumns",
+          "mascot": "ada",
+          "say": "Uma linha por equivalência. Nada de pular.",
+          "source": "Alencar Filho, Cap. 8, seção 1 e exemplificação (1)",
+          "explanation": null
+        },
+        {
+          "kind": "choice",
+          "instruction": "Classifique a fórmula: (~p v q) ^ (~q v ~r)",
+          "options": [
+            { "text": "É uma FNC (forma normal conjuntiva), mas não é FND", "isCorrect": true },
+            { "text": "É uma FND (forma normal disjuntiva), mas não é FNC", "isCorrect": false },
+            { "text": "É FNC e FND ao mesmo tempo", "isCorrect": false },
+            { "text": "Não está em forma normal: ainda tem conectivo → ou ↔", "isCorrect": false }
+          ],
+          "art": "dnfCnf",
+          "source": "Alencar Filho, Cap. 8, §5 (definição e exemplos de FNC)",
+          "explanation": "É uma conjunção (^) de disjunções de literais, com ~ incidindo só sobre letras: exatamente a FNC. Como o ^ principal tem alcance sobre o v, ela viola a condição 3 da FND (o ^ não pode ter alcance sobre v)."
+        },
+        {
+          "kind": "choice",
+          "instruction": "Classifique a fórmula: p v (~q ^ r)",
+          "options": [
+            { "text": "É uma FND, mas não é FNC", "isCorrect": true },
+            { "text": "É uma FNC, mas não é FND", "isCorrect": false },
+            { "text": "É FNC e FND ao mesmo tempo", "isCorrect": false },
+            { "text": "Não está em forma normal", "isCorrect": false }
+          ],
+          "art": "dnfCnf",
+          "source": "Alencar Filho, Cap. 8, §6 (definição e exemplos de FND)",
+          "explanation": "É uma disjunção de conjunções de literais — o livro lista p v (~q ^ r) entre os exemplos de FND. Para ser FNC precisaria que o v não tivesse alcance sobre o ^, e é justamente isso que o v principal faz aqui."
+        },
+        {
+          "kind": "theory",
+          "title": "Redução do número de conectivos",
+          "instruction": null,
+          "content": "Entre os cinco conectivos fundamentais (~, ^, v, →, ↔), três deles se exprimem com apenas dois dos pares abaixo:<br/><br/>(~ e v) dá ^, → e ↔, porque p ^ q ≡ ~(~p v ~q) e p → q ≡ ~p v q;<br/>(~ e ^) dá v, → e ↔, porque p v q ≡ ~(~p ^ ~q) e p → q ≡ ~(p ^ ~q);<br/>(~ e →) dá ^, v e ↔, porque p ^ q ≡ ~(p → ~q) e p v q ≡ ~p → q.<br/><br/>Já ^, v e → <b>não</b> se exprimem em termos de ~ e ↔. E todos se exprimem com um único conectivo, ↑ ou ↓ — resultado de A. M. Scheffer (1913).",
+          "table": [
+            ["par que basta", "conectivos que se escrevem só com ele"],
+            ["~ e v", "^, →, ↔"],
+            ["~ e ^", "v, →, ↔"],
+            ["~ e →", "^, v, ↔"],
+            ["↑ (ou ↓) sozinho", "^, v, →, ↔ e ~"]
+          ],
+          "art": "scheffer",
+          "source": "Alencar Filho, Cap. 8, §3 (teorema da redução) e §2 exemplos (18) e (19)",
+          "explanation": null
+        },
+        {
+          "kind": "choice",
+          "instruction": "Complete o teorema: os conectivos ^, v e → NÃO podem ser escritos apenas em termos de...",
+          "options": [
+            { "text": "~ e ↔", "isCorrect": true },
+            { "text": "~ e v", "isCorrect": false },
+            { "text": "~ e ^", "isCorrect": false },
+            { "text": "~ e →", "isCorrect": false }
+          ],
+          "art": "lawsLadder",
+          "source": "Alencar Filho, Cap. 8, §3",
+          "explanation": "As três bases de dois conectivos possíveis são (~, v), (~, ^) e (~, →). A dupla ~ e ↔ não basta: é exatamente o que o teorema da redução afirma no fim."
+        },
+        {
+          "kind": "multi",
+          "instruction": "Marque TODAS as fórmulas equivalentes a p → q",
+          "options": ["~p v q", "~(p ^ ~q)", "~q → ~p", "p ^ ~q", "p → ~q"],
+          "formula": "~p v q",
+          "correct": null,
+          "art": "demorgan",
+          "source": "Alencar Filho, Cap. 8, §2 exemplos (11) e (12)",
+          "explanation": "p → q ≡ ~p v q (condicional) ≡ ~(p ^ ~q) (negação da condicional) ≡ ~q → ~p (contrapositiva). p ^ ~q é a negação ~(p → q), e p → ~q não diz o mesmo."
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Monte, com os blocos, a FNC da condicional p → q",
+          "promptBox": "FNC de:  p → q",
+          "tokens": ["~p", "v", "q", "^", "~q", "→"],
+          "correctSequence": ["~p", "v", "q"],
+          "hint": "Primeiro passo de qualquer FNC: elimine o →. Depois só sobram literais ligados por v.",
+          "art": "dnfCnf",
+          "mascot": "ada",
+          "say": "Elimine → e ↔ antes de tudo.",
+          "source": "Alencar Filho, Cap. 8, §5, transformação (1)",
+          "explanation": "O primeiro passo de qualquer FNC é eliminar → e ↔: p → q ≡ ~p v q. O resultado é uma disjunção de literais, logo já é FNC (uma única disjunção basta)."
+        },
+        {
+          "kind": "theory",
+          "title": "FNC, FND e princípio de dualidade",
+          "instruction": null,
+          "content": "<b>Forma normal (FN)</b>: a fórmula contém, quando muito, ~, ^ e v. Basta trocar p → q por ~p v q e p ↔ q por (~p v q) ^ (p v ~q).<br/><br/><b>FNC</b>: além de FN, o ~ não se repete nem tem alcance sobre ^ e v, e o v não tem alcance sobre ^ — é uma conjunção de disjunções de literais. <b>FND</b>: as mesmas condições, mas com o ^ sem alcance sobre v — uma disjunção de conjunções de literais. Uma mesma proposição pode ter mais de uma FNC (ou FND), desde que equivalentes.<br/><br/>Pistas de leitura: se todo elemento da FNC contém uma letra e a sua negação, a proposição é <b>tautológica</b>; se todo elemento da FND faz isso, ela é <b>contravalente</b>.<br/><br/><b>Princípio de dualidade</b>: a dual de P troca cada ^ por v e cada v por ^, preservando as negações. Se P ≡ Q, então P¹ ≡ Q¹. De p ^ (p v q) ≡ p sai de graça p v (p ^ q) ≡ p.",
+          "table": [
+            ["forma", "estrutura", "exemplo do livro"],
+            ["FN", "só ~, ^ e v", "~(~p v ~q)"],
+            ["FNC", "conjunção de disjunções", "(~p v q) ^ (~q v ~r)"],
+            ["FND", "disjunção de conjunções", "(p ^ ~q) v (~p ^ ~q ^ r)"]
+          ],
+          "art": "dnfCnf",
+          "source": "Alencar Filho, Cap. 8, §4, §5, §6 e §7",
+          "explanation": null
+        },
+        {
+          "kind": "choice",
+          "instruction": "Qual é a dual de ~((p ^ q) v ~r)?",
+          "options": [
+            { "text": "~((p v q) ^ ~r)", "isCorrect": true },
+            { "text": "(~p v ~q) ^ ~~r", "isCorrect": false },
+            { "text": "~((~p v ~q) ^ r)", "isCorrect": false },
+            { "text": "~((p v q) v ~r)", "isCorrect": false }
+          ],
+          "source": "Alencar Filho, Cap. 8, §7 (exemplo de dual)",
+          "explanation": "Dual é só a troca dos conectivos ^ e v, mantendo as negações onde estão: o ^ interno vira v e o v principal vira ^, resultando em ~((p v q) ^ ~r). Empurrar De Morgan ou inverter os ~ não é dualidade."
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Verdadeiro ou falso.",
+          "statement": "Uma mesma proposição pode ter mais de uma FNC equivalente.",
+          "subtext": "Idem para a FND.",
+          "isTrue": true,
+          "source": "Alencar Filho, Cap. 8, §5 exemplo (1) e §6 exemplo (1)",
+          "explanation": "O livro mostra isso duas vezes: ~(p v q) ^ (~q v ~r) e (~p v q) ^ (~q v ~r) são FNC equivalentes da mesma proposição. A forma não é única — o que não muda é o valor lógico."
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Verdadeiro ou falso.",
+          "statement": "A dual de p ^ (q v ~r) é ~p v (~q ^ r).",
+          "subtext": "Confira o que a definição permite trocar.",
+          "isTrue": false,
+          "mascot": "boole",
+          "say": "Dual não mexe nos ~!",
+          "source": "Alencar Filho, Cap. 8, §7",
+          "explanation": "Na dual só se trocam ^ e v; as negações continuam exatamente onde estavam. A dual correta é p v (q ^ ~r) — negar as letras foi erro de quem aplicou De Morgan sem ser chamado."
+        },
+        {
+          "kind": "order",
+          "instruction": "Ordene as linhas da demonstração dedutiva da implicação p ^ q ⇒ p (Simplificação)",
+          "items": [
+            "p ^ q → p  ≡  ~(p ^ q) v p",
+            "≡  (~p v ~q) v p        (De Morgan)",
+            "≡  (~p v p) v ~q        (comutativa + associativa)",
+            "≡  t v ~q        (complemento)",
+            "≡  t        (dominação) — a implicação é válida"
+          ],
+          "labels": null,
+          "art": "proofColumns",
+          "source": "Alencar Filho, Cap. 8, §2 exemplo (2)",
+          "explanation": "Cada linha aplica uma única equivalência sobre a anterior. A condicional que traduz a implicação acaba reduzida à tautologia t, e é isso que demonstra p ^ q ⇒ p sem tabela-verdade."
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Monte a FNC do bicondicional p ↔ q",
+          "promptBox": "FNC de:  p ↔ q",
+          "tokens": ["(", "~p", "v", "q", ")", "^", "(", "p", "v", "~q", ")", "→", "↔"],
+          "correctSequence": ["(", "~p", "v", "q", ")", "^", "(", "p", "v", "~q", ")"],
+          "hint": "p ↔ q ≡ (p → q) ^ (q → p). Troque cada → e ordene as letras dentro da segunda disjunção.",
+          "source": "Alencar Filho, Cap. 8, §5, transformação (1)",
+          "explanation": "Eliminando ↔ pela substituição (~p v q) ^ (p v ~q), e depois ~q v p ≡ p v ~q pela comutativa, a fórmula fica como conjunção de duas disjunções de literais: é FNC."
+        },
+        {
+          "kind": "multi",
+          "instruction": "Marque TODAS as fórmulas equivalentes a p",
+          "options": ["p v (p ^ q)", "(p ^ q) v (p ^ ~q)", "p ^ (q v ~q)", "~p v p", "p ^ (q ^ ~q)"],
+          "formula": "p",
+          "correct": null,
+          "art": "lawsLadder",
+          "source": "Alencar Filho, Cap. 8, exercícios 1(b) e 2(b)",
+          "explanation": "p v (p ^ q) ≡ p (absorção); (p ^ q) v (p ^ ~q) ≡ p ^ (q v ~q) ≡ p (distributiva ao contrário + complemento); p ^ (q v ~q) ≡ p ^ t ≡ p. ~p v p é tautologia e p ^ (q ^ ~q) é contradição."
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Complete a coluna final de ~p v q, a FNC de p → q que você montou acima.",
+          "vars": ["p", "q"],
+          "formula": "~p v q",
+          "columnLabel": "p → q",
+          "art": "truthColumns",
+          "mascot": "ada",
+          "say": "Uma linha só pode dar F.",
+          "source": "Alencar Filho, Cap. 8, §2 exemplo (2); tabela da condicional",
+          "explanation": "A coluna sai V, F, V, V: a condicional é falsa exatamente na linha p = V e q = F. É a mesma linha que faz ~(p → q) ≡ p ^ ~q verdadeira."
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Complete a coluna da condicional associada ao argumento p → q, p ⊢ q (Modus ponens).",
+          "vars": ["p", "q"],
+          "formula": "((p → q) ^ p) → q",
+          "columnLabel": "condicional associada",
+          "art": "inferenceRules",
+          "source": "Alencar Filho, Cap. 10, §1 e §2 exemplo (6)",
+          "explanation": "Sai tautologia: não existe linha com premissas verdadeiras e conclusão falsa, logo o argumento é válido. Se uma célula fosse F ali, teríamos um sofisma — como o de afirmar o consequente, ((p → q) ^ q) → p, que dá F na linha p = F, q = V."
+        }
+      ]
+    },
+    {
+      "id": "c8_testes_logica_prog",
+      "title": "Lógica no código: simplificando testes SE/SENÃO",
+      "unitTitle": "Capítulo 8 + Revisão IFES — reescrita de condições",
+      "char": "migo",
+      "icon": "terminal",
+      "steps": [
+        {
+          "kind": "theory",
+          "title": "Reduzir ou negar um teste SE/SENÃO",
+          "instruction": null,
+          "content": "Um teste <b>SE condição ENTÃO bloco A SENÃO bloco B</b> é uma fórmula proposicional: cada comparação (fluxo_ext > fluxo_int, idade > 21, sexo = \"F\") é uma letra. <b>Reduzir</b> é aplicar as equivalências notáveis até sobrar o menor número de comparações.<br/><br/><b>Negar</b> o teste pede dois cuidados: espalhar o ~ com De Morgan (~ (p ^ q) ≡ ~p v ~q e ~ (p v q) ≡ ~p ^ ~q), invertendo cada comparação (de > para ≤, de = para ≠), e <b>trocar os blocos A e B de lugar</b>, porque agora a condição verdadeira é a antiga falsa.",
+          "table": [
+            ["condição original", "condição negada"],
+            ["p ^ q", "~p v ~q"],
+            ["p v q", "~p ^ ~q"],
+            ["(p v q) ^ r", "(~p ^ ~q) v ~r"]
+          ],
+          "art": "demorgan",
+          "mascot": "migo",
+          "say": "Cada comparação vira uma letra.",
+          "source": "Revisão IFES, itens 7 e 8 (reescrita de testes)",
+          "explanation": null
+        },
+        {
+          "kind": "code-blank",
+          "instruction": "Item 7a: reescreva o teste com a condição reduzida (p: fluxo_ext > fluxo_int, q: pressão < 1000).",
+          "codePrefix": "SE  ",
+          "codeSuffix": "\n     faça o bloco de comandos A\nSENÃO\n     faça o bloco de comandos B",
+          "options": [
+            "fluxo_ext > fluxo_int ∧ pressão ≥ 1000",
+            "fluxo_ext > fluxo_int ∧ pressão < 1000",
+            "fluxo_ext > fluxo_int ∨ pressão ≥ 1000",
+            "fluxo_ext ≤ fluxo_int ∧ pressão ≥ 1000"
+          ],
+          "correctIndex": 0,
+          "art": null,
+          "source": "Revisão IFES, item 7a",
+          "explanation": "p ^ ~(p ^ q) vira p ^ (~p v ~q) por De Morgan, depois (p ^ ~p) v (p ^ ~q) por distributiva, e F v (p ^ ~q) ≡ p ^ ~q pelo complemento. Em código: fluxo_ext > fluxo_int e pressão ≥ 1000, com o bloco A continuando no SE."
+        },
+        {
+          "kind": "input",
+          "instruction": "Item 7b: reduza a condição e responda só em termos de p e q (p: idade > 21, q: sexo = \"F\").",
+          "prompt": "~(p ∨ q) ∨ (~p ∧ q)  ≡  ?",
+          "accepted": ["~p"],
+          "formula": "~p",
+          "hint": "Comece por ~(p v q) ≡ ~p ^ ~q e junte os dois lados pela distributiva ao contrário.",
+          "placeholder": "ex.: ~p",
+          "source": "Revisão IFES, item 7b",
+          "explanation": "A fórmula vira (~p ^ ~q) ∨ (~p ^ q) ≡ ~p ^ (~q v q) ≡ ~p ^ t ≡ ~p. O teste inteiro se resume a idade ≤ 21; a comparação de sexo desaparece do código."
+        },
+        {
+          "kind": "multi",
+          "instruction": "Marque TODAS as condições que podem substituir a do item 7b sem alterar o comportamento do programa",
+          "options": ["~p", "~p ^ q", "~p v (~p ^ q)", "~(p v q)", "~p v (~q ^ ~p)"],
+          "formula": "~p",
+          "correct": null,
+          "source": "adaptado de: Revisão IFES, item 7b",
+          "explanation": "Valem as fórmulas equivalentes a ~p: a própria, ~p v (~p ^ q) (absorção) e ~p v (~q ^ ~p). ~p ^ q e ~(p v q) ≡ ~p ^ ~q são mais estritas: deixariam de executar o bloco A em alguns casos."
+        },
+        {
+          "kind": "code-blank",
+          "instruction": "Item 7c: reescreva o teste com o menor número de comparações.",
+          "codePrefix": "SE  ",
+          "codeSuffix": "\n     faça o bloco de comandos A\nSENÃO\n     faça o bloco de comandos B",
+          "options": [
+            "cab = \"loiro\" ∧ (pele = \"morena\" ∨ pele = \"branca\")",
+            "(cab = \"loiro\" ∨ pele = \"morena\") ∧ (cab = \"loiro\" ∨ pele = \"branca\")",
+            "cab = \"loiro\" ∨ (pele = \"morena\" ∧ pele = \"branca\")",
+            "cab = \"loiro\" ∧ pele = \"morena\" ∧ pele = \"branca\""
+          ],
+          "correctIndex": 0,
+          "source": "Revisão IFES, item 7c",
+          "explanation": "É a distributiva ao contrário: (p ^ q) v (p ^ r) ≡ p ^ (q v r). A factor comum cab = \"loiro\" sai para fora e sobra uma comparação a menos. A opção com ∨ nos fatores é a distributiva de outra fórmula."
+        },
+        {
+          "kind": "input",
+          "instruction": "Item 7d: reduza a condição em p, q e r (p: cab = \"loiro\", q: pele = \"morena\", r: pele = \"branca\").",
+          "prompt": "(p ∨ q) ∨ (p ∨ r)  ≡  ?",
+          "accepted": ["p v q v r"],
+          "formula": "p v q v r",
+          "hint": "Aqui só existe ∨: use associatividade e idempotência (p v p ≡ p).",
+          "placeholder": "ex.: p ∨ q",
+          "source": "Revisão IFES, item 7d",
+          "explanation": "Sem nenhum ^ para distribuir, a cadeia de ∨ colapsa: (p v q) v (p v r) ≡ p v q v r. Compare com o item 7c, onde o ^ obrigava a manter o parêntese."
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Verdadeiro ou falso.",
+          "statement": "Negar a condição de um teste SE/SENÃO exige trocar os blocos A e B de lugar.",
+          "subtext": "O enunciado do item 8 avisa: 'note a inversão entre os blocos de comando A e B'.",
+          "isTrue": true,
+          "source": "Revisão IFES, item 8a",
+          "explanation": "Se a condição passa a ser a sua negação, tudo que antes caía no SENÃO passa a cair no SE. Por isso o exemplo do item 8a escreve o bloco B dentro do SE e o bloco A no SENÃO."
+        },
+        {
+          "kind": "code-blank",
+          "instruction": "Item 8a: negue a condição (p: i > 8, q: estado = \"OFF\") e reescreva o teste.",
+          "codePrefix": "SE  ",
+          "codeSuffix": "\n     faça o bloco de comandos B\nSENÃO\n     faça o bloco de comandos A",
+          "options": [
+            "i ≤ 8 ∨ estado ≠ \"OFF\"",
+            "i ≤ 8 ∧ estado ≠ \"OFF\"",
+            "i > 8 ∨ estado ≠ \"OFF\"",
+            "i ≤ 8 ∨ estado = \"OFF\""
+          ],
+          "correctIndex": 0,
+          "mascot": "migo",
+          "say": "De Morgan: o ^ virou ∨.",
+          "source": "Revisão IFES, item 8a",
+          "explanation": "~(p ^ q) ≡ ~p v ~q: o conectivo inverte e cada comparação também (de > para ≤, de = para ≠). Como os blocos já aparecem trocados no enunciado, a condição correta é i ≤ 8 ∨ estado ≠ \"OFF\"."
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Monte a negação da condição do item 8a usando p e q",
+          "promptBox": "~( i > 8 ∧ estado = \"OFF\" )  ≡  ~(p ^ q)  ≡  ?",
+          "tokens": ["~p", "v", "~q", "^", "p", "q"],
+          "correctSequence": ["~p", "v", "~q"],
+          "check": "equiv",
+          "formula": "~p v ~q",
+          "hint": "Com ~ por fora, o ^ quebra em duas negações ligadas por v.",
+          "source": "Revisão IFES, item 8a",
+          "explanation": "De Morgan transforma a negação de uma conjunção na disjunção das negações: ~(p ^ q) ≡ ~p v ~q. Manter o ^ no lugar do ∨ é o erro clássico dessa reescrita."
+        },
+        {
+          "kind": "code-blank",
+          "instruction": "Item 8b: negue a condição dos três ∨ e reescreva o teste.",
+          "codePrefix": "SE  ",
+          "codeSuffix": "\n     faça o bloco de comandos B\nSENÃO\n     faça o bloco de comandos A",
+          "options": [
+            "título_livro ≠ \"Cortiço\" ∧ autor ≠ \"Machado de Assis\" ∧ editora ≠ \"LTC\"",
+            "título_livro ≠ \"Cortiço\" ∨ autor ≠ \"Machado de Assis\" ∨ editora ≠ \"LTC\"",
+            "título_livro = \"Cortiço\" ∧ autor = \"Machado de Assis\" ∧ editora = \"LTC\"",
+            "título_livro ≠ \"Cortiço\" ∧ autor = \"Machado de Assis\" ∧ editora ≠ \"LTC\""
+          ],
+          "correctIndex": 0,
+          "source": "Revisão IFES, item 8b",
+          "explanation": "É a outra face de De Morgan: ~(p v q v r) ≡ ~p ^ ~q ^ ~r. Basta um dos três campos bater para a condição antiga ser verdadeira, então a negação exige as três desigualdades ao mesmo tempo."
+        },
+        {
+          "kind": "input",
+          "instruction": "Item 8c: negue a condição em p, q e r (p: assunto = \"redes\", q: assunto = \"teleinformática\", r: data_public > 20/12/1998).",
+          "prompt": "~ ( (p ∨ q) ∧ r )  ≡  ?",
+          "accepted": ["(~p ^ ~q) v ~r"],
+          "formula": "(~p ^ ~q) v ~r",
+          "hint": "De Morgan em dois níveis: primeiro quebre o ^, depois o ∨ que ficou dentro do parêntese.",
+          "placeholder": "ex.: (~p ∧ ~q) ∨ ~r",
+          "source": "Revisão IFES, item 8c",
+          "explanation": "Negando por fora: ~((p v q) ^ r) ≡ ~(p v q) v ~r ≡ (~p ^ ~q) v ~r. Os parênteses são essenciais — sem eles a precedência de ^ sobre v muda a condição do teste."
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Verdadeiro ou falso.",
+          "statement": "A negação de (p ∨ q) ∧ r é ~p ∨ ~q ∧ ~r.",
+          "subtext": null,
+          "isTrue": false,
+          "mascot": "migo",
+          "say": "Sem parêntese, o bloco vaza.",
+          "source": "adaptado de: Revisão IFES, item 8c",
+          "explanation": "Faltou o parêntese: ~((p v q) ^ r) ≡ (~p ^ ~q) v ~r. De Morgan inverte o conectivo de cada nível — não solta o ~p do bloco que era (p v q)."
+        },
+        {
+          "kind": "code-blank",
+          "instruction": "O teste abaixo é a versão negada do item 8a. Complete só o bloco do SE.",
+          "codePrefix": "SE  i ≤ 8 ∨ estado ≠ \"OFF\"  ENTÃO\n     faça o bloco ",
+          "codeSuffix": "\nSENÃO\n     faça o bloco de comandos A",
+          "options": ["B", "A", "A ou B, indifferentemente"],
+          "correctIndex": 0,
+          "mascot": "migo",
+          "say": "Negou a condição? Inverta A e B.",
+          "source": "Revisão IFES, item 8a (inversão dos blocos de comando)",
+          "explanation": "A condição agora é a negação da original, então o caminho do SE recebe o bloco que estava no SENÃO: o bloco B. Manter A duplicaria a execução antiga do programa."
+        },
+        {
+          "kind": "code-blank",
+          "instruction": "Um programador inverteu o teste do item 7c. Complete a condição negada.",
+          "codePrefix": "SE  ",
+          "codeSuffix": "\n     faça o bloco de comandos B\nSENÃO\n     faça o bloco de comandos A",
+          "options": [
+            "cab ≠ \"loiro\" ∨ (pele ≠ \"morena\" ∧ pele ≠ \"branca\")",
+            "cab ≠ \"loiro\" ∧ (pele ≠ \"morena\" ∨ pele ≠ \"branca\")",
+            "cab ≠ \"loiro\" ∨ pele ≠ \"morena\" ∨ pele ≠ \"branca\"",
+            "cab = \"loiro\" ∨ (pele ≠ \"morena\" ∧ pele ≠ \"branca\")"
+          ],
+          "correctIndex": 0,
+          "art": "demorgan",
+          "source": "adaptado de: Revisão IFES, itens 7c e 8",
+          "explanation": "A condição reduzida do item 7c é p ^ (q v r). Negando: ~(p ^ (q v r)) ≡ ~p v ~(q v r) ≡ ~p v (~q ^ ~r). Daí o ∨ solto por fora e o ∧ dentro do parêntese."
+        }
+      ]
+    }
+  ]
+}

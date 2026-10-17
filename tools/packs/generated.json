@@ -1,0 +1,1677 @@
+{
+  "lessons": [
+    {
+      "id": "g3_tabela_mestra",
+      "title": "Construa a coluna final",
+      "unitTitle": "Capítulo 3 — Construção de tabelas-verdade",
+      "char": "bit",
+      "icon": "tableCells",
+      "steps": [
+        {
+          "kind": "theory",
+          "title": "Como nasce uma coluna",
+          "content": "Com n variáveis a tabela tem 2ⁿ linhas. Na ordem do livro a ÚLTIMA variável alterna a cada linha, a penúltima a cada 2, a primeira a cada 4. Complete a coluna e o app confere linha a linha.",
+          "table": null,
+          "instruction": null,
+          "id": "g3_tabela_mestra#0"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Complete a coluna final da tabela de p  →  ~q.",
+          "vars": [
+            "p",
+            "q"
+          ],
+          "formula": "p → ~q",
+          "columnLabel": "p  →  ~q",
+          "source": "Alencar Filho, Cap. 3 — conectivos binários (resposta calculada pelo motor)",
+          "explanation": "p  →  ~q resulta em F V V V em VV, VF, FV, FF: 3 linha(s) V. Lembre: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "mascot": "bit",
+          "say": "A última variável alterna mais rápido.",
+          "id": "g3_tabela_mestra#1"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Complete a coluna final da tabela de p v q.",
+          "vars": [
+            "p",
+            "q"
+          ],
+          "formula": "p v q",
+          "columnLabel": "p v q",
+          "source": "Alencar Filho, Cap. 3 — conectivos binários (resposta calculada pelo motor)",
+          "explanation": "p v q resulta em V V V F em VV, VF, FV, FF: 3 linha(s) V. Lembre: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "mascot": "bit",
+          "say": "A última variável alterna mais rápido.",
+          "id": "g3_tabela_mestra#2"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Complete a coluna final da tabela de ~p  ↔  q.",
+          "vars": [
+            "p",
+            "q"
+          ],
+          "formula": "~p ↔ q",
+          "columnLabel": "~p  ↔  q",
+          "source": "Alencar Filho, Cap. 3 — conectivos binários (resposta calculada pelo motor)",
+          "explanation": "~p  ↔  q resulta em F V V F em VV, VF, FV, FF: 2 linha(s) V. Lembre: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "mascot": "bit",
+          "say": "A última variável alterna mais rápido.",
+          "id": "g3_tabela_mestra#3"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Complete a coluna final da tabela de p  ∧  ~q.",
+          "vars": [
+            "p",
+            "q"
+          ],
+          "formula": "p ^ ~q",
+          "columnLabel": "p  ∧  ~q",
+          "source": "Alencar Filho, Cap. 3 — conectivos binários (resposta calculada pelo motor)",
+          "explanation": "p  ∧  ~q resulta em F V F F em VV, VF, FV, FF: 1 linha(s) V. Lembre: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "mascot": "bit",
+          "say": "A última variável alterna mais rápido.",
+          "id": "g3_tabela_mestra#4"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Complete a coluna final da tabela de p ↓ q.",
+          "vars": [
+            "p",
+            "q"
+          ],
+          "formula": "p ↓ q",
+          "columnLabel": "p ↓ q",
+          "source": "Alencar Filho, Cap. 3 — conectivos binários (resposta calculada pelo motor)",
+          "explanation": "p ↓ q resulta em F F F V em VV, VF, FV, FF: 1 linha(s) V. Lembre: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "mascot": "bit",
+          "say": "A última variável alterna mais rápido.",
+          "id": "g3_tabela_mestra#5"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Complete a coluna final da tabela de p  ∧  (q v r).",
+          "vars": [
+            "p",
+            "q",
+            "r"
+          ],
+          "formula": "p ^ (q v r)",
+          "columnLabel": "p  ∧  (q v r)",
+          "source": "Alencar Filho, Cap. 3 — três variáveis (resposta calculada pelo motor)",
+          "explanation": "p  ∧  (q v r) resulta em V V V F F F F F em VVV, VVF, VFV, VFF, FVV, FVF, FFV, FFF: 3 linha(s) V. Lembre: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "mascot": "bit",
+          "say": "A última variável alterna mais rápido.",
+          "id": "g3_tabela_mestra#6"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Complete a coluna final da tabela de (p v q)  →  r.",
+          "vars": [
+            "p",
+            "q",
+            "r"
+          ],
+          "formula": "(p v q) → r",
+          "columnLabel": "(p v q)  →  r",
+          "source": "Alencar Filho, Cap. 3 — três variáveis (resposta calculada pelo motor)",
+          "explanation": "(p v q)  →  r resulta em V F V F V F V V em VVV, VVF, VFV, VFF, FVV, FVF, FFV, FFF: 5 linha(s) V. Lembre: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "mascot": "bit",
+          "say": "A última variável alterna mais rápido.",
+          "id": "g3_tabela_mestra#7"
+        },
+        {
+          "kind": "truth-grid",
+          "instruction": "Preencha as células que faltam em ~(p  →  q)  ∧  q.",
+          "headers": [
+            "p",
+            "q",
+            "p  →  q",
+            "~(p  →  q)",
+            "~(p  →  q)  ∧  q"
+          ],
+          "rows": [
+            [
+              "V",
+              "V",
+              "V",
+              "F",
+              "F"
+            ],
+            [
+              "V",
+              "F",
+              "F",
+              "V",
+              {
+                "ans": "F"
+              }
+            ],
+            [
+              "F",
+              "V",
+              "V",
+              "F",
+              "F"
+            ],
+            [
+              "F",
+              "F",
+              "V",
+              "F",
+              {
+                "ans": "F"
+              }
+            ]
+          ],
+          "source": "Alencar Filho, Cap. 3 e 7 — construção de tabela (resposta calculada pelo motor)",
+          "explanation": "Cada sub-fórmula é avaliada sozinha: p  →  q = V F V V; ~(p  →  q) = F V F F; ~(p  →  q)  ∧  q = F F F F.",
+          "mascot": "turing",
+          "say": "Cada coluna é uma sub-fórmula sozinha.",
+          "id": "g3_tabela_mestra#8"
+        },
+        {
+          "kind": "truth-grid",
+          "instruction": "Preencha as células que faltam em (p v q)  ∧  ~(p  ∧  q).",
+          "headers": [
+            "p",
+            "q",
+            "p v q",
+            "p  ∧  q",
+            "~(p  ∧  q)",
+            "(p v q)  ∧  ~(p  ∧  q)"
+          ],
+          "rows": [
+            [
+              "V",
+              "V",
+              "V",
+              "V",
+              "F",
+              "F"
+            ],
+            [
+              "V",
+              "F",
+              "V",
+              "F",
+              "V",
+              {
+                "ans": "V"
+              }
+            ],
+            [
+              "F",
+              "V",
+              "V",
+              "F",
+              "V",
+              "V"
+            ],
+            [
+              "F",
+              "F",
+              "F",
+              "F",
+              "V",
+              {
+                "ans": "F"
+              }
+            ]
+          ],
+          "source": "Alencar Filho, Cap. 3 e 7 — construção de tabela (resposta calculada pelo motor)",
+          "explanation": "Cada sub-fórmula é avaliada sozinha: p v q = V V V F; p  ∧  q = V F F F; ~(p  ∧  q) = F V V V; (p v q)  ∧  ~(p  ∧  q) = F V V F.",
+          "mascot": "turing",
+          "say": "Cada coluna é uma sub-fórmula sozinha.",
+          "id": "g3_tabela_mestra#9"
+        },
+        {
+          "kind": "truth-grid",
+          "instruction": "Preencha as células que faltam em (p  →  q)  ∧  (~q  →  ~p).",
+          "headers": [
+            "p",
+            "q",
+            "p  →  q",
+            "~q  →  ~p",
+            "(p  →  q)  ∧  (~q  →  ~p)"
+          ],
+          "rows": [
+            [
+              "V",
+              "V",
+              "V",
+              "V",
+              "V"
+            ],
+            [
+              "V",
+              "F",
+              "F",
+              "F",
+              {
+                "ans": "F"
+              }
+            ],
+            [
+              "F",
+              "V",
+              "V",
+              "V",
+              "V"
+            ],
+            [
+              "F",
+              "F",
+              "V",
+              "V",
+              {
+                "ans": "V"
+              }
+            ]
+          ],
+          "source": "Alencar Filho, Cap. 3 e 7 — construção de tabela (resposta calculada pelo motor)",
+          "explanation": "Cada sub-fórmula é avaliada sozinha: p  →  q = V F V V; ~q  →  ~p = V F V V; (p  →  q)  ∧  (~q  →  ~p) = V F V V.",
+          "mascot": "turing",
+          "say": "Cada coluna é uma sub-fórmula sozinha.",
+          "id": "g3_tabela_mestra#10"
+        },
+        {
+          "kind": "row-truth",
+          "instruction": "Qual o valor de ~(p v q) nessa linha?",
+          "rowContext": {
+            "p": "V",
+            "q": "V"
+          },
+          "options": [
+            "V",
+            "F"
+          ],
+          "correctIndex": 1,
+          "source": "Alencar Filho, Cap. 3 — avaliação linha a linha (resposta calculada pelo motor)",
+          "explanation": "Com p=V, q=V a fórmula fecha em F: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "id": "g3_tabela_mestra#11"
+        },
+        {
+          "kind": "row-truth",
+          "instruction": "Qual o valor de p  ∧  ~q nessa linha?",
+          "rowContext": {
+            "p": "V",
+            "q": "F"
+          },
+          "options": [
+            "V",
+            "F"
+          ],
+          "correctIndex": 0,
+          "source": "Alencar Filho, Cap. 3 — avaliação linha a linha (resposta calculada pelo motor)",
+          "explanation": "Com p=V, q=F a fórmula fecha em V: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "id": "g3_tabela_mestra#12"
+        },
+        {
+          "kind": "row-truth",
+          "instruction": "Qual o valor de (p  →  q)  →  q nessa linha?",
+          "rowContext": {
+            "p": "F",
+            "q": "V"
+          },
+          "options": [
+            "V",
+            "F"
+          ],
+          "correctIndex": 0,
+          "source": "Alencar Filho, Cap. 3 — avaliação linha a linha (resposta calculada pelo motor)",
+          "explanation": "Com p=F, q=V a fórmula fecha em V: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "id": "g3_tabela_mestra#13"
+        },
+        {
+          "kind": "row-truth",
+          "instruction": "Qual o valor de p v q nessa linha?",
+          "rowContext": {
+            "p": "F",
+            "q": "F"
+          },
+          "options": [
+            "V",
+            "F"
+          ],
+          "correctIndex": 1,
+          "source": "Alencar Filho, Cap. 3 — avaliação linha a linha (resposta calculada pelo motor)",
+          "explanation": "Com p=F, q=F a fórmula fecha em F: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "id": "g3_tabela_mestra#14"
+        },
+        {
+          "kind": "circuit",
+          "instruction": "Acenda as linhas em que p ⊕ q dá V.",
+          "vars": [
+            "p",
+            "q"
+          ],
+          "formula": "p ⊕ q",
+          "target": "V",
+          "source": "Alencar Filho, Cap. 3 e 6 — leitura da tabela (resposta calculada pelo motor)",
+          "explanation": "A saída V aparece nas linhas marcadas; nas demais a fórmula vale F. Motivo: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "art": "circuit",
+          "mascot": "migo",
+          "say": "Monte a tabela antes de escolher.",
+          "id": "g3_tabela_mestra#15"
+        },
+        {
+          "kind": "circuit",
+          "instruction": "Acenda as linhas em que ~p  →  q dá V.",
+          "vars": [
+            "p",
+            "q"
+          ],
+          "formula": "~p → q",
+          "target": "V",
+          "source": "Alencar Filho, Cap. 3 e 6 — leitura da tabela (resposta calculada pelo motor)",
+          "explanation": "A saída V aparece nas linhas marcadas; nas demais a fórmula vale F. Motivo: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "art": "circuit",
+          "mascot": "migo",
+          "say": "Monte a tabela antes de escolher.",
+          "id": "g3_tabela_mestra#16"
+        },
+        {
+          "kind": "circuit",
+          "instruction": "Acenda as linhas em que (p  →  q)  →  q dá V.",
+          "vars": [
+            "p",
+            "q"
+          ],
+          "formula": "(p → q) → q",
+          "target": "V",
+          "source": "Alencar Filho, Cap. 3 e 6 — leitura da tabela (resposta calculada pelo motor)",
+          "explanation": "A saída V aparece nas linhas marcadas; nas demais a fórmula vale F. Motivo: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "art": "circuit",
+          "mascot": "migo",
+          "say": "Monte a tabela antes de escolher.",
+          "id": "g3_tabela_mestra#17"
+        }
+      ]
+    },
+    {
+      "id": "g4_classificar",
+      "title": "Tautologia, contradição ou contingência",
+      "unitTitle": "Capítulo 4 — Tautologias, contradições e contingências",
+      "char": "turing",
+      "icon": "filter",
+      "steps": [
+        {
+          "kind": "theory",
+          "title": "Os três destinos de uma fórmula",
+          "content": "Tautologia: V em todas as linhas. Contradição: F em todas. Contingência: depende da linha. Não existe quarta opção — basta olhar a coluna inteira.",
+          "table": null,
+          "instruction": null,
+          "id": "g4_classificar#0"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Classifique ~(p v q) v (p  ∧  q).",
+          "options": [
+            {
+              "text": "Contingência",
+              "isCorrect": true
+            },
+            {
+              "text": "Tautologia",
+              "isCorrect": false
+            },
+            {
+              "text": "Contradição",
+              "isCorrect": false
+            }
+          ],
+          "source": "Alencar Filho, Cap. 4 — classificação de fórmulas (resposta calculada pelo motor)",
+          "explanation": "~(p v q) v (p  ∧  q): coluna V F F V — aparecem V e F, então o valor depende da linha.",
+          "art": "condTable",
+          "id": "g4_classificar#1"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Classifique p v ~p.",
+          "options": [
+            {
+              "text": "Contradição",
+              "isCorrect": false
+            },
+            {
+              "text": "Contingência",
+              "isCorrect": false
+            },
+            {
+              "text": "Tautologia",
+              "isCorrect": true
+            }
+          ],
+          "source": "Alencar Filho, Cap. 4 — classificação de fórmulas (resposta calculada pelo motor)",
+          "explanation": "p v ~p: coluna V V — todas as linhas deram V.",
+          "art": "lawsLadder",
+          "id": "g4_classificar#2"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Classifique (p  →  q)  ↔  (~p v q).",
+          "options": [
+            {
+              "text": "Contradição",
+              "isCorrect": false
+            },
+            {
+              "text": "Contingência",
+              "isCorrect": false
+            },
+            {
+              "text": "Tautologia",
+              "isCorrect": true
+            }
+          ],
+          "source": "Alencar Filho, Cap. 4 — classificação de fórmulas (resposta calculada pelo motor)",
+          "explanation": "(p  →  q)  ↔  (~p v q): coluna V V V V — todas as linhas deram V.",
+          "art": "lawsLadder",
+          "id": "g4_classificar#3"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Classifique (p  ∧  q)  ∧  (p  →  ~q).",
+          "options": [
+            {
+              "text": "Contingência",
+              "isCorrect": false
+            },
+            {
+              "text": "Tautologia",
+              "isCorrect": false
+            },
+            {
+              "text": "Contradição",
+              "isCorrect": true
+            }
+          ],
+          "source": "Alencar Filho, Cap. 4 — classificação de fórmulas (resposta calculada pelo motor)",
+          "explanation": "(p  ∧  q)  ∧  (p  →  ~q): coluna F F F F — todas as linhas deram F.",
+          "art": "condTable",
+          "id": "g4_classificar#4"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Classifique p  →  V.",
+          "options": [
+            {
+              "text": "Tautologia",
+              "isCorrect": true
+            },
+            {
+              "text": "Contradição",
+              "isCorrect": false
+            },
+            {
+              "text": "Contingência",
+              "isCorrect": false
+            }
+          ],
+          "source": "Alencar Filho, Cap. 4 — classificação de fórmulas (resposta calculada pelo motor)",
+          "explanation": "p  →  V: coluna V V — todas as linhas deram V.",
+          "art": "lawsLadder",
+          "id": "g4_classificar#5"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Verdadeiro ou falso?",
+          "statement": "p  →  (q  →  p) é uma tautologia.",
+          "subtext": "Julgue com a tabela completa, não com a primeira linha.",
+          "isTrue": true,
+          "source": "Alencar Filho, Cap. 4 — tautologia e contradição (resposta calculada pelo motor)",
+          "explanation": "De fato: p  →  (q  →  p) é uma tautologia — coluna V V V V.",
+          "id": "g4_classificar#6"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Verdadeiro ou falso?",
+          "statement": "p  ↔  (p  ∧  q) é uma tautologia.",
+          "subtext": "Julgue com a tabela completa, não com a primeira linha.",
+          "isTrue": false,
+          "source": "Alencar Filho, Cap. 4 — tautologia e contradição (resposta calculada pelo motor)",
+          "explanation": "Não é isso: p  ↔  (p  ∧  q) é uma contingência — coluna V F V V.",
+          "id": "g4_classificar#7"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Verdadeiro ou falso?",
+          "statement": "p v ~p é uma tautologia.",
+          "subtext": "Julgue com a tabela completa, não com a primeira linha.",
+          "isTrue": true,
+          "source": "Alencar Filho, Cap. 4 — tautologia e contradição (resposta calculada pelo motor)",
+          "explanation": "De fato: p v ~p é uma tautologia — coluna V V.",
+          "id": "g4_classificar#8"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Verdadeiro ou falso?",
+          "statement": "p  ∧  ~p é uma contradição.",
+          "subtext": "Julgue com a tabela completa, não com a primeira linha.",
+          "isTrue": true,
+          "source": "Alencar Filho, Cap. 4 — tautologia e contradição (resposta calculada pelo motor)",
+          "explanation": "De fato: p  ∧  ~p é uma contradição — coluna F F.",
+          "id": "g4_classificar#9"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Verdadeiro ou falso?",
+          "statement": "(p  ∧  q)  ∧  (p  →  ~q) é uma contradição.",
+          "subtext": "Julgue com a tabela completa, não com a primeira linha.",
+          "isTrue": true,
+          "source": "Alencar Filho, Cap. 4 — tautologia e contradição (resposta calculada pelo motor)",
+          "explanation": "De fato: (p  ∧  q)  ∧  (p  →  ~q) é uma contradição — coluna F F F F.",
+          "id": "g4_classificar#10"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Complete a coluna final da tabela de (p  →  q)  →  q.",
+          "vars": [
+            "p",
+            "q"
+          ],
+          "formula": "(p → q) → q",
+          "columnLabel": "(p  →  q)  →  q",
+          "source": "Alencar Filho, Cap. 3 — classificação pela coluna (resposta calculada pelo motor)",
+          "explanation": "(p  →  q)  →  q resulta em V V V F em VV, VF, FV, FF: 3 linha(s) V. Lembre: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "mascot": "bit",
+          "say": "A última variável alterna mais rápido.",
+          "id": "g4_classificar#11"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Complete a coluna final da tabela de ~p  ↔  q.",
+          "vars": [
+            "p",
+            "q"
+          ],
+          "formula": "~p ↔ q",
+          "columnLabel": "~p  ↔  q",
+          "source": "Alencar Filho, Cap. 3 — classificação pela coluna (resposta calculada pelo motor)",
+          "explanation": "~p  ↔  q resulta em F V V F em VV, VF, FV, FF: 2 linha(s) V. Lembre: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "mascot": "bit",
+          "say": "A última variável alterna mais rápido.",
+          "id": "g4_classificar#12"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Complete a coluna final da tabela de p  →  q.",
+          "vars": [
+            "p",
+            "q"
+          ],
+          "formula": "p → q",
+          "columnLabel": "p  →  q",
+          "source": "Alencar Filho, Cap. 3 — classificação pela coluna (resposta calculada pelo motor)",
+          "explanation": "p  →  q resulta em V F V V em VV, VF, FV, FF: 3 linha(s) V. Lembre: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "mascot": "bit",
+          "say": "A última variável alterna mais rápido.",
+          "id": "g4_classificar#13"
+        },
+        {
+          "kind": "row-truth",
+          "instruction": "Qual o valor de p ↑ q nessa linha?",
+          "rowContext": {
+            "p": "V",
+            "q": "V"
+          },
+          "options": [
+            "V",
+            "F"
+          ],
+          "correctIndex": 1,
+          "source": "Alencar Filho, Cap. 3 — avaliação linha a linha (resposta calculada pelo motor)",
+          "explanation": "Com p=V, q=V a fórmula fecha em F: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "id": "g4_classificar#14"
+        },
+        {
+          "kind": "row-truth",
+          "instruction": "Qual o valor de p ⊕ q nessa linha?",
+          "rowContext": {
+            "p": "F",
+            "q": "F"
+          },
+          "options": [
+            "V",
+            "F"
+          ],
+          "correctIndex": 1,
+          "source": "Alencar Filho, Cap. 3 — avaliação linha a linha (resposta calculada pelo motor)",
+          "explanation": "Com p=F, q=F a fórmula fecha em F: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "id": "g4_classificar#15"
+        }
+      ]
+    },
+    {
+      "id": "g5_implicacao",
+      "title": "Quem segue de quem",
+      "unitTitle": "Capítulo 5 — Implicação lógica",
+      "char": "boole",
+      "icon": "arrowsSplitUpAndLeft",
+      "steps": [
+        {
+          "kind": "theory",
+          "title": "⊨ é mais forte que →",
+          "content": "φ ⊨ ψ quando NENHUMA linha faz φ valer V e ψ valer F. É uma relação entre fórmulas, não uma fórmula. Toda tautologia φ → ψ acompanha a implicação, mas o teste é a tabela.",
+          "table": null,
+          "instruction": null,
+          "id": "g5_implicacao#0"
+        },
+        {
+          "kind": "multi",
+          "instruction": "Marque toda fórmula que p  ∧  q implica (⊨).",
+          "options": [
+            "p",
+            "p v q",
+            "p  →  q",
+            "q  →  p",
+            "~p",
+            "p  ↔  q"
+          ],
+          "correct": [
+            0,
+            1,
+            2,
+            3,
+            5
+          ],
+          "source": "Alencar Filho, Cap. 5 — implicação lógica (resposta calculada pelo motor)",
+          "explanation": "⊨ confere linha a linha: nenhuma linha faz p  ∧  q valer V com a consequente F. Corretas: p; p v q; p  →  q; q  →  p; p  ↔  q.",
+          "id": "g5_implicacao#1"
+        },
+        {
+          "kind": "multi",
+          "instruction": "Marque toda fórmula que p  ↔  q implica (⊨).",
+          "options": [
+            "p  →  q",
+            "q  →  p",
+            "p  ∧  q",
+            "~p v q",
+            "p v q"
+          ],
+          "correct": [
+            0,
+            1,
+            3
+          ],
+          "source": "Alencar Filho, Cap. 5 — implicação lógica (resposta calculada pelo motor)",
+          "explanation": "⊨ confere linha a linha: nenhuma linha faz p  ↔  q valer V com a consequente F. Corretas: p  →  q; q  →  p; ~p v q.",
+          "id": "g5_implicacao#2"
+        },
+        {
+          "kind": "multi",
+          "instruction": "Marque toda fórmula que ~(p v q) implica (⊨).",
+          "options": [
+            "~p",
+            "~q",
+            "~p  ∧  ~q",
+            "p  →  q",
+            "~p v q"
+          ],
+          "correct": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "source": "Alencar Filho, Cap. 5 — implicação lógica (resposta calculada pelo motor)",
+          "explanation": "⊨ confere linha a linha: nenhuma linha faz ~(p v q) valer V com a consequente F. Corretas: ~p; ~q; ~p  ∧  ~q; p  →  q; ~p v q.",
+          "id": "g5_implicacao#3"
+        },
+        {
+          "kind": "multi",
+          "instruction": "Marque toda fórmula que p  →  q implica (⊨).",
+          "options": [
+            "~p v q",
+            "~q  →  ~p",
+            "~p  →  ~q",
+            "q  →  p",
+            "p  ∧  q"
+          ],
+          "correct": [
+            0,
+            1
+          ],
+          "source": "Alencar Filho, Cap. 5 — implicação lógica (resposta calculada pelo motor)",
+          "explanation": "⊨ confere linha a linha: nenhuma linha faz p  →  q valer V com a consequente F. Corretas: ~p v q; ~q  →  ~p.",
+          "id": "g5_implicacao#4"
+        },
+        {
+          "kind": "multi",
+          "instruction": "Marque toda fórmula que (p  →  q)  ∧  (q  →  r) implica (⊨).",
+          "options": [
+            "p  →  r",
+            "q  →  r",
+            "~r  →  ~p",
+            "p  →  q",
+            "r  →  p"
+          ],
+          "correct": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "source": "Alencar Filho, Cap. 5 — implicação lógica (resposta calculada pelo motor)",
+          "explanation": "⊨ confere linha a linha: nenhuma linha faz (p  →  q)  ∧  (q  →  r) valer V com a consequente F. Corretas: p  →  r; q  →  r; ~r  →  ~p; p  →  q.",
+          "id": "g5_implicacao#5"
+        },
+        {
+          "kind": "multi",
+          "instruction": "Marque toda fórmula que p  ∧  (q v r) implica (⊨).",
+          "options": [
+            "(p  ∧  q) v (p  ∧  r)",
+            "p",
+            "q v r",
+            "p  →  q",
+            "~q  ∧  ~r"
+          ],
+          "correct": [
+            0,
+            1,
+            2
+          ],
+          "source": "Alencar Filho, Cap. 5 — implicação lógica (resposta calculada pelo motor)",
+          "explanation": "⊨ confere linha a linha: nenhuma linha faz p  ∧  (q v r) valer V com a consequente F. Corretas: (p  ∧  q) v (p  ∧  r); p; q v r.",
+          "id": "g5_implicacao#6"
+        },
+        {
+          "kind": "circuit",
+          "instruction": "Acenda as linhas em que p  →  q dá F.",
+          "vars": [
+            "p",
+            "q"
+          ],
+          "formula": "p → q",
+          "target": "F",
+          "source": "Alencar Filho, Cap. 3 e 6 — caça da linha F (resposta calculada pelo motor)",
+          "explanation": "A saída F aparece nas linhas marcadas; nas demais a fórmula vale V. Motivo: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "art": "circuit",
+          "mascot": "migo",
+          "say": "Monte a tabela antes de escolher.",
+          "id": "g5_implicacao#7"
+        },
+        {
+          "kind": "circuit",
+          "instruction": "Acenda as linhas em que ~p  ∧  q dá F.",
+          "vars": [
+            "p",
+            "q"
+          ],
+          "formula": "~p ^ q",
+          "target": "F",
+          "source": "Alencar Filho, Cap. 3 e 6 — caça da linha F (resposta calculada pelo motor)",
+          "explanation": "A saída F aparece nas linhas marcadas; nas demais a fórmula vale V. Motivo: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "art": "circuit",
+          "mascot": "migo",
+          "say": "Monte a tabela antes de escolher.",
+          "id": "g5_implicacao#8"
+        },
+        {
+          "kind": "circuit",
+          "instruction": "Acenda as linhas em que p  ∧  ~q dá F.",
+          "vars": [
+            "p",
+            "q"
+          ],
+          "formula": "p ^ ~q",
+          "target": "F",
+          "source": "Alencar Filho, Cap. 3 e 6 — caça da linha F (resposta calculada pelo motor)",
+          "explanation": "A saída F aparece nas linhas marcadas; nas demais a fórmula vale V. Motivo: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "art": "circuit",
+          "mascot": "migo",
+          "say": "Monte a tabela antes de escolher.",
+          "id": "g5_implicacao#9"
+        },
+        {
+          "kind": "row-truth",
+          "instruction": "Qual o valor de ~p v ~q v r nessa linha?",
+          "rowContext": {
+            "p": "V",
+            "q": "F",
+            "r": "V"
+          },
+          "options": [
+            "V",
+            "F"
+          ],
+          "correctIndex": 0,
+          "source": "Alencar Filho, Cap. 3 — avaliação linha a linha (resposta calculada pelo motor)",
+          "explanation": "Com p=V, q=F, r=V a fórmula fecha em V: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "id": "g5_implicacao#10"
+        },
+        {
+          "kind": "row-truth",
+          "instruction": "Qual o valor de (p v q)  →  r nessa linha?",
+          "rowContext": {
+            "p": "V",
+            "q": "F",
+            "r": "F"
+          },
+          "options": [
+            "V",
+            "F"
+          ],
+          "correctIndex": 1,
+          "source": "Alencar Filho, Cap. 3 — avaliação linha a linha (resposta calculada pelo motor)",
+          "explanation": "Com p=V, q=F, r=F a fórmula fecha em F: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "id": "g5_implicacao#11"
+        },
+        {
+          "kind": "row-truth",
+          "instruction": "Qual o valor de (p v q)  ∧  (q v r) nessa linha?",
+          "rowContext": {
+            "p": "V",
+            "q": "V",
+            "r": "F"
+          },
+          "options": [
+            "V",
+            "F"
+          ],
+          "correctIndex": 0,
+          "source": "Alencar Filho, Cap. 3 — avaliação linha a linha (resposta calculada pelo motor)",
+          "explanation": "Com p=V, q=V, r=F a fórmula fecha em V: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "id": "g5_implicacao#12"
+        },
+        {
+          "kind": "truth-grid",
+          "instruction": "Preencha as células que faltam em ~(p  ∧  q)  ↔  (~p v ~q).",
+          "headers": [
+            "p",
+            "q",
+            "p  ∧  q",
+            "~(p  ∧  q)",
+            "~p v ~q",
+            "~(p  ∧  q)  ↔  (~p v ~q)"
+          ],
+          "rows": [
+            [
+              "V",
+              "V",
+              "V",
+              "F",
+              "F",
+              "V"
+            ],
+            [
+              "V",
+              "F",
+              "F",
+              "V",
+              "V",
+              {
+                "ans": "V"
+              }
+            ],
+            [
+              "F",
+              "V",
+              "F",
+              "V",
+              "V",
+              "V"
+            ],
+            [
+              "F",
+              "F",
+              "F",
+              "V",
+              "V",
+              {
+                "ans": "V"
+              }
+            ]
+          ],
+          "source": "Alencar Filho, Cap. 3 e 7 — construção de tabela (resposta calculada pelo motor)",
+          "explanation": "Cada sub-fórmula é avaliada sozinha: p  ∧  q = V F F F; ~(p  ∧  q) = F V V V; ~p v ~q = F V V V; ~(p  ∧  q)  ↔  (~p v ~q) = V V V V.",
+          "mascot": "turing",
+          "say": "Cada coluna é uma sub-fórmula sozinha.",
+          "id": "g5_implicacao#13"
+        },
+        {
+          "kind": "truth-grid",
+          "instruction": "Preencha as células que faltam em (p v q)  ∧  ~(p  ∧  q).",
+          "headers": [
+            "p",
+            "q",
+            "p v q",
+            "p  ∧  q",
+            "~(p  ∧  q)",
+            "(p v q)  ∧  ~(p  ∧  q)"
+          ],
+          "rows": [
+            [
+              "V",
+              "V",
+              "V",
+              "V",
+              "F",
+              "F"
+            ],
+            [
+              "V",
+              "F",
+              "V",
+              "F",
+              "V",
+              {
+                "ans": "V"
+              }
+            ],
+            [
+              "F",
+              "V",
+              "V",
+              "F",
+              "V",
+              "V"
+            ],
+            [
+              "F",
+              "F",
+              "F",
+              "F",
+              "V",
+              {
+                "ans": "F"
+              }
+            ]
+          ],
+          "source": "Alencar Filho, Cap. 3 e 7 — construção de tabela (resposta calculada pelo motor)",
+          "explanation": "Cada sub-fórmula é avaliada sozinha: p v q = V V V F; p  ∧  q = V F F F; ~(p  ∧  q) = F V V V; (p v q)  ∧  ~(p  ∧  q) = F V V F.",
+          "mascot": "turing",
+          "say": "Cada coluna é uma sub-fórmula sozinha.",
+          "id": "g5_implicacao#14"
+        }
+      ]
+    },
+    {
+      "id": "g6_equivalencias",
+      "title": "Escreva de outro jeito, vale igual",
+      "unitTitle": "Capítulo 6 e 7 — Equivalência lógica e álgebra das proposições",
+      "char": "boole",
+      "icon": "scaleBalanced",
+      "steps": [
+        {
+          "kind": "theory",
+          "title": "Equivalência = mesma coluna",
+          "content": "φ ≡ ψ quando as duas tabelas coincidem linha a linha. Por isso o app aceita qualquer resposta equivalente: o que vale é a coluna, não a escrita.",
+          "table": null,
+          "instruction": null,
+          "id": "g6_equivalencias#0"
+        },
+        {
+          "kind": "multi",
+          "instruction": "Marque todas as fórmulas equivalentes a p  →  q.",
+          "options": [
+            "~p v q",
+            "~q  →  ~p",
+            "q  →  p",
+            "~p  →  ~q",
+            "p  ∧  ~q",
+            "~~p v q"
+          ],
+          "correct": null,
+          "formula": "p → q",
+          "source": "Alencar Filho, Cap. 6 e 7 — equivalência lógica (resposta calculada pelo motor)",
+          "explanation": "Equivalentes são as que têm a MESMA coluna que p  →  q (V F V V). O app confere por tabela, não por memória.",
+          "art": "lawsLadder",
+          "id": "g6_equivalencias#1"
+        },
+        {
+          "kind": "multi",
+          "instruction": "Marque todas as fórmulas equivalentes a ~(p  ∧  q).",
+          "options": [
+            "~p v ~q",
+            "~(~~p  ∧  ~~q)",
+            "p  →  ~q",
+            "~p  ∧  ~q",
+            "p ⊕ q",
+            "~p  →  q"
+          ],
+          "correct": null,
+          "formula": "~(p ^ q)",
+          "source": "Alencar Filho, Cap. 6 e 7 — equivalência lógica (resposta calculada pelo motor)",
+          "explanation": "Equivalentes são as que têm a MESMA coluna que ~(p  ∧  q) (F V V V). O app confere por tabela, não por memória.",
+          "art": "lawsLadder",
+          "id": "g6_equivalencias#2"
+        },
+        {
+          "kind": "multi",
+          "instruction": "Marque todas as fórmulas equivalentes a p  ↔  q.",
+          "options": [
+            "(p  →  q)  ∧  (q  →  p)",
+            "~p  ↔  ~q",
+            "~(p ⊕ q)",
+            "p  ∧  q",
+            "p v q",
+            "p ⊕ ~q"
+          ],
+          "correct": null,
+          "formula": "p ↔ q",
+          "source": "Alencar Filho, Cap. 6 e 7 — equivalência lógica (resposta calculada pelo motor)",
+          "explanation": "Equivalentes são as que têm a MESMA coluna que p  ↔  q (V F F V). O app confere por tabela, não por memória.",
+          "art": "lawsLadder",
+          "id": "g6_equivalencias#3"
+        },
+        {
+          "kind": "multi",
+          "instruction": "Marque todas as fórmulas equivalentes a ~(p  →  q).",
+          "options": [
+            "p  ∧  ~q",
+            "~(~p v q)",
+            "p v ~q",
+            "~p v q",
+            "~p  ∧  q",
+            "p  →  ~q"
+          ],
+          "correct": null,
+          "formula": "~(p → q)",
+          "source": "Alencar Filho, Cap. 6 e 7 — equivalência lógica (resposta calculada pelo motor)",
+          "explanation": "Equivalentes são as que têm a MESMA coluna que ~(p  →  q) (F V F F). O app confere por tabela, não por memória.",
+          "art": "lawsLadder",
+          "id": "g6_equivalencias#4"
+        },
+        {
+          "kind": "multi",
+          "instruction": "Marque todas as fórmulas equivalentes a p v (q  ∧  r).",
+          "options": [
+            "(p v q)  ∧  (p v r)",
+            "p  ∧  (q v r)",
+            "(p  ∧  r) v (p  ∧  q)",
+            "p v q",
+            "~(~p  ∧  ~(q  ∧  r))",
+            "q  ∧  (p v r)"
+          ],
+          "correct": null,
+          "formula": "p v (q ^ r)",
+          "source": "Alencar Filho, Cap. 6 e 7 — equivalência lógica (resposta calculada pelo motor)",
+          "explanation": "Equivalentes são as que têm a MESMA coluna que p v (q  ∧  r) (V V V V V F F F). O app confere por tabela, não por memória.",
+          "art": "lawsLadder",
+          "id": "g6_equivalencias#5"
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Empurre a negação para dentro de ~(p  ∧  q) (monte a fórmula equivalente).",
+          "promptBox": "~(p  ∧  q)",
+          "tokens": [
+            "p",
+            " ",
+            "q",
+            " ",
+            "^",
+            "^",
+            "↔",
+            "(",
+            "→"
+          ],
+          "correctSequence": [],
+          "check": "equiv",
+          "formula": "p ^ q",
+          "hint": "De Morgan: ~(A ^ B) vira ~A v ~B e ~(A v B) vira ~A ^ ~B. ~(A → B) vira A ^ ~B.",
+          "source": "Alencar Filho, Cap. 7 — leis de De Morgan (resposta calculada pelo motor)",
+          "explanation": "Negação empurrada: ~(p  ∧  q) ≡ p  ∧  q. O app aceita QUALQUER escrita equivalente, não só esta.",
+          "art": "demorgan",
+          "mascot": "boole",
+          "say": "Troque o conectivo e negue os dois lados.",
+          "id": "g6_equivalencias#6"
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Empurre a negação para dentro de ~(p v q) (monte a fórmula equivalente).",
+          "promptBox": "~(p v q)",
+          "tokens": [
+            "v",
+            "v",
+            "~",
+            " ",
+            "q",
+            "p",
+            " ",
+            "r",
+            "q"
+          ],
+          "correctSequence": [],
+          "check": "equiv",
+          "formula": "p v q",
+          "hint": "De Morgan: ~(A ^ B) vira ~A v ~B e ~(A v B) vira ~A ^ ~B. ~(A → B) vira A ^ ~B.",
+          "source": "Alencar Filho, Cap. 7 — leis de De Morgan (resposta calculada pelo motor)",
+          "explanation": "Negação empurrada: ~(p v q) ≡ p v q. O app aceita QUALQUER escrita equivalente, não só esta.",
+          "art": "demorgan",
+          "mascot": "boole",
+          "say": "Troque o conectivo e negue os dois lados.",
+          "id": "g6_equivalencias#7"
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Empurre a negação para dentro de ~(p  →  q) (monte a fórmula equivalente).",
+          "promptBox": "~(p  →  q)",
+          "tokens": [
+            "v",
+            ")",
+            "→",
+            " ",
+            "r",
+            " ",
+            "~",
+            "p",
+            "q"
+          ],
+          "correctSequence": [],
+          "check": "equiv",
+          "formula": "p → q",
+          "hint": "De Morgan: ~(A ^ B) vira ~A v ~B e ~(A v B) vira ~A ^ ~B. ~(A → B) vira A ^ ~B.",
+          "source": "Alencar Filho, Cap. 7 — leis de De Morgan (resposta calculada pelo motor)",
+          "explanation": "Negação empurrada: ~(p  →  q) ≡ p  →  q. O app aceita QUALQUER escrita equivalente, não só esta.",
+          "art": "demorgan",
+          "mascot": "boole",
+          "say": "Troque o conectivo e negue os dois lados.",
+          "id": "g6_equivalencias#8"
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Empurre a negação para dentro de ~(p  ↔  q) (monte a fórmula equivalente).",
+          "promptBox": "~(p  ↔  q)",
+          "tokens": [
+            "↔",
+            "p",
+            "q",
+            "(",
+            "r",
+            " ",
+            " ",
+            "^",
+            ")"
+          ],
+          "correctSequence": [],
+          "check": "equiv",
+          "formula": "p ↔ q",
+          "hint": "De Morgan: ~(A ^ B) vira ~A v ~B e ~(A v B) vira ~A ^ ~B. ~(A → B) vira A ^ ~B.",
+          "source": "Alencar Filho, Cap. 7 — leis de De Morgan (resposta calculada pelo motor)",
+          "explanation": "Negação empurrada: ~(p  ↔  q) ≡ p  ↔  q. O app aceita QUALQUER escrita equivalente, não só esta.",
+          "art": "demorgan",
+          "mascot": "boole",
+          "say": "Troque o conectivo e negue os dois lados.",
+          "id": "g6_equivalencias#9"
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Empurre a negação para dentro de ~(~p  ∧  q) (monte a fórmula equivalente).",
+          "promptBox": "~(~p  ∧  q)",
+          "tokens": [
+            "~",
+            "(",
+            "~",
+            "^",
+            "↔",
+            " ",
+            "q",
+            "^",
+            "p",
+            " "
+          ],
+          "correctSequence": [],
+          "check": "equiv",
+          "formula": "~p ^ q",
+          "hint": "De Morgan: ~(A ^ B) vira ~A v ~B e ~(A v B) vira ~A ^ ~B. ~(A → B) vira A ^ ~B.",
+          "source": "Alencar Filho, Cap. 7 — leis de De Morgan (resposta calculada pelo motor)",
+          "explanation": "Negação empurrada: ~(~p  ∧  q) ≡ ~p  ∧  q. O app aceita QUALQUER escrita equivalente, não só esta.",
+          "art": "demorgan",
+          "mascot": "boole",
+          "say": "Troque o conectivo e negue os dois lados.",
+          "id": "g6_equivalencias#10"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Escreva p  →  q usando só o conectivo ↑ (negação disjunta).",
+          "options": [
+            {
+              "text": "(p ↑ q) ↑ (p ↑ q)",
+              "isCorrect": false
+            },
+            {
+              "text": "(p ↑ p) ↑ (q ↑ q)",
+              "isCorrect": false
+            },
+            {
+              "text": "(p ↑ q)",
+              "isCorrect": false
+            },
+            {
+              "text": "(p ↑ p) ↑ ((q ↑ q) ↑ (q ↑ q))",
+              "isCorrect": true
+            }
+          ],
+          "source": "Alencar Filho, Cap. 6 — conectivos de Scheffer (resposta calculada pelo motor)",
+          "explanation": "Conferido por tabela: p  →  q e (p ↑ p) ↑ ((q ↑ q) ↑ (q ↑ q)) têm a mesma coluna. ↑ é funcionalmente completo, então ~, ^ e v se reconstroem com ele.",
+          "art": "gateMatrix",
+          "mascot": "boole",
+          "say": "~p é p ↑ p. Decore essa.",
+          "id": "g6_equivalencias#11"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Escreva ~p usando só o conectivo ↑ (negação disjunta).",
+          "options": [
+            {
+              "text": "p ↑ p",
+              "isCorrect": true
+            },
+            {
+              "text": "(p ↑ p) ↑ (q ↑ q)",
+              "isCorrect": false
+            },
+            {
+              "text": "(p ↑ q)",
+              "isCorrect": false
+            },
+            {
+              "text": "(p ↑ q) ↑ (p ↑ q)",
+              "isCorrect": false
+            }
+          ],
+          "source": "Alencar Filho, Cap. 6 — conectivos de Scheffer (resposta calculada pelo motor)",
+          "explanation": "Conferido por tabela: ~p e p ↑ p têm a mesma coluna. ↑ é funcionalmente completo, então ~, ^ e v se reconstroem com ele.",
+          "art": "gateMatrix",
+          "mascot": "boole",
+          "say": "~p é p ↑ p. Decore essa.",
+          "id": "g6_equivalencias#12"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Escreva p v q usando só o conectivo ↑ (negação disjunta).",
+          "options": [
+            {
+              "text": "(p ↑ p) ↑ ((q ↑ q) ↑ (q ↑ q))",
+              "isCorrect": false
+            },
+            {
+              "text": "(p ↑ q)",
+              "isCorrect": false
+            },
+            {
+              "text": "(p ↑ p) ↑ (q ↑ q)",
+              "isCorrect": true
+            },
+            {
+              "text": "(p ↑ q) ↑ (p ↑ q)",
+              "isCorrect": false
+            }
+          ],
+          "source": "Alencar Filho, Cap. 6 — conectivos de Scheffer (resposta calculada pelo motor)",
+          "explanation": "Conferido por tabela: p v q e (p ↑ p) ↑ (q ↑ q) têm a mesma coluna. ↑ é funcionalmente completo, então ~, ^ e v se reconstroem com ele.",
+          "art": "gateMatrix",
+          "mascot": "boole",
+          "say": "~p é p ↑ p. Decore essa.",
+          "id": "g6_equivalencias#13"
+        },
+        {
+          "kind": "input",
+          "instruction": "Digite uma fórmula equivalente (qualquer uma que feche).",
+          "prompt": "~p  ∧  q",
+          "accepted": [],
+          "formula": "~p ^ q",
+          "hint": "Use ~, ^, v, →, ↔, ↑, ↓ e parênteses; o app confere por tabela-verdade.",
+          "placeholder": "ex.: ~p v q",
+          "source": "Alencar Filho, Cap. 6 e 7 — equivalência (resposta calculada pelo motor)",
+          "explanation": "Uma resposta mínima: ~p  ∧  q. avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "art": "transMap",
+          "mascot": "ada",
+          "say": "Sem acento, sem espaços: só símbolos.",
+          "id": "g6_equivalencias#14"
+        },
+        {
+          "kind": "input",
+          "instruction": "Digite uma fórmula equivalente (qualquer uma que feche).",
+          "prompt": "~p  ↔  q",
+          "accepted": [],
+          "formula": "~p ↔ q",
+          "hint": "Use ~, ^, v, →, ↔, ↑, ↓ e parênteses; o app confere por tabela-verdade.",
+          "placeholder": "ex.: ~p v q",
+          "source": "Alencar Filho, Cap. 6 e 7 — equivalência (resposta calculada pelo motor)",
+          "explanation": "Uma resposta mínima: ~p  ↔  q. avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "art": "transMap",
+          "mascot": "ada",
+          "say": "Sem acento, sem espaços: só símbolos.",
+          "id": "g6_equivalencias#15"
+        }
+      ]
+    },
+    {
+      "id": "g7_portas",
+      "title": "Portas, Scheffer e saída acesa",
+      "unitTitle": "Capítulo 6 — Conectivos de Scheffer e portas lógicas",
+      "char": "migo",
+      "icon": "microchip",
+      "steps": [
+        {
+          "kind": "theory",
+          "title": "Uma porta chega a tudo",
+          "content": "↑ (negação disjunta) é F só quando as duas entradas são V; ↓ (negação conjunta) é V só quando as duas são F. Com uma delas você refaz ~, ^ e v — por isso elas aparecem em circuito.",
+          "table": null,
+          "instruction": null,
+          "id": "g7_portas#0"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Escreva p v q usando só o conectivo ↑ (negação disjunta).",
+          "options": [
+            {
+              "text": "p ↑ p",
+              "isCorrect": false
+            },
+            {
+              "text": "(p ↑ p) ↑ (q ↑ q)",
+              "isCorrect": true
+            },
+            {
+              "text": "(p ↑ p) ↑ ((q ↑ q) ↑ (q ↑ q))",
+              "isCorrect": false
+            },
+            {
+              "text": "(p ↑ q) ↑ (p ↑ q)",
+              "isCorrect": false
+            }
+          ],
+          "source": "Alencar Filho, Cap. 6 — conectivos de Scheffer (resposta calculada pelo motor)",
+          "explanation": "Conferido por tabela: p v q e (p ↑ p) ↑ (q ↑ q) têm a mesma coluna. ↑ é funcionalmente completo, então ~, ^ e v se reconstroem com ele.",
+          "art": "gateMatrix",
+          "mascot": "boole",
+          "say": "~p é p ↑ p. Decore essa.",
+          "id": "g7_portas#1"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Escreva p  →  q usando só o conectivo ↑ (negação disjunta).",
+          "options": [
+            {
+              "text": "p ↑ p",
+              "isCorrect": false
+            },
+            {
+              "text": "(p ↑ p) ↑ ((q ↑ q) ↑ (q ↑ q))",
+              "isCorrect": true
+            },
+            {
+              "text": "(p ↑ q)",
+              "isCorrect": false
+            },
+            {
+              "text": "(p ↑ p) ↑ (q ↑ q)",
+              "isCorrect": false
+            }
+          ],
+          "source": "Alencar Filho, Cap. 6 — conectivos de Scheffer (resposta calculada pelo motor)",
+          "explanation": "Conferido por tabela: p  →  q e (p ↑ p) ↑ ((q ↑ q) ↑ (q ↑ q)) têm a mesma coluna. ↑ é funcionalmente completo, então ~, ^ e v se reconstroem com ele.",
+          "art": "gateMatrix",
+          "mascot": "boole",
+          "say": "~p é p ↑ p. Decore essa.",
+          "id": "g7_portas#2"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Escreva p  ∧  q usando só o conectivo ↑ (negação disjunta).",
+          "options": [
+            {
+              "text": "(p ↑ q) ↑ (p ↑ q)",
+              "isCorrect": true
+            },
+            {
+              "text": "(p ↑ q)",
+              "isCorrect": false
+            },
+            {
+              "text": "p ↑ p",
+              "isCorrect": false
+            },
+            {
+              "text": "(p ↑ p) ↑ ((q ↑ q) ↑ (q ↑ q))",
+              "isCorrect": false
+            }
+          ],
+          "source": "Alencar Filho, Cap. 6 — conectivos de Scheffer (resposta calculada pelo motor)",
+          "explanation": "Conferido por tabela: p  ∧  q e (p ↑ q) ↑ (p ↑ q) têm a mesma coluna. ↑ é funcionalmente completo, então ~, ^ e v se reconstroem com ele.",
+          "art": "gateMatrix",
+          "mascot": "boole",
+          "say": "~p é p ↑ p. Decore essa.",
+          "id": "g7_portas#3"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Escreva ~(p v q) usando só o conectivo ↑ (negação disjunta).",
+          "options": [
+            {
+              "text": "(p ↑ q) ↑ (p ↑ q)",
+              "isCorrect": false
+            },
+            {
+              "text": "(p ↑ p) ↑ ((q ↑ q) ↑ (q ↑ q))",
+              "isCorrect": false
+            },
+            {
+              "text": "(p ↑ q)",
+              "isCorrect": true
+            },
+            {
+              "text": "p ↑ p",
+              "isCorrect": false
+            }
+          ],
+          "source": "Alencar Filho, Cap. 6 — conectivos de Scheffer (resposta calculada pelo motor)",
+          "explanation": "Conferido por tabela: ~(p v q) e (p ↑ q) têm a mesma coluna. ↑ é funcionalmente completo, então ~, ^ e v se reconstroem com ele.",
+          "art": "gateMatrix",
+          "mascot": "boole",
+          "say": "~p é p ↑ p. Decore essa.",
+          "id": "g7_portas#4"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Escreva ~p usando só o conectivo ↑ (negação disjunta).",
+          "options": [
+            {
+              "text": "(p ↑ p) ↑ ((q ↑ q) ↑ (q ↑ q))",
+              "isCorrect": false
+            },
+            {
+              "text": "p ↑ p",
+              "isCorrect": true
+            },
+            {
+              "text": "(p ↑ p) ↑ (q ↑ q)",
+              "isCorrect": false
+            },
+            {
+              "text": "(p ↑ q) ↑ (p ↑ q)",
+              "isCorrect": false
+            }
+          ],
+          "source": "Alencar Filho, Cap. 6 — conectivos de Scheffer (resposta calculada pelo motor)",
+          "explanation": "Conferido por tabela: ~p e p ↑ p têm a mesma coluna. ↑ é funcionalmente completo, então ~, ^ e v se reconstroem com ele.",
+          "art": "gateMatrix",
+          "mascot": "boole",
+          "say": "~p é p ↑ p. Decore essa.",
+          "id": "g7_portas#5"
+        },
+        {
+          "kind": "circuit",
+          "instruction": "Acenda as linhas em que (p ↓ q)  →  r dá V.",
+          "vars": [
+            "p",
+            "q",
+            "r"
+          ],
+          "formula": "(p ↓ q) → r",
+          "target": "V",
+          "source": "Alencar Filho, Cap. 3 e 6 — Saída V (resposta calculada pelo motor)",
+          "explanation": "A saída V aparece nas linhas marcadas; nas demais a fórmula vale F. Motivo: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "art": "circuit",
+          "mascot": "migo",
+          "say": "Monte a tabela antes de escolher.",
+          "id": "g7_portas#6"
+        },
+        {
+          "kind": "circuit",
+          "instruction": "Acenda as linhas em que (p ↑ q) v r dá V.",
+          "vars": [
+            "p",
+            "q",
+            "r"
+          ],
+          "formula": "(p ↑ q) v r",
+          "target": "V",
+          "source": "Alencar Filho, Cap. 3 e 6 — Saída V (resposta calculada pelo motor)",
+          "explanation": "A saída V aparece nas linhas marcadas; nas demais a fórmula vale F. Motivo: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "art": "circuit",
+          "mascot": "migo",
+          "say": "Monte a tabela antes de escolher.",
+          "id": "g7_portas#7"
+        },
+        {
+          "kind": "circuit",
+          "instruction": "Acenda as linhas em que p ↓ q dá V.",
+          "vars": [
+            "p",
+            "q"
+          ],
+          "formula": "p ↓ q",
+          "target": "V",
+          "source": "Alencar Filho, Cap. 3 e 6 — Saída V (resposta calculada pelo motor)",
+          "explanation": "A saída V aparece nas linhas marcadas; nas demais a fórmula vale F. Motivo: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "art": "circuit",
+          "mascot": "migo",
+          "say": "Monte a tabela antes de escolher.",
+          "id": "g7_portas#8"
+        },
+        {
+          "kind": "circuit",
+          "instruction": "Acenda as linhas em que p ↑ q dá V.",
+          "vars": [
+            "p",
+            "q"
+          ],
+          "formula": "p ↑ q",
+          "target": "V",
+          "source": "Alencar Filho, Cap. 3 e 6 — Saída V (resposta calculada pelo motor)",
+          "explanation": "A saída V aparece nas linhas marcadas; nas demais a fórmula vale F. Motivo: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "art": "circuit",
+          "mascot": "migo",
+          "say": "Monte a tabela antes de escolher.",
+          "id": "g7_portas#9"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Complete a coluna final da tabela de p ↑ q.",
+          "vars": [
+            "p",
+            "q"
+          ],
+          "formula": "p ↑ q",
+          "columnLabel": "p ↑ q",
+          "source": "Alencar Filho, Cap. 3 — Scheffer (resposta calculada pelo motor)",
+          "explanation": "p ↑ q resulta em F V V V em VV, VF, FV, FF: 3 linha(s) V. Lembre: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "mascot": "bit",
+          "say": "A última variável alterna mais rápido.",
+          "id": "g7_portas#10"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Complete a coluna final da tabela de p ⊕ q.",
+          "vars": [
+            "p",
+            "q"
+          ],
+          "formula": "p ⊕ q",
+          "columnLabel": "p ⊕ q",
+          "source": "Alencar Filho, Cap. 3 — Scheffer (resposta calculada pelo motor)",
+          "explanation": "p ⊕ q resulta em F V V F em VV, VF, FV, FF: 2 linha(s) V. Lembre: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "mascot": "bit",
+          "say": "A última variável alterna mais rápido.",
+          "id": "g7_portas#11"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Complete a coluna final da tabela de p ↓ q.",
+          "vars": [
+            "p",
+            "q"
+          ],
+          "formula": "p ↓ q",
+          "columnLabel": "p ↓ q",
+          "source": "Alencar Filho, Cap. 3 — Scheffer (resposta calculada pelo motor)",
+          "explanation": "p ↓ q resulta em F F F V em VV, VF, FV, FF: 1 linha(s) V. Lembre: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "mascot": "bit",
+          "say": "A última variável alterna mais rápido.",
+          "id": "g7_portas#12"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Complete a coluna final da tabela de ~(p ↑ q).",
+          "vars": [
+            "p",
+            "q"
+          ],
+          "formula": "~(p ↑ q)",
+          "columnLabel": "~(p ↑ q)",
+          "source": "Alencar Filho, Cap. 3 — Scheffer (resposta calculada pelo motor)",
+          "explanation": "~(p ↑ q) resulta em V F F F em VV, VF, FV, FF: 1 linha(s) V. Lembre: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "mascot": "bit",
+          "say": "A última variável alterna mais rápido.",
+          "id": "g7_portas#13"
+        },
+        {
+          "kind": "row-truth",
+          "instruction": "Qual o valor de p ↓ q nessa linha?",
+          "rowContext": {
+            "p": "F",
+            "q": "F"
+          },
+          "options": [
+            "V",
+            "F"
+          ],
+          "correctIndex": 0,
+          "source": "Alencar Filho, Cap. 3 — avaliação linha a linha (resposta calculada pelo motor)",
+          "explanation": "Com p=F, q=F a fórmula fecha em V: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "id": "g7_portas#14"
+        },
+        {
+          "kind": "row-truth",
+          "instruction": "Qual o valor de p ↓ q nessa linha?",
+          "rowContext": {
+            "p": "V",
+            "q": "V"
+          },
+          "options": [
+            "V",
+            "F"
+          ],
+          "correctIndex": 1,
+          "source": "Alencar Filho, Cap. 3 — avaliação linha a linha (resposta calculada pelo motor)",
+          "explanation": "Com p=V, q=V a fórmula fecha em F: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "id": "g7_portas#15"
+        },
+        {
+          "kind": "row-truth",
+          "instruction": "Qual o valor de p ⊕ q nessa linha?",
+          "rowContext": {
+            "p": "F",
+            "q": "V"
+          },
+          "options": [
+            "V",
+            "F"
+          ],
+          "correctIndex": 0,
+          "source": "Alencar Filho, Cap. 3 — avaliação linha a linha (resposta calculada pelo motor)",
+          "explanation": "Com p=F, q=V a fórmula fecha em V: avalie de dentro para fora, respeitando a precedência ~ > ^ > v > → > ↔.",
+          "id": "g7_portas#16"
+        }
+      ]
+    }
+  ]
+}

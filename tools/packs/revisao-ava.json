@@ -1,0 +1,610 @@
+{
+  "lessons": [
+    {
+      "id": "ava_revisao_conectivos",
+      "title": "Proposições, conectivos e tradução",
+      "unitTitle": "Revisão AVA — proposições, conectivos e tradução",
+      "char": "bit",
+      "icon": "language",
+      "steps": [
+        {
+          "kind": "theory",
+          "title": "Do português para os símbolos",
+          "content": "<b>e, mas, também, além disso</b> → conjunção ^ · <b>ou</b> → disjunção v · <b>se A então B, A implica B, A logo B, A só se B, A somente se B, B segue de A, basta A para B, A é condição suficiente para B, B é condição necessária para A</b> → condicional A → B · <b>A se, e somente se B; A é condição necessária e suficiente para B</b> → bicondicional ↔ · <b>não A, é falso que A, não é verdade que A</b> → negação ~A.<br/>Armadilha: 'A <i>só se</i> B' e 'B é condição <i>necessária</i> para A' dão a <i>mesma</i> fórmula A → B — o que é necessário fica no consequente, nunca no antecedente.",
+          "table": [
+            ["Em português", "Conectivo", "Símbolo"],
+            ["e, mas, também, além disso", "Conjunção", "A ^ B"],
+            ["ou", "Disjunção", "A v B"],
+            ["se A, então B / A só se B", "Condicional", "A → B"],
+            ["A se, e somente se B", "Bicondicional", "A ↔ B"],
+            ["não A / é falso que A", "Negação", "~A"]
+          ],
+          "art": "transMap",
+          "source": "Aula Dicas de tradução e negação (Profa. Kelly Gazolli), tabela 'Linguagem Natural x Linguagem Simbólica'; retirada de Gersting, Fundamentos Matemáticos para CC"
+        },
+        {
+          "kind": "theory",
+          "title": "Suficiente x necessária: quem vai no antecedente",
+          "content": "Em p → q, p é <b>condição suficiente</b> para q e q é <b>condição necessária</b> para p: o antecedente é o que basta, o consequente é o que não pode faltar. Antecedente = p, consequente = q.<br/>Exemplo da folha de dicas: 'O fogo é uma condição necessária para fumaça' traduz-se por 'se há fumaça, então há fogo' — o necessário (fogo) aparece depois da seta.<br/>Nas frases da Lista I: 'Uma condição suficiente para a falha é que a chave geral pare' → chave para → rede falha; 'boa dieta é condição necessária para um gato saudável' → gato saudável → boa dieta.",
+          "table": [
+            ["Locução", "Antecedente", "Consequente"],
+            ["Basta A para B", "A", "B"],
+            ["A só se B / A somente se B", "A", "B"],
+            ["B é necessária para A", "A", "B"],
+            ["A é suficiente para B", "A", "B"]
+          ],
+          "art": "condTable",
+          "source": "Aula Proposições e Conectivos (Profa. Kelly Gazolli), slide 'Conectivos Lógicos - Condicional'; Lista I, questão 3; Dicas de tradução e negação"
+        },
+        {
+          "kind": "match",
+          "instruction": "Lista I, questão 3 — ligue cada frase a antecedente e consequente:",
+          "pairs": [
+            { "left": "Se a chuva continuar, o rio vai transbordar.", "right": "Antecedente: a chuva continuar → consequente: o rio transbordar" },
+            { "left": "Uma condição suficiente para a falha de uma rede é que a chave geral pare.", "right": "Antecedente: a chave geral para → consequente: a rede falha" },
+            { "left": "Os abacates só estão maduros quando estão escuros e macios.", "right": "Antecedente: estão maduros → consequente: estão escuros e macios" },
+            { "left": "Uma boa dieta é uma condição necessária para um gato saudável.", "right": "Antecedente: o gato é saudável → consequente: o gato tem boa dieta" }
+          ],
+          "explanation": "'Condição suficiente' é o que basta e vira antecedente; 'condição necessária' é o que não pode faltar e vira consequente. 'Só quando' faz o mesmo: o bloco depois de 'quando' (escuros e macios) é o consequente. Por isso a última frase é 'gato saudável → boa dieta', e não o contrário.",
+          "source": "Lista I, questões 3a, 3b, 3c e 3d"
+        },
+        {
+          "kind": "multi",
+          "instruction": "Marque TODAS as frases que são proposições (o que a lógica proposicional aceita como fórmula):",
+          "options": [
+            "2 é par.",
+            "36 é divisível por 15.",
+            "Que horas são?",
+            "Desligue o celular.",
+            "Esta afirmação é falsa.",
+            "O sol é uma estrela e a lua é um satélite."
+          ],
+          "correct": [0, 1, 5],
+          "explanation": "Proposição é declaração com valor lógico. '36 é divisível por 15' é F, mas continua sendo proposição; a última é composta (^). Pergunta, ordem e o paradoxo 'esta afirmação é falsa' não recebem valor lógico — e a lógica proposicional ainda não tem quantificadores.",
+          "source": "Aula Proposições e Conectivos (Profa. Kelly Gazolli), slides 'Proposição', 'São Proposições' e 'Não São Proposições'"
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Item 4a — niegue em símbolos (p: 'Atlético é alvi-verde', q: 'Coritiba é rubro-negro'):",
+          "promptBox": "Atlético é alvi-verde e Coritiba é rubro-negro.  p ^ q  →  ~(p ^ q) = ?",
+          "tokens": ["~p", "v", "~q", "^", "p", "q", "~"],
+          "correctSequence": ["~p", "v", "~q"],
+          "check": "equiv",
+          "formula": "~p v ~q",
+          "hint": "A negação de uma conjunção vira disjunção das negações.",
+          "art": "demorgan",
+          "explanation": "De Morgan: ~(p ^ q) ≡ ~p v ~q. Em linguagem corrente: 'Atlético não é alvi-verde ou Coritiba não é rubro-negro'. Manter o ^ ('não é alvi-verde nem rubro-negro') é a negação de uma disjunção, não desta frase.",
+          "source": "Revisão III AVA, itens 4a e 5a; Equivalências notáveis, linha 8 (DM)"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Complete a coluna final da fórmula que traduz o item 5c ('Sempre que violetas são azuis, as rosas são vermelhas e o açúcar é doce'):",
+          "vars": ["p", "q", "r"],
+          "formula": "q → (p ^ r)",
+          "columnLabel": "q → (p ^ r)",
+          "art": "truthColumns",
+          "explanation": "'Sempre que' abre a condicional com antecedente q e consequente a conjunção p ^ r. Na ordem canônica a coluna é V, F, V, V, F, F, V, V: ela é F exatamente nas linhas em que q = V e falta p ou r (VVF, FVV e FVF), e é V sempre que q é F.",
+          "source": "Lista I, questão 5c; tradução de 'sempre que' (Dicas de tradução e negação)"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Verdadeiro ou falso:",
+          "statement": "Em 'Júlia adora manteiga, mas detesta nata' o 'mas' traduz por conjunção: com p = 'Júlia adora manteiga' e q = 'Júlia adora nata', a frase é p ^ ~q e sua negação é ~p v q.",
+          "subtext": "Lista I, questão 4a — apresente a negação da sentença.",
+          "isTrue": true,
+          "explanation": "O 'mas' é oposição retórica, não lógica: a frase afirma os dois lados, então é p ^ ~q. Negando: ~(p ^ ~q) ≡ ~p v ~~q ≡ ~p v q (De Morgan + dupla negação) — 'Júlia não adora manteiga ou adora nata'.",
+          "source": "Lista I, questão 4a; Dicas de tradução e negação, tabela 'Negação de uma Proposição Composta'"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Item 4c — 'É falso que está frio ou que está chovendo' (p: está frio, q: está chovendo). Assinale a negação correta dessa proposição:",
+          "options": [
+            { "text": "Está frio ou está chovendo (p v q).", "isCorrect": true },
+            { "text": "Não está frio nem está chovendo (~p ^ ~q).", "isCorrect": false },
+            { "text": "Está frio e não está chovendo (p ^ ~q).", "isCorrect": false },
+            { "text": "Se está frio, então está chovendo (p → q).", "isCorrect": false }
+          ],
+          "mascot": "bit",
+          "say": "'Nem frio nem chuva' é a frase, não a negação.",
+          "explanation": "Lida como ~(p v q), a própria frase já equivale por De Morgan a ~p ^ ~q — a segunda alternativa é a frase, não sua negação. Negar de novo devolve p v q, pela dupla negação ~~(p v q) ≡ p v q.",
+          "source": "Revisão III AVA, itens 4c e 5c"
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Questão 5d — monte a fórmula com os blocos (p: 'Rosas são vermelhas', q: 'Violetas são azuis', s: 'O açúcar é amargo'):",
+          "promptBox": "Rosas são vermelhas apenas se as violetas não forem azuis e o açúcar não for amargo.",
+          "tokens": ["p", "→", "(", "~q", "^", "~s", ")", "v", "~"],
+          "correctSequence": ["p", "→", "(", "~q", "^", "~s", ")"],
+          "check": "equiv",
+          "formula": "p → (~q ^ ~s)",
+          "hint": "'Apenas se' anuncia o consequente: o bloco inteiro vai depois da seta.",
+          "explanation": "'A apenas se B' é 'A só se B', ou seja A → B: violetas não azuis e açúcar não amargo são condições necessárias para rosas vermelhas, logo p → (~q ^ ~s). Inverter a seta é ler 'apenas se' como 'se'. O consequente também pode ser escrito ~(q v s), por De Morgan.",
+          "source": "Lista I, questão 5d; Dicas de tradução e negação (linha 'A só se B')"
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Item 4d — monte, bloco a bloco, a negação de 'Se João passar em Física, então se formará':",
+          "promptBox": "~(p → q) = ?   (p: João passa em Física, q: João se forma)",
+          "tokens": ["p", "^", "~q", "→", "v", "~p", "q"],
+          "correctSequence": ["p", "^", "~q"],
+          "check": "equiv",
+          "formula": "p ^ ~q",
+          "hint": "Troque a seta por 'e' e negue apenas o consequente.",
+          "explanation": "Uma condicional só é F com antecedente V e consequente F; por isso ~(p → q) ≡ p ^ ~q — 'João passa em Física e não se forma'. É exatamente a equivalência que o item 3a da revisão pede para verificar por tabela.",
+          "source": "Revisão III AVA, itens 4d e 3a; Equivalências notáveis, linha 9 (COND)"
+        },
+        {
+          "kind": "multi",
+          "instruction": "Item 3c — marque TODAS as fórmulas equivalentes a p → ~q:",
+          "options": [
+            "~(p ^ q)",
+            "~p v ~q",
+            "q → ~p",
+            "~p ^ ~q",
+            "p ^ q",
+            "~p → q"
+          ],
+          "formula": "p → ~q",
+          "correct": [0, 1, 2],
+          "explanation": "Por COND, p → ~q ≡ ~p v ~q; por De Morgan isso é ~(p ^ q); e a contrapositiva de p → ~q é ~~q → ~p, isto é, q → ~p. As três têm a coluna F V V V. ~p ^ ~q só é V em FF, e ~p → q equivale a p v q.",
+          "source": "Revisão III AVA, item 3c; Equivalências notáveis, linhas 8, 9 e 12 (DM, COND, Contraposição)"
+        },
+        {
+          "kind": "order",
+          "instruction": "Ordene os conectivos do MAIS forte para o MAIS fraco (a precedência que dispensa parênteses na aula):",
+          "items": [
+            "~  (negação)",
+            "^  e  v  (conjunção e disjunção)",
+            "→  (condicional)",
+            "↔  (bicondicional)"
+          ],
+          "explanation": "É essa ordem que faz '~p ^ q' ler-se (~p) ^ q e 'p v ~q → r' ler-se (p v ~q) → r, e o bicondicional ser sempre o conectivo principal da frase inteira. O motor deste app usa exatamente ~ > ^ > v > → > ↔.",
+          "source": "Aula Proposições e Conectivos (Profa. Kelly Gazolli), slide 'Omissão de Parênteses'"
+        },
+        {
+          "kind": "circuit",
+          "instruction": "Itens 4c/5c — quais entradas deixam a saída do circuito ~(p v q) em V?",
+          "vars": ["p", "q"],
+          "formula": "~(p v q)",
+          "target": "V",
+          "art": "circuit",
+          "explanation": "Só a linha p = F, q = F: a disjunção é V em qualquer outra linha e a negação inverte. É De Morgan em ação — ~(p v q) ≡ ~p ^ ~q, e uma conjunção só acende com os dois lados V ('não está frio nem está chovendo').",
+          "source": "Revisão III AVA, itens 4c e 5c; Equivalências notáveis, linha 8 (DM)"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Verdadeiro ou falso:",
+          "statement": "A negação correta de 'Pepinos são verdes e têm sementes' é 'Pepinos não são verdes e não têm sementes'.",
+          "subtext": "Compare com a coluna 'Negação Incorreta' da folha de dicas.",
+          "isTrue": false,
+          "mascot": "bit",
+          "say": "De Morgan: o 'e' negado vira 'ou'.",
+          "explanation": "De Morgan troca o conectivo: ~(p ^ q) ≡ ~p v ~q, então o certo é 'Pepinos não são verdes <i>ou</i> não têm sementes'. Manter o 'e' negando as duas componentes é exatamente a negação incorreta listada na aula (o caso 'Rui é alto e magro').",
+          "source": "Lista I, questão 4c; Dicas de tradução e negação, tabela 'Negação de uma Proposição Composta'"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Questão 6a — com p 'Rosas são vermelhas', q 'Violetas são azuis', r 'Açúcar é doce', traduza (r ^ ~p) ↔ q para o português:",
+          "options": [
+            { "text": "O açúcar é doce e as rosas não são vermelhas, se, e somente se, as violetas são azuis.", "isCorrect": true },
+            { "text": "Se o açúcar é doce e as rosas não são vermelhas, então as violetas são azuis.", "isCorrect": false },
+            { "text": "O açúcar é doce ou as rosas não são vermelhas, se e somente se as violetas são azuis.", "isCorrect": false },
+            { "text": "As violetas são azuis apenas se o açúcar é doce e as rosas são vermelhas.", "isCorrect": false }
+          ],
+          "art": "bicondTable",
+          "explanation": "O conectivo principal é ↔ ('se, e somente se'), ligando a conjunção (r ^ ~p) a q: os dois lados precisam ter o mesmo valor, o que na tabela (p, q, r) acontece só nas linhas VFV, VFF, FVV e FFF. A segunda opção lê ↔ como →; a terceira troca ^ por v; a quarta inverte o sentido da condicional e perde o ~p.",
+          "source": "Lista I, questão 6a"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Item 4e — 'Não tenho carro e não tenho moto' (p: tenho carro, q: tenho moto). Qual é a negação em linguagem corrente?",
+          "options": [
+            { "text": "Tenho carro ou tenho moto.", "isCorrect": true },
+            { "text": "Não tenho carro ou não tenho moto.", "isCorrect": false },
+            { "text": "Não tenho nem carro nem moto.", "isCorrect": false },
+            { "text": "Se tenho carro, então tenho moto.", "isCorrect": false }
+          ],
+          "explanation": "A frase é ~p ^ ~q; negando, ~(~p ^ ~q) ≡ ~~p v ~~q ≡ p v q (De Morgan + dupla negação): 'tenho carro ou tenho moto'. A segunda alternativa troca só o conectivo e esquece de negar as componentes; a terceira é a própria frase original.",
+          "source": "Revisão III AVA, itens 4e e 5e"
+        }
+      ]
+    },
+    {
+      "id": "ava_revisao_equiv",
+      "title": "Equivalências notáveis e implicação",
+      "unitTitle": "Revisão AVA — equivalências notáveis e implicação",
+      "char": "boole",
+      "icon": "scaleBalanced",
+      "steps": [
+        {
+          "kind": "theory",
+          "title": "As equivalências notáveis da folha",
+          "content": "São as 13 linhas que a revisão manda usar nas demonstrações dos itens 6 e 7.<br/><b>ID</b> p ^ p ≡ p, p v p ≡ p · <b>COM</b> p ^ q ≡ q ^ p · <b>ASSOC</b> (p ^ q) ^ r ≡ p ^ (q ^ r) · <b>IDENT</b> p ^ V ≡ p, p v F ≡ p, p v V ≡ V, p ^ F ≡ F · <b>TAUT</b> p v ~p ≡ V · <b>CONTRAD</b> p ^ ~p ≡ F · <b>DIST</b> p ^ (q v r) ≡ (p ^ q) v (p ^ r) e p v (q ^ r) ≡ (p v q) ^ (p v r) · <b>DM</b> ~(p ^ q) ≡ ~p v ~q e ~(p v q) ≡ ~p ^ ~q · <b>COND</b> p → q ≡ ~p v q · <b>BICOND</b> p ↔ q ≡ (p → q) ^ (q → p) ≡ (p ^ q) v (~p ^ ~q) · <b>DN</b> ~~p ≡ p · <b>Contraposição</b> p → q ≡ ~q → ~p · <b>IE</b> p → (q → r) ≡ (p ^ q) → r.",
+          "table": [
+            ["Nome", "Equivalência"],
+            ["DIST", "p ^ (q v r) ≡ (p ^ q) v (p ^ r)"],
+            ["DM", "~(p v q) ≡ ~p ^ ~q"],
+            ["COND", "p → q ≡ ~p v q"],
+            ["Contraposição", "p → q ≡ ~q → ~p"],
+            ["IE", "p → (q → r) ≡ (p ^ q) → r"]
+          ],
+          "art": "lawsLadder",
+          "source": "Equivalências notáveis (IFES, Sistemas de Informação), linhas 1 a 13"
+        },
+        {
+          "kind": "theory",
+          "title": "Dois modos de provar uma equivalência",
+          "content": "1) <b>Por tabela</b>: monte A ↔ B; se a coluna final for toda V, então A ≡ B — e cada linha V vira uma implicação (A ⇒ B e B ⇒ A).<br/>2) <b>Por cadeia de leis</b>: parta de um lado, reescreva linha a linha citando a lei usada (COND, DM, DIST...), como no exemplo do item 7a.<br/>Armadilha: duas fórmulas equivalentes <i>juntas por ^</i> não produzem tautologia — (p → q) ^ (~p v q) repete a coluna VFVV de p → q e continua contingência. O que é tautologia é a <i>bicondicional</i> ((p → q) ↔ (~p v q)).",
+          "table": [
+            ["Objeto", "O que a última coluna diz"],
+            ["A ≡ B", "A ↔ B é tautologia (colunas idênticas)"],
+            ["A ⇒ B", "A → B é tautologia"],
+            ["A ^ B com A ≡ B", "mesma coluna de A: contingência se A for"]
+          ],
+          "art": "truthColumns",
+          "source": "Equivalências notáveis, linha 9; adaptado de: Revisão III AVA, itens 3, 6 e 7a"
+        },
+        {
+          "kind": "multi",
+          "instruction": "Marque TODAS as fórmulas equivalentes a p → q:",
+          "options": [
+            "~p v q",
+            "~q → ~p",
+            "~(p ^ ~q)",
+            "q → p",
+            "~p → q",
+            "p ^ ~q"
+          ],
+          "formula": "p → q",
+          "correct": [0, 1, 2],
+          "mascot": "boole",
+          "say": "q → p é a recíproca: coluna V V F V.",
+          "explanation": "COND dá ~p v q (linha 9), Contraposição dá ~q → ~p (linha 12) e a negação da condicional, item 3a da revisão, dá ~(p ^ ~q). As três têm a coluna V F V V. q → p é a recíproca, ~p → q equivale a p v q, e p ^ ~q é justamente a negação de p → q.",
+          "source": "Equivalências notáveis, linhas 9 e 12; Revisão III AVA, itens 3a e 6d"
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Item 6d — monte a fórmula equivalente a ~(~p → ~q):",
+          "promptBox": "~( ~p → ~q )  ≡  ?",
+          "tokens": ["~p", "^", "q", "v", "→", "~q", "p"],
+          "correctSequence": ["~p", "^", "q"],
+          "check": "equiv",
+          "formula": "~p ^ q",
+          "hint": "Primeiro COND por dentro, depois DM por fora.",
+          "explanation": "Por dentro, ~p → ~q ≡ ~~p v ~q ≡ p v ~q (COND + dupla negação). Negando a disjunção por De Morgan: ~(p v ~q) ≡ ~p ^ ~~q ≡ ~p ^ q. Daí a resposta ser uma conjunção, com q afirmado — exatamente o item 6d da revisão.",
+          "source": "Revisão III AVA, item 6d; Equivalências notáveis, linhas 8, 9 e 11 (DM, COND, DN)"
+        },
+        {
+          "kind": "input",
+          "instruction": "Item 6e — reduza a fórmula e digite uma forma equivalente mais simples (letras p, q, r):",
+          "prompt": "~~(p v q) ^ ~(r → ~p)",
+          "formula": "p ^ r",
+          "accepted": ["p ^ r", "r ^ p", "p ^ (p v q) ^ r"],
+          "hint": "Comece por ~~(p v q) e por ~(r → ~p).",
+          "placeholder": "~(r → ~p) fica...",
+          "explanation": "~~(p v q) ≡ p v q (DN) e ~(r → ~p) ≡ r ^ ~~p ≡ r ^ p (negação da condicional). Juntando: (p v q) ^ r ^ p ≡ p ^ (p v q) ^ r, que é a resposta do item 6e; por absorção (p ^ (p v q) ≡ p) tudo se reduz a p ^ r.",
+          "source": "Revisão III AVA, item 6e; Equivalências notáveis, linhas 9 e 11"
+        },
+        {
+          "kind": "order",
+          "instruction": "Item 7a — coloque as linhas da demonstração na ordem em que elas se encadeiam (p: fluxo_ext > fluxo_int, q: pressão < 1000):",
+          "items": [
+            "p ^ ~(p ^ q)",
+            "≡ p ^ (~p v ~q)   (De Morgan)",
+            "≡ (p ^ ~p) v (p ^ ~q)   (Distributiva)",
+            "≡ F v (p ^ ~q)   (Contradição / complemento)",
+            "≡ p ^ ~q   (Identidade)"
+          ],
+          "art": "proofColumns",
+          "explanation": "DM quebra a negação da conjunção interna, DIST espalha o ^ externo, a linha (p ^ ~p) colapsa em F pela lei da contradição e F v X ≡ X devolve p ^ ~q. Em código: 'se fluxo_ext > fluxo_int e pressão ≥ 1000'.",
+          "source": "Revisão III AVA, item 7a (exemplo do fluxo_ext); Equivalências notáveis, linhas 4, 6, 7 e 8"
+        },
+        {
+          "kind": "code-blank",
+          "instruction": "Item 7b — reduza a condição do teste (p: idade > 21, q: sexo = \"F\") e complete o SE.",
+          "codePrefix": "SE  ",
+          "codeSuffix": "\n     faça o bloco de comandos A\nSENÃO\n     faça o bloco de comandos B",
+          "options": [
+            "idade ≤ 21",
+            "idade ≤ 21 ∧ sexo ≠ \"F\"",
+            "idade ≤ 21 ∨ sexo ≠ \"F\"",
+            "idade > 21 ∧ sexo = \"F\""
+          ],
+          "correctIndex": 0,
+          "explanation": "~(p v q) v (~p ^ q) ≡ (~p ^ ~q) v (~p ^ q) ≡ ~p ^ (~q v q) ≡ ~p ^ V ≡ ~p: De Morgan, distributiva e complemento. Em código sobra apenas ~(idade > 21), ou seja idade ≤ 21 — o sexo deixa de importar para o teste.",
+          "source": "Revisão III AVA, item 7b; Equivalências notáveis, linhas 4, 7 e 8"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Item 6c — complete a coluna final: ela é o teste por tabela de (p ^ q) → r ≡ p → (q → r).",
+          "vars": ["p", "q", "r"],
+          "formula": "((p → (q → r)) ↔ ((p ^ q) → r))",
+          "columnLabel": "(p → (q → r)) ↔ ((p ^ q) → r)",
+          "explanation": "A coluna sai toda V, o que prova a equivalência: é a lei de Importação-Exportação (linha 13). Sem parênteses, 'p ^ q → r' lê-se (p ^ q) → r porque ^ tem precedência sobre → — trocar essa leitura é o que faz a tabela deixar de fechar.",
+          "source": "Revisão III AVA, item 6c; Equivalências notáveis, linha 13 (IE)"
+        },
+        {
+          "kind": "circuit",
+          "instruction": "Item 8b — negando a condição 'título_livro = \"Cortiço\" ∨ autor = \"Machado de Assis\" ∨ editora = \"LTC\": quais entradas deixam ~(p v q v r) em V?",
+          "vars": ["p", "q", "r"],
+          "formula": "~(p v q v r)",
+          "target": "V",
+          "art": "circuit",
+          "explanation": "Só a última linha, p = q = r = F. Por De Morgan, ~(p v q v r) ≡ ~p ^ ~q ^ ~r, e uma conjunção acende apenas com todos os lados V: o teste negado exige título ≠ \"Cortiço\" <i>e</i> autor ≠ \"Machado de Assis\" <i>e</i> editora ≠ \"LTC\".",
+          "source": "Revisão III AVA, item 8b; Equivalências notáveis, linha 8 (DM)"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Esta relação vale?",
+          "statement": "'(p → q) ^ (~p v q)' é tautologia, porque os dois lados são equivalentes.",
+          "subtext": "Teste a linha p = V, q = F.",
+          "isTrue": false,
+          "mascot": "boole",
+          "say": "Equivalente ^ equivalente é só a própria fórmula.",
+          "explanation": "Os dois lados têm a mesma coluna V F V V, então a conjunção repete essa coluna: é contingência, F justamente na linha p = V, q = F. Tautologia é a bicondicional ((p → q) ↔ (~p v q)), cuja coluna é toda V — equivalência se testa com ↔, não com ^.",
+          "source": "adaptado de: Revisão III AVA, itens 3 e 6 (relação verificada com a tabela do motor)"
+        },
+        {
+          "kind": "match",
+          "instruction": "Ligue cada equivalência ao nome da lei que a folha usa na demonstração:",
+          "pairs": [
+            { "left": "p ^ (q v r) ≡ (p ^ q) v (p ^ r)", "right": "Distributiva (DIST)" },
+            { "left": "~(p v q) ≡ ~p ^ ~q", "right": "De Morgan (DM)" },
+            { "left": "p → q ≡ ~p v q", "right": "Condicional (COND)" },
+            { "left": "p → q ≡ ~q → ~p", "right": "Contraposição" },
+            { "left": "p → (q → r) ≡ (p ^ q) → r", "right": "Importação-Exportação (IE)" }
+          ],
+          "art": "lawsLadder",
+          "explanation": "Cada linha da folha tem nome e uso próprio na redução de testes: DIST espalha o conectivo, DM quebra a negação trocando ^ por v, COND derruba a seta, Contraposição inverte e nega os dois lados, IE junta ou separa premissas.",
+          "source": "Equivalências notáveis, linhas 7, 8, 9, 12 e 13"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Item 6b — a relação p → (q v r) ⇔ (p → q) ∨ (p → r) vale?",
+          "options": [
+            { "text": "Sim: por COND, os dois lados viram ~p v q v r.", "isCorrect": true },
+            { "text": "Não: a condicional não se distribui sobre a disjunção.", "isCorrect": false },
+            { "text": "Só quando q e r têm o mesmo valor lógico.", "isCorrect": false },
+            { "text": "Não: o lado direito é uma contradição.", "isCorrect": false }
+          ],
+          "explanation": "Esquerda: p → (q v r) ≡ ~p v (q v r). Direita: (~p v q) v (~p v r) ≡ ~p v q v r, por associativa e idempotência. Mesma coluna em toda linha, logo ⇔ vale. O par com ^ (item 6a) também vale pela distributiva ~p v (q ^ r) ≡ (~p v q) ^ (~p v r).",
+          "source": "Revisão III AVA, item 6b; Equivalências notáveis, linhas 1, 3 e 9"
+        },
+        {
+          "kind": "truth-grid",
+          "instruction": "Complete as células em branco da tabela que prova a linha 10 (BICOND).",
+          "headers": ["p", "q", "p → q", "q → p", "(p → q) ^ (q → p)", "p ↔ q"],
+          "rows": [
+            ["V", "V", "V", "V", { "ans": "V" }, { "ans": "V" }],
+            ["V", "F", "F", "V", { "ans": "F" }, { "ans": "F" }],
+            ["F", "V", "F", "V", { "ans": "F" }, { "ans": "F" }],
+            ["F", "F", "V", "F", { "ans": "F" }, { "ans": "V" }]
+          ],
+          "explanation": "As duas colunas finais coincidem linha a linha (V, F, F, V): é a prova de p ↔ q ≡ (p → q) ^ (q → p). A segunda metade da linha 10, (p ^ q) v (~p ^ ~q), produz a mesma coluna — e é ela que explica o bicondicional dar V só em VV e FF.",
+          "source": "Equivalências notáveis, linha 10 (BICOND); Revisão III AVA, item 2"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Esta relação vale?",
+          "statement": "(p ∨ q) ∧ (p ∧ q) ≡ (p ∧ q), como afirma o item 3b da revisão.",
+          "subtext": "Monte as quatro linhas na ordem canônica VV, VF, FV, FF.",
+          "isTrue": true,
+          "explanation": "As duas colunas são V F F F. Quando p ^ q é V, a disjunção p v q automaticamente é V, então a conjunção fica dominada pelo lado mais forte (caso de absorção); nas outras três linhas os dois lados já são F.",
+          "source": "Revisão III AVA, item 3b"
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Item 8c — monte a negação da condição '(assunto = \"redes\" ∨ assunto = \"teleinformática\") ∧ data_public > 20/12/1998':",
+          "promptBox": "~( (p v q) ^ r )  =  ?",
+          "tokens": ["(", "~p", "^", "~q", ")", "v", "~r", "→", "q"],
+          "correctSequence": ["(", "~p", "^", "~q", ")", "v", "~r"],
+          "check": "equiv",
+          "formula": "(~p ^ ~q) v ~r",
+          "hint": "De Morgan primeiro no ^ externo; depois no v interno.",
+          "art": "demorgan",
+          "explanation": "DM no ^ externo: ~((p v q) ^ r) ≡ ~(p v q) v ~r. DM outra vez na disjunção: ~(p v q) ≡ ~p ^ ~q. Daí (~p ^ ~q) v ~r — 'o assunto não é redes nem teleinformática, ou a data não é posterior a 20/12/1998'.",
+          "source": "Revisão III AVA, item 8c; Equivalências notáveis, linha 8 (DM)"
+        }
+      ]
+    },
+    {
+      "id": "ava_revisao_tabelas",
+      "title": "Tabelas-verdade e validade",
+      "unitTitle": "Revisão AVA — tabelas-verdade e validade",
+      "char": "turing",
+      "icon": "tableCells",
+      "steps": [
+        {
+          "kind": "theory",
+          "title": "2ⁿ linhas e a ordem canônica",
+          "content": "Uma proposição com n componentes simples tem 2ⁿ linhas: a primeira letra altera blocos de 2^(n-1) valores, a última altera de um em um. A ordem canônica vai de V…V até F…F, e a coluna da fórmula é a última a ser preenchida, conectivo por conectivo.<br/>Classificação pela coluna final: só V = <b>tautologia</b>; só F = <b>contradição</b>; V e F = <b>contingência</b>. Os itens 1, 2 e 3 da revisão e a questão 7 da Lista I são exatamente isso.",
+          "table": [
+            ["n", "Linhas", "Item da lista"],
+            ["1", "2", "p → ~p"],
+            ["2", "4", "(p ^ q) → ~p — Revisão, item 1"],
+            ["3", "8", "((p v q) v ~r) → (~p v r) — Lista I, 7a"],
+            ["4", "16", "(p → q) ^ (q → r) ^ (r → s) — Lista I, 1"]
+          ],
+          "art": "tree2n",
+          "source": "Alencar Filho, Cap. 3 (número de linhas e ordem das colunas); Lista I, questões 1 e 7; Revisão III AVA, itens 1 a 3"
+        },
+        {
+          "kind": "theory",
+          "title": "Valer por tabela: ⇒, ⇔ e o contraexemplo",
+          "content": "P ⇒ Q significa: nenhuma linha com P = V tem Q = F — equivalentemente, P → Q é tautologia. P ⇔ Q exige ⇒ nos dois sentidos, ou seja, colunas idênticas.<br/>Num argumento com várias premissas, junte-as por ^ e condicione à conclusão: [(p → q) ^ (q → r) ^ (r → s)] → (p → s).<br/>Uma única linha premissa V / conclusão F já derruba a relação. E fórmula contingente pode implicar algo — o item 1 da revisão é justamente um caso em que a relação impressa <i>não</i> vale.",
+          "table": [
+            ["Relação", "Teste pela tabela"],
+            ["P ⇒ Q", "P → Q é tautologia"],
+            ["P ⇔ Q", "P ↔ Q é tautologia (colunas iguais)"],
+            ["P ⇏ Q", "basta uma linha com P = V e Q = F"]
+          ],
+          "art": "argForm",
+          "source": "Alencar Filho, Cap. 5 (implicação lógica) e Cap. 10 (validade por tabela-verdade); Revisão III AVA, itens 1 e 3"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Item 2 — complete a coluna final de ((p ↔ q) ^ p) → q e decida a classe:",
+          "vars": ["p", "q"],
+          "formula": "((p ↔ q) ^ p) → q",
+          "columnLabel": "((p ↔ q) ^ p) → q",
+          "art": "bicondTable",
+          "explanation": "Sai V V V V: tautologia. A premissa (p ↔ q) ^ p só é V na linha VV, e nela q é V; nas outras três a premissa é F e a condicional vale por convenção. É o Modus Ponens lido pelo bicondicional, que tem duas condicionais dentro.",
+          "source": "Revisão III AVA, item 2"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Ainda o item 2 — o que a tabela de ((p ↔ q) ^ p) → q diz sobre a relação entre premissa e conclusão?",
+          "options": [
+            { "text": "Vale ((p ↔ q) ^ p) ⇒ q, porque a condicional associada é tautologia.", "isCorrect": true },
+            { "text": "Vale q ⇒ (p ↔ q): a conclusão devolve a premissa.", "isCorrect": false },
+            { "text": "As duas fórmulas são equivalentes: valem ⇔ nos dois sentidos.", "isCorrect": false },
+            { "text": "A fórmula é contingência, porque p ↔ q pode ser F.", "isCorrect": false }
+          ],
+          "explanation": "Tautologia da condicional dá apenas a implicação num sentido. A recíproca falha na linha p = F, q = V: q é V e (p ↔ q) ^ p é F. E as colunas não são iguais — (p ↔ q) ^ p dá V F F F, q dá V F V F —, logo não há ⇔.",
+          "source": "Revisão III AVA, item 2; Alencar Filho, Cap. 5 (P ⇒ Q se e somente se P → Q é tautológica)"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Item 1 — antes de julgar a implicação, complete a coluna de (p ^ q) → ~p:",
+          "vars": ["p", "q"],
+          "formula": "(p ^ q) → ~p",
+          "columnLabel": "(p ^ q) → ~p",
+          "art": "truthColumns",
+          "explanation": "A coluna é F V V V: só F na linha p = V, q = V (antecedente V e ~p F). É contingência — e a mesma coluna de ~p v ~q, porque (p ^ q) → ~p ≡ ~(p ^ q) v ~p ≡ ~p v ~q, por COND e De Morgan.",
+          "source": "Revisão III AVA, item 1; Equivalências notáveis, linhas 8 e 9"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Esta relação vale, como está impresso no item 1?",
+          "statement": "((p ^ q) → ~p) ⇒ (~p v q).",
+          "subtext": "Compare coluna a coluna: F V V V contra V F V V.",
+          "isTrue": false,
+          "mascot": "turing",
+          "say": "Uma linha premissa V / conclusão F já derruba.",
+          "explanation": "Não vale. Na linha p = V, q = F a premissa é V (o antecedente p ^ q é F, e F → qualquer coisa é V) enquanto ~p v q é F. Com a outra colocação de parênteses que o enunciado admite, p ^ (q → ~p) ≡ p ^ ~q, essa mesma linha também derruba a relação.",
+          "source": "adaptado de: Revisão III AVA, item 1 (relação corrigida pelo motor do app)"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Com A = (p ^ q) → ~p, assinale a única consequência válida entre as opções:",
+          "options": [
+            { "text": "A ⇒ (~p v ~q).", "isCorrect": true },
+            { "text": "A ⇒ (~p v q).", "isCorrect": false },
+            { "text": "A ⇒ (~p ^ ~q).", "isCorrect": false },
+            { "text": "A ⇒ p.", "isCorrect": false }
+          ],
+          "explanation": "A ≡ ~p v ~q, então a implicação vale — na verdade nos dois sentidos, porque as colunas são idênticas (F V V V). ~p v q é F na linha p = V, q = F onde A é V; ~p ^ ~q e p falham na linha p = F, q = V, em que A já é V.",
+          "source": "adaptado de: Revisão III AVA, item 1 (conclusão correta); Equivalências notáveis, linhas 8 e 9"
+        },
+        {
+          "kind": "circuit",
+          "instruction": "Item 3a — quais linhas acendem a saída de ~(p → q)? É a coluna que prova ~(p → q) ≡ p ^ ~q.",
+          "vars": ["p", "q"],
+          "formula": "~(p → q)",
+          "target": "V",
+          "art": "circuit",
+          "explanation": "Só a linha p = V, q = F: negar uma condicional é manter o antecedente e negar o consequente. As outras três linhas dão F, exatamente como a coluna de p ^ ~q — por isso a relação do item 3a vale.",
+          "source": "Revisão III AVA, item 3a; Alencar Filho, Cap. 7, §4 (negação da condicional)"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Lista I, questão 7a — complete a coluna e classifique ((p v q) v ~r) → (~p v r):",
+          "vars": ["p", "q", "r"],
+          "formula": "((p v q) v ~r) → (~p v r)",
+          "columnLabel": "((p v q) v ~r) → (~p v r)",
+          "explanation": "A coluna é V, F, V, F, V, V, V, V: fica F nas duas linhas com p = V e r = F (VVF e VFF), em que a antecedente (p v q) v ~r é V mas ~p v r é F. Como a coluna traz V e F, a fórmula é contingência, não tautologia.",
+          "source": "Lista I, questão 7a"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Lista I, questão 7b — classifique ((p ^ q) v r) → (p ^ (q v ~r)):",
+          "options": [
+            { "text": "Contingência: em p = F, q = V, r = V a premissa é V e a conclusão, F.", "isCorrect": true },
+            { "text": "Tautologia, pois (p ^ q) v r ≡ p ^ (q v r).", "isCorrect": false },
+            { "text": "Contradição: premissa e conclusão nunca são V na mesma linha.", "isCorrect": false },
+            { "text": "Tautologia: quando r = F, as duas fórmulas coincidem.", "isCorrect": false }
+          ],
+          "explanation": "A coluna é V V F V F V F V — F sempre que r = V e o lado direito falha (linhas VFV, FVV, FFV). A distributiva correta de (p ^ q) v r é (p v r) ^ (q v r), não p ^ (q v r): é essa troca que faz a segunda alternativa parecer tautologia.",
+          "source": "Lista I, questão 7b; Equivalências notáveis, linha 7 (DIST)"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Lista I, questão 7c — complete a coluna de ((~p v q) ↔ (p → q)) v p:",
+          "vars": ["p", "q"],
+          "formula": "((~p v q) ↔ (p → q)) v p",
+          "columnLabel": "((~p v q) ↔ (p → q)) v p",
+          "explanation": "Sai V V V V: tautologia. Por COND, ~p v q é a própria p → q, então o bicondicional entre elas já é V em toda linha — o 'v p' final nem chega a decidir nada. Uma disjunção com um lado tautológico é tautologia.",
+          "source": "Lista I, questão 7c; Equivalências notáveis, linha 9 (COND)"
+        },
+        {
+          "kind": "counterexample",
+          "instruction": "A relação (p v q) ⇒ p é a recíproca da válida p ⇒ (p v q) (Lista I, 2a). Toque na linha que serve de contraexemplo:",
+          "items": [
+            { "id": 1, "shape": "circle", "color": "blue", "label": "p=V q=V" },
+            { "id": 2, "shape": "square", "color": "blue", "label": "p=V q=F" },
+            { "id": 3, "shape": "square", "color": "purple", "label": "p=F q=V", "isCounter": true },
+            { "id": 4, "shape": "circle", "color": "red", "label": "p=F q=F" }
+          ],
+          "explanation": "Com p = F e q = V a premissa p v q é V e a conclusão p é F: é a única linha que quebra a implicação, e basta ela. O item 2a pede o outro sentido, p ⇒ p v q, que vale — se p é V, a disjunção é V em qualquer caso.",
+          "source": "adaptado de: Lista I, questão 2a; Alencar Filho, Cap. 5, §3"
+        },
+        {
+          "kind": "truth-grid",
+          "instruction": "Item 3c — preencha as células em branco da tabela de ~(p ^ q) e p → ~q:",
+          "headers": ["p", "q", "p ^ q", "~(p ^ q)", "p → ~q"],
+          "rows": [
+            ["V", "V", "V", { "ans": "F" }, { "ans": "F" }],
+            ["V", "F", "F", { "ans": "V" }, { "ans": "V" }],
+            ["F", "V", "F", { "ans": "V" }, { "ans": "V" }],
+            ["F", "F", "F", { "ans": "V" }, { "ans": "V" }]
+          ],
+          "art": "truthColumns",
+          "explanation": "As duas colunas finais ficam F V V V, idênticas: é a prova por tabela de p → ~q ≡ ~(p ^ q). A condicional só é F na linha p = V, q = V, que é justamente a única linha em que p ^ q é V.",
+          "source": "Revisão III AVA, item 3c; Equivalências notáveis, linhas 8 e 9"
+        },
+        {
+          "kind": "multi",
+          "instruction": "Marque TODAS as tautologias — cada uma certifica uma implicação ou equivalência válida da revisão:",
+          "options": [
+            "(p → q) ^ (~p v q)",
+            "((p ↔ q) ^ p) → q",
+            "(p ^ q) → ~p",
+            "~~p ↔ p",
+            "p → (q → p)"
+          ],
+          "correct": [1, 3, 4],
+          "mascot": "turing",
+          "say": "Equivalente ^ equivalente não dá tautologia.",
+          "explanation": "A primeira é contingência (V F V V): conjugar duas fórmulas equivalentes por ^ repete a coluna delas. A terceira, do item 1, dá F V V V. Restam as tautologias — o Modus Ponens via bicondicional do item 2, a dupla negação em ↔ e a condicional que repete p no consequente.",
+          "source": "adaptado de: Revisão III AVA, itens 1 e 2; Lista I, questão 7"
+        },
+        {
+          "kind": "order",
+          "instruction": "Ordene o procedimento para verificar P ⇒ Q por tabela-verdade, como nos itens 1 a 3 da revisão:",
+          "items": [
+            "Liste as 2ⁿ linhas na ordem canônica, de V…V a F…F",
+            "Abra uma coluna para P e outra para Q",
+            "Marque as linhas em que P é V",
+            "Nessas linhas, confira se Q também é V",
+            "Se aparecer linha com P = V e Q = F, a implicação não vale"
+          ],
+          "art": "condTable",
+          "explanation": "É o teste do Cap. 5: P ⇒ Q exatamente quando P → Q é tautologia. Aplicado ao item 1, ele reprova a relação impressa na linha p = V, q = F e aprova ((p ^ q) → ~p) ⇒ (~p v ~q), que é a consequência correta.",
+          "source": "Revisão III AVA, item 1; Alencar Filho, Cap. 5 e Cap. 10"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Lista I, questão 1 — com P = (p → q) ^ (q → r) ^ (r → s) e Q = p → s, o que a tabela de 16 linhas mostra?",
+          "options": [
+            { "text": "P ⇒ Q vale (item 1a); P ⇔ Q não vale (1b): Q é V e P é F em p = V, q = V, r = F, s = V.", "isCorrect": true },
+            { "text": "Valem os dois sentidos: as colunas de P e Q coincidem linha a linha.", "isCorrect": false },
+            { "text": "Só Q ⇒ P vale: a cadeia de condicionais é mais forte que p → s.", "isCorrect": false },
+            { "text": "Nenhum vale: P é contradição e nunca chega a V.", "isCorrect": false }
+          ],
+          "explanation": "P é V em cinco linhas (VVVV, FVVV, FFVV, FFFV, FFFF) e em todas s é V, o que faz p → s ser V — logo P ⇒ Q vale, o silogismo hipotético aplicado duas vezes. Para ⇔ faltaria o outro lado: com p = V, q = V, r = F, s = V a conclusão Q é V, mas (q → r) é F e P fica F. P também não é contradição.",
+          "source": "Lista I, questões 1a e 1b"
+        }
+      ]
+    }
+  ]
+}

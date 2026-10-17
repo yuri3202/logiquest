@@ -1,0 +1,415 @@
+{
+  "lessons": [
+    {
+      "id": "c17_quant_multi",
+      "title": "Quantificação com mais de uma variável",
+      "unitTitle": "Capítulo 17 — Quantificação de sentenças abertas com mais de uma variável",
+      "char": "sofia",
+      "icon": "layerGroup",
+      "steps": [
+        {
+          "kind": "theory",
+          "title": "Quantificação parcial: um quantificador não basta",
+          "content": "Uma sentença aberta com duas variáveis pode perder uma variável de cada vez. Com A = {1, 2, 3, 4, 5} como universo de x e y, a expressão (∃x ∈ A)(2x + y < 7) NÃO é proposição: seu valor lógico já não depende de x (variável aparente), mas ainda depende de y. É uma sentença aberta em y, com conjunto-verdade {1, 2, 3, 4} — somente para y = 5 não existe x em A com 2x + y < 7. Regra geral: cada quantificador elimina uma variável livre e a aplicação sucessiva acaba transformando a sentença aberta em proposição.",
+          "table": null,
+          "art": "openSentence",
+          "source": "Alencar Filho, Cap. 17, item 1 — Quantificação parcial"
+        },
+        {
+          "kind": "theory",
+          "title": "As quatro montagens de dois quantificadores",
+          "content": "Sentença aberta com todas as variáveis quantificadas é proposição (Cap. 17, item 2). Há quatro montagens com duas variáveis e elas NÃO são intercambiáveis: quantificadores da mesma espécie comutam, quantificadores de espécies diferentes em geral não comutam. O ponto do capítulo: (∃y)(∀x) P(x, y) é mais forte que (∀x)(∃y) P(x, y) — a primeira implica a segunda (exercício 9), a recíproca é falsa.",
+          "table": [
+            ["Forma", "Como se lê", "O que exige"],
+            ["(∀x)(∀y) P(x, y)", "para todo x e para todo y", "P verdadeira em todos os pares"],
+            ["(∃x)(∃y) P(x, y)", "existem x e y tais que", "basta um par"],
+            ["(∀x)(∃y) P(x, y)", "para cada x existe um y", "o y pode mudar com x"],
+            ["(∃y)(∀x) P(x, y)", "existe um y que vale para todo x", "um único y serve para todos"]
+          ],
+          "art": "nestedQuant",
+          "source": "Alencar Filho, Cap. 17, itens 2 e 3; exercício 9"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Com A = {1, 2, 3, 4, 5} como universo de x e y, qual é o conjunto-verdade da sentença aberta (∃x ∈ A)(2x + y < 7)?",
+          "options": [
+            { "text": "{1, 2, 3, 4}", "isCorrect": true },
+            { "text": "{1, 2}", "isCorrect": false },
+            { "text": "{1, 2, 3, 4, 5}", "isCorrect": false },
+            { "text": "É proposição, não tem conjunto-verdade", "isCorrect": false }
+          ],
+          "explanation": "Para um y fixo basta escolher o menor x disponível: 2·1 + y < 7 dá y < 5, logo y ∈ {1, 2, 3, 4}. Só y = 5 fica de fora, porque 2x ≥ 2 para todo x de A; como y continua livre, a expressão é sentença aberta.",
+          "source": "Alencar Filho, Cap. 17, item 1",
+          "art": "openSentence"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Julgue: a expressão abaixo é uma sentença aberta e qual é o seu conjunto-verdade.",
+          "statement": "(∀y ∈ A)(2x + y < 10), com A = {1, 2, 3, 4, 5}, é uma sentença aberta em x cujo conjunto-verdade é {1, 2}.",
+          "subtext": "Dica: o pior caso é o maior y do universo.",
+          "isTrue": true,
+          "explanation": "Quantificar y deixa x livre, então continua sendo sentença aberta. Para valer com todo y de A é preciso 2x + 5 < 10, ou seja x ≤ 2: V = {1, 2}. Só x = 1 e x = 2 servem.",
+          "source": "Alencar Filho, Cap. 17, item 1"
+        },
+        {
+          "kind": "choice",
+          "instruction": "A = {1, 2, 3, 4}, B = {0, 2, 4, 6, 8} e P(x, y): 2x + y = 8. Marque a ÚNICA proposição verdadeira.",
+          "options": [
+            { "text": "(∀x ∈ A)(∃y ∈ B)(2x + y = 8)", "isCorrect": true },
+            { "text": "(∀y ∈ B)(∃x ∈ A)(2x + y = 8)", "isCorrect": false },
+            { "text": "(∃y ∈ B)(∀x ∈ A)(2x + y = 8)", "isCorrect": false },
+            { "text": "(∃x ∈ A)(∀y ∈ B)(2x + y = 8)", "isCorrect": false }
+          ],
+          "explanation": "Para x = 1, 2, 3, 4 funcionam y = 6, 4, 2, 0, todos em B — a universal-existencial é V. Com y = 8 a equação exigiria x = 0 ∉ A, e nem y fixo nem x fixo satisfaz 2x + y = 8 para todos os elementos do outro conjunto.",
+          "source": "Alencar Filho, Cap. 17, item 2, exemplo 3"
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Monte a fórmula com os blocos:",
+          "promptBox": "H = {Jorge, Cláudio, Paulo}, M = {Sucly, Carmen}, p(x, y): 'x é irmão de y' — 'Para todo x de H existe pelo menos um y de M tal que x é irmão de y'",
+          "tokens": ["(∀x ∈ H)", "(∃y ∈ M)", "p(x, y)", "(∃y ∈ M)", "(∀x ∈ H)", "q(x, y)", "(∀x ∈ M)"],
+          "correctSequence": ["(∀x ∈ H)", "(∃y ∈ M)", "p(x, y)"],
+          "hint": "Quem é 'todo' abre a fórmula; o predicado mantém a ordem x, y.",
+          "explanation": "A ordem dos blocos é a ordem de leitura: o quantificador de x vem primeiro, depois o de y, depois p(x, y). Se (∃y ∈ M) abrir a fórmula, a proposição passa a dizer que uma única mulher de M é irmã de todos os homens de H.",
+          "source": "Alencar Filho, Cap. 17, item 2, exemplo 1"
+        },
+        {
+          "kind": "match",
+          "instruction": "Ligue cada fórmula à frase que ela diz.",
+          "pairs": [
+            { "left": "(∀x ∈ H)(∃y ∈ M) p(x, y) — p: 'x é irmão de y'", "right": "Cada homem de H é irmão de Suely ou de Carmen." },
+            { "left": "(∃y ∈ M)(∀x ∈ H) p(x, y)", "right": "Pelo menos uma das mulheres de M é irmã de todos os homens de H." },
+            { "left": "(∀x)(∃y) gosta(x, y)", "right": "Todos gostam de alguém." },
+            { "left": "(∃y)(∀x) gosta(x, y)", "right": "Existe alguém de quem todo mundo gosta." },
+            { "left": "(∃x)(∃y) ama(x, y)", "right": "Alguém ama alguém." }
+          ],
+          "explanation": "Em (∀x)(∃y) o y pode depender do x ('todos gostam de alguém'); em (∃y)(∀x) um só y serve para todos ('existe alguém de quem todo mundo gosta'). Os dois primeiros pares vêm do exemplo das famílias H e M do Cap. 17.",
+          "source": "Alencar Filho, Cap. 17, item 2, exemplo 1; Aula Quantificação Múltipla (Profa. Kelly Gazolli), slide 'Todos gostam de alguém'; Lista Quantificação Múltipla 2022, item b"
+        },
+        {
+          "kind": "choice",
+          "instruction": "x varia sobre os alunos e y sobre os orientadores. O que dizem, respectivamente, (∀x)(∃y) O(x, y) e (∃y)(∀x) O(x, y)?",
+          "options": [
+            { "text": "'Todo aluno tem um orientador' e 'existe um orientador que orienta todos os alunos'.", "isCorrect": true },
+            { "text": "'Existe um aluno que tem todos os orientadores' e 'todo orientador orienta algum aluno'.", "isCorrect": false },
+            { "text": "'Algum aluno tem um orientador' e 'todo orientador orienta todos os alunos'.", "isCorrect": false },
+            { "text": "'Todo aluno tem um orientador' e 'todo aluno tem todos os orientadores'.", "isCorrect": false }
+          ],
+          "mascot": "sofia",
+          "say": "∀ antes de ∃: o orientador pode mudar por aluno.",
+          "explanation": "'Todo aluno tem um orientador' = para cada x há um y (cada um com o seu): (∀x)(∃y). 'Existe um orientador de todos os alunos' exige um único y para todo x: (∃y)(∀x). São proposições diferentes — quantificadores de espécies diferentes não comutam.",
+          "source": "adaptado de: Alencar Filho, Cap. 17, item 3 — Comutatividade dos quantificadores"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Julgue a implicação entre as duas montagens.",
+          "statement": "(∃y)(∀x) P(x, y) implica (∀x)(∃y) P(x, y), mas (∀x)(∃y) P(x, y) não implica (∃y)(∀x) P(x, y).",
+          "subtext": "Contra-exemplo do livro: P(x, y) = 'y > x', domínio ℕ = {1, 2, 3, …}.",
+          "isTrue": true,
+          "explanation": "Se um único y serve para todo x, então cada x tem pelo menos um y — é o que o exercício 9(i) manda demonstrar. A recíproca falha: (∀x)(∃y)(y > x) é V em ℕ e (∃y)(∀x)(y > x) é F.",
+          "source": "Alencar Filho, Cap. 17, exercício 9(i) e item 3, exemplo II"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Julgue o valor lógico nos dois domínios.",
+          "statement": "(x + y)² > x² + y² é verdadeira para todos x, y ∈ ℕ = {1, 2, 3, …} e falsa quando x e y correm em ℝ.",
+          "subtext": "Lembre do produto notável: (x + y)² = x² + 2xy + y².",
+          "isTrue": true,
+          "mascot": "sofia",
+          "say": "O 2xy decide: em ℝ ele pode ser negativo.",
+          "explanation": "Restando 2xy > 0, nos naturais positivos isso sempre vale, como afirma o exemplo 2 do Cap. 17. Em ℝ basta x = 1 e y = −1: (0)² > 1 + 1 é falso.",
+          "source": "Alencar Filho, Cap. 17, item 2, exemplo 2"
+        },
+        {
+          "kind": "order",
+          "instruction": "Coloque na ordem: como (∃x ∈ A)(2x + y < 7) vira uma proposição, com A = {1, 2, 3, 4, 5}.",
+          "items": [
+            "P(x, y): 2x + y < 7 é sentença aberta nas duas variáveis.",
+            "(∃x ∈ A)(2x + y < 7): x desaparece (variável aparente), mas a expressão ainda é aberta em y, com V = {1, 2, 3, 4}.",
+            "(∃x ∈ A)(∃y ∈ A)(2x + y < 7): agora todas as variáveis estão quantificadas.",
+            "Valor lógico V: com x = 1 e y = 1 temos 2 + 1 = 4 < 7."
+          ],
+          "mascot": "sofia",
+          "say": "Um quantificador por variável — aí vira proposição.",
+          "explanation": "Cada quantificador aplicado a uma das variáveis transforma a sentença aberta noutra com menos uma variável livre; com todas quantificadas a expressão assume um dos valores lógicos V ou F.",
+          "source": "Alencar Filho, Cap. 17, itens 1 e 2"
+        },
+        {
+          "kind": "counterexample",
+          "instruction": "Toque no par (x, y) que derruba (∀x)(∀y)(x² + y² < 12), com x e y em A = {1, 2, 3}.",
+          "items": [
+            { "id": 1, "shape": "square", "color": "blue", "label": "x = 1, y = 1 → 1 + 1" },
+            { "id": 2, "shape": "circle", "color": "blue", "label": "x = 2, y = 2 → 4 + 4" },
+            { "id": 3, "shape": "square", "color": "red", "label": "x = 3, y = 3 → 9 + 9", "isCounter": true },
+            { "id": 4, "shape": "circle", "color": "purple", "label": "x = 2, y = 1 → 4 + 1" },
+            { "id": 5, "shape": "square", "color": "blue", "label": "x = 3, y = 1 → 9 + 1" }
+          ],
+          "explanation": "Contra-exemplo de uma universal é um par que viola a desigualdade: 3² + 3² = 18 e 18 < 12 é falso. Os demais pares ficam abaixo de 12 (10, 8, 5, 2), o que mostra que a proposição do exercício 3c é F.",
+          "source": "Alencar Filho, Cap. 17, exercício 3, alínea c"
+        },
+        {
+          "kind": "truth-grid",
+          "instruction": "Marque V ou F em cada célula. Linha 1: (∀x)(∃y)(y > x). Linha 2: (∃y)(∀x)(y > x). Linha 3: (∀x)(∀y)((x + y)² > x² + y²).",
+          "headers": ["A = {1, 2, 3}", "ℕ = {1, 2, 3, …}", "ℝ"],
+          "rows": [
+            [{ "ans": "F" }, { "ans": "V" }, { "ans": "V" }],
+            [{ "ans": "F" }, { "ans": "F" }, { "ans": "F" }],
+            [{ "ans": "V" }, { "ans": "V" }, { "ans": "F" }]
+          ],
+          "mascot": "sofia",
+          "say": "Em A = {1, 2, 3} o maior x não tem y acima dele.",
+          "explanation": "Linha 1 é F em A porque x = 3 não tem y maior em A, e é V em ℕ e ℝ: basta tomar y = x + 1. Linha 2 pede um y acima de todos — F nos três domínios. Linha 3 vale nos positivos (sobra 2xy > 0) e cai em ℝ com x = 1, y = −1.",
+          "source": "Alencar Filho, Cap. 17, itens 2 e 3"
+        },
+        {
+          "kind": "multi",
+          "instruction": "A = {1, 2, 3} é o universo de x e y. Marque TODAS as proposições verdadeiras.",
+          "options": [
+            "(∃x)(∀y)(x² < y + 1)",
+            "(∀x)(∃y)(x² + y² < 12)",
+            "(∀x)(∀y)(x² + y² < 12)",
+            "(∀x)(∃y)(x² + 2y < 10)"
+          ],
+          "correct": [0, 1],
+          "explanation": "x = 1 satisfaz x² < y + 1 para todo y de A, e com y = 1 a desigualdade x² + y² < 12 vale para x = 1, 2, 3 (9 + 1 = 10). O par (3, 3) derruba a terceira (18 < 12) e x = 3 derruba a quarta, pois 9 + 2y < 10 não tem solução em A.",
+          "source": "Alencar Filho, Cap. 17, exercício 3, alíneas a, b, c e f",
+          "art": "setOps"
+        },
+        {
+          "kind": "venn",
+          "title": "Gatos e pardos: a região que a universal esvazia",
+          "instruction": "p(x): x é gato, q(x): x é pardo. Para que 'Todo gato é pardo', ou seja (∀x)(p(x) → q(x)), seja verdadeira, pinte a região que fica VAZIA.",
+          "targetRegion": "difference",
+          "explanation": "p(x) → q(x) só é falsa quando p(x) é V e q(x) é F, exatamente a região 'só p'. A universal não proíbe pardos que não são gatos (região 'só q') nem a interseção.",
+          "source": "adaptado de: Aula Quantificação Múltipla (Profa. Kelly Gazolli), slide 'Todos os gatos são pardos'",
+          "art": "vennQuant"
+        },
+        {
+          "kind": "theory",
+          "title": "Domínio não é detalhe: é a resposta",
+          "content": "A mesma fórmula muda de valor lógico quando muda o universo das variáveis, e em ℝ as existenciais dependem de o domínio excluir ou não o elemento problemático (o 0, por exemplo). O Cap. 17 pede sempre 'determinar o valor lógico (V ou F)' indicando o universo antes de qualquer julgamento — e as negações do exercício 8 se obtêm empurrando o '~' para dentro, um quantificador por vez.",
+          "table": [
+            ["Proposição", "Domínio", "Valor"],
+            ["(∀x)(∃y)(y > x)", "ℕ = {1, 2, 3, …}", "V"],
+            ["(∃y)(∀x)(y > x)", "ℕ = {1, 2, 3, …}", "F"],
+            ["(∀x)(∃y)(x · y = 1)", "ℝ", "F (x = 0 não tem y)"],
+            ["(∀x)(∃y)(x · y = 1)", "ℝ sem o 0", "V (y = 1/x)"],
+            ["(∀y)(∃x)(x + y = y)", "ℝ", "V (x = 0)"],
+            ["(∀x ∈ A)(∃y ∈ B)(2x + y = 8)", "A = {1,2,3,4}, B = {0,2,4,6,8}", "V"]
+          ],
+          "art": "setOps",
+          "source": "Alencar Filho, Cap. 17, item 3, exemplos; exercício 5, alíneas a e c"
+        }
+      ]
+    },
+    {
+      "id": "c17_quant_multi_traducao",
+      "title": "Tradução e negação com quantificadores múltiplos",
+      "unitTitle": "Capítulo 17 — Quantificação de sentenças abertas com mais de uma variável",
+      "char": "ada",
+      "icon": "language",
+      "steps": [
+        {
+          "kind": "theory",
+          "title": "Roteiro: da frase ao par de quantificadores",
+          "content": "A lista do curso traduz com um único domínio — 'o domínio é todo o mundo' —, então cada variável é um indivíduo e o predicado carrega o papel temático: ama(x, y) = 'x ama y'. Roteiro: (1) localize os dois quantificadores da frase; (2) 'todo A ... um/alguém' pede (∀x)(∃y), 'existe um ... que todo' pede (∃y)(∀x); (3) escreva o predicado com x e y na ordem certa, porque a voz passiva inverte os argumentos; (4) conectivo 'mas/e' é conjunção, 'se' é condicional.",
+          "table": [
+            ["Frase-tipo", "Fórmula", "Sentido"],
+            ["Todo A tem um B", "(∀x)(∃y) P(x, y)", "o B pode mudar conforme o A"],
+            ["Existe um B para todo A", "(∃y)(∀x) P(x, y)", "um único B serve para todos"],
+            ["Todo A é amado por alguém", "(∀x)(∃y) ama(y, x)", "passiva: x é o segundo argumento"],
+            ["(∀x)(∀y) P", "(∀y)(∀x) P", "iguais: podem comutar"],
+            ["(∀x)(∃y) P", "(∃y)(∀x) P", "diferentes: NÃO equivalem"]
+          ],
+          "art": "transMap",
+          "source": "Lista Quantificação Múltipla 2022, enunciado 'O domínio é todo o mundo'; Alencar Filho, Cap. 17, item 3"
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Traduza montando a fórmula com os blocos:",
+          "promptBox": "ama(x, y): x ama y. Domínio: todo o mundo — 'Todos amam alguém.'",
+          "tokens": ["(∀x)", "(∃y)", "(ama(x, y))", "(∀y)", "(∃x)", "(ama(y, x))", "~"],
+          "correctSequence": ["(∀x)", "(∃y)", "(ama(x, y))"],
+          "hint": "O 'todos' da frase é quem abre a fórmula.",
+          "explanation": "Para cada x existe um y que ele ama: (∀x)(∃y)(ama(x, y)). Como x é quem ama, o predicado é ama(x, y); adiantar o (∃y) daria 'existe alguém amado por todos'.",
+          "source": "Lista Quantificação Múltipla 2022, exercício 1, item a"
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Agora na voz passiva. Monte a fórmula:",
+          "promptBox": "ama(x, y): x ama y — 'Todos são amados por alguém.'",
+          "tokens": ["(∀x)", "(∃y)", "(ama(y, x))", "(ama(x, y))", "(∃x)", "(∀y)", "~"],
+          "correctSequence": ["(∀x)", "(∃y)", "(ama(y, x))"],
+          "hint": "Na passiva, x recebe o amor: o predicado é ama(y, x).",
+          "explanation": "Cada x é amado por algum y, então x é o segundo argumento: (∀x)(∃y)(ama(y, x)). Manter ama(x, y) leria 'todos amam alguém', o item a da mesma lista.",
+          "source": "Lista Quantificação Múltipla 2022, exercício 1, item c"
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Monte a fórmula desta frase, atente à ordem dos quantificadores:",
+          "promptBox": "ama(x, y): x ama y — 'Alguém é amado por todos.'",
+          "tokens": ["(∃x)", "(∀y)", "(ama(y, x))", "(∀x)", "(∃y)", "(ama(x, y))", "(ama(y, x))"],
+          "correctSequence": ["(∃x)", "(∀y)", "(ama(y, x))"],
+          "mascot": "ada",
+          "say": "'Alguém é amado por todos': o ∃ vem primeiro.",
+          "explanation": "Existe um x tal que todo y o ama: (∃x)(∀y)(ama(y, x)). Não equivale a (∀x)(∃y)(ama(x, y)) de 'todos amam alguém': quantificadores de espécies diferentes não comutam (Cap. 17, item 3).",
+          "source": "Lista Quantificação Múltipla 2022, exercício 1, item d"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Traduza: 'Todos amam alguém que não os ama' (domínio: todo o mundo).",
+          "options": [
+            { "text": "(∀x)(∃y) (ama(x, y) ^ ~ama(y, x))", "isCorrect": true },
+            { "text": "(∀x)(∃y) (ama(x, y) → ~ama(y, x))", "isCorrect": false },
+            { "text": "(∀x)(∃y) (ama(y, x) ^ ~ama(x, y))", "isCorrect": false },
+            { "text": "(∃x)(∀y) (ama(x, y) ^ ~ama(y, x))", "isCorrect": false },
+            { "text": "(∀x)(∀y) (ama(x, y) ^ ~ama(y, x))", "isCorrect": false }
+          ],
+          "explanation": "'Todo x ama algum y E esse y não devolve o amor': as duas coisas valem juntas para o mesmo par, então o conectivo interno é conjunção, não condicional. Trocar (∀x)(∃y) por (∃x)(∀y) faria um único x amar todo mundo.",
+          "source": "Lista Quantificação Múltipla 2022, exercício 1, item k"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Traduza: 'Todos amam alguém, mas ninguém ama todos.'",
+          "options": [
+            { "text": "(∀x)(∃y) ama(x, y) ^ ~(∃x)(∀y) ama(x, y)", "isCorrect": true },
+            { "text": "(∀x)(∃y) ama(x, y) ^ (∀x)(∀y) ~ama(x, y)", "isCorrect": false },
+            { "text": "(∀x)(∃y) ama(x, y) v ~(∃x)(∀y) ama(x, y)", "isCorrect": false },
+            { "text": "~(∀x)(∃y) ama(x, y) ^ (∃x)(∀y) ama(x, y)", "isCorrect": false }
+          ],
+          "explanation": "'Mas' é conjunção, então as duas partes se ligam por ^ e a segunda nega a inteira: 'ninguém ama todos' = ~(∃x)(∀y) ama(x, y). Trocar o ^ por v ou negar (∀x)(∃y) inverte o sentido da frase.",
+          "source": "Lista Quantificação Múltipla 2022, exercício 1, item m"
+        },
+        {
+          "kind": "match",
+          "instruction": "Ligue cada fórmula à frase da lista que ela traduz.",
+          "pairs": [
+            { "left": "(∃x)(∃y) ama(x, y)", "right": "Alguém ama alguém." },
+            { "left": "(∃x)(∃y) ~ama(x, y)", "right": "Alguém não ama todos." },
+            { "left": "(∀x) (filósofo(x) → (∃y) (livro(y) ^ gosta(x, y)))", "right": "Todo filósofo gosta de algum livro." },
+            { "left": "(∃y) (livro(y) ^ (∀x) (filósofo(x) → gosta(x, y)))", "right": "Há um livro do qual todos os filósofos gostam." },
+            { "left": "(∃y) (livro(y) ^ (∀x) (psicólogo(x) → ~gosta(x, y)))", "right": "Há um livro do qual nenhum psicólogo gosta." }
+          ],
+          "explanation": "Os dois pares de filósofos são a mesma matéria com quantificadores trocados: (∀x)(∃y) não equivale a (∃y)(∀x), e a universal entra com condicional enquanto a existencial entra com conjunção. 'Alguém não ama todos' exige só um par em que o amor falta.",
+          "source": "Lista Quantificação Múltipla 2022, exercício 1, itens b, f, q, r e t"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Julgue a tradução proposta pelo slide da aula.",
+          "statement": "'Nem todos os gatos são brancos, nem há gatos maiores do que Miau' se traduz por ~(∀x) (gato(x) → branco(x)) ^ ~(∃x) (gato(x) ^ maior(x, Miau)).",
+          "subtext": "Cada 'nem' nega uma das sentenças quantificadas.",
+          "isTrue": true,
+          "explanation": "'Nem todos são brancos' nega a universal e 'nem há gatos maiores que Miau' nega a existencial; as duas negações ficam ligadas por conjunção, como na representação do slide.",
+          "source": "adaptado de: Aula Quantificação Múltipla (Profa. Kelly Gazolli), slide 'Nem todos os gatos são brancos'"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Traduza: 'Há alguém que não gosta de ninguém'.",
+          "options": [
+            { "text": "(∃x)(∀y) ~gosta(x, y)", "isCorrect": true },
+            { "text": "(∀x)(∃y) ~gosta(x, y)", "isCorrect": false },
+            { "text": "(∃x)(∃y) ~gosta(x, y)", "isCorrect": false },
+            { "text": "(∀y)(∃x) ~gosta(x, y)", "isCorrect": false },
+            { "text": "(∃x)(∀y) ~gosta(y, x)", "isCorrect": false }
+          ],
+          "mascot": "ada",
+          "say": "'Ninguém' = 'todo mundo não': vira ∀y com ~.",
+          "explanation": "O slide dá as duas formas equivalentes (∃x)~(∃y) gosta(x, y) e (∃x)(∀y)~gosta(x, y): 'não gosta de ninguém' é negar a existencial, o que produz uma universal. (∃x)(∃y)~gosta(x, y) é mais fraco — 'há alguém que não gosta de algumas pessoas'.",
+          "source": "adaptado de: Aula Quantificação Múltipla (Profa. Kelly Gazolli), slide 'Há alguém que não gosta de ninguém'"
+        },
+        {
+          "kind": "theory",
+          "title": "Negação por dentro: De Morgan para quantificadores",
+          "content": "A negação de uma proposição com vários quantificadores sai aplicando sucessivamente as regras de um só quantificador, de fora para dentro: ~(∀x) P ≡ (∃x) ~P e ~(∃x) P ≡ (∀x) ~P. Um quantificador é trocado por vez, e o '~' só encosta no predicado no último passo. Se dentro houver condicional, use ~(p → q) ≡ p ^ ~q; se houver disjunção ou conjunção, use De Morgan.",
+          "table": [
+            ["Negação de", "Fica", "Casos do Cap. 17"],
+            ["(∀x)(∀y) P(x, y)", "(∃x)(∃y) ~P(x, y)", "item 4 (1)"],
+            ["(∃x)(∃y) P(x, y)", "(∀x)(∀y) ~P(x, y)", "item 4 (1)"],
+            ["(∀x)(∃y) P(x, y)", "(∃x)(∀y) ~P(x, y)", "item 4 (2)"],
+            ["(∃x)(∀y) P(x, y)", "(∀x)(∃y) ~P(x, y)", "item 4 (2)"],
+            ["(∃x)(∃y)(∀z) P(x, y, z)", "(∀x)(∀y)(∃z) ~P(x, y, z)", "item 4 (3)"]
+          ],
+          "art": "quantNegation",
+          "source": "Alencar Filho, Cap. 17, item 4 — Negação de proposições com quantificadores"
+        },
+        {
+          "kind": "order",
+          "instruction": "Coloque na ordem as linhas da negação de (∀x)(∃y) (p(x) v q(y)).",
+          "items": [
+            "~(∀x)(∃y) (p(x) v q(y))",
+            "(∃x) ~(∃y) (p(x) v q(y))",
+            "(∃x)(∀y) ~(p(x) v q(y))",
+            "(∃x)(∀y) (~p(x) ^ ~q(y))"
+          ],
+          "mascot": "ada",
+          "say": "Troque um quantificador por vez, de fora para dentro.",
+          "explanation": "Primeiro ~(∀x) vira (∃x)~, depois ~(∃y) vira (∀y)~; com o '~' encostado no predicado, De Morgan sobre a disjunção dá ~p(x) ^ ~q(y). Essa é a negação pedida no exercício 7a.",
+          "source": "Alencar Filho, Cap. 17, exercício 7a",
+          "art": "quantNegation"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Dê a negação de (∃x)(∀y) (p(x) v ~q(y)):",
+          "options": [
+            { "text": "(∀x)(∃y) (~p(x) ^ q(y))", "isCorrect": true },
+            { "text": "(∀x)(∃y) (~p(x) v ~q(y))", "isCorrect": false },
+            { "text": "(∀x)(∀y) (~p(x) ^ q(y))", "isCorrect": false },
+            { "text": "(∃x)(∀y) (~p(x) ^ q(y))", "isCorrect": false },
+            { "text": "(∀x)(∃y) (~p(x) ^ ~q(y))", "isCorrect": false }
+          ],
+          "explanation": "Nega de fora para dentro: ~(∃x) dá (∀x)~, ~(∀y) dá (∃y)~ e ~(p(x) v ~q(y)) dá ~p(x) ^ ~~q(y) = ~p(x) ^ q(y). Manter (∀y) é negar só o primeiro quantificador; deixar a disjunção é esquecer De Morgan.",
+          "source": "Alencar Filho, Cap. 17, exercício 7b",
+          "art": "quantNegation"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Dê a negação de (∀x)(∃y) (p(x, y) → q(y)):",
+          "options": [
+            { "text": "(∃x)(∀y) (p(x, y) ^ ~q(y))", "isCorrect": true },
+            { "text": "(∃x)(∀y) (p(x, y) → ~q(y))", "isCorrect": false },
+            { "text": "(∃x)(∀y) (~p(x, y) v ~q(y))", "isCorrect": false },
+            { "text": "(∀x)(∃y) (p(x, y) ^ ~q(y))", "isCorrect": false },
+            { "text": "(∃x)(∀y) (~p(x, y) ^ q(y))", "isCorrect": false }
+          ],
+          "explanation": "Os quantificadores trocam, (∀x)(∃y) → (∃x)(∀y), e a negação da condicional é ~(p → q) ≡ p ^ ~q: o antecedente fica positivo e só o consequente é negado. Negar o antecedente também é o erro da última opção.",
+          "source": "Alencar Filho, Cap. 17, exercício 7d"
+        },
+        {
+          "kind": "multi",
+          "instruction": "Marque TODAS as expressões equivalentes à negação de (∀x)(∃y) (p(x) v q(y)).",
+          "options": [
+            "(∃x)(∀y) (~p(x) ^ ~q(y))",
+            "(∃x)(∀y) ~(p(x) v q(y))",
+            "(∀x)(∃y) (~p(x) ^ ~q(y))",
+            "(∃x)(∀y) (~p(x) v ~q(y))",
+            "(∃x)(∃y) (~p(x) ^ ~q(y))"
+          ],
+          "correct": [0, 1],
+          "explanation": "A regra do item 4(2) dá ~(∀x)(∃y) P ≡ (∃x)(∀y) ~P, e a última linha da cadeia aplica De Morgan ao predicado, ficando ~p(x) ^ ~q(y). Conservar (∀x)(∃y), deixar a disjunção ou não inverter o ∃y produz fórmulas mais fortes ou mais fracas.",
+          "source": "Alencar Filho, Cap. 17, item 4 (2) e exercício 7a"
+        },
+        {
+          "kind": "venn",
+          "title": "Estudantes e livros",
+          "instruction": "p(x): x é estudante, q(x): x gosta de livros. Para que 'Nenhum estudante gosta de livros' seja verdadeira, pinte a região que fica VAZIA.",
+          "targetRegion": "intersection",
+          "explanation": "'Nenhum P é Q' é (∀x)(p(x) → ~q(x)), que proíbe qualquer elemento em p(x) ^ q(x): a interseção. Simbolizando como na lista: (∀x)(estudante(x) → (∀y)(livro(y) → ~gosta(x, y))).",
+          "source": "Lista Quantificação Múltipla 2022, exercício 1, item u",
+          "art": "vennQuant"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Julgue a negação em português.",
+          "statement": "A negação de 'existe um orientador de todos os alunos' é 'para todo orientador existe um aluno que ele não orienta'.",
+          "subtext": "Formalmente: ~[(∃y)(∀x) O(x, y)] ≡ (∀y)(∃x) ~O(x, y).",
+          "isTrue": true,
+          "mascot": "ada",
+          "say": "'Não existe' inverte o ∃: vira 'todo ... não'.",
+          "explanation": "Um quantificador por vez: ~(∃y) vira (∀y)~ e ~(∀x) vira (∃x)~, resultando em (∀y)(∃x) ~O(x, y) — a leitura proposta. O erro é negar apenas o predicado ou manter (∃y)(∀x) na frente do '~'.",
+          "source": "Alencar Filho, Cap. 17, item 4 (2); par 'orientador de todos os alunos' do item 3",
+          "art": "nestedQuant"
+        }
+      ]
+    }
+  ]
+}

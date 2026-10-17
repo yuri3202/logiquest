@@ -1,0 +1,420 @@
+{
+  "lessons": [
+    {
+      "id": "c6_equivalencia",
+      "title": "Equivalência lógica, associadas e Scheffer",
+      "unitTitle": "Capítulo 6 — Equivalência lógica",
+      "char": "boole",
+      "icon": "scaleBalanced",
+      "steps": [
+        {
+          "kind": "theory",
+          "title": "O que é equivalência lógica",
+          "content": "Duas proposições P(p, q, ...) e Q(p, q, ...) são <b>logicamente equivalentes</b> (escreve-se P ⇔ Q) quando as suas tabelas-verdade são <b>idênticas</b>.<br/><br/>Teorema (Cap. 6, §4): P ⇔ Q <b>se e somente se</b> a bicondicional P ↔ Q é <b>tautológica</b>. Assim, toda equivalência lógica corresponde a uma bicondicional tautológica, e vice-versa.<br/><br/>Não confunda os símbolos: <b>↔</b> é conectivo (de p e q faz a fórmula nova p ↔ q); <b>⇔</b> é relação (afirma que a bicondicional das duas é tautologia). Corolário: se P e Q são ambas tautologias — ou ambas contradições — elas são equivalentes.<br/><br/>Primeiros exemplos do livro: ~~p ⇔ p (dupla negação) e ~p → p ⇔ p (regra de Clavius). A equivalência ainda é reflexiva, simétrica e transitiva.",
+          "table": [
+            ["p", "~p", "~~p"],
+            ["V", "F", "V"],
+            ["F", "V", "F"]
+          ],
+          "source": "Alencar Filho, Cap. 6, §1 a §4 (definição, propriedades e exemplos 1 e 2)"
+        },
+        {
+          "kind": "theory",
+          "title": "As proposições associadas a p → q",
+          "content": "Dada a condicional <b>p → q</b> (chamada <b>direta</b>), há três condicionais associadas que usam p e q:<br/>• <b>recíproca</b>: q → p<br/>• <b>contrária</b> (ou inversa): ~p → ~q<br/>• <b>contrapositiva</b>: ~q → ~p<br/><br/>Pela tabela-verdade abaixo, a única coluna igual à da direta é a da <b>contrapositiva</b>: p → q ⇔ ~q → ~p. A recíproca e a contrária são equivalentes entre si (cada uma é a contrapositiva da outra), mas nenhuma equivale à direta.<br/><br/>Exemplo do livro: 'Se o triângulo T é equilátero, então T é isósceles' é V, mas a recíproca 'Se T é isósceles, então T é equilátero' é F — a recíproca pode mudar o valor lógico.",
+          "table": [
+            ["p", "q", "direta p → q", "recíproca q → p", "contrária ~p → ~q", "contrapositiva ~q → ~p"],
+            ["V", "V", "V", "V", "V", "V"],
+            ["V", "F", "F", "V", "F", "F"],
+            ["F", "V", "V", "F", "F", "V"],
+            ["F", "F", "V", "V", "V", "V"]
+          ],
+          "art": "associadas",
+          "mascot": "boole",
+          "say": "Só a contrapositiva mantém a verdade da direta.",
+          "source": "Alencar Filho, Cap. 6, §5, propriedades (I) e (II)"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Seja a condicional p → q: 'Se o triângulo T é equilátero, então T é isósceles'. Qual é a recíproca dela?",
+          "options": [
+            { "text": "q → p: 'Se T é isósceles, então T é equilátero'", "isCorrect": true },
+            { "text": "~p → ~q: 'Se T não é equilátero, então T não é isósceles'", "isCorrect": false },
+            { "text": "~q → ~p: 'Se T não é isósceles, então T não é equilátero'", "isCorrect": false },
+            { "text": "p → ~q: 'Se T é equilátero, então T não é isósceles'", "isCorrect": false }
+          ],
+          "explanation": "A recíproca põe a conclusão no lugar do antecedente: q → p (Cap. 6, §5a), sem nenhum ~. Note que a direta é V e a recíproca é F — sinal de que recíproca não é equivalente à direta.",
+          "source": "Alencar Filho, Cap. 6, §5, exemplo 1"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Dada a condicional 'Se Carlos é professor, então Carlos é pobre' (p → q), assinale a contrapositiva.",
+          "options": [
+            { "text": "Se Carlos não é pobre, então Carlos não é professor", "isCorrect": true },
+            { "text": "Se Carlos não é professor, então Carlos não é pobre", "isCorrect": false },
+            { "text": "Se Carlos é pobre, então Carlos é professor", "isCorrect": false },
+            { "text": "Carlos é professor e não é pobre", "isCorrect": false }
+          ],
+          "explanation": "Contrapositiva = ~q → ~p: nega os dois lados e inverte a ordem. Por Contraposição (p → q ≡ ~q → ~p) ela é equivalente à direta, o que permite demonstrar a contrapositiva no lugar da condicional.",
+          "source": "Alencar Filho, Cap. 6, §5, exemplo 2"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Seja a condicional 'Se x é menor que zero, então x não é positivo', escrita p → ~q (p: 'x é menor que zero', q: 'x é positivo'). Qual é a contrária (inversa) dela?",
+          "options": [
+            { "text": "~p → q", "isCorrect": true },
+            { "text": "~q → ~p", "isCorrect": false },
+            { "text": "~q → p", "isCorrect": false },
+            { "text": "p → q", "isCorrect": false }
+          ],
+          "explanation": "A contrária nega antecedente e consequência, sem trocar a ordem: ~p → ~(~q), que pela dupla negação fica ~p → q. Em palavras: 'Se x não é menor que zero, então x é positivo'. ~q → ~p seria a contrapositiva e ~q → p a recíproca.",
+          "source": "Alencar Filho, Cap. 6, §5, exemplo 3 (adaptado)"
+        },
+        {
+          "kind": "multi",
+          "instruction": "Marque todas as fórmulas equivalentes à condicional p → q.",
+          "formula": "p → q",
+          "options": [
+            "~p v q",
+            "~q → ~p",
+            "q → p",
+            "~p → ~q",
+            "p ^ ~q"
+          ],
+          "correct": null,
+          "mascot": "boole",
+          "say": "Duas delas são a mesma coisa escrita de outro modo.",
+          "explanation": "Por Condicional, p → q ≡ ~p v q; por Contraposição, p → q ≡ ~q → ~p. A recíproca q → p e a contrária ~p → ~q têm coluna diferente (divergem nas linhas VF e FV), e p ^ ~q é exatamente a negação de p → q.",
+          "source": "Alencar Filho, Cap. 6, §3 exemplo 4 e §5 propriedade (I); Equivalências notáveis, itens 9 e 12"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Esta relação vale?",
+          "statement": "A contrária de uma condicional é equivalente à própria condicional.",
+          "subtext": "p → q  ⇔  ~p → ~q",
+          "isTrue": false,
+          "explanation": "Falso. Na linha p=F, q=V a direta vale V e a contrária vale F; na linha p=V, q=F é o contrário. A contrária é equivalente à recíproca q → p, nunca à direta (Cap. 6, §5).",
+          "source": "Alencar Filho, Cap. 6, §5, tabela-verdade das associadas"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Esta relação vale?",
+          "statement": "As proposições 'x = 1 ou x < 3' e 'não é o caso que x < 3 e x = 1' são logicamente equivalentes.",
+          "subtext": "p v q  ⇔  ~(q ^ p)",
+          "isTrue": false,
+          "explanation": "Falso — é o contra-exemplo do Cap. 6. Na linha p=V, q=V a disjunção vale V e ~(q ^ p) vale F, de modo que a bicondicional (p v q) ↔ ~(q ^ p) não é tautológica: as tabelas-verdade não são idênticas. ~(p ^ q) equivale a ~p v ~q (De Morgan), nunca a p v q.",
+          "source": "Alencar Filho, Cap. 6, §3 exemplo 3 e exercício 4"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Complete a coluna da recíproca q → p. Ela é idêntica à coluna de p → q?",
+          "vars": ["p", "q"],
+          "formula": "q → p",
+          "columnLabel": "recíproca q → p",
+          "explanation": "A coluna fica V, V, F, V, enquanto p → q fica V, F, V, V: divergem nas linhas VF e FV. Logo a recíproca não é equivalente à direta — é a história do triângulo isósceles que não é equilátero.",
+          "source": "Alencar Filho, Cap. 6, §5, exemplo 1"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Agora complete a coluna da contrapositiva ~q → ~p e compare com a de p → q.",
+          "vars": ["p", "q"],
+          "formula": "~q → ~p",
+          "columnLabel": "contrapositiva ~q → ~p",
+          "explanation": "A coluna sai V, F, V, V — igual à de p → q, linha por linha. Por isso p → q ⇔ ~q → ~p (Contraposição): dá para provar a contrapositiva no lugar da condicional, como no exemplo 'se x² é ímpar então x é ímpar'.",
+          "source": "Alencar Filho, Cap. 6, §5 propriedade (I) e exemplo 4"
+        },
+        {
+          "kind": "theory",
+          "title": "Negação de uma condicional",
+          "content": "Negar p → q <b>não</b> é negar os dois lados: ~p → ~q é a contrária, não a negação.<br/><br/>Caminho algébrico: ~(p → q) ⇔ ~(~p v q) ⇔ p ^ ~q (use Condicional e depois De Morgan).<br/><br/>Em palavras: a condicional só falha quando o antecedente é verdadeiro e a consequência é falsa. Negar 'Se João passar em Física então se formará' dá 'João passou em Física e não se formou'.",
+          "table": [
+            ["p", "q", "p → q", "~(p → q)", "p ^ ~q"],
+            ["V", "V", "V", "F", "F"],
+            ["V", "F", "F", "V", "V"],
+            ["F", "V", "V", "F", "F"],
+            ["F", "F", "V", "F", "F"]
+          ],
+          "source": "Alencar Filho, Cap. 7, §4; Revisão IFES III, item 3a"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Niegue a condicional: p → q",
+          "options": [
+            { "text": "p ^ ~q", "isCorrect": true },
+            { "text": "~p ^ ~q", "isCorrect": false },
+            { "text": "~p → ~q", "isCorrect": false },
+            { "text": "~q → ~p", "isCorrect": false }
+          ],
+          "explanation": "~(p → q) ≡ p ^ ~q: o antecedente continua afirmado e a conclusão sai negada. ~p → ~q é a contrária e ~q → ~p é a contrapositiva (equivalente à direta, portanto longe de ser a negação).",
+          "source": "Alencar Filho, Cap. 7, §4; Revisão IFES III, item 3a"
+        },
+        {
+          "kind": "theory",
+          "title": "Scheffer: negação conjunta (↓) e negação disjunta (↑)",
+          "content": "<b>Negação conjunta</b>: p ↓ q lê-se 'não p e não q', ou seja ~p ^ ~q. Como só é verdadeira quando p e q são <b>ambas falsas</b>, a única linha V é FF.<br/><br/><b>Negação disjunta</b>: p ↑ q lê-se 'não p ou não q', ou seja ~p v ~q. Ela só é falsa quando p e q são <b>ambas verdadeiras</b>, então a única linha F é VV.<br/><br/>Os dois conectivos são funcionais completos: pela ↓, ~p ≡ p ↓ p, p v q ≡ (p ↓ q) ↓ (p ↓ q), p ^ q ≡ (p ↓ p) ↓ (q ↓ q); pela ↑, ~p ≡ p ↑ p, p v q ≡ (p ↑ p) ↑ (q ↑ q), p ^ q ≡ (p ↑ q) ↑ (p ↑ q).",
+          "table": [
+            ["p", "q", "p ↓ q (~p ^ ~q)", "p ↑ q (~p v ~q)"],
+            ["V", "V", "F", "F"],
+            ["V", "F", "F", "V"],
+            ["F", "V", "F", "V"],
+            ["F", "F", "V", "V"]
+          ],
+          "art": "scheffer",
+          "mascot": "boole",
+          "say": "↓ só é V no FF; ↑ só é F no VV.",
+          "source": "Alencar Filho, Cap. 6, §6 e §7, exercícios 6 e 7"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Esta relação vale?",
+          "statement": "Na negação conjunta p ↓ q, a única linha em que a proposição é verdadeira é a linha em que p e q são ambas falsas.",
+          "subtext": "p ↓ q  ≡  ~p ^ ~q",
+          "isTrue": true,
+          "explanation": "Verdadeiro. p ↓ q é a conjunção ~p ^ ~q, que só vale V quando ~p e ~q são ambas V, isto é, quando p=F e q=F. Por isso a tabela de ↓ é F, F, F, V.",
+          "source": "Alencar Filho, Cap. 6, §6, tabela-verdade da negação conjunta"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Assinale a fórmula equivalente à negação disjunta p ↑ q.",
+          "options": [
+            { "text": "~p v ~q", "isCorrect": true },
+            { "text": "~p ^ ~q", "isCorrect": false },
+            { "text": "p ^ q", "isCorrect": false },
+            { "text": "~(p v q)", "isCorrect": false }
+          ],
+          "explanation": "Por definição, ↑ é 'não p ou não q' = ~p v ~q, e por De Morgan isso é ~(p ^ q) — a porta NAND: só dá F na linha VV. ~p ^ ~q e ~(p v q) são a negação conjunta ↓ (NOR).",
+          "source": "Alencar Filho, Cap. 6, §7; Equivalências notáveis, item 8 (De Morgan)"
+        },
+        {
+          "kind": "match",
+          "instruction": "Ligue cada nome ao seu enunciado simbólico.",
+          "pairs": [
+            { "left": "Dupla negação", "right": "~~p ≡ p" },
+            { "left": "Regra de Clavius", "right": "~p → p ≡ p" },
+            { "left": "Absorção (Cap. 6)", "right": "p → (p ^ q) ≡ p → q" },
+            { "left": "Condicional", "right": "p → q ≡ ~p v q" },
+            { "left": "Contraposição", "right": "p → q ≡ ~q → ~p" },
+            { "left": "Importação-Exportação", "right": "(p ^ q) → r ≡ p → (q → r)" }
+          ],
+          "mascot": "boole",
+          "say": "Clavius é a mais capciosa dessas.",
+          "explanation": "Todas são equivalências do Cap. 6: a dupla negação diz que negar duas vezes afirma; Clavius (~p → p ≡ p) e a absorção p → (p ^ q) ≡ p → q aparecem na exemplificação; Condicional, Contraposição e Importação-Exportação viram as leis 9, 12 e 13 da lista.",
+          "source": "Alencar Filho, Cap. 6, §3 exemplos 1 a 4 e §4 exemplo 2; Equivalências notáveis, itens 9, 12 e 13"
+        }
+      ]
+    },
+    {
+      "id": "c7_algebra",
+      "title": "Álgebra das proposições e as 13 equivalências notáveis",
+      "unitTitle": "Capítulo 7 — Álgebra das proposições",
+      "char": "ada",
+      "icon": "layerGroup",
+      "steps": [
+        {
+          "kind": "theory",
+          "title": "Propriedades da conjunção",
+          "content": "Sejam p, q, r proposições simples, t uma tautologia (valor V) e c uma contradição (valor F). A conjunção ^ é:<br/>• <b>idempotente</b>: p ^ p ≡ p<br/>• <b>comutativa</b>: p ^ q ≡ q ^ p<br/>• <b>associativa</b>: (p ^ q) ^ r ≡ p ^ (q ^ r)<br/>• com <b>identidade</b>: p ^ t ≡ p, e p ^ c ≡ c<br/><br/>Ou seja: V é elemento neutro e F é elemento absorvente da conjunção. Exemplo do livro: 'x ≠ 1 e |x| > 0' equivale a 'x ≠ 1'; 'x ≠ 1 e |x| < 0' equivale a '|x| < 0'.",
+          "table": [
+            ["Lei", "Conjunção"],
+            ["Idempotência (ID)", "p ^ p ≡ p"],
+            ["Comutação (COM)", "p ^ q ≡ q ^ p"],
+            ["Associação (ASSOC)", "(p ^ q) ^ r ≡ p ^ (q ^ r)"],
+            ["Identidade (IDENT)", "p ^ V ≡ p   ·   p ^ F ≡ F"]
+          ],
+          "source": "Alencar Filho, Cap. 7, §1 (a a d); Equivalências notáveis, itens 1 a 4"
+        },
+        {
+          "kind": "theory",
+          "title": "Propriedades da disjunção, tautologia e contradição",
+          "content": "A disjunção v espelha a conjunção, trocando os papéis de V e F:<br/>• <b>idempotente</b>: p v p ≡ p<br/>• <b>comutativa</b>: p v q ≡ q v p<br/>• <b>associativa</b>: (p v q) v r ≡ p v (q v r)<br/>• <b>identidade</b>: p v c ≡ p, e p v t ≡ t<br/><br/>Sobrando a negação, aparecem as duas leis de complemento: <b>tautologia</b> p v ~p ≡ V e <b>contradição</b> p ^ ~p ≡ F. Exemplo do livro: 'x ≠ 0 v x ≠ 0' ≡ 'x ≠ 0' e 'x ≠ 0 v x² < 0' ≡ 'x ≠ 0'.",
+          "table": [
+            ["Lei", "Disjunção"],
+            ["Idempotência (ID)", "p v p ≡ p"],
+            ["Comutação (COM)", "p v q ≡ q v p"],
+            ["Associação (ASSOC)", "(p v q) v r ≡ p v (q v r)"],
+            ["Identidade (IDENT)", "p v F ≡ p   ·   p v V ≡ V"],
+            ["Tautologia", "p v ~p ≡ V"],
+            ["Contradição", "p ^ ~p ≡ F"]
+          ],
+          "source": "Alencar Filho, Cap. 7, §2 (a a d); Equivalências notáveis, itens 1 a 6"
+        },
+        {
+          "kind": "multi",
+          "instruction": "Marque todas as fórmulas equivalentes a p ^ (q v r).",
+          "formula": "p ^ (q v r)",
+          "options": [
+            "(p ^ q) v (p ^ r)",
+            "(p ^ r) v (p ^ q)",
+            "(p v q) ^ (p v r)",
+            "p ^ q v r"
+          ],
+          "correct": null,
+          "explanation": "Distributiva da conjunção sobre a disjunção: p ^ (q v r) ≡ (p ^ q) v (p ^ r); a segunda é a mesma coisa pela comutação do v. (p v q) ^ (p v r) é a distributiva da <i>disjunção</i> (equivale a p v (q ^ r)), e p ^ q v r lê-se (p ^ q) v r.",
+          "source": "Alencar Filho, Cap. 7, §3(a)(i); Equivalências notáveis, item 7"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Reduza a condição do teste usando absorção: p ^ (p v q)",
+          "options": [
+            { "text": "p", "isCorrect": true },
+            { "text": "p v q", "isCorrect": false },
+            { "text": "p ^ q", "isCorrect": false },
+            { "text": "(p ^ p) v q", "isCorrect": false }
+          ],
+          "explanation": "Absorção (Cap. 7, §3b): p ^ (p v q) ≡ p. Se p é necessário de todo modo, o ramo (p v q) não acrescenta exigência. O dual é p v (p ^ q) ≡ p.",
+          "source": "Alencar Filho, Cap. 7, §3(b)(i); Revisão IFES III, item 3b (adaptado)"
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Monte, bloco a bloco, a fórmula equivalente a p → q pela lei da Condicional (COND).",
+          "promptBox": "p → q ≡",
+          "tokens": ["~p", "v", "q", "^", "~q", "p"],
+          "correctSequence": ["~p", "v", "q"],
+          "hint": "Nega o antecedente, mantém a consequência, liga com ou.",
+          "explanation": "Condicional: p → q ≡ ~p v q. É a equivalência que permite eliminar → de qualquer fórmula e também prova a negação da condicional.",
+          "source": "Equivalências notáveis, item 9 (COND); Alencar Filho, Cap. 6, §3 exemplo 4"
+        },
+        {
+          "kind": "theory",
+          "title": "Leis da condicional e da bicondicional",
+          "content": "As cinco últimas leis da lista tratam de → e ↔:<br/>• <b>Condicional (COND)</b>: p → q ≡ ~p v q<br/>• <b>Bicondicional (BICOND)</b>: p ↔ q ≡ (p → q) ^ (q → p) ≡ (p ^ q) v (~p ^ ~q)<br/>• <b>Dupla negação (DN)</b>: ~~p ≡ p<br/>• <b>Contraposição</b>: p → q ≡ ~q → ~p<br/>• <b>Importação-Exportação (IE)</b>: p → (q → r) ≡ (p ^ q) → r<br/><br/>Duas negações que caem dessas leis: <b>~(p → q) ≡ p ^ ~q</b> e <b>~(p ↔ q) ≡ (p ^ ~q) v (~p ^ q) ≡ p ↔ ~q ≡ ~p ↔ q</b>.<br/><br/>Atenção: condicional e bicondicional não são equivalentes — p → q vale V sempre que p é falso, e p ↔ q não.",
+          "table": [
+            ["Lei", "Forma"],
+            ["Condicional (COND)", "p → q ≡ ~p v q"],
+            ["Bicondicional (BICOND)", "p ↔ q ≡ (p → q) ^ (q → p)"],
+            ["Bicondicional ( outra forma )", "p ↔ q ≡ (p ^ q) v (~p ^ ~q)"],
+            ["Dupla negação (DN)", "~~p ≡ p"],
+            ["Contraposição", "p → q ≡ ~q → ~p"],
+            ["Importação-Exportação (IE)", "p → (q → r) ≡ (p ^ q) → r"]
+          ],
+          "source": "Equivalências notáveis, itens 9 a 13; Alencar Filho, Cap. 7, §4 e §5"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Esta relação vale?",
+          "statement": "Assim como ^ e v, a condicional é comutativa: p → q ≡ q → p.",
+          "subtext": "p → q  ≡  q → p",
+          "isTrue": false,
+          "explanation": "Falso. Na linha p=V, q=F a direta é F e a recíproca é V. A nota do Cap. 7 avisa: a condicional não é idempotente (p → p ≢ p), não é comutativa e não é associativa. A bicondicional, sim, é comutativa e associativa (mas não idempotente).",
+          "source": "Alencar Filho, Cap. 7, §4 (nota) e §5 (nota)"
+        },
+        {
+          "kind": "multi",
+          "instruction": "Marque todas as fórmulas equivalentes à bicondicional p ↔ q.",
+          "formula": "p ↔ q",
+          "options": [
+            "(p → q) ^ (q → p)",
+            "(p ^ q) v (~p ^ ~q)",
+            "(p ^ ~q) v (~p ^ q)",
+            "p → q"
+          ],
+          "correct": null,
+          "mascot": "ada",
+          "say": "Cuidado: uma das opções é a negação, não a bicondicional.",
+          "explanation": "BICOND dá as duas primeiras: (p → q) ^ (q → p) e a forma disjuntiva (p ^ q) v (~p ^ ~q). A terceira opção, (p ^ ~q) v (~p ^ q), é a <b>negação</b> de p ↔ q (a disjunção exclusiva), e p → q sozinha vale V em FV e FF.",
+          "source": "Equivalências notáveis, item 10; Alencar Filho, Cap. 6, §3 exemplos 5 e 6"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Niegue a bicondicional: ~(p ↔ q)",
+          "options": [
+            { "text": "(p ^ ~q) v (~p ^ q)", "isCorrect": true },
+            { "text": "(p ^ q) v (~p ^ ~q)", "isCorrect": false },
+            { "text": "p ^ q", "isCorrect": false },
+            { "text": "~p ^ ~q", "isCorrect": false }
+          ],
+          "explanation": "Do Cap. 7, §5: ~(p ↔ q) ≡ (p ^ ~q) v (~p ^ q) — exatamente uma das duas é verdadeira. Por isso a negação também se escreve p ↔ ~q ou ~p ↔ q.",
+          "source": "Alencar Filho, Cap. 7, §5"
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Monte a fórmula equivalente a p → (q → r) pela lei de Importação-Exportação (IE).",
+          "promptBox": "p → (q → r) ≡",
+          "tokens": ["(", "p", "^", "q", ")", "→", "r", "v", "~"],
+          "correctSequence": ["(", "p", "^", "q", ")", "→", "r"],
+          "hint": "Os dois antecedentes se juntam com ^ e viram um único antecedente.",
+          "explanation": "IE (item 13): p → (q → r) ≡ (p ^ q) → r. É a equivalência usada no Cap. 6 para demonstrar a regra de exportação-importação por tabela-verdade.",
+          "source": "Equivalências notáveis, item 13; Alencar Filho, Cap. 6, §4 exemplo 2"
+        },
+        {
+          "kind": "order",
+          "instruction": "Reordene as linhas da demonstração que reduz a condição do teste p ^ ~(p ^ q) (revisão III, item 7a).",
+          "items": [
+            "p ^ ~(p ^ q)",
+            "p ^ (~p v ~q)",
+            "(p ^ ~p) v (p ^ ~q)",
+            "F v (p ^ ~q)",
+            "p ^ ~q"
+          ],
+          "labels": null,
+          "explanation": "Ordem: De Morgan em ~(p ^ q); Distributiva espalhando o p; Contradição (p ^ ~p ≡ F); Identidade da disjunção (F v X ≡ X). Com p: 'fluxo_ext > fluxo_int' e q: 'pressão < 1000', o teste vira 'fluxo_ext > fluxo_int e pressão ≥ 1000'.",
+          "source": "Revisão IFES III, item 7a (exemplo fluxo_ext)"
+        },
+        {
+          "kind": "multi",
+          "instruction": "Marque todas as fórmulas equivalentes a ~(~p → ~q).",
+          "formula": "~(~p → ~q)",
+          "options": [
+            "~p ^ q",
+            "~(p v ~q)",
+            "p ^ ~q",
+            "~p → ~q"
+          ],
+          "correct": null,
+          "explanation": "Negação da condicional aplicada a ~p → ~q: fica ~p ^ ~~q, isto é, ~p ^ q. Por De Morgan a mesma coisa se escreve ~(p v ~q). p ^ ~q seria a negação da direta, e ~p → ~q é a contrária da direta.",
+          "source": "Revisão IFES III, item 6d; Alencar Filho, Cap. 7, §4"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Complete a coluna de ~(p ↔ q). Onde ela deve dar V?",
+          "vars": ["p", "q"],
+          "formula": "~(p ↔ q)",
+          "columnLabel": "~(p ↔ q)",
+          "explanation": "A coluna é F, V, V, F: V apenas nas linhas em que p e q têm valores diferentes, porque ~(p ↔ q) ≡ (p ^ ~q) v (~p ^ q). É a disjunção exclusiva p ⊕ q.",
+          "source": "Alencar Filho, Cap. 7, §5, tabela-verdade da negação da bicondicional"
+        },
+        {
+          "kind": "input",
+          "instruction": "Digite a negação da condicional p → q. Aceito qualquer fórmula equivalente.",
+          "prompt": "Niegue: p → q ('Se João passar em Física então se formará')",
+          "formula": "p ^ ~q",
+          "accepted": ["p ^ ~q", "p^~q", "~(~p v q)"],
+          "hint": "Use ~ para 'não' e ^ para 'e'. A condicional falha só quando p é V e q é F.",
+          "placeholder": "p ^ ~q",
+          "mascot": "ada",
+          "say": "Nada de flecha na negação: o resultado é uma conjunção.",
+          "explanation": "~(p → q) ≡ ~(~p v q) ≡ p ^ ~q. Em linguagem corrente: 'João passou em Física e não se formou'. O motor também aceita, por exemplo, ~(~p v q).",
+          "source": "Revisão IFES III, itens 3a e 4d; Alencar Filho, Cap. 7, §4"
+        },
+        {
+          "kind": "match",
+          "instruction": "Ligue cada lei ao seu enunciado simbólico (parte 1 das 13 equivalências notáveis).",
+          "pairs": [
+            { "left": "Idempotência (ID)", "right": "p ^ p ≡ p   ·   p v p ≡ p" },
+            { "left": "Tautologia", "right": "p v ~p ≡ V" },
+            { "left": "Contradição", "right": "p ^ ~p ≡ F" },
+            { "left": "De Morgan (DM)", "right": "~(p ^ q) ≡ ~p v ~q" },
+            { "left": "Dupla negação (DN)", "right": "~~p ≡ p" }
+          ],
+          "explanation": "As cinco primeiras colunas da lista: idempotência repete a fórmula, tautologia e contradição são os complementos, De Morgan vira ^ em v e vice-versa (trocando os ~), e dupla negação equivale à afirmação.",
+          "source": "Equivalências notáveis, itens 1, 5, 6, 8 e 11"
+        },
+        {
+          "kind": "match",
+          "instruction": "Ligue cada lei ao seu enunciado simbólico (parte 2 das 13 equivalências notáveis).",
+          "pairs": [
+            { "left": "Comutação (COM)", "right": "p ^ q ≡ q ^ p" },
+            { "left": "Associação (ASSOC)", "right": "(p v q) v r ≡ p v (q v r)" },
+            { "left": "Identidade (IDENT)", "right": "p v F ≡ p" },
+            { "left": "Distributiva (DIST)", "right": "p v (q ^ r) ≡ (p v q) ^ (p v r)" },
+            { "left": "Contraposição", "right": "p → q ≡ ~q → ~p" }
+          ],
+          "mascot": "ada",
+          "say": "Associação troca os parênteses; comutação troca a ordem.",
+          "explanation": "Comutação troca a ordem dos operandos, associação troca o par de que se junta primeiro (a ordem continua a mesma), identidade usa o neutro F da disjunção, distributiva espalha o v sobre o ^ e contraposição nega e inverte.",
+          "source": "Equivalências notáveis, itens 2, 3, 4, 7 e 12; Alencar Filho, Cap. 7, §1 a §3"
+        }
+      ]
+    }
+  ]
+}

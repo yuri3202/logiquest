@@ -1,0 +1,358 @@
+{
+  "lessons": [
+    {
+      "id": "c4_tautologias",
+      "title": "Tautologia, contradição e contingência",
+      "unitTitle": "Capítulo 4 — Tautologias, contradições e contingências",
+      "char": "boole",
+      "icon": "infinity",
+      "steps": [
+        {
+          "kind": "theory",
+          "title": "As três classes da última coluna",
+          "content": "<b>Tautologia</b>: toda proposição composta P(p, q, r, ...) cujo valor lógico é sempre V, quaisquer que sejam os valores das componentes — a última coluna encerra <i>somente</i> a letra V. Também chamada proposição tautológica ou logicamente verdadeira.<br/><b>Contradição</b>: a última coluna encerra <i>somente</i> F; é a proposição logicamente falsa (contraválida). A negação de uma tautologia é contradição, e vice-versa.<br/><b>Contingência</b>: a última coluna traz V e F, cada uma pelo menos uma vez — não é tautologia nem contradição.",
+          "table": [
+            ["Fórmula", "Última coluna", "Classe"],
+            ["p v ~p", "só V", "tautologia (3º excluído)"],
+            ["p ^ ~p", "só F", "contradição"],
+            ["p → ~p", "V e F", "contingência"]
+          ],
+          "source": "Alencar Filho, Cap. 4, §1, §3 e §4 (definições)",
+          "art": "truthColumns"
+        },
+        {
+          "kind": "theory",
+          "title": "Princípio de substituição",
+          "content": "Se P(p, q, r, ...) é uma tautologia, então P(P0, Q0, R0, ...) também é tautologia, quaisquer que sejam as proposições P0, Q0, R0, ... — troca-se cada letra por uma fórmula inteira e o V da última coluna se mantém.<br/>Vale o análogo para contradições. Cuidado: o princípio só se aplica a tautologia/contradição; substituir numa <i>contingência</i> pode mudar a classe.",
+          "table": [
+            ["Tautologia", "Substituindo p por (q ^ r)", "Classe"],
+            ["p → p", "(q ^ r) → (q ^ r)", "tautologia"],
+            ["p v ~p", "(q ^ r) v ~(q ^ r)", "tautologia"]
+          ],
+          "source": "Alencar Filho, Cap. 4, §2 (Princípio de substituição para as tautologias)"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Complete a coluna final da tabela-verdade:",
+          "vars": ["p", "q"],
+          "formula": "((p → q) ↔ (~q → ~p))",
+          "columnLabel": "(p → q) ↔ (~q → ~p)",
+          "explanation": "A condicional é sempre equivalente à sua contrapositiva: a coluna final fica toda em V, então a fórmula é tautologia. As linhas V-F e F-V da condicional coincidem com as de ~q → ~p.",
+          "source": "Alencar Filho, Cap. 4, §1 (tautologias por contrapositiva)"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Complete a coluna final da tabela-verdade:",
+          "vars": ["p", "q"],
+          "formula": "(p ^ (p → q) ^ ~q)",
+          "columnLabel": "p ^ (p → q) ^ ~q",
+          "explanation": "Fica toda em F: é impossível ter p verdadeiro, p → q verdadeiro e ~q verdadeiro ao mesmo tempo. Uma contradição — a negação da condicional do Modus Ponens.",
+          "source": "Alencar Filho, Cap. 4, §3 (contraexemplo de contradição)",
+          "mascot": "boole",
+          "say": "Se a coluna der só F, é contradição."
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Verdadeiro ou falso:",
+          "statement": "Toda contradição é falsa em todas as linhas da sua tabela-verdade, e por isso também é chamada de proposição contraválida.",
+          "subtext": "Alencar Filho chama as contradições de proposições logicamente falsas.",
+          "isTrue": true,
+          "explanation": "Exato: contradição é a proposição cujo valor é sempre F, quaisquer que sejam os valores das componentes — o espelho da tautologia.",
+          "source": "Alencar Filho, Cap. 4, §3 (Definição de contradição)"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Complete a coluna final da tabela-verdade:",
+          "vars": ["p", "q"],
+          "formula": "(p v (q ^ ~q)) ↔ p",
+          "columnLabel": "p v (q ^ ~q) ↔ p",
+          "explanation": "(q ^ ~q) é contradição, então p v (q ^ ~q) vale o mesmo que p, e o bicondicional fica todo em V: tautologia.",
+          "source": "Alencar Filho, Cap. 4, §1, exemplo 5"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Complete a coluna final da tabela-verdade:",
+          "vars": ["p", "q"],
+          "formula": "~p ^ (p ^ ~q)",
+          "columnLabel": "~p ^ (p ^ ~q)",
+          "explanation": "Só F em toda linha: ~p e p aparecem juntos na conjunção, o que nunca acontece. É o exemplo 4 de contradição do Cap. 4.",
+          "source": "Alencar Filho, Cap. 4, §3, exemplo 4"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Complete a coluna final da tabela-verdade:",
+          "vars": ["p", "q"],
+          "formula": "(((p ↔ q) ^ p) → q)",
+          "columnLabel": "(p ↔ q) ^ p → q",
+          "explanation": "A coluna sai toda V: quando p ↔ q e p são verdadeiros, q obrigatoriamente é verdadeiro. O item 2 da revisão pedia justamente essa verificação.",
+          "source": "Revisão III IFES, item 2",
+          "art": "bicondTable"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Verdadeiro ou falso:",
+          "statement": "Como (p → p) é tautologia, a fórmula ((q ^ ~q) → (q ^ ~q)), obtida substituindo p por (q ^ ~q), deixa de ser tautologia porque a componente é uma contradição.",
+          "subtext": "Princípio de substituição para as tautologias (Cap. 4, §2).",
+          "isTrue": false,
+          "explanation": "Falso. O princípio de substituição garante que P(P0, Q0, ...) continua tautologia <i>quaisquer que sejam</i> as componentes — vale sempre A → A, mesmo com A contradição.",
+          "source": "Alencar Filho, Cap. 4, §2"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Complete a coluna final da tabela-verdade:",
+          "vars": ["p"],
+          "formula": "p → ~p",
+          "columnLabel": "p → ~p",
+          "explanation": "Dá F quando p é V e V quando p é F: como a coluna traz as duas letras, é contingência — não é tautologia nem contradição.",
+          "source": "Alencar Filho, Cap. 4, §4, exemplo 1"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Lista I, questão 7a — construa (ou leia) a tabela de ((p v q) v ~r) → (~p v r) e classifique:",
+          "options": [
+            { "text": "Tautologia, porque ~p v r é uma disjunção sempre verdadeira", "isCorrect": false },
+            { "text": "Contradição, porque a condicional nunca chega a V", "isCorrect": false },
+            { "text": "Contingência: fica F exatamente quando p = V e r = F; nas outras seis linhas é V", "isCorrect": true },
+            { "text": "Tautologia por substituição, pois ((p v q) v ~r) é instância de p v ~p", "isCorrect": false }
+          ],
+          "explanation": "Com p = V e r = F a antecedente (p v q) v ~r é V e a consequente ~p v r é F, então a condicional é F nessas duas linhas; em p = F a consequente é V. Coluna com V e F = contingência.",
+          "source": "Lista I IFES, questão 7a",
+          "art": "truthColumns"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Lista I, questão 7b — classifique ((p ^ q) v r) → (p ^ (q v ~r)):",
+          "options": [
+            { "text": "Tautologia, porque a conclusão é verdadeira em toda linha", "isCorrect": false },
+            { "text": "Contingência: na linha p = F, q = V, r = V a premissa é V e a conclusão, F", "isCorrect": true },
+            { "text": "Contradição: premissa e conclusão nunca são V na mesma linha", "isCorrect": false },
+            { "text": "Tautologia, já que (p ^ q) v r ⇔ p ^ (q v r)", "isCorrect": false }
+          ],
+          "explanation": "A coluna final traz V e F: é V quando a premissa (p ^ q) v r é F, e é F quando a premissa é V mas p ^ (q v ~r) falha. A distributiva correta daria (p v r) ^ (q v r), não p ^ (q v r) — é essa troca que produz a falsa tautologia da quarta opção.",
+          "source": "Lista I IFES, questão 7b"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Lista I, questão 7c — classifique ((~p v q) ↔ (p → q)) v p:",
+          "options": [
+            { "text": "Tautologia: (~p v q) e (p → q) são equivalentes, então o bicondicional é sempre V", "isCorrect": true },
+            { "text": "Contingência: o resultado depende dos valores de p e q", "isCorrect": false },
+            { "text": "Contradição: o v p no final força a coluna a F", "isCorrect": false },
+            { "text": "Tautologia apenas nas linhas em que p é V", "isCorrect": false }
+          ],
+          "explanation": "Por Condicional, p → q ≡ ~p v q; o bicondicional entre duas fórmulas equivalentes é tautologia, e uma disjunção que tem um lado sempre V é sempre V — o ~p v q de (p → q) é literalmente a mesma tabela.",
+          "source": "Lista I IFES, questão 7c",
+          "mascot": "boole",
+          "say": "Traduza p → q por ~p v q antes de tabelar."
+        },
+        {
+          "kind": "multi",
+          "instruction": "Marque todas as fórmulas que são tautologias:",
+          "options": [
+            "((p → q) ^ p) → q",
+            "(p v q) → p",
+            "p ↔ ~p",
+            "~(p v ~p) v (q v ~q)",
+            "(p ^ q) → (p ↔ q)"
+          ],
+          "correct": [0, 3, 4],
+          "explanation": "((p → q) ^ p) → q é o Modus Ponens tautológico; ~(p v ~p) v (q v ~q) é F v V = V sempre; (p ^ q) → (p ↔ q) só tem premissa V na linha V-V, onde p ↔ q também é V. Sobram (p v q) → p (contingência, falha em p=F, q=V) e p ↔ ~p (contradição).",
+          "source": "Alencar Filho, Cap. 4, §1 e §3; Lista I IFES, questão 7"
+        },
+        {
+          "kind": "match",
+          "instruction": "Ligue cada fórmula à sua classe:",
+          "pairs": [
+            { "left": "p v ~p", "right": "tautologia — é o Princípio do terceiro excluído" },
+            { "left": "p ^ ~p", "right": "contradição — negação da tautologia ~(p ^ ~p)" },
+            { "left": "p → ~p", "right": "contingência — só F na linha em que p é V" },
+            { "left": "((~p v q) ↔ (p → q)) v p", "right": "tautologia — o bicondicional interno já é V em toda linha" }
+          ],
+          "explanation": "Basta olhar a última coluna: só V = tautologia, só F = contradição, V e F = contingência. Os dois princípios clássicos (terceiro excluído e não contradição) são os exemplos imediatos do Cap. 4.",
+          "source": "Alencar Filho, Cap. 4, §1 a §4 (exemplos 1, 2, 3 e 4)"
+        }
+      ]
+    },
+    {
+      "id": "c5_implicacao",
+      "title": "Implicação lógica (⇒) e consequência",
+      "unitTitle": "Capítulo 5 — Implicação lógica",
+      "char": "turing",
+      "icon": "arrowUp",
+      "steps": [
+        {
+          "kind": "theory",
+          "title": "O que P ⇒ Q quer dizer",
+          "content": "Diz-se que P(p, q, r, ...) <b>implica logicamente</b> Q(p, q, r, ...) quando Q é verdadeira (V) <i>todas as vezes</i> que P é verdadeira — isto é, nunca aparece V na última coluna de P com F na última coluna de Q na mesma linha.<br/>A relação ⇒ é reflexiva (P ⇒ P) e transitiva (se P ⇒ Q e Q ⇒ R, então P ⇒ R). Toda proposição implica uma tautologia, e somente uma contradição implica uma contradição.",
+          "table": [
+            ["p", "q", "p v q", "(p v q) ⇒ p?"],
+            ["V", "V", "V", "ok, p é V"],
+            ["V", "F", "V", "ok, p é V"],
+            ["F", "V", "V", "falha: premissa V, conclusão F"],
+            ["F", "F", "F", "não conta"]
+          ],
+          "source": "Alencar Filho, Cap. 5, §1 e §2; exemplo de falha no Cap. 5, §3",
+          "art": "condTable"
+        },
+        {
+          "kind": "theory",
+          "title": "⇒, → e ⇔ sem confusão",
+          "content": "Teorema: P ⇒ Q <b>se e somente se</b> a condicional P → Q é tautológica — e como P → Q ≡ ~P v Q, na prática basta negar a premissa, colocar um v e ver se a coluna sai toda V.<br/><b>→ é conectivo</b> (opera duas fórmulas e gera uma nova); <b>⇒ é relação</b> entre fórmulas (afirma algo sobre a tabela delas).<br/>P ⇔ Q vale quando P ⇒ Q <i>e</i> Q ⇒ P: todo ⇔ traz uma implicação nos dois sentidos, mas nem toda ⇒ tem a recíproca.",
+          "table": [
+            ["Relação", "O que a tabela-verdade exige"],
+            ["P ⇒ Q", "P → Q é tautologia"],
+            ["P ⇔ Q", "P → Q e Q → P são ambas tautologia"],
+            ["P ⇒ Q só", "existe linha com Q = V e P = F"]
+          ],
+          "source": "Alencar Filho, Cap. 5, §4 (Tautologias e implicação lógica) e Nota sobre → e ⇒"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Verdadeiro ou falso:",
+          "statement": "p ^ q ⇒ p",
+          "subtext": "Regra da Simplificação (Cap. 5, §3, item ii).",
+          "isTrue": true,
+          "explanation": "A conjunção só é V na linha V-V, e nela p é V. Não existe linha com p ^ q verdadeiro e p falso, logo a implicação vale — e o mesmo raciocínio dá p ^ q ⇒ q.",
+          "source": "Lista I IFES, questão 2b; Alencar Filho, Cap. 5, §3, exemplo (1)"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Verdadeiro ou falso:",
+          "statement": "(p v q) ^ ~q ⇒ p",
+          "subtext": "Silogismo disjuntivo: negue um lado da disjunção e sobra o outro.",
+          "isTrue": true,
+          "explanation": "A premissa é V somente quando q é F e p v q é V — e aí p tem de ser V. Justamente a outra forma do silogismo disjuntivo do Cap. 5.",
+          "source": "Lista I IFES, questão 2c; Alencar Filho, Cap. 5, §3, exemplo (3)",
+          "mascot": "turing",
+          "say": "Teste linha por linha, não 'de cabeça'."
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Verdadeiro ou falso:",
+          "statement": "p v q ⇒ p",
+          "subtext": "Procure uma linha com premissa V e conclusão F.",
+          "isTrue": false,
+          "explanation": "Na linha p = F, q = V a disjunção é V e p é F: uma linha assim já derruba a implicação. É o exercício do Cap. 5 que pede mostrar que p v q não implica p.",
+          "source": "Alencar Filho, Cap. 5, §5, exercício 4"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Complete a coluna final — ela é o teste da implicação (p → q) ^ (q → r) ⇒ p → r:",
+          "vars": ["p", "q", "r"],
+          "formula": "((p → q) ^ (q → r)) → (p → r)",
+          "columnLabel": "((p → q) ^ (q → r)) → (p → r)",
+          "explanation": "Coluna toda V: a condicional entre premissa e conclusão é tautologia, então vale o silogismo hipotético (p → q) ^ (q → r) ⇒ p → r.",
+          "source": "Lista I IFES, questão 2 (adaptado); Alencar Filho, Cap. 5, §4, exemplo 1",
+          "art": "transMap"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Verdadeiro ou falso:",
+          "statement": "((p ^ q) → ~p) ⇒ (~p v q), como está escrito no item 1 da revisão.",
+          "subtext": "Teste as linhas p = V, q = V e p = V, q = F.",
+          "isTrue": false,
+          "explanation": "Na linha p = V, q = F a premissa (p ^ q) → ~p é V (antecedente F) e a conclusão ~p v q é F: a relação não vale. O que vale é ((p ^ q) → ~p) ⇒ (~p v ~q), que dá tautologia — e sob a outra leitura do enunciado, p ^ (q → ~p) ⇒ ~p v q também falha nessa mesma linha.",
+          "source": "adaptado de: Revisão III IFES, item 1 (enunciado revisado pelo motor do app)"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Item 1 da Lista I: P = (p → q) ^ (q → r) ^ (r → s) e Q = p → s. Complete a coluna final de P → Q (16 linhas):",
+          "vars": ["p", "q", "r", "s"],
+          "formula": "(((p → q) ^ (q → r)) ^ (r → s)) → (p → s)",
+          "columnLabel": "P → Q",
+          "explanation": "Dezesseis V: a condicional P → Q é tautologia, portanto P ⇒ Q — a cadeia de condicionais arranca p → s por silogismo hipotético repetido.",
+          "source": "Lista I IFES, questão 1a"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Com P = (p → q) ^ (q → r) ^ (r → s) e Q = p → s, o que a tabela de 16 linhas mostra?",
+          "options": [
+            { "text": "P ⇒ Q: nenhuma linha tem P = V e Q = F, ou seja, P → Q é tautologia", "isCorrect": true },
+            { "text": "Q ⇒ P: como p → s é mais curta, ela implica a cadeia inteira", "isCorrect": false },
+            { "text": "Nem P ⇒ Q: em p=V, q=V, r=F, s=F a premissa é V e Q é F", "isCorrect": false },
+            { "text": "P ⇔ Q: as duas fórmulas têm a mesma última coluna", "isCorrect": false }
+          ],
+          "explanation": "Vale a implicação simples, no sentido P para Q. A linha alegada na terceira opção não existe: com r = F e s = F a conjunção já é F porque q → r é F, e premissa F não conta para ⇒.",
+          "source": "Lista I IFES, questão 1a"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Ainda no item 1: P ⇔ Q vale? Por quê?",
+          "options": [
+            { "text": "Não: P ⇒ Q vale, mas Q ⇒ P não — em p=F, q=V, r=F, s=F temos Q = V e P = F", "isCorrect": true },
+            { "text": "Sim: qualquer cadeia de condicionais é equivalente à condicional entre as pontas", "isCorrect": false },
+            { "text": "Não: falta uma premissa, nem P ⇒ Q se completa", "isCorrect": false },
+            { "text": "Sim, porque P e Q são contingências com o mesmo número de linhas V", "isCorrect": false }
+          ],
+          "explanation": "Equivalência exige ⇒ nos dois sentidos. Com p = F, p → s é V sozinha, mas (q → r) é F → a conjunção P é F. Uma linha só já basta para negar P ⇔ Q — mesmo número de linhas V não dá equivalência nenhuma.",
+          "source": "Lista I IFES, questão 1b",
+          "mascot": "turing",
+          "say": "Uma linha contrária derruba a relação."
+        },
+        {
+          "kind": "choice",
+          "instruction": "Lista I, questão 2f: (~p → q) ^ ~q ⇒ ~p. A relação vale?",
+          "options": [
+            { "text": "Não: em p=V, q=F as duas premissas são V e ~p é F. O que vale é (~p → q) ^ ~q ⇒ p", "isCorrect": true },
+            { "text": "Sim, é Modus Tollens aplicado a ~p → q com ~q", "isCorrect": false },
+            { "text": "Só vale quando q é verdadeiro", "isCorrect": false },
+            { "text": "Sim, porque ~p → q equivale a p v q e ~q elimina q", "isCorrect": false }
+          ],
+          "explanation": "O Modus Tollens nega o antecedente de ~p → q, e ~~p é p — não ~p. A quarta alternativa até raciocina certo: ~p → q ≡ p v q e, com ~q, sobra p. Por isso a conclusão impressa na lista está trocada.",
+          "source": "Lista I IFES, questão 2f (conclusão corrigida pelo motor do app)"
+        },
+        {
+          "kind": "circuit",
+          "instruction": "Quais entradas deixam a saída em V? Depois leia o que isso diz sobre (p v q) ^ ~p ⇒ q.",
+          "vars": ["p", "q"],
+          "formula": "(p v q) ^ ~p",
+          "target": "V",
+          "explanation": "Só p = F, q = V acende a saída. Como toda linha que torna a premissa V também torna q V, vale a implicação do silogismo disjuntivo (p v q) ^ ~p ⇒ q.",
+          "source": "Alencar Filho, Cap. 5, §3, exemplo (3)",
+          "art": "circuit"
+        },
+        {
+          "kind": "multi",
+          "instruction": "Marque todas as tautologias — cada uma certifica uma implicação lógica válida:",
+          "options": [
+            "p → (p v q)",
+            "(p v q) → p",
+            "((p → q) ^ p) → q",
+            "p ↔ ~p",
+            "(p ^ q) → p"
+          ],
+          "correct": [0, 2, 4],
+          "explanation": "p → (p v q) certifica p ⇒ p v q (Adição, Lista I 2a); ((p → q) ^ p) → q certifica o Modus Ponens; (p ^ q) → p certifica a Simplificação. (p v q) → p é contingência (falha em p=F, q=V) e p ↔ ~p é contradição.",
+          "source": "Lista I IFES, questão 2a; Alencar Filho, Cap. 5, §3, exemplos (1) e (4)"
+        },
+        {
+          "kind": "proof-step",
+          "title": "Modus Tollens",
+          "instruction": "Complete a Linha 3 da dedução a partir das duas premissas:",
+          "proofState": [
+            { "line": 1, "text": "p → q", "rule": "Premissa" },
+            { "line": 2, "text": "~q", "rule": "Premissa" }
+          ],
+          "exprOptions": ["~p", "q", "p", "~q → ~p"],
+          "ruleOptions": ["Modus Tollens (1, 2)", "Modus Ponens (1, 2)", "Silogismo disjuntivo (2)", "Adição (1, 2)"],
+          "correctExpr": 0,
+          "correctRule": 0,
+          "explanation": "Negando o consequente se nega o antecedente: de p → q e ~q conclui-se ~p. A condicional ((p → q) ^ ~q) → ~p é tautologia, e é isso que significa (p → q) ^ ~q ⇒ ~p.",
+          "source": "Alencar Filho, Cap. 5, §3, exemplo (5); Lista I IFES, questão 2",
+          "art": "inferenceRules"
+        },
+        {
+          "kind": "match",
+          "instruction": "Ligue cada par de fórmulas ao tipo de relação que vale entre elas:",
+          "pairs": [
+            { "left": "~(p → q) e p ^ ~q", "right": "⇔ — as duas tabelas coincidem linha a linha" },
+            { "left": "p ^ q e p v q", "right": "⇒ em um só sentido — p ^ q ⇒ p v q, nunca o contrário" },
+            { "left": "p v q e p", "right": "a relação pedida não vale — p v q ⇒ p cai na linha p=F, q=V" },
+            { "left": "p ↔ q e p → q", "right": "⇒ em um só sentido — p ↔ q ⇒ p → q" }
+          ],
+          "explanation": "⇔ é o caso forte: exigem-se P ⇒ Q e Q ⇒ P. Quando só um dos sentidos resiste ao contraexemplo, a relação é ⇒ simples. E quando o sentido pedido falha numa única linha — como p v q ⇒ p — não há implicação lógica naquela direção (a recíproca p ⇒ p v q, essa sim, vale).",
+          "source": "Alencar Filho, Cap. 5, §4 e Nota; Revisão III IFES, item 3a (adaptado)" }
+      ]
+    }
+  ]
+}

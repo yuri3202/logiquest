@@ -1,0 +1,390 @@
+{
+  "lessons": [
+    {
+      "id": "c2_traducao_simbolos",
+      "title": "Traduzir do português para os símbolos",
+      "unitTitle": "Capítulo 2/3 — Tradução da linguagem natural",
+      "char": "bit",
+      "icon": "language",
+      "steps": [
+        {
+          "kind": "theory",
+          "title": "Locução → conectivo: o mapa do curso",
+          "instruction": null,
+          "content": "Não existem regras fixas que garantam a tradução entre linguagem natural e linguagem simbólica, e muitas frases do cotidiano são ambíguas — por isso a aula converte passado e futuro para o presente. Ainda assim, a tabela do curso fecha as locuções que mais caem. O ponto que derruba todo mundo: 'A só se B', 'A somente se B', 'Basta A para B', 'B segue de A', 'A é condição suficiente para B' e 'B é condição necessária para A' são TODAS a mesma condicional A → B. Negação também tem três fantasias: 'não A', 'é falso que A', 'não é verdade que A'.",
+          "table": [
+            ["Expressão em português", "Conectivo", "Expressão lógica"],
+            ["e, mas, também, além disso", "Conjunção", "A ^ B"],
+            ["ou", "Disjunção", "A v B"],
+            ["se... então, A implica B, A logo B", "Condicional", "A → B"],
+            ["A só se B, A somente se B, B segue de A, basta A para B", "Condicional", "A → B"],
+            ["A é condição suficiente para B, B é condição necessária para A", "Condicional", "A → B"],
+            ["A se, e somente se, B; condição necessária e suficiente", "Bicondicional", "A ↔ B"],
+            ["não A, é falso que A, não é verdade que A", "Negação", "~A"]
+          ],
+          "art": "transMap",
+          "source": "Aula Dicas de tradução e negação (Profa. Kelly Gazolli), tabela 'Linguagem Natural x Linguagem Simbólica', retirado de Gersting"
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Traduza montando a fórmula com os blocos:",
+          "promptBox": "p: Rosas são vermelhas. q: Violetas são azuis. r: Açúcar é doce. — 'Rosas são vermelhas e violetas são azuis.'",
+          "tokens": ["p", "^", "q", "v", "~"],
+          "correctSequence": ["p", "^", "q"],
+          "hint": "Duas afirmações ligadas por 'e'.",
+          "explanation": "'e' é conjunção, então a tradução é p ^ q. A disjunção 'v' e a negação '~' são distratores: nenhuma das duas palavras aparece na frase.",
+          "source": "Lista I IFES, questão 5a"
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Traduza montando a fórmula:",
+          "promptBox": "'Rosas são vermelhas, ou bem violetas são azuis ou bem açúcar é doce.'",
+          "tokens": ["p", "v", "(", "q", "v", "r", ")", "^", "~"],
+          "correctSequence": ["p", "v", "(", "q", "v", "r", ")"],
+          "hint": "A primeira parte fica solta; o par 'ou bem... ou bem...' forma o segundo bloco.",
+          "explanation": "O conectivo principal é a disjunção que separa 'rosas' do resto: p v (q v r). O curso trata o 'ou bem... ou bem...' como disjunção; os parênteses marcam que a segunda disjunção se fecha antes.",
+          "source": "Lista I IFES, questão 5b"
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Traduza montando a fórmula:",
+          "promptBox": "'Sempre que violetas são azuis, as rosas são vermelhas e o açúcar é doce.'",
+          "tokens": ["q", "→", "(", "p", "^", "r", ")", "~", "v"],
+          "correctSequence": ["q", "→", "(", "p", "^", "r", ")"],
+          "hint": "'Sempre que A, B' é uma condicional.",
+          "mascot": "boole",
+          "say": "Quem vem depois de 'sempre que' é o antecedente.",
+          "explanation": "'Sempre que' introduz a condição suficiente, então q → (...); o consequente é a conjunção p ^ r e precisa de parênteses, senão a seta englobaria o 'e'.",
+          "source": "Lista I IFES, questão 5c"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Com p: 'Rosas são vermelhas', q: 'Violetas são azuis', r: 'Açúcar é doce', traduza: 'Rosas são vermelhas apenas se as violetas não forem azuis e o açúcar não for amargo.'",
+          "options": [
+            { "text": "p → (~q ^ ~r)", "isCorrect": true },
+            { "text": "(~q ^ ~r) → p", "isCorrect": false },
+            { "text": "p ^ (~q ^ ~r)", "isCorrect": false },
+            { "text": "p → (~q v ~r)", "isCorrect": false }
+          ],
+          "mascot": "bit",
+          "say": "Armadilha: 'apenas se' nunca é a recíproca.",
+          "explanation": "'apenas se' funciona como 'só se' / 'somente se': o que vem depois da expressão é condição necessária, então p → (...). O consequente é a conjunção das duas negações (~q ^ ~r); inverter a seta ou trocar ^ por v são os erros clássicos.",
+          "source": "Lista I IFES, questão 5d"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Traduza a última frase da mesma lista: 'Rosas são vermelhas e, se o açúcar for amargo, então as violetas não são azuis ou o açúcar é doce.'",
+          "options": [
+            { "text": "p ^ (~r → (~q v r))", "isCorrect": true },
+            { "text": "p ^ (~q v r)", "isCorrect": false },
+            { "text": "(p ^ ~r) → (~q v r)", "isCorrect": false },
+            { "text": "p ^ (~r → (~q ^ r))", "isCorrect": false },
+            { "text": "p → (~r ^ (~q v r))", "isCorrect": false }
+          ],
+          "explanation": "O conectivo principal é o 'e' que abre a frase: p ^ (...). Dentro, 'se o açúcar for amargo' é ~r (a negação de 'açúcar é doce') e o consequente é a disjunção ~q v r. Quem esquece o parêntese do consequente ou troca o 'e' por seta cai nas outras opções.",
+          "source": "Lista I IFES, questão 5e"
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Agora com Gauss e Maradona. Monte a fórmula:",
+          "promptBox": "p: Gauss é um matemático. q: Gauss é um dançarino. r: Maradona é atleta de natação. — 'Se Gauss foi um matemático ou um dançarino, então Maradona não era atleta de natação.'",
+          "tokens": ["(", "p", "v", "q", ")", "→", "~r", "^", "~p"],
+          "correctSequence": ["(", "p", "v", "q", ")", "→", "~r"],
+          "hint": "O 'se... então' é o conectivo principal; o antecedente é uma disjunção.",
+          "explanation": "O 'se... então' é o conectivo principal, então o antecedente (p v q) vem entre parênteses e o consequente nega apenas r: (p v q) → ~r. É exatamente a resolução do slide da aula.",
+          "source": "Aula Proposições e Conectivos (Profa. Kelly Gazolli), slide 'Linguagem Natural x Linguagem Simbólica', exemplo 3"
+        },
+        {
+          "kind": "choice",
+          "instruction": "p: 'Gauss é um matemático'. q: 'Maradona é atleta de natação'. Qual fórmula traduz 'Gauss ser um matemático é condição suficiente para que Maradona seja atleta de natação'?",
+          "options": [
+            { "text": "p → q", "isCorrect": true },
+            { "text": "q → p", "isCorrect": false },
+            { "text": "p ↔ q", "isCorrect": false },
+            { "text": "p ^ q", "isCorrect": false },
+            { "text": "~p → q", "isCorrect": false }
+          ],
+          "explanation": "Condição suficiente é o antecedente: 'A é condição suficiente para B' = 'basta A para B' = A → B, o mesmo que 'Se Gauss é matemático, então Maradona é atleta de natação'. A recíproca q → p e a inversa ~p → q não equivalem à condicional.",
+          "source": "Aula Proposições e Conectivos (Profa. Kelly Gazolli), slide 'Linguagem Natural x Linguagem Simbólica', exemplo 2"
+        },
+        {
+          "kind": "input",
+          "instruction": "Digite a fórmula desta frase (letras p, q e os símbolos ~ ^ v → ↔):",
+          "prompt": "p: Os abacates estão maduros. q: Os abacates estão escuros e macios. — 'Os abacates estão maduros somente se estão escuros e macios.'",
+          "accepted": ["p → q", "p->q", "p →(q)"],
+          "formula": "p → q",
+          "hint": "'Somente se' é o mesmo que 'só se' / 'apenas se'.",
+          "placeholder": "ex.: p ^ ~q",
+          "explanation": "'Somente se' introduce a condição necessária, que fica depois da seta: p → q. Quem escreve q → p inverte a frase, e quem usa ^ esquece que é condicional. O app aceita qualquer fórmula equivalente (por exemplo ~p v q).",
+          "source": "Lista I IFES, questão 3c; Aula Dicas de tradução e negação (tabela 'A somente se B')"
+        },
+        {
+          "kind": "multi",
+          "instruction": "Com p: 'Rosas são vermelhas', q: 'Violetas são azuis', r: 'Açúcar é doce', marque TODAS as frases que traduzem a mesma fórmula (p v q) ^ ~r.",
+          "options": [
+            "Rosas são vermelhas ou violetas são azuis, e o açúcar não é doce.",
+            "É falso que o açúcar seja doce, e rosas são vermelhas ou violetas são azuis.",
+            "Rosas são vermelhas e violetas são azuis, ou o açúcar não é doce.",
+            "Se rosas são vermelhas ou violetas são azuis, então o açúcar não é doce.",
+            "Violetas são azuis e o açúcar não é doce, ou as rosas são vermelhas."
+          ],
+          "correct": [0, 1],
+          "mascot": "ada",
+          "say": "Ache primeiro o conectivo principal.",
+          "explanation": "Em (p v q) ^ ~r o conectivo principal é a conjunção, a disjunção fica isolada nos parênteses e a negação atinge só r — leitura da questão 6b. Trocar a ordem dos termos (opção 1) não muda a fórmula; já a opção 2 é (p ^ q) v ~r, a 3 é uma condicional e a 4 é p v (q ^ ~r), a questão 6c.",
+          "source": "Lista I IFES, questão 6b"
+        },
+        {
+          "kind": "match",
+          "instruction": "Ligue cada locução da tabela ao conectivo que ela produz.",
+          "pairs": [
+            { "left": "e, mas, também, além disso", "right": "conjunção ^" },
+            { "left": "ou", "right": "disjunção v" },
+            { "left": "se A, então B; A implica B; basta A para B", "right": "condicional →" },
+            { "left": "A se, e somente se, B", "right": "bicondicional ↔" },
+            { "left": "não A; é falso que A; não é verdade que A", "right": "negação ~" }
+          ],
+          "explanation": "É a tabela do material: as locuções aditivas viram conjunção, 'ou' vira disjunção, todas as formas condicionais (inclusive 'basta A para B') viram A → B, 'se, e somente se' vira bicondicional e 'é falso que / não é verdade que' viram negação.",
+          "source": "Aula Dicas de tradução e negação (Profa. Kelly Gazolli), tabela 'Expressão em Português → Conectivo Lógico'"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Verdadeiro ou falso?",
+          "statement": "'O fogo é uma condição necessária para fumaça' se traduz por 'Se há fogo, então há fumaça'.",
+          "subtext": "Use a regra: se B é condição necessária para A, a fórmula é A → B.",
+          "isTrue": false,
+          "mascot": "sofia",
+          "say": "Condição necessária fica depois da seta.",
+          "explanation": "Falso. Condição necessária é o consequente, então a tradução do material é 'Se há fumaça, então há fogo' (fumaça → fogo): sem fogo não há fumaça, mas fumaça garante fogo.",
+          "source": "Aula Dicas de tradução e negação (Profa. Kelly Gazolli), exemplo do fogo e da fumaça"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Verdadeiro ou falso?",
+          "statement": "'A falha de uma rede segue de a chave geral parar de funcionar' significa: se a chave geral para de funcionar, então a rede falha.",
+          "subtext": "'B segue de A' é a condicional A → B.",
+          "isTrue": true,
+          "explanation": "Verdadeiro. 'B segue de A' (como 'A logo B') coloca A como antecedente: parar a chave é condição suficiente para a falha, então chave para → rede falha.",
+          "source": "Lista I IFES, questão 3b; Aula Dicas de tradução e negação (tabela 'B segue de A')"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Verdadeiro ou falso?",
+          "statement": "Sem parênteses, 'p v q ^ ~r' lê-se p v (q ^ ~r) e corresponde a 'Rosas são vermelhas ou violetas são azuis e o açúcar não é doce'.",
+          "subtext": "Precedência do curso: ~ > ^ e v > → > ↔.",
+          "isTrue": true,
+          "explanation": "Verdadeiro. Como a conjunção liga antes da disjunção, o bloco q ^ ~r se fecha sozinho — é a fórmula da questão 6c, diferente da 6b '(p v q) ^ ~r' embora use as mesmas letras.",
+          "source": "Lista I IFES, questão 6c; Alencar Filho, Cap. 3, item 6 (Uso de parênteses)"
+        },
+        {
+          "kind": "choice",
+          "instruction": "De volta para o português: traduza a fórmula (r ^ ~p) ↔ q, com p: 'Rosas são vermelhas', q: 'Violetas são azuis', r: 'Açúcar é doce'.",
+          "options": [
+            { "text": "O açúcar é doce e as rosas não são vermelhas se, e somente se, as violetas são azuis.", "isCorrect": true },
+            { "text": "As violetas são azuis e as rosas não são vermelhas se, e somente se, o açúcar é doce.", "isCorrect": false },
+            { "text": "O açúcar é doce, ou as rosas não são vermelhas, se e somente se as violetas são azuis.", "isCorrect": false },
+            { "text": "Se o açúcar é doce e as rosas não são vermelhas, então as violetas são azuis.", "isCorrect": false }
+          ],
+          "explanation": "O conectivo principal é a bicondicional, lida 'se, e somente se'; à esquerda dela está a conjunção r ^ ~p, 'o açúcar é doce e as rosas não são vermelhas'. As opções erradas trocam as letras, trocam ^ por v ou viram condicional.",
+          "source": "Lista I IFES, questão 6a"
+        }
+      ]
+    },
+    {
+      "id": "c3_tabelas_construcao",
+      "title": "Montar tabela-verdade sem errar a ordem",
+      "unitTitle": "Capítulo 3 — Construção de tabelas-verdade",
+      "char": "boole",
+      "icon": "tableCells",
+      "steps": [
+        {
+          "kind": "theory",
+          "title": "2^n linhas e a ordem canônica",
+          "instruction": null,
+          "content": "O número de linhas da tabela-verdade depende apenas da quantidade n de proposições simples componentes: são 2^n linhas, porque cada componente admite V ou F. Na ordem canônica do livro, à 1ª letra atribuem-se 2^(n-1) valores V seguidos de igual quantidade de F; à 2ª, blocos da metade; e à última letra o valor muda a cada linha. Com duas letras: VV, VF, FV, FF. Com três: VVV, VVF, VFV, VFF, FVV, FVF, FFV, FFF. Traçam-se uma coluna para cada letra e uma para cada conectivo, e o valor lógico da composta fica na coluna completada em último lugar.",
+          "table": [
+            ["nº de componentes", "linhas na tabela"],
+            ["1", "2"],
+            ["2", "4"],
+            ["3", "8"],
+            ["4", "16"],
+            ["5", "32"]
+          ],
+          "art": "tree2n",
+          "source": "Alencar Filho, Cap. 3, itens 2 e 3 (Número de linhas / Construção da tabela-verdade)"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Quantas linhas tem a tabela-verdade de uma proposição composta com quatro proposições simples componentes, como P(p, q, r, s)?",
+          "options": [
+            { "text": "16 linhas", "isCorrect": true },
+            { "text": "8 linhas", "isCorrect": false },
+            { "text": "24 linhas", "isCorrect": false },
+            { "text": "32 linhas", "isCorrect": false },
+            { "text": "4 linhas", "isCorrect": false }
+          ],
+          "mascot": "boole",
+          "say": "É 2^n, não n vezes 2.",
+          "explanation": "Pelo teorema do Cap. 3, uma composta com n componentes tem 2^n linhas: 2^4 = 16. O erro comum é multiplicar 4 por 2 (dá 8) ou somar tabelas menores (16 + 8 = 24).",
+          "source": "Alencar Filho, Cap. 3, item 2 (teorema das 2^n linhas)"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Verdadeiro ou falso?",
+          "statement": "Uma proposição com três componentes, como P(p, q, r) = ((p → q) ^ (q → r)) → (p → r), tem tabela-verdade com 6 linhas.",
+          "subtext": "Outra do Cap. 3: p ^ q → p v q tem só 4 linhas e é tautologia.",
+          "isTrue": false,
+          "explanation": "Falso. São 2^3 = 8 linhas, não 3 vezes 2 = 6. O livro monta exatamente essa tabela de 8 linhas no exemplo (4) do Cap. 3, e a última coluna sai toda V (tautologia).",
+          "source": "Alencar Filho, Cap. 3, itens 2 e 4, exemplo (4)"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Complete a coluna final da condicional p → q, na ordem canônica VV, VF, FV, FF.",
+          "vars": ["p", "q"],
+          "formula": "p → q",
+          "columnLabel": "p → q",
+          "art": "condTable",
+          "explanation": "A condicional só é falsa quando o antecedente é V e o consequente é F. Nas linhas VV, VF, FV, FF isso dá V, F, V, V — quando p é falsa, a condicional é verdadeira seja qual for q.",
+          "source": "Aula Proposições e Conectivos (Profa. Kelly Gazolli), slide 'Conectivos Lógicos - Condicional'"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Complete a coluna de ~(p ^ ~q): o exemplo (1) do Cap. 3.",
+          "vars": ["p", "q"],
+          "formula": "~(p ^ ~q)",
+          "columnLabel": "~(p ^ ~q)",
+          "explanation": "Primeiro se faz a coluna de ~q, depois a de p ^ ~q e por último a negação dessa conjunção. O livro conclui P(VV)=V, P(VF)=F, P(FV)=V, P(FF)=V.",
+          "source": "Alencar Filho, Cap. 3, item 4, exemplo (1)"
+        },
+        {
+          "kind": "truth-grid",
+          "instruction": "Preencha a última coluna: ela é a coluna completada em último lugar e traz o valor da proposição composta.",
+          "headers": ["p", "q", "p ^ ~q", "~(p ^ ~q)"],
+          "rows": [
+            ["V", "V", "F", { "ans": "V" }],
+            ["V", "F", "V", { "ans": "F" }],
+            ["F", "V", "F", { "ans": "V" }],
+            ["F", "F", "F", { "ans": "V" }]
+          ],
+          "explanation": "Negar a conjunção inverte cada linha: onde p ^ ~q é F a composta é V, e onde ela é V (linha VF) a composta é F. Repare que a coluna de p ^ ~q só pode ser escrita depois da coluna de ~q.",
+          "source": "Alencar Filho, Cap. 3, item 4, exemplo (1), 2ª resolução"
+        },
+        {
+          "kind": "order",
+          "instruction": "Coloque na ordem as colunas que você deve preencher ao montar a tabela de ~(p ^ ~q), do primeiro traço ao último.",
+          "items": [
+            "as colunas das letras p e q",
+            "a coluna de ~q",
+            "a coluna de p ^ ~q",
+            "a coluna final de ~(p ^ ~q)"
+          ],
+          "explanation": "É a receita da 1ª resolução do Cap. 3: forma-se primeiro o par de colunas das componentes, depois a negação ~q, depois a conjunção p ^ ~q e, por último, a negação externa — a coluna completada em último lugar dá o valor lógico da composta.",
+          "source": "Alencar Filho, Cap. 3, item 4, exemplo (1), 1ª resolução"
+        },
+        {
+          "kind": "theory",
+          "title": "Precedência: onde os parênteses obrigatoriamente fecham",
+          "instruction": null,
+          "content": "Os parênteses servem para matar a ambiguidade: 'p ^ q v r' pode ser (p ^ q) v r, uma disjunção, ou p ^ (q v r), uma conjunção — são duas proposições com tabelas diferentes. A convenção do curso dá a ordem de precedência ~ ; ^ e v ; → ; ↔, isto é, a negação é o conectivo mais forte e a bicondicional o mais fraco. Assim '~p ^ q' é (~p) ^ q e não ~(p ^ q), 'p v q → r' é (p v q) → r e 'p → q ↔ r' é (p → q) ↔ r. Quando o mesmo conectivo se repete, suprimem-se os parênteses associando da esquerda: 'p ^ q ^ r' é ((p ^ q) ^ r).",
+          "table": [
+            ["escrita sem parênteses", "leitura correta"],
+            ["~p ^ q", "(~p) ^ q"],
+            ["p ^ q v r", "(p ^ q) v r"],
+            ["p v q → r", "(p v q) → r"],
+            ["p → q ↔ r", "(p → q) ↔ r"]
+          ],
+          "source": "Alencar Filho, Cap. 3, item 6 (Uso de parênteses); Aula Proposições e Conectivos (Profa. Kelly Gazolli), slide 'Omissão de Parêntesis'"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Complete a coluna de (p → q) ↔ (~p v q) — a equivalência da condicional vista como tabela.",
+          "vars": ["p", "q"],
+          "formula": "(p → q) ↔ (~p v q)",
+          "columnLabel": "(p → q) ↔ (~p v q)",
+          "explanation": "As duas metades têm tabelas idênticas (V, F, V, V cada uma), então a bicondicional é V em todas as linhas: a coluna final toda V denuncia uma tautologia.",
+          "source": "Alencar Filho, Cap. 3, item 1 (tabelas das operações fundamentais)"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Complete a coluna de 'p v ~r → q ^ ~r', o exemplo (3) do Cap. 3. Sem parênteses: a condicional é o conectivo principal e a tabela tem oito linhas.",
+          "vars": ["p", "q", "r"],
+          "formula": "p v ~r → q ^ ~r",
+          "columnLabel": "(p v ~r) → (q ^ ~r)",
+          "mascot": "boole",
+          "say": "Comece por ~r: ela muda a cada linha.",
+          "explanation": "Pela precedência, ^ e v ligam antes de →, então lê-se (p v ~r) → (q ^ ~r). Monte ~r (F, V alternando a cada linha), depois p v ~r e q ^ ~r, e feche na condicional: ela só é F quando o antecedente é V e o consequente F.",
+          "source": "Alencar Filho, Cap. 3, item 4, exemplo (3)"
+        },
+        {
+          "kind": "row-truth",
+          "title": "Valor lógico com p = V e q = F",
+          "instruction": "Sabendo que V(p) = V e V(q) = F, qual é o valor lógico de ~(p v q) ↔ (~p ^ ~q)?",
+          "rowContext": { "p": "V", "q": "F" },
+          "options": [
+            "V, porque os dois lados valem F",
+            "F, porque ~p ^ ~q é F",
+            "F, porque ~(p v q) é V"
+          ],
+          "correctIndex": 0,
+          "art": "demorgan",
+          "explanation": "p v q = V, logo ~(p v q) = F; e ~p ^ ~q = F ^ V = F. Uma bicondicional entre dois lados F é V. É o exemplo (1) do item 5 do Cap. 3, que nada mais é que a lei de De Morgan.",
+          "source": "Alencar Filho, Cap. 3, item 5, exemplo (1)"
+        },
+        {
+          "kind": "row-truth",
+          "title": "Uma linha da tabela de 8 linhas",
+          "instruction": "Na linha p = V, q = V, r = F da tabela de ((p → q) ^ (q → r)) → (p → r), qual é o valor da composta?",
+          "rowContext": { "p": "V", "q": "V", "r": "F" },
+          "options": [
+            "V, porque o antecedente (p → q) ^ (q → r) é F",
+            "F, porque p → r é F",
+            "V, porque as três letras valem V"
+          ],
+          "correctIndex": 0,
+          "mascot": "memo",
+          "say": "Antecedente falso salva a condicional.",
+          "explanation": "(p → q) = V, mas (q → r) = V → F = F, então o antecedente conjuntivo é F; uma condicional com antecedente F é sempre V, ainda que p → r seja F. Por isso a fórmula é tautologia no exemplo (4) do Cap. 3.",
+          "source": "Alencar Filho, Cap. 3, item 4, exemplo (4)"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Complete a coluna de (p v q) ^ ~r — a fórmula da questão 6b ('Rosas são vermelhas ou violetas são azuis, e o açúcar não é doce').",
+          "vars": ["p", "q", "r"],
+          "formula": "(p v q) ^ ~r",
+          "columnLabel": "(p v q) ^ ~r",
+          "explanation": "Com três componentes são 2^3 = 8 linhas. A conjunção principal só é V onde (p v q) é V e ~r é V, ou seja, nas linhas em que r = F e pelo menos uma de p, q é verdadeira: VVF, VFF e FVF.",
+          "source": "Lista I IFES, questão 6b; contagem de linhas: Alencar Filho, Cap. 3, item 2"
+        },
+        {
+          "kind": "circuit",
+          "instruction": "Quais atribuições de V e F para p, q e r deixam a saída de p v (q ^ ~r) em F? (fórmula da questão 6c)",
+          "vars": ["p", "q", "r"],
+          "formula": "p v (q ^ ~r)",
+          "target": "F",
+          "art": "circuit",
+          "explanation": "A disjunção só é F quando os dois lados são F: precisa p = F e, ao mesmo tempo, q ^ ~r = F. Isso acontece nas linhas FVV, FFV e FFF — o mesmo cálculo do valor lógico da composta feito no item 5 do Cap. 3.",
+          "source": "Lista I IFES, questão 6c; Alencar Filho, Cap. 3, item 5"
+        },
+        {
+          "kind": "truth-grid",
+          "instruction": "Complete as duas colunas em branco da tabela de três componentes, seguindo a ordem canônica das linhas.",
+          "headers": ["p", "q", "r", "~r", "q ^ ~r"],
+          "rows": [
+            ["V", "V", "V", { "ans": "F" }, { "ans": "F" }],
+            ["V", "V", "F", { "ans": "V" }, { "ans": "V" }],
+            ["V", "F", "V", { "ans": "F" }, { "ans": "F" }],
+            ["V", "F", "F", { "ans": "V" }, { "ans": "F" }],
+            ["F", "V", "V", { "ans": "F" }, { "ans": "F" }],
+            ["F", "V", "F", { "ans": "V" }, { "ans": "V" }],
+            ["F", "F", "V", { "ans": "F" }, { "ans": "F" }],
+            ["F", "F", "F", { "ans": "V" }, { "ans": "F" }]
+          ],
+          "mascot": "sofia",
+          "say": "p muda de 4 em 4, q de 2 em 2, r a cada linha.",
+          "explanation": "Na ordem canônica de três letras, p alterna em blocos de 4, q em blocos de 2 e r a cada linha; por isso ~r é F, V, F, V, F, V, F, V. A conjunção q ^ ~r só é V onde q = V e r = F: linhas VVF e FVF.",
+          "source": "Alencar Filho, Cap. 3, itens 3 e 4, exemplo (3)"
+        }
+      ]
+    }
+  ]
+}

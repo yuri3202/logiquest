@@ -1,0 +1,335 @@
+{
+  "lessons": [
+    {
+      "id": "c14_sentencas_abertas",
+      "title": "Sentenças abertas e o conjunto-verdade",
+      "unitTitle": "Capítulo 14 — Sentenças abertas",
+      "char": "sofia",
+      "icon": "squareRootVariable",
+      "steps": [
+        {
+          "kind": "theory",
+          "title": "O que é uma sentença aberta",
+          "content": "Uma <b>sentença aberta</b> com uma variável em um conjunto A é uma expressão p(x) que vira proposição (V ou F) toda vez que substituímos x por um elemento a ∈ A. Enquanto a variável está solta, <b>não é proposição</b>: não tem valor lógico. O conjunto A chama-se <b>universo</b> (ou conjunto-universo, ou domínio) da variável. Quando p(a) é verdadeira, dizemos que a <b>satisfaz</b> (verifica) p(x). A sentença aberta também é chamada <b>função proposicional</b> ou <b>condição</b> em A. Exemplos do livro em N = {1, 2, 3, ...}: 'x + 1 > 8', 'x² − 5x + 6 = 0', 'x é divisor de 10', 'x é primo'.",
+          "table": null,
+          "art": "openSentence",
+          "source": "Alencar Filho, Cap. 14, seção 1"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Assinale a alternativa que contém uma sentença aberta (e não uma proposição):",
+          "options": [
+            { "text": "x é divisor de 10.", "isCorrect": true },
+            { "text": "7 é divisor de 14.", "isCorrect": false },
+            { "text": "2 + 3 = 5.", "isCorrect": false },
+            { "text": "O número 9 é quadrado perfeito.", "isCorrect": false }
+          ],
+          "explanation": "'x é divisor de 10' traz uma variável sem valor: só vira proposição (V ou F) quando atribuímos um valor a x. As outras três já têm valor lógico fixo — são proposições, não sentenças abertas.",
+          "source": "Alencar Filho, Cap. 14, seção 1"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Verdadeiro ou falso?",
+          "statement": "'x + 5 = 9' é uma proposição, porque já é uma frase declarativa com sinal de igualdade.",
+          "subtext": null,
+          "isTrue": false,
+          "explanation": "Ser declarativa não basta: com a variável x livre, não há valor lógico. 'x + 5 = 9' é sentença aberta em N; só ao trocar x por 4 ela vira proposição verdadeira.",
+          "source": "Alencar Filho, Cap. 14, seção 1",
+          "mascot": "sofia",
+          "say": "Sentença aberta não tem valor lógico sozinha!"
+        },
+        {
+          "kind": "theory",
+          "title": "Conjunto-verdade Vp",
+          "content": "O <b>conjunto-verdade</b> Vp de uma sentença aberta p(x) em A é o conjunto de todos os elementos a ∈ A que tornam p(a) verdadeira: Vp = {x ∈ A | p(x)}. Como só os elementos de A podem verificar p(x), <b>Vp é sempre subconjunto de A</b> (Vp ⊆ A). Exemplos: em N, 'x é divisor de 10' dá Vp = {1, 2, 5, 10}; 'x + 1 > 8' dá Vp = {8, 9, 10, ...}; em Z, 'x² − 2x > 0' dá Vp = Z − {0, 1, 2}.",
+          "table": null,
+          "art": "setOps",
+          "source": "Alencar Filho, Cap. 14, seção 2, exemplos 1, 4 e 5"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Qual é o conjunto-verdade da sentença aberta 'x² − 5x + 6 = 0' no universo N?",
+          "options": [
+            { "text": "{2, 3}", "isCorrect": true },
+            { "text": "{1, 6}", "isCorrect": false },
+            { "text": "{−2, −3}", "isCorrect": false },
+            { "text": "{2, 3, 6}", "isCorrect": false }
+          ],
+          "explanation": "x² − 5x + 6 = (x − 2)(x − 3), então as raízes são x = 2 e x = 3, ambas naturais. O conjunto-verdade é Vp = {2, 3}. Os sinais trocados {−2, −3} não caem em N e não resolvem a equação.",
+          "source": "Alencar Filho, Cap. 14, seção 1, exemplo (b)"
+        },
+        {
+          "kind": "order",
+          "instruction": "Ordene os passos para achar o conjunto-verdade de uma sentença aberta p(x) em A:",
+          "items": [
+            "Identificar o universo A da variável",
+            "Substituir x por cada elemento a ∈ A",
+            "Reter os valores a para os quais p(a) é verdadeira",
+            "Formar Vp = {a ∈ A | p(a) é V}"
+          ],
+          "explanation": "O conjunto-verdade é construído testando os elementos do domínio: primeiro fixamos A, depois avaliamos p(a) para cada a e guardamos os que dão V — o resultado é Vp ⊆ A.",
+          "source": "adaptado de: Alencar Filho, Cap. 14, seção 2"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Seja p(x): 'x + 1 > 8' em N. Qual substituição produz uma proposição verdadeira?",
+          "options": [
+            { "text": "x = 8", "isCorrect": true },
+            { "text": "x = 7", "isCorrect": false },
+            { "text": "x = 1", "isCorrect": false },
+            { "text": "x = 0", "isCorrect": false }
+          ],
+          "explanation": "x + 1 > 8 equivale a x > 7, o primeiro natural que satisfaz é 8 (8 + 1 = 9 > 8). Com x = 7 teríamos 8 > 8, falso; os demais também não satisfazem.",
+          "source": "Alencar Filho, Cap. 14, seção 1, exemplo (a)",
+          "art": "numberLine"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Verdadeiro ou falso?",
+          "statement": "O conjunto-universo A e o conjunto-verdade Vp de uma sentença aberta são sempre iguais.",
+          "subtext": null,
+          "isTrue": false,
+          "explanation": "Vp é sempre subconjunto de A, mas costuma ser próprio. Só no caso de condição universal Vp coincide com A; nas condições possível e impossível Vp é menor que A.",
+          "source": "Alencar Filho, Cap. 14, seção 2",
+          "mascot": "sofia",
+          "say": "Vp fica sempre dentro do universo A."
+        },
+        {
+          "kind": "match",
+          "instruction": "Ligue cada sentença aberta ao tipo de condição que ela exprime no universo indicado:",
+          "pairs": [
+            { "left": "x + 5 > 3  (em N)", "right": "condição universal: todo natural satisfaz" },
+            { "left": "x é divisor de 10  (em N)", "right": "condição possível: só {1, 2, 5, 10} satisfazem" },
+            { "left": "x + 1 = x  (em R)", "right": "condição impossível: nenhum real satisfaz" },
+            { "left": "9x² − 1 = 0  (em N)", "right": "condição impossível: nenhuma raiz é natural" }
+          ],
+          "explanation": "Universal é quando Vp = A (x + 5 > 3 vale para todo natural); possível é quando Vp é subconjunto próprio de A (divisor de 10); impossível é quando Vp = ∅ (x + 1 = x não tem solução, e 9x² − 1 = 0 só tem raízes ±1/3, que não são naturais).",
+          "source": "Alencar Filho, Cap. 14, seção 2, nota sobre condições universal, possível e impossível"
+        },
+        {
+          "kind": "theory",
+          "title": "Sentenças abertas com duas variáveis",
+          "content": "Dados conjuntos A e B, uma <b>sentença aberta com duas variáveis</b> em A × B é uma expressão p(x, y) que vira proposição quando trocamos (x, y) por um par (a, b) ∈ A × B. O universo agora é o produto cartesiano A × B, e o conjunto-verdade Vp é um conjunto de <b>pares ordenados</b>: Vp = {(x, y) ∈ A × B | p(x, y)}. Exemplo: com A = {1, 2, 3} e B = {5, 6}, a expressão 'x < y' é sentença aberta em A × B; o par (3, 5) a satisfaz, pois 3 < 5.",
+          "table": null,
+          "source": "Alencar Filho, Cap. 14, seção 3"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Sejam A = {1, 2, 3, 4}, B = {1, 3, 5}. Qual é o conjunto-verdade de 'x < y' em A × B?",
+          "options": [
+            { "text": "{(1,3), (1,5), (2,3), (2,5), (3,5), (4,5)}", "isCorrect": true },
+            { "text": "{(1,1), (3,3), (5,5)}", "isCorrect": false },
+            { "text": "{(3,1), (5,1), (5,2), (5,3), (5,4)}", "isCorrect": false },
+            { "text": "{(1,3), (2,3), (3,3), (1,5), (2,5), (3,5), (4,5)}", "isCorrect": false }
+          ],
+          "explanation": "Para cada x, colhemos os y ∈ B com x < y: x = 1 → y = 3, 5; x = 2 → 3, 5; x = 3 → 5; x = 4 → 5. Isso dá exatamente os seis pares da resposta. Incluir (3, 3) é o erro de aceitar x = y, que não satisfaz x < y.",
+          "source": "Alencar Filho, Cap. 14, seção 4, exemplo (1)"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Verdadeiro ou falso?",
+          "statement": "Com A = {1, 2, 3} e B = {5, 6}, o par (3, 5) satisfaz ao mesmo tempo 'x < y' e 'mdc(x, y) = 1'.",
+          "subtext": null,
+          "isTrue": true,
+          "explanation": "3 < 5 é verdadeiro e mdc(3, 5) = 1 é verdadeiro, então (3, 5) pertence aos conjuntos-verdade das duas sentenças abertas em A × B.",
+          "source": "Alencar Filho, Cap. 14, seção 3, exemplos (a) e (d)"
+        },
+        {
+          "kind": "counterexample",
+          "instruction": "Dizem que '3x > 1' é condição universal em R. Escolha o valor de x que serve de contraexemplo:",
+          "items": [
+            { "id": 1, "shape": "circle", "color": "blue", "label": "x = 5" },
+            { "id": 2, "shape": "square", "color": "blue", "label": "x = 1" },
+            { "id": 3, "shape": "circle", "color": "red", "label": "x = 1/3", "isCounter": true },
+            { "id": 4, "shape": "square", "color": "blue", "label": "x = 2" }
+          ],
+          "explanation": "Para x = 1/3 temos 3 · (1/3) = 1, e 1 > 1 é falso. Esse único valor já mostra que '3x > 1' não é universal em R — embora seja universal em N, pois todo natural satisfaz.",
+          "source": "Alencar Filho, Cap. 14, seção 2, nota (a condição 3x > 1 em R)"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Duas sentenças abertas em A são iguais quando têm o mesmo conjunto-verdade. Em N, qual par de sentenças abertas é igual?",
+          "options": [
+            { "text": "'x² − 5x + 6 = 0' e 'x = 2 ou x = 3'", "isCorrect": true },
+            { "text": "'x² − 4 = 0' e 'x = 2 ou x = 3'", "isCorrect": false },
+            { "text": "'x é divisor de 10' e 'x é divisor de 6'", "isCorrect": false },
+            { "text": "'x + 1 > 8' e 'x + 1 ≥ 8'", "isCorrect": false }
+          ],
+          "explanation": "As duas primeiras têm Vp = {2, 3}: a equação fatora em (x − 2)(x − 3) e a disjunção lista exatamente essas raízes, então são a mesma sentença aberta. 'x² − 4 = 0' dá só {2}; os divisores de 10 e de 6 diferem; e x > 7 (de x+1>8) difere de x ≥ 7 (de x+1≥8).",
+          "source": "adaptado de: Alencar Filho, Cap. 14, seções 1 e 2"
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Monte, com os blocos, a definição simbólica do conjunto-verdade de p(x) em A:",
+          "promptBox": "Vp = ?",
+          "tokens": ["Vp", "=", "{", "x ∈ A", "|", "p(x)", "}", "⊆", "∪", "^"],
+          "correctSequence": ["Vp", "=", "{", "x ∈ A", "|", "p(x)", "}"],
+          "hint": "Comece por Vp = {, indique que x vem do universo, separe por | e feche com p(x).",
+          "explanation": "O conjunto-verdade é Vp = {x ∈ A | p(x)}: o conjunto dos elementos de A que tornam p verdadeira. Os blocos ⊆, ∪ e ^ são distratores — Vp ⊆ A é propriedade, não parte da definição.",
+          "source": "Alencar Filho, Cap. 14, seção 2"
+        }
+      ]
+    },
+    {
+      "id": "c15_operacoes_abertas",
+      "title": "Negação, conjunção, disjunção, condicional e bicondicional de sentenças abertas",
+      "unitTitle": "Capítulo 15 — Operações lógicas sobre sentenças abertas",
+      "char": "ada",
+      "icon": "atom",
+      "steps": [
+        {
+          "kind": "theory",
+          "title": "As operações definidas pelos conjuntos-verdade",
+          "content": "As operações do Cap. 2 estendem-se às sentenças abertas, definidas <b>ponto a ponto</b> pelos conjuntos-verdade. A <b>conjunção</b> p(x) ∧ q(x) é verificada por quem satisfaz as duas ao mesmo tempo, então <b>V(p∧q) = Vp ∩ Vq</b>. Exemplo em Z: p(x): x² + x − 2 = 0 dá Vp = {−2, 1}; q(x): x² − 4 = 0 dá Vq = {−2, 2}; logo V(p∧q) = {−2, 1} ∩ {−2, 2} = {−2}. A conjunção 'x > 2 ∧ x < 8' costuma escrever-se 2 < x < 8.",
+          "table": null,
+          "art": "setOps",
+          "source": "Alencar Filho, Cap. 15, seção 2"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Em Z, p(x): x² + x − 2 = 0 e q(x): x² − 4 = 0. Qual é V(p ∧ q)?",
+          "options": [
+            { "text": "{−2}", "isCorrect": true },
+            { "text": "{−2, 1, 2}", "isCorrect": false },
+            { "text": "{1, 2}", "isCorrect": false },
+            { "text": "∅", "isCorrect": false }
+          ],
+          "explanation": "Vp = {−2, 1} e Vq = {−2, 2}. A conjunção usa a interseção: Vp ∩ Vq = {−2}, o único inteiro que satisfaz as duas equações. Usar a união daria {−2, 1, 2}, o resultado da disjunção.",
+          "source": "Alencar Filho, Cap. 15, seção 2, exemplo (Z)"
+        },
+        {
+          "kind": "venn",
+          "instruction": "Pinte a região que representa o conjunto-verdade de p(x) ∧ q(x):",
+          "title": "Conjunção",
+          "targetRegion": "intersection",
+          "explanation": "A conjunção exige que x satisfaça as duas condições simultaneamente, então V(p∧q) = Vp ∩ Vq — a região central do diagrama, comum às duas sentenças abertas.",
+          "source": "Alencar Filho, Cap. 15, seção 2"
+        },
+        {
+          "kind": "theory",
+          "title": "Disjunção vira reunião",
+          "content": "A <b>disjunção</b> p(x) ∨ q(x) é verificada por quem satisfaz pelo menos uma das duas, então <b>V(p∨q) = Vp ∪ Vq</b>. Com os mesmos exemplos em Z: {−2, 1} ∪ {−2, 2} = {−2, 1, 2}. Em R, para p(x): x < 0 e q(x): x > 0, temos Vp ∪ Vq = R⁻ ∪ R⁺ = R* (os reais não nulos): todo real diferente de 0 satisfaz a disjunção.",
+          "table": null,
+          "source": "Alencar Filho, Cap. 15, seção 3"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Nas mesmas sentenças em Z, p(x): x² + x − 2 = 0 e q(x): x² − 4 = 0, qual é V(p ∨ q)?",
+          "options": [
+            { "text": "{−2, 1, 2}", "isCorrect": true },
+            { "text": "{−2}", "isCorrect": false },
+            { "text": "{1, 2}", "isCorrect": false },
+            { "text": "{−2, 1, 2, −1}", "isCorrect": false }
+          ],
+          "explanation": "A disjunção usa a reunião: Vp ∪ Vq = {−2, 1} ∪ {−2, 2} = {−2, 1, 2}. Trocar por {−2} é aplicar a interseção (conjunção); acrescentar −1 é um valor que não satisfaz nenhuma das equações.",
+          "source": "Alencar Filho, Cap. 15, seção 3, exemplo (Z)"
+        },
+        {
+          "kind": "venn",
+          "instruction": "Pinte a região que representa o conjunto-verdade de p(x) ∨ q(x):",
+          "title": "Disjunção",
+          "targetRegion": "union",
+          "explanation": "Na disjunção basta satisfazer uma das condições, então V(p∨q) = Vp ∪ Vq, que abrange as três regiões do diagrama: só p, ambas e só q.",
+          "source": "Alencar Filho, Cap. 15, seção 3"
+        },
+        {
+          "kind": "theory",
+          "title": "Negação é complemento relativo ao universo",
+          "content": "A <b>negação</b> ~p(x) é verificada por quem <b>não</b> satisfaz p, então <b>V(~p) = A − Vp</b>, o complemento de Vp <b>em relação ao universo A</b> (não em relação a R nem a N, e sim ao A adotado). Exemplo: A = {5, 10, 15, ...} (naturais divisíveis por 5) e p(x): 'x termina por 5'; então V(~p) = {x ∈ A | x termina por 0} = {10, 20, ...}. Em N, ~ (x é par) é equivalente a 'x é ímpar'.",
+          "table": null,
+          "source": "Alencar Filho, Cap. 15, seção 4"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Seja A = {0, 1, 2, 3, 4, 5} e p(x): x < 3. Qual é o conjunto-verdade de ~p(x)?",
+          "options": [
+            { "text": "{3, 4, 5}", "isCorrect": true },
+            { "text": "{0, 1, 2}", "isCorrect": false },
+            { "text": "{0, 1, 2, 3, 4, 5}", "isCorrect": false },
+            { "text": "{x ∈ N | x ≥ 3}", "isCorrect": false }
+          ],
+          "explanation": "Vp = {0, 1, 2}. A negação pega o complemento relativo a A: V(~p) = A − Vp = {3, 4, 5}. Responder {x ∈ N | x ≥ 3} esquece que o complemento é tomado dentro do universo A e não na infinidade dos naturais.",
+          "source": "Alencar Filho, Cap. 15, exercício 3, item (a)"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Verdadeiro ou falso?",
+          "statement": "Ao negar uma sentença aberta em A = {0, 1, 2, 3, 4, 5}, o conjunto-verdade de ~p pode conter valores fora de A, como 6 ou 7.",
+          "subtext": null,
+          "isTrue": false,
+          "explanation": "V(~p) = A − Vp é sempre subconjunto de A: o complemento é relativo ao universo adotado. Nenhum valor fora de A entra no conjunto-verdade da negação.",
+          "source": "Alencar Filho, Cap. 15, seção 4",
+          "mascot": "ada",
+          "say": "Cuidado: o complemento é relativo a A!"
+        },
+        {
+          "kind": "theory",
+          "title": "Condicional e bicondicional",
+          "content": "Como p → q equivale a ~p ∨ q, a <b>condicional</b> de sentenças abertas tem <b>V(p→q) = (A − Vp) ∪ Vq</b>. Exemplo em Z: 'x² − 5x + 6 = 0 → x² − 9 = 0' falha só em x = 2 (o único ponto em que p é V e q é F), logo V(p→q) = Z − {2}. Na <b>bicondicional</b>, p ↔ q vale onde p e q têm o mesmo valor, então <b>V(p↔q) = (Vp ∩ Vq) ∪ ((A − Vp) ∩ (A − Vq))</b>. Exemplo: 'x > −5 ↔ x < 0' em Z é verificada só por {−4, −3, −2, −1}.",
+          "table": null,
+          "art": "truthColumns",
+          "source": "Alencar Filho, Cap. 15, seções 5 e 6"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Em Z, p(x): x² − 5x + 6 = 0 e q(x): x² − 9 = 0. Qual é V(p → q)?",
+          "options": [
+            { "text": "Z − {2}", "isCorrect": true },
+            { "text": "Z − {3}", "isCorrect": false },
+            { "text": "Z − {2, 3}", "isCorrect": false },
+            { "text": "Z − {−3, 3}", "isCorrect": false }
+          ],
+          "explanation": "Vp = {2, 3} e Vq = {−3, 3}. A condicional é falsa só quando p é V e q é F, isto é, em x = 2 (que está em Vp mas não em Vq). Então V(p→q) = Z − {2}. Tirar x = 3 seria um erro: em 3, p e q são ambos V.",
+          "source": "Alencar Filho, Cap. 15, seção 5",
+          "mascot": "ada",
+          "say": "Só x = 2 faz p V e q F ao mesmo tempo."
+        },
+        {
+          "kind": "choice",
+          "instruction": "Em N, p(x): x divide 12 e q(x): x divide 45. Qual é V(p → q)?",
+          "options": [
+            { "text": "N − {2, 4, 6, 12}", "isCorrect": true },
+            { "text": "N − {2, 4, 6}", "isCorrect": false },
+            { "text": "N − {1, 3}", "isCorrect": false },
+            { "text": "N − {5, 9, 15, 45}", "isCorrect": false }
+          ],
+          "explanation": "Vp = {1, 2, 3, 4, 6, 12} e Vq = {1, 3, 5, 9, 15, 45}. Pelo cálculo (A − Vp) ∪ Vq, caem exatamente os pontos de Vp que não estão em Vq: {2, 4, 6, 12} (1 e 3 ficam porque também dividem 45). Resultado: N − {2, 4, 6, 12}.",
+          "source": "Alencar Filho, Cap. 15, seção 5, exemplo (N)"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Em A = {1, 2, ..., 9}, p(x): x² ∈ A e q(x): x é ímpar. Qual é V(p ↔ q)?",
+          "options": [
+            { "text": "{1, 3, 4, 6, 8}", "isCorrect": true },
+            { "text": "{1, 3}", "isCorrect": false },
+            { "text": "{2, 5, 7, 9}", "isCorrect": false },
+            { "text": "{1, 2, 3, 5, 7, 9}", "isCorrect": false }
+          ],
+          "explanation": "Vp = {1, 2, 3} e Vq = {1, 3, 5, 7, 9}. A bicondicional vale onde os valores coincidem: ambas V em Vp ∩ Vq = {1, 3}; ambas F em A − (Vp ∪ Vq) = {4, 6, 8}. União: {1, 3, 4, 6, 8}. {2, 5, 7, 9} é justamente o conjunto onde os valores divergem.",
+          "source": "Alencar Filho, Cap. 15, seção 6, exemplo (N); exercício 9"
+        },
+        {
+          "kind": "match",
+          "instruction": "Ligue cada operação lógica sobre sentenças abertas à sua identidade entre conjuntos-verdade:",
+          "pairs": [
+            { "left": "p(x) ∧ q(x)", "right": "Vp ∩ Vq" },
+            { "left": "p(x) ∨ q(x)", "right": "Vp ∪ Vq" },
+            { "left": "~ p(x)", "right": "A − Vp" },
+            { "left": "p(x) → q(x)", "right": "(A − Vp) ∪ Vq" },
+            { "left": "p(x) ↔ q(x)", "right": "(Vp ∩ Vq) ∪ ((A − Vp) ∩ (A − Vq))" }
+          ],
+          "explanation": "Cada conectivo se traduz numa operação de conjuntos sobre os conjuntos-verdade: conjunção → interseção, disjunção → reunião, negação → complemento em A, condicional → complemento de Vp reunido com Vq, bicondicional → onde Vp e Vq concordam.",
+          "source": "Alencar Filho, Cap. 15, seções 2 a 6"
+        },
+        {
+          "kind": "theory",
+          "title": "Álgebra das sentenças abertas",
+          "content": "As leis da álgebra das proposições (Cap. 7) valem para sentenças abertas, agora traduzidas em <b>identidades de conjuntos</b>. De Morgan: ~ (p ∧ q) ≡ ~p ∨ ~q vira A − (Vp ∩ Vq) = (A − Vp) ∪ (A − Vq); a dupla negação vira A − (A − Vp) = Vp. Nas condições-limite, conjugar p com uma condição <b>universal</b> (Vp = A) deixa p inalterada, e conjugar com uma <b>impossível</b> (Vp = ∅) gera uma impossível; os duals valem para a disjunção (trocar ∧ por ∨, universal por impossível).",
+          "table": null,
+          "art": "lawsLadder",
+          "source": "Alencar Filho, Cap. 15, seção 7"
+        }
+      ]
+    }
+  ]
+}

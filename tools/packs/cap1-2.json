@@ -1,0 +1,345 @@
+{
+  "lessons": [
+    {
+      "id": "c1_proposicoes",
+      "title": "O que é proposição, valor lógico e princípios",
+      "unitTitle": "Capítulo 1 — Proposições. Conectivos",
+      "char": "bit",
+      "icon": "circleQuestion",
+      "steps": [
+        {
+          "kind": "theory",
+          "title": "O que é proposição",
+          "content": "Proposição é todo conjunto de palavras ou símbolos que exprime um pensamento de sentido completo (Alencar Filho). Na aula: uma declaração à qual podemos atribuir um valor lógico, verdadeiro (V) ou falso (F). Para contar, a frase passa por duas regras do juízo objetivo: (1) ser declarativa, afirmativa ou negativa — pergunta, ordem e exclamação não afirmam juízo nenhum; (2) ter valor lógico objetivo, que vale para qualquer um, não gosto pessoal. Exemplos da aula: <b>'2 é par'</b> (proposição, V) e <b>'36 é divisível por 15'</b> (proposição, F). Não são proposições: 'Que horas são?', 'Desligue o celular', 'Que dia lindo!', 'Esta afirmação é falsa'.",
+          "table": null,
+          "source": "Alencar Filho, Cap. 1, seção 1; Aula Proposições e Conectivos (Profa. Kelly Gazolli), slide 'Proposição'"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Classifique: qual destas frases é uma proposição?",
+          "options": [
+            { "text": "Que horas são?", "isCorrect": false },
+            { "text": "Desligue o celular.", "isCorrect": false },
+            { "text": "2 é par.", "isCorrect": true },
+            { "text": "Que dia lindo!", "isCorrect": false }
+          ],
+          "explanation": "Só frase declarativa afirma um juízo e admite valor lógico: '2 é par' é proposição verdadeira. Interrogativa, imperativa (ordem) e exclamativa não são proposições.",
+          "source": "Aula Proposições e Conectivos (Profa. Kelly Gazolli), slides 'São Proposições' e 'Não São Proposições'"
+        },
+        {
+          "kind": "match",
+          "instruction": "Ligue cada frase ao seu tipo:",
+          "pairs": [
+            { "left": "'2 é par'", "right": "proposição simples (valor V)" },
+            { "left": "'36 é divisível por 15'", "right": "proposição simples (valor F)" },
+            { "left": "'Que horas são?'", "right": "pergunta: não é proposição" },
+            { "left": "'Desligue o celular.'", "right": "ordem: não é proposição" }
+          ],
+          "explanation": "Pergunta e ordem não afirmam juízo, então não são proposições. '2 é par' e '36 é divisível por 15' são declarativas sem conectivo: simples, uma verdadeira e outra falsa.",
+          "source": "Aula Proposições e Conectivos (Profa. Kelly Gazolli), slides 'São Proposições' e 'Não São Proposições'"
+        },
+        {
+          "kind": "multi",
+          "instruction": "Quais destas frases são proposições? Marque todas.",
+          "options": [
+            "36 é divisível por 15.",
+            "O Sol gira em torno da Terra.",
+            "Esta afirmação é falsa.",
+            "Que dia lindo!",
+            "Feche a porta."
+          ],
+          "correct": [0, 1],
+          "explanation": "Proposição falsa continua sendo proposição: '36 é divisível por 15' e 'O Sol gira em torno da Terra' têm valor lógico F. O paradoxo não admite valor estável, e exclamação e ordem não são declarativas.",
+          "source": "Alencar Filho, Cap. 1, seção 2; Aula Proposições e Conectivos (Profa. Kelly Gazolli), slide 'Não São Proposições'"
+        },
+        {
+          "kind": "input",
+          "instruction": "Digite o valor lógico da proposição.",
+          "prompt": "36 é divisível por 15.",
+          "accepted": ["F", "falso"],
+          "hint": "Faça a divisão: 36 ÷ 15.",
+          "placeholder": "V ou F",
+          "explanation": "36 ÷ 15 = 2,4: a divisão não é exata, então 15 não divide 36 e o valor lógico é F. Ter valor F não impede a frase de ser proposição.",
+          "source": "Aula Proposições e Conectivos (Profa. Kelly Gazolli), slide 'São Proposições'"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Verdadeiro ou falso?",
+          "statement": "Como 'O Sol gira em torno da Terra' é falsa, essa frase não é uma proposição.",
+          "subtext": "Separe duas coisas: ser proposição e o valor que ela tem.",
+          "isTrue": false,
+          "explanation": "Ser proposição é admitir um valor lógico objetivo, não importa qual. O próprio livro lista 'O Sol gira em torno da Terra' como proposição de valor lógico F.",
+          "source": "Alencar Filho, Cap. 1, seção 2",
+          "mascot": "bit",
+          "say": "Falsa ou verdadeira: o que importa é ter valor lógico."
+        },
+        {
+          "kind": "theory",
+          "title": "Proposição simples, composta e conectivos",
+          "content": "Proposição <b>simples</b> (atômica) não contém outra proposição como parte: p: 'Carlos é careca', q: 'Pedro é estudante', r: 'O número 25 é quadrado perfeito'. Proposição <b>composta</b> (molecular) combina duas ou mais simples e costuma ser escrita P, Q, R, S: 'Carlos é careca e Pedro é estudante'. As compostas são chamadas fórmulas proposicionais. Conectivos usuais: <b>'e', 'ou', 'não', 'se... então...', '... se e somente se...'</b>. Exemplos do livro: 'O número 6 é par e o número 8 é cubo perfeito', 'O triângulo ABC é retângulo ou é isósceles', 'Se Jorge é engenheiro, então sabe Matemática'.",
+          "table": null,
+          "source": "Alencar Filho, Cap. 1, seções 3 e 4; Aula Proposições e Conectivos (Profa. Kelly Gazolli), slides 'Proposições Simples' e 'Proposições Compostas'"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Qual destas é uma proposição composta?",
+          "options": [
+            { "text": "Pedro é estudante.", "isCorrect": false },
+            { "text": "O número 25 é quadrado perfeito.", "isCorrect": false },
+            { "text": "O triângulo ABC é retângulo ou é isósceles.", "isCorrect": true },
+            { "text": "Serra é a capital do Espírito Santo.", "isCorrect": false }
+          ],
+          "explanation": "Composta é a que combina duas simples com um conectivo: 'O triângulo ABC é retângulo' + 'ou' + 'é isósceles'. As outras três não contêm outra proposição dentro de si: são simples.",
+          "source": "Alencar Filho, Cap. 1, seções 3 e 4"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Verdadeiro ou falso?",
+          "statement": "'Não está chovendo' não é proposição porque é uma frase negativa.",
+          "subtext": null,
+          "isTrue": false,
+          "explanation": "Frase declarativa negativa também exprime juízo e admite V ou F, logo é proposição. Para Alencar Filho, 'Não está chovendo' é composta, formada pelo conectivo de negação.",
+          "source": "Alencar Filho, Cap. 1, seção 4"
+        },
+        {
+          "kind": "theory",
+          "title": "Os dois princípios do raciocínio lógico",
+          "content": "A Lógica Matemática adota dois axiomas e por isso é dita <b>bivalente</b>: toda proposição tem um, e um só, dos valores V e F. Princípio da não contradição: uma proposição não pode ser verdadeira e falsa ao mesmo tempo — uma frase e sua negação não podem ser V juntas. Princípio do terceiro excluído: toda proposição é verdadeira ou é falsa, sem um terceiro caso.",
+          "table": [
+            ["Princípio", "O que diz"],
+            ["Não contradição", "Uma proposição não pode ser V e F ao mesmo tempo"],
+            ["Terceiro excluído", "Toda proposição é V ou é F; nunca um terceiro valor"]
+          ],
+          "source": "Alencar Filho, Cap. 1, seção 1; Aula Proposições e Conectivos (Profa. Kelly Gazolli), slide 'Princípios da Lógica'"
+        },
+        {
+          "kind": "choice",
+          "instruction": "O fato de uma proposição e sua negação não poderem ser ambas verdadeiras ao mesmo tempo é garantido por qual princípio?",
+          "options": [
+            { "text": "Princípio da não contradição", "isCorrect": true },
+            { "text": "Princípio do terceiro excluído", "isCorrect": false },
+            { "text": "Princípio da implicação material", "isCorrect": false },
+            { "text": "Princípio de De Morgan", "isCorrect": false }
+          ],
+          "explanation": "A não contradição proíbe V e F simultâneos. O terceiro excluído é o complementar: garante que pelo menos um dos dois valores ocorre, sem terceiro caso.",
+          "source": "Aula Proposições e Conectivos (Profa. Kelly Gazolli), slide 'Princípios da Lógica' (Alencar Filho, 2002)"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Verdadeiro ou falso?",
+          "statement": "'Esta afirmação é falsa.' é uma proposição.",
+          "subtext": "Teste os dois casos de valor lógico.",
+          "isTrue": false,
+          "explanation": "Se fosse verdadeira, seria falsa; se fosse falsa, seria verdadeira. Viola a não contradição e o terceiro excluído, por isso a aula a lista entre os enunciados que não são proposições.",
+          "source": "Aula Proposições e Conectivos (Profa. Kelly Gazolli), slides 'Não São Proposições' e 'Paradoxo'",
+          "mascot": "bit",
+          "say": "Isso é paradoxo, não proposição!"
+        },
+        {
+          "kind": "choice",
+          "instruction": "No paradoxo do barbeiro de Sevilha — que só corta o cabelo de todos os que não cortam o próprio cabelo —, o que se conclui sobre 'o barbeiro corta o próprio cabelo'?",
+          "options": [
+            { "text": "Qualquer resposta leva a contradição: a situação descrita é impossível.", "isCorrect": true },
+            { "text": "Ele corta o próprio cabelo.", "isCorrect": false },
+            { "text": "Ele não corta o próprio cabelo.", "isCorrect": false },
+            { "text": "Depende dos fregueses: é V para uns e F para outros.", "isCorrect": false }
+          ],
+          "explanation": "Se corta, não pertence ao grupo que ele corta e não deveria cortar; se não corta, pertence ao grupo e deveria cortar. Nenhum valor lógico fecha, então a frase não é proposição.",
+          "source": "Aula Proposições e Conectivos (Profa. Kelly Gazolli), slide 'Paradoxo (Farjado, 2016)'"
+        },
+        {
+          "kind": "input",
+          "instruction": "Classifique a frase.",
+          "prompt": "Se Jorge é engenheiro, então sabe Matemática. Escreva: simples ou composta?",
+          "accepted": ["composta", "proposição composta"],
+          "hint": "Procure o conectivo 'se... então...'.",
+          "placeholder": "simples ou composta",
+          "explanation": "Combina duas simples ('Jorge é engenheiro', 'Jorge sabe Matemática') pelo conectivo de implicação, portanto é composta — uma fórmula proposicional.",
+          "source": "Alencar Filho, Cap. 1, seções 3 e 4"
+        }
+      ]
+    },
+    {
+      "id": "c2_operacoes",
+      "title": "Negação, conjunção, disjunção, exclusiva, condicional e bicondicional",
+      "unitTitle": "Capítulo 2 — Operações lógicas sobre proposições",
+      "char": "boole",
+      "icon": "bolt",
+      "steps": [
+        {
+          "kind": "theory",
+          "title": "Negação (~p)",
+          "content": "A negação de p, escrita '~p' e lida 'não p', tem valor lógico oposto ao de p: ~V = F e ~F = V. Na linguagem comum, nega-se antepondo 'não' ao verbo (p: 'O Sol é uma estrela' → ~p: 'O Sol não é uma estrela') ou usando as expressões 'não é verdade que...' e 'é falso que...' (q: 'Carlos é mecânico' → 'É falso que Carlos é mecânico'). Atenção: negar não é trocar adjetivos nem inverter fatos, é inverter o valor lógico.",
+          "table": [
+            ["p", "~p"],
+            ["V", "F"],
+            ["F", "V"]
+          ],
+          "source": "Alencar Filho, Cap. 2, seção 2; Aula Conectivos Lógicos (Profa. Kelly Gazolli), slide 'Conectivos Lógicos - Negação'"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Apresente a negação de: 'Júlia adora manteiga, mas detesta nata.'",
+          "options": [
+            { "text": "Júlia não adora manteiga ou não detesta nata.", "isCorrect": true },
+            { "text": "Júlia não adora manteiga e não detesta nata.", "isCorrect": false },
+            { "text": "Júlia adora nata e não detesta manteiga.", "isCorrect": false },
+            { "text": "Júlia não adora manteiga nem detesta nata.", "isCorrect": false }
+          ],
+          "explanation": "O 'mas' funciona como conjunção: p = 'adora manteiga', q = 'detesta nata'. Por De Morgan, ~(p ^ q) ≡ ~p v ~q — na negação o 'e' vira 'ou'.",
+          "source": "Lista I IFES, questão 4a"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Verdadeiro ou falso?",
+          "statement": "'Rui é baixo e gordo' é a negação correta de 'Rui é alto e magro'.",
+          "subtext": "O quadro de dicas do curso tem uma coluna de negações incorretas.",
+          "isTrue": false,
+          "explanation": "A negação correta é 'Rui não é alto ou não é magro' — por De Morgan, ~(p ^ q) ≡ ~p v ~q. Trocar os adjetivos e manter o 'e' é exatamente a negação incorreta do quadro.",
+          "source": "Dicas de tradução e negação (Profa. Kelly Gazolli), quadro 'Negação correta vs. incorreta' (Gersting)",
+          "mascot": "boole",
+          "say": "Negação de 'e' vira 'ou' — é De Morgan!"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Assinale a negação correta de: 'O rio é raso ou poluído.'",
+          "options": [
+            { "text": "O rio não é raso e não está poluído.", "isCorrect": true },
+            { "text": "O rio não é raso ou não está poluído.", "isCorrect": false },
+            { "text": "O rio é fundo ou poluído.", "isCorrect": false },
+            { "text": "O rio é raso e não está poluído.", "isCorrect": false }
+          ],
+          "explanation": "Por De Morgan, ~(p v q) ≡ ~p ^ ~q: o 'ou' vira 'e' negado ('não é raso nem poluído'). Manter o 'ou' é a negação incorreta listada no quadro de dicas.",
+          "source": "Dicas de tradução e negação (Profa. Kelly Gazolli), quadro 'Negação correta vs. incorreta' (Gersting)"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Verdadeiro ou falso?",
+          "statement": "A negação de 'A resposta é 4 ou 5' é 'A resposta não é 4 e não é 5'.",
+          "subtext": null,
+          "isTrue": true,
+          "explanation": "'A resposta é 4 ou 5' é a disjunção p v q; a negação ~(p v q) ≡ ~p ^ ~q exige que as duas opções caiam juntas.",
+          "source": "Lista I IFES, questão 4b"
+        },
+        {
+          "kind": "theory",
+          "title": "Conjunção (^) e disjunção (v)",
+          "content": "<b>Conjunção</b> 'p ^ q' ('p e q'): V somente quando p e q são ambas V. Em linguagem natural, 'e', 'mas', 'também', 'além disso' são conjunções — 'Júlia adora manteiga, mas detesta nata' e 'Pepinos são verdes e têm sementes' (4c da Lista I). <b>Disjunção</b> 'p v q' ('p ou q', ou inclusivo): V quando ao menos uma das duas é V; só é F quando ambas são F. Exemplo do livro: '2 < 7 e 3 é ímpar' é V, então sua negação (4d) é F.",
+          "table": [
+            ["p", "q", "p ^ q", "p v q"],
+            ["V", "V", "V", "V"],
+            ["V", "F", "F", "V"],
+            ["F", "V", "F", "V"],
+            ["F", "F", "F", "F"]
+          ],
+          "source": "Alencar Filho, Cap. 2, seções 3 e 4; Lista I IFES, questões 4c e 4d; Dicas de tradução e negação (Profa. Kelly Gazolli)"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Complete a coluna final da tabela-verdade da conjunção.",
+          "vars": ["p", "q"],
+          "formula": "p ^ q",
+          "columnLabel": "p ^ q",
+          "explanation": "Por definição de conjunção, a coluna é V apenas na linha VV; nas linhas VF, FV e FF o valor é F.",
+          "source": "Alencar Filho, Cap. 2, seção 3"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Sejam p: 'os abacates estão maduros' e q: 'os abacates estão escuros e macios'. Como simbolizar 'Os abacates só estão maduros quando estão escuros e macios'?",
+          "options": [
+            { "text": "p → q", "isCorrect": true },
+            { "text": "q → p", "isCorrect": false },
+            { "text": "p ↔ q", "isCorrect": false },
+            { "text": "p ^ q", "isCorrect": false }
+          ],
+          "explanation": "'A só quando B' significa 'se A, então B': estar maduro implica estar escuro e macio, então o antecedente é p e o consequente é q. Ler q → p trocaria a condição necessária pela suficiente.",
+          "source": "Lista I IFES, questão 3c",
+          "mascot": "boole",
+          "say": "'Só quando' inverte a seta da condicional."
+        },
+        {
+          "kind": "theory",
+          "title": "Condicional (→): condição suficiente e necessária",
+          "content": "'p → q' lê-se 'se p então q' e vale F apenas quando p é V e q é F; com antecedente falso, a condicional é sempre V. Em 'p → q', <b>p é o antecedente</b> e <b>q é o consequente</b>, e a mesma fórmula também se lê: 'p é condição suficiente para q' e 'q é condição necessária para p'. Exemplo da aula: p: 'João é juiz federal', q: 'João cursou direito' — p → q. A condicional não afirma causa: 'Se DANTE escreveu os Lusíadas, então CANTOR criou a Teoria dos Conjuntos' é V porque o antecedente é F.",
+          "table": [
+            ["p", "q", "p → q"],
+            ["V", "V", "V"],
+            ["V", "F", "F"],
+            ["F", "V", "V"],
+            ["F", "F", "V"]
+          ],
+          "source": "Alencar Filho, Cap. 2, seção 6; Aula Conectivos Lógicos (Profa. Kelly Gazolli), slide 'Conectivos Lógicos - Condicional'; Dicas de tradução e negação (Profa. Kelly Gazolli)",
+          "art": "condTable"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Complete a coluna final da tabela-verdade da condicional.",
+          "vars": ["p", "q"],
+          "formula": "p → q",
+          "columnLabel": "p → q",
+          "explanation": "A condicional p → q é F na única linha em que o antecedente é V e o consequente é F (linha VF); nas demais vale V.",
+          "source": "Alencar Filho, Cap. 2, seção 6"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Em 'Uma condição suficiente para a falha de uma rede é que a chave geral para de funcionar', indique antecedente e consequente.",
+          "options": [
+            { "text": "Antecedente: a chave geral para de funcionar; consequente: a rede falha.", "isCorrect": true },
+            { "text": "Antecedente: a rede falha; consequente: a chave geral para de funcionar.", "isCorrect": false },
+            { "text": "Antecedente: a rede falha; consequente: a chave geral não para de funcionar.", "isCorrect": false },
+            { "text": "A frase é bicondicional: os papéis são intercambiáveis.", "isCorrect": false }
+          ],
+          "explanation": "'Uma condição suficiente para B é C' simboliza C → B: quem vem depois de 'é que' é o antecedente, a falha da rede é o consequente. Confundir com B → C é ler condição suficiente como necessária.",
+          "source": "Lista I IFES, questão 3b"
+        },
+        {
+          "kind": "multi",
+          "instruction": "Sejam p: 'o gato tem uma boa dieta' e q: 'o gato é saudável'. Sobre 'Uma boa dieta é uma condição necessária para um gato saudável', marque todas as corretas.",
+          "options": [
+            "A fórmula correta é q → p.",
+            "A fórmula correta é p → q.",
+            "O antecedente da condicional é 'o gato é saudável'.",
+            "Boa dieta é condição suficiente para o gato ser saudável."
+          ],
+          "correct": [0, 2],
+          "explanation": "Condição necessária vai no consequente: 'p é necessária para q' lê-se q → p, 'se o gato é saudável, então tem boa dieta'. O antecedente é 'o gato é saudável'; dizer que a dieta é suficiente inverte a frase.",
+          "source": "Lista I IFES, questão 3d; Dicas de tradução e negação (Profa. Kelly Gazolli)"
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Sejam p: 'a chuva continua' e q: 'o rio vai transbordar'. Monte a fórmula da frase.",
+          "promptBox": "Se a chuva continuar, então o rio vai transbordar.",
+          "tokens": ["p", "→", "q", "^", "v", "~"],
+          "correctSequence": ["p", "→", "q"],
+          "hint": "Em 'se... então', o que vem depois do 'se' é o antecedente.",
+          "explanation": "A chuva continuar é o antecedente, o rio transbordar é o consequente: o conectivo 'se... então' é a condicional p → q.",
+          "source": "adaptado de: Lista I IFES, questão 3a"
+        },
+        {
+          "kind": "theory",
+          "title": "Disjunção exclusiva (⊕) e bicondicional (↔)",
+          "content": "O 'ou' da linguagem comum tem dois sentidos. <b>Inclusivo</b> (v): 'Carlos é médico ou professor' — pode ser os dois. <b>Exclusivo</b> (⊕): 'Mario é alagoano ou gaúcho' — uma e somente uma das duas; p ⊕ q é V só quando exatamente uma é V. <b>Bicondicional</b> 'p ↔ q' ('p se e somente se q') é V quando p e q têm o mesmo valor; equivale às duas condicionais p → q e q → p juntas. Exemplo: 'O triângulo ABC é equilátero se e somente se é equiãngulo'.",
+          "table": [
+            ["p", "q", "p ⊕ q", "p ↔ q"],
+            ["V", "V", "F", "V"],
+            ["V", "F", "V", "F"],
+            ["F", "V", "V", "F"],
+            ["F", "F", "F", "V"]
+          ],
+          "source": "Alencar Filho, Cap. 2, seções 5 e 7; Cap. 1, seção 4; Aula Conectivos Lógicos (Profa. Kelly Gazolli), slide 'Conectivos Lógicos - Bicondicional'",
+          "art": "bicondTable"
+        },
+        {
+          "kind": "circuit",
+          "instruction": "Quais entradas deixam a saída do circuito p ↔ q em V?",
+          "vars": ["p", "q"],
+          "formula": "p ↔ q",
+          "target": "V",
+          "explanation": "Por definição da bicondicional, p ↔ q vale V exatamente quando p e q têm o mesmo valor lógico: as atribuições VV e FF.",
+          "source": "Alencar Filho, Cap. 2, seção 7",
+          "art": "circuit"
+        }
+      ]
+    }
+  ]
+}

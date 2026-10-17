@@ -1,0 +1,565 @@
+{
+  "lessons": [
+    {
+      "id": "c9_argumentos",
+      "title": "Argumento, validade e dedução x indução",
+      "unitTitle": "Capítulos 9 e 10 — Argumentos",
+      "char": "turing",
+      "icon": "gavel",
+      "steps": [
+        {
+          "kind": "theory",
+          "title": "O que é um argumento",
+          "content": "Sejam P1, P2, …, Pn (n > 1) e Q proposições. Chama-se <b>argumento</b> toda afirmação de que a sequência finita P1, P2, …, Pn tem como consequência a proposição final Q. As P1…Pn são as <b>premissas</b>; Q é a <b>conclusão</b>. Indica-se P1, P2, …, Pn ⊢ Q e se lê \"Q se infere de P1, P2, …, Pn\". Um argumento de duas premissas e uma conclusão é um <b>silogismo</b>.",
+          "table": null,
+          "instruction": null,
+          "explanation": null,
+          "source": "Alencar Filho, Cap. 9, §1 Definição de argumento",
+          "art": "argForm"
+        },
+        {
+          "kind": "choice",
+          "instruction": "O que é, exatamente, um argumento segundo a definição do Cap. 9?",
+          "options": [
+            { "text": "Uma única proposição que pode ser verdadeira ou falsa.", "isCorrect": false },
+            { "text": "Uma sequência finita de premissas P1, …, Pn (n > 1) que se afirma acarretar uma conclusão Q.", "isCorrect": true },
+            { "text": "Qualquer conjunto de frases, mesmo sem conclusão.", "isCorrect": false },
+            { "text": "Uma pergunta cuja resposta é uma proposição.", "isCorrect": false }
+          ],
+          "explanation": "Argumento é a afirmação de que as premissas P1, …, Pn acarretam a conclusão Q, escrita P1, …, Pn ⊢ Q. Sem premissas e conclusão não há argumento.",
+          "source": "Alencar Filho, Cap. 9, §1"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Julgue: a Lógica decide se as premissas são, de fato, verdadeiras.",
+          "statement": "A Lógica se preocupa com a validade dos argumentos, e não com a verdade ou a falsidade das premissas e conclusões.",
+          "subtext": "Cap. 9, §2",
+          "isTrue": true,
+          "explanation": "Correto. A validade depende só da relação entre premissas e conclusão. Pode-se admitir premissas verdadeiras; verificar a verdade delas é tarefa de outra ciência.",
+          "source": "Alencar Filho, Cap. 9, §2 Validade de um argumento"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Dado o argumento P1, P2, …, Pn ⊢ Q, qual é a sua <b>condicional associada</b>?",
+          "options": [
+            { "text": "Q → (P1 ^ P2 ^ … ^ Pn)", "isCorrect": false },
+            { "text": "(P1 ^ P2 ^ … ^ Pn) → Q", "isCorrect": true },
+            { "text": "(P1 v P2 v … v Pn) → Q", "isCorrect": false },
+            { "text": "(P1 ^ P2 ^ … ^ Pn) ^ Q", "isCorrect": false }
+          ],
+          "explanation": "A condicional associada tem por antecedente a <b>conjunção das premissas</b> e por consequente a conclusão: (P1 ^ … ^ Pn) → Q. O argumento é válido sse essa condicional é tautológica.",
+          "source": "Alencar Filho, Cap. 9, §4 Condicional associada",
+          "art": "associadas"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Complete a coluna da condicional associada do suposto argumento p → q, q ⊢ p. Se a coluna não for toda V, ele é sofisma.",
+          "vars": ["p", "q"],
+          "formula": "((p → q) ^ q) → p",
+          "columnLabel": "(p→q)^q → p",
+          "explanation": "Aparece F na linha p=V, q=F: premissas verdadeiras e conclusão falsa. Logo não é tautologia — é o <b>sofisma de afirmar o consequente</b>, válido ≠ verdadeira.",
+          "source": "Alencar Filho, Cap. 10, §2 exemplo (1)"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Julgue a validade pelo critério das tabelas.",
+          "statement": "Um argumento é válido quando não existe nenhuma linha da tabela-verdade em que todas as premissas sejam V e a conclusão seja F.",
+          "subtext": "Cap. 10, §1",
+          "isTrue": true,
+          "explanation": "É o critério prático: constrói-se a tabela com uma coluna por premissa e a conclusão; nas linhas em que todas as premissas são V, a conclusão também precisa ser V.",
+          "source": "Alencar Filho, Cap. 10, §1 Validade mediante tabelas-verdade"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Dedução x indução — julgue.",
+          "statement": "\"Todo gato caça ratos. Miau é um gato. Logo, Miau caça ratos\" é um argumento dedutivo: as premissas bastam para garantir a conclusão.",
+          "subtext": null,
+          "isTrue": true,
+          "explanation": "Dedutivo: se as premissas são verdadeiras, a conclusão é necessariamente verdadeira. O conjunto de fatos é suficiente para saber que a conclusão é V.",
+          "source": "Aula Proposições e Conectivos (Profa. Kelly Gazolli), slide 'Dedução x Indução'",
+          "mascot": "turing",
+          "say": "Premissas bastam? Então é dedução."
+        },
+        {
+          "kind": "choice",
+          "instruction": "O argumento \"É comum o sistema não funcionar após uma atualização. O sistema foi atualizado. Logo, o sistema não funcionará\" é:",
+          "options": [
+            { "text": "Dedutivo: as premissas garantem a conclusão com certeza.", "isCorrect": false },
+            { "text": "Indutivo: \"é comum\" não dá garantia total, então não se pode afirmar validade com 100% de certeza.", "isCorrect": true },
+            { "text": "Um sofisma de afirmar o consequente.", "isCorrect": false },
+            { "text": "Uma tautologia condicional.", "isCorrect": false }
+          ],
+          "explanation": "É indutivo. Saber que algo é comum não garante a conclusão; a verdade das premissas é compatível com a falsidade da conclusão. Diferente do argumento do Miau, que é dedutivo.",
+          "source": "Aula Proposições e Conectivos (Profa. Kelly Gazolli), slide 'Dedução x Indução'"
+        },
+        {
+          "kind": "multi",
+          "instruction": "Marque <b>todos</b> os que são argumentos <b>válidos</b> (forma correta).",
+          "options": [
+            "p → q, ~q ⊢ ~p",
+            "p → q, q ⊢ p",
+            "p v q, ~p ⊢ q",
+            "p → q, ~p ⊢ ~q",
+            "p ^ q ⊢ p"
+          ],
+          "correct": [0, 2, 4],
+          "explanation": "0 é Modus tollens, 2 é Silogismo disjuntivo, 4 é Simplificação — todos válidos. 1 (afirmar o consequente) e 3 (negar o antecedente) são sofismas famosos.",
+          "source": "Alencar Filho, Cap. 10, §2 exemplos (1) e (2)"
+        },
+        {
+          "kind": "match",
+          "instruction": "Ligue cada nome de forma à sua condicional associada (esquema).",
+          "pairs": [
+            { "left": "Modus ponens", "right": "(p ^ (p→q)) → q" },
+            { "left": "Modus tollens", "right": "(~q ^ (p→q)) → ~p" },
+            { "left": "Simplificação", "right": "(p ^ q) → p" },
+            { "left": "Adição", "right": "p → (p v q)" }
+          ],
+          "explanation": "Cada esquema é a condicional associada da forma: MP tira q de p e p→q; MT tira ~p de ~q e p→q; SIMP tira p de p^q; AD adiciona q a p.",
+          "source": "Alencar Filho, Cap. 9, §5 e §6",
+          "art": "inferenceRules"
+        },
+        {
+          "kind": "proof-step",
+          "title": "Critério de validade passo a passo",
+          "instruction": "Nas premissas p → (q → r), p → q, p, complete a linha (4) da dedução de r.",
+          "proofState": [
+            { "line": 1, "text": "p → (q → r)", "rule": "P" },
+            { "line": 2, "text": "p → q", "rule": "P" },
+            { "line": 3, "text": "p", "rule": "P" }
+          ],
+          "exprOptions": ["q → r", "p → r", "q", "~r"],
+          "ruleOptions": ["MT", "MP", "SH", "SIMP"],
+          "correctExpr": 0,
+          "correctRule": 1,
+          "explanation": "De (1) p → (q → r) e (3) p, Modus ponens produz a linha (4) q → r.",
+          "source": "Alencar Filho, Cap. 11, §2 exemplo (3)"
+        },
+        {
+          "kind": "proof-step",
+          "title": "Critério de validade passo a passo",
+          "instruction": "Conclua a dedução: complete a linha (6) a partir de (4) q → r e (5) q.",
+          "proofState": [
+            { "line": 4, "text": "q → r", "rule": "1,3 MP" },
+            { "line": 5, "text": "q", "rule": "2,3 MP" }
+          ],
+          "exprOptions": ["r", "q", "~q", "p"],
+          "ruleOptions": ["SD", "SH", "MT", "MP"],
+          "correctExpr": 0,
+          "correctRule": 3,
+          "explanation": "De (4) q → r e (5) q, Modus ponens dá a linha (6) r, que é a conclusão. A cadeia de MP prova a validade.",
+          "source": "Alencar Filho, Cap. 11, §2 exemplo (3)"
+        },
+        {
+          "kind": "table-build",
+          "instruction": "Agora teste a condicional associada do Modus ponens ((p → q) ^ p) → q. Coluna toda V? Então o argumento é válido.",
+          "vars": ["p", "q"],
+          "formula": "((p → q) ^ p) → q",
+          "columnLabel": "((p→q)^p) → q",
+          "explanation": "Todas as linhas dão V: é tautologia. Pelo teorema do Cap. 9 §3, a condicional associada tautológica prova que p → q, p ⊢ q é válido.",
+          "source": "Alencar Filho, Cap. 9, §3; Cap. 10, §1"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Para provar a NÃO-validade (sofisma) de (p → q) v ~(r ^ s), p v s ⊢ r → q, qual atribuição torna as premissas V e a conclusão F?",
+          "options": [
+            { "text": "p=F, q=F, r=V, s=V", "isCorrect": true },
+            { "text": "p=V, q=V, r=F, s=F", "isCorrect": false },
+            { "text": "p=V, q=F, r=V, s=V", "isCorrect": false },
+            { "text": "p=F, q=V, r=F, s=V", "isCorrect": false }
+          ],
+          "explanation": "Com p=F,q=F,r=V,s=V: 1ª premissa (F→F) v ~(V^s)=V; 2ª F v V=V; conclusão V→F=F. Premissas V e conclusão F provam o sofisma.",
+          "source": "Alencar Filho, Cap. 10, §3 prova de não-validade, exemplo (1)",
+          "art": "fallacies",
+          "mascot": "sofia",
+          "say": "Ache uma linha V...V/F e derrubou."
+        }
+      ]
+    },
+    {
+      "id": "c9_regras_inferencia",
+      "title": "As regras de inferência fundamentais",
+      "unitTitle": "Capítulo 11 — Regras de inferência",
+      "char": "boole",
+      "icon": "arrowUp",
+      "steps": [
+        {
+          "kind": "theory",
+          "title": "As dez regras de inferência",
+          "content": "O método das tabelas-verdade fica trabalhoso (5 proposições simples = 2⁵ = 32 linhas). Um método mais eficiente é deduzir a conclusão das premissas com as <b>regras de inferência</b>. As premissas vão sobre um traço horizontal e a conclusão, abaixo dele.",
+          "table": [
+            ["Nome", "Abrev.", "Forma"],
+            ["Adição", "AD", "p ⊢ p v q"],
+            ["Simplificação", "SIMP", "p ^ q ⊢ p"],
+            ["Conjunção", "CONJ", "p, q ⊢ p ^ q"],
+            ["Absorção", "ABS", "p → q ⊢ p → (p ^ q)"],
+            ["Modus ponens", "MP", "p → q, p ⊢ q"],
+            ["Modus tollens", "MT", "p → q, ~q ⊢ ~p"],
+            ["Silogismo disjuntivo", "SD", "p v q, ~p ⊢ q"],
+            ["Silogismo hipotético", "SH", "p → q, q → r ⊢ p → r"],
+            ["Dilema construtivo", "DC", "p → q, r → s, p v r ⊢ q v s"],
+            ["Dilema destrutivo", "DD", "p → q, r → s, ~q v ~s ⊢ ~p v ~r"]
+          ],
+          "instruction": null,
+          "explanation": null,
+          "source": "Alencar Filho, Cap. 11, §1; lista Cap. 9, §5 e §6",
+          "art": "inferenceRules"
+        },
+        {
+          "kind": "choice",
+          "instruction": "O que se conclui de A: p → q e B: p? E por qual regra?",
+          "options": [
+            { "text": "q, por Modus ponens (MP).", "isCorrect": true },
+            { "text": "~p, por Modus tollens (MT).", "isCorrect": false },
+            { "text": "~q, por Silogismo disjuntivo (SD).", "isCorrect": false },
+            { "text": "p ^ q, por Conjunção (CONJ).", "isCorrect": false }
+          ],
+          "explanation": "Modus ponens (regra de separação): de p → q e p, separa-se o consequente q.",
+          "source": "Alencar Filho, Cap. 9, §5 (V); Cap. 11, §2 exemplo (1)"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Qual regra justifica a inferência de p v q a partir de p sozinha?",
+          "options": [
+            { "text": "Adição (AD)", "isCorrect": true },
+            { "text": "Simplificação (SIMP)", "isCorrect": false },
+            { "text": "Conjunção (CONJ)", "isCorrect": false },
+            { "text": "Absorção (ABS)", "isCorrect": false }
+          ],
+          "explanation": "Adição: dada p, deduz-se a disjunção p v q (ou p v r, s v p…). Uma verdade basta para tornar qualquer disjunção que a contenha verdadeira.",
+          "source": "Alencar Filho, Cap. 9, §7 exemplo I (Adição)"
+        },
+        {
+          "kind": "choice",
+          "instruction": "De p → q e ~q, qual linha sai e por qual regra?",
+          "options": [
+            { "text": "~p, por Modus tollens (MT).", "isCorrect": true },
+            { "text": "q, por Modus ponens (MP).", "isCorrect": false },
+            { "text": "~q → ~p, por Silogismo hipotético (SH).", "isCorrect": false },
+            { "text": "p, por Silogismo disjuntivo (SD).", "isCorrect": false }
+          ],
+          "explanation": "Modus tollens parte da condicional p → q e da negação do consequente (~q) e conclui a negação do antecedente (~p).",
+          "source": "Alencar Filho, Cap. 9, §5 (VI); Cap. 11, §2 exemplo (6)"
+        },
+        {
+          "kind": "choice",
+          "instruction": "As premissas p → q, q → r justificam p → r. Que regra é essa?",
+          "options": [
+            { "text": "Silogismo hipotético (SH)", "isCorrect": true },
+            { "text": "Dilema construtivo (DC)", "isCorrect": false },
+            { "text": "Modus ponens (MP)", "isCorrect": false },
+            { "text": "Absorção (ABS)", "isCorrect": false }
+          ],
+          "explanation": "Silogismo hipotético liga duas condicionais cujo meio coincide (o consequente da 1ª é o antecedente da 2ª), por transitividade da seta.",
+          "source": "Alencar Filho, Cap. 9, §5 (VIII); Cap. 11, §2 exemplo (8)"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Em p → q, r → s, p v r ⊢ q v s, qual regra foi usada?",
+          "options": [
+            { "text": "Dilema construtivo (DC)", "isCorrect": true },
+            { "text": "Dilema destrutivo (DD)", "isCorrect": false },
+            { "text": "Silogismo disjuntivo (SD)", "isCorrect": false },
+            { "text": "Conjunção (CONJ)", "isCorrect": false }
+          ],
+          "explanation": "Dilema construtivo: de duas condicionais e da disjunção dos antecedentes (p v r), conclui a disjunção dos consequentes (q v s). No destrutivo (DD) a disjunção é das negações dos consequentes.",
+          "source": "Alencar Filho, Cap. 9, §5 (IX); Cap. 11, §2 exemplo (8)"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Julgue a afirmação sobre a Simplificação.",
+          "statement": "Pela Simplificação (SIMP), de p ^ q pode-se inferir tanto p quanto q.",
+          "subtext": "Cap. 9, §7 exemplo II",
+          "isTrue": true,
+          "explanation": "Verdadeiro. SIMP tem duas faces: p ^ q ⊢ p e p ^ q ⊢ q. Da conjunção se extrai cada conjunctor.",
+          "source": "Alencar Filho, Cap. 9, §5 (II) e §7"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Julgue: qual é a premissa da Absorção (ABS)?",
+          "statement": "A Absorção parte de uma disjunção p v q e conclui p → (p ^ q).",
+          "subtext": null,
+          "isTrue": false,
+          "explanation": "Falso. A Absorção parte de uma <b>condicional</b> p → q e conclui p → (p ^ q): o antecedente \"absorve\" a conjunção no consequente. Não é a disjunção.",
+          "source": "Alencar Filho, Cap. 9, §5 (IV) e §7 exemplo IV"
+        },
+        {
+          "kind": "match",
+          "instruction": "Ligue o nome da regra à sua forma (primeira metade).",
+          "pairs": [
+            { "left": "Modus ponens (MP)", "right": "p → q, p ⊢ q" },
+            { "left": "Modus tollens (MT)", "right": "p → q, ~q ⊢ ~p" },
+            { "left": "Silogismo disjuntivo (SD)", "right": "p v q, ~p ⊢ q" },
+            { "left": "Silogismo hipotético (SH)", "right": "p → q, q → r ⊢ p → r" }
+          ],
+          "explanation": "MP separa o consequente; MT nega o antecedente; SD elimina um membro da disjunção; SH encadeia condicionais.",
+          "source": "Alencar Filho, Cap. 11, lista de regras §6 (Cap. 9)"
+        },
+        {
+          "kind": "match",
+          "instruction": "Ligue o nome da regra à sua forma (segunda metade).",
+          "pairs": [
+            { "left": "Adição (AD)", "right": "p ⊢ p v q" },
+            { "left": "Simplificação (SIMP)", "right": "p ^ q ⊢ p" },
+            { "left": "Conjunção (CONJ)", "right": "p, q ⊢ p ^ q" },
+            { "left": "Absorção (ABS)", "right": "p → q ⊢ p → (p ^ q)" }
+          ],
+          "explanation": "AD acrescenta um disjuntor; SIMP extrai um conjunctor; CONJ junta duas premissas numa conjunção; ABS absorve no consequente.",
+          "source": "Alencar Filho, Cap. 9, §5 e §6",
+          "mascot": "boole",
+          "say": "Nomes e formas na ponta da língua."
+        },
+        {
+          "kind": "proof-step",
+          "title": "Dedução real: p → q, p ^ r ⊢ q",
+          "instruction": "Complete a linha (3) da dedução.",
+          "proofState": [
+            { "line": 1, "text": "p → q", "rule": "P" },
+            { "line": 2, "text": "p ^ r", "rule": "P" }
+          ],
+          "exprOptions": ["p", "r", "q", "~p"],
+          "ruleOptions": ["MP", "SIMP", "CONJ", "SD"],
+          "correctExpr": 0,
+          "correctRule": 1,
+          "explanation": "Da segunda premissa p ^ r, pela Simplificação, inferimos p (linha 3).",
+          "source": "Alencar Filho, Cap. 11, §2 exemplo (1)"
+        },
+        {
+          "kind": "proof-step",
+          "title": "Dedução real: p → q, p ^ r ⊢ q",
+          "instruction": "Complete a linha (4), que é a conclusão.",
+          "proofState": [
+            { "line": 1, "text": "p → q", "rule": "P" },
+            { "line": 2, "text": "p ^ r", "rule": "P" },
+            { "line": 3, "text": "p", "rule": "2 SIMP" }
+          ],
+          "exprOptions": ["q", "p", "r", "p ^ r"],
+          "ruleOptions": ["SIMP", "MP", "MT", "SH"],
+          "correctExpr": 0,
+          "correctRule": 1,
+          "explanation": "De p (linha 3) e da primeira premissa p → q, Modus ponens inferem q, a conclusão.",
+          "source": "Alencar Filho, Cap. 11, §2 exemplo (1)"
+        },
+        {
+          "kind": "proof-step",
+          "title": "Dedução real: t → ~u, t, ~s v u ⊢ ~s",
+          "instruction": "Complete as linhas (6) ~u e (7) ~s: escolha a fórmula e a regra da linha (7).",
+          "proofState": [
+            { "line": 3, "text": "t → ~u", "rule": "P" },
+            { "line": 4, "text": "t", "rule": "P" },
+            { "line": 5, "text": "~s v u", "rule": "P" },
+            { "line": 6, "text": "~u", "rule": "3,4 MP" }
+          ],
+          "exprOptions": ["~s", "s", "u", "~u"],
+          "ruleOptions": ["MT", "MP", "SD", "SIMP"],
+          "correctExpr": 0,
+          "correctRule": 2,
+          "explanation": "De (5) ~s v u e (6) ~u (a negação de u), o Silogismo disjuntivo elimina u e sobra ~s.",
+          "source": "Alencar Filho, Cap. 11, §2 exemplo (7)"
+        },
+        {
+          "kind": "proof-step",
+          "title": "Dedução real: p → q, q → r, s → t, p v s ⊢ r v t",
+          "instruction": "Complete a linha (5), obtida de (1) p → q e (2) q → r.",
+          "proofState": [
+            { "line": 1, "text": "p → q", "rule": "P" },
+            { "line": 2, "text": "q → r", "rule": "P" },
+            { "line": 3, "text": "s → t", "rule": "P" },
+            { "line": 4, "text": "p v s", "rule": "P" }
+          ],
+          "exprOptions": ["p → r", "q → t", "p → t", "r → t"],
+          "ruleOptions": ["DC", "MP", "SH", "DD"],
+          "correctExpr": 0,
+          "correctRule": 2,
+          "explanation": "De (1) p → q e (2) q → r, o Silogismo hipotético encadeia e produz (5) p → r; depois DC com (3) e (4) dá r v t.",
+          "source": "Alencar Filho, Cap. 11, §2 exemplo (8)"
+        },
+        {
+          "kind": "input",
+          "instruction": "Qual regra de inferência permite deduzir p v q a partir de p? Digite o nome (ou a sigla).",
+          "prompt": "Premissa: p.   Conclusão: p v q.",
+          "accepted": ["Adicao", "Regra da Adicao", "AD", "Adição"],
+          "hint": "É a regra que acrescenta um disjuntor a uma proposição já dada.",
+          "placeholder": "nome da regra",
+          "explanation": "Adição (AD): de p, deduz-se a disjunção p v q. Uma proposição verdadeira torna verdadeira qualquer disjunção que a contenha.",
+          "source": "Alencar Filho, Cap. 9, §5 (I) e §7 exemplo I"
+        }
+      ]
+    },
+    {
+      "id": "c10_argumentos_listas",
+      "title": "Prove os seis argumentos da lista IFES",
+      "unitTitle": "Lista — Argumentos e Regras de Inferência",
+      "char": "turing",
+      "icon": "comments",
+      "steps": [
+        {
+          "kind": "tokens",
+          "instruction": "Item (a). Seja p: \"o programa é eficiente\", q: \"executa rapidamente\", r: \"tem algum bug\". Monte a 1ª premissa: \"Se o programa é eficiente, executa rapidamente\".",
+          "promptBox": "1ª premissa de (a)",
+          "tokens": ["p", "→", "q", "v", "~", "r"],
+          "correctSequence": ["p", "→", "q"],
+          "hint": "\"Se … então …\" é uma condicional.",
+          "explanation": "A condicional \"se p então q\" se escreve p → q. Esta é a primeira premissa do argumento (a).",
+          "source": "Lista de Exercícios — Argumentos e Regras de Inferência, item a)"
+        },
+        {
+          "kind": "proof-step",
+          "title": "Item (a): p → q, p v r, ~q ⊢ r",
+          "instruction": "Complete a linha (4), derivada de (1) p → q e (3) ~q.",
+          "proofState": [
+            { "line": 1, "text": "p → q", "rule": "P" },
+            { "line": 2, "text": "p v r", "rule": "P" },
+            { "line": 3, "text": "~q", "rule": "P" }
+          ],
+          "exprOptions": ["~p", "p", "~r", "r"],
+          "ruleOptions": ["MP", "MT", "SD", "SIMP"],
+          "correctExpr": 0,
+          "correctRule": 1,
+          "explanation": "De (1) p → q e (3) ~q, Modus tollens dá (4) ~p: o programa não é eficiente. Falta só (2) p v r com ~p, donde r pelo Silogismo disjuntivo — o texto usa dois-pontos em vez de ponto final, mas a leitura é \"p → q\" e \"p v r\". Argumento (a) válido.",
+          "source": "Lista de Exercícios — Argumentos e Regras de Inferência, item a)"
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Item (b). p: colheita boa, q: há água suficiente, r: muita chuva, s: muito sol. Monte a premissa \"Se houver muita chuva ou se não houver muito sol, então haverá água suficiente\".",
+          "promptBox": "2ª premissa de (b)",
+          "tokens": ["(", "r", "v", "~", "s", ")", "→", "q", "^"],
+          "correctSequence": ["(", "r", "v", "~", "s", ")", "→", "q"],
+          "hint": "O \"se…então\" liga a disjunção (r v ~s) ao consequente q.",
+          "explanation": "\"Muita chuva ou não muito sol\" é r v ~s; o \"se…então\" dá (r v ~s) → q.",
+          "source": "Lista de Exercícios — Argumentos e Regras de Inferência, item b)"
+        },
+        {
+          "kind": "proof-step",
+          "title": "Item (b): p ^ ~q, (r v ~s) → q ⊢ p ^ s",
+          "instruction": "Temos (3) ~q obtido de (1) p ^ ~q por SIMP. Complete a linha (4).",
+          "proofState": [
+            { "line": 1, "text": "p ^ ~q", "rule": "P" },
+            { "line": 2, "text": "(r v ~s) → q", "rule": "P" },
+            { "line": 3, "text": "~q", "rule": "1 SIMP" }
+          ],
+          "exprOptions": ["~(r v ~s)", "r v ~s", "~r", "s"],
+          "ruleOptions": ["MP", "MT", "SD", "SIMP"],
+          "correctExpr": 0,
+          "correctRule": 1,
+          "explanation": "De (2) (r v ~s) → q e (3) ~q, Modus tollens conclui (4) ~(r v ~s), isto é, ~r ^ s — há muito sol. Com p (SIMP de p ^ ~q) e s, Conjunção fecha p ^ s. Argumento (b) válido.",
+          "source": "Lista de Exercícios — Argumentos e Regras de Inferência, item b)"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Item (c). p: Rússia era potência superior, q: França era poderosa, r: Napoleão fez um erro, s: o exército perdeu. Julgue a validade.",
+          "statement": "De p ^ (~q v r), ~r ^ (~s → q) conclui-se s ^ p; o argumento (c) é válido.",
+          "subtext": "SIMP, SD, MT e CONJ fecham a prova.",
+          "isTrue": true,
+          "explanation": "Válido. De (~q v r) e ~r sai ~q (SD); de (~s → q) e ~q sai ~~s, ou seja s (MT); de p (SIMP) e s conclui-se s ^ p (CONJ).",
+          "source": "Lista de Exercícios — Argumentos e Regras de Inferência, item c)",
+          "mascot": "turing",
+          "say": "Quatro regras fecham o item (c)."
+        },
+        {
+          "kind": "proof-step",
+          "title": "Item (c) — passo intermediário",
+          "instruction": "Dadas (3) ~q v r e (4) ~r, complete a linha (5).",
+          "proofState": [
+            { "line": 3, "text": "~q v r", "rule": "1 SIMP" },
+            { "line": 4, "text": "~r", "rule": "2 SIMP" }
+          ],
+          "exprOptions": ["~q", "q", "~r", "r"],
+          "ruleOptions": ["MP", "MT", "SD", "SH"],
+          "correctExpr": 0,
+          "correctRule": 2,
+          "explanation": "De (3) ~q v r e (4) ~r, o Silogismo disjuntivo elimina r e conclui (5) ~q.",
+          "source": "Lista de Exercícios — Argumentos e Regras de Inferência, item c)"
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Item (d). p: José levou as joias, q: a Sra. Krasov mentiu, r: foi cometido um crime, s: o Sr. Krasov estava na cidade. Monte a conclusão \"José não levou as joias\".",
+          "promptBox": "Conclusão de (d)",
+          "tokens": ["~", "p", "p", "→", "q"],
+          "correctSequence": ["~", "p"],
+          "hint": "\"não\" aplica a negação ~ sobre a letra.",
+          "explanation": "\"José não levou as joias\" é a negação de p, escrita ~p.",
+          "source": "Lista de Exercícios — Argumentos e Regras de Inferência, item d)"
+        },
+        {
+          "kind": "proof-step",
+          "title": "Item (d): (p v q) → r, ~s, r → s ⊢ ~p",
+          "instruction": "Complete a linha (4), derivada de (3) r → s e (2) ~s.",
+          "proofState": [
+            { "line": 1, "text": "(p v q) → r", "rule": "P" },
+            { "line": 2, "text": "~s", "rule": "P" },
+            { "line": 3, "text": "r → s", "rule": "P" }
+          ],
+          "exprOptions": ["~r", "r", "~s", "s"],
+          "ruleOptions": ["MP", "MT", "SD", "SIMP"],
+          "correctExpr": 0,
+          "correctRule": 1,
+          "explanation": "De (3) r → s e (2) ~s, Modus tollens dá (4) ~r; depois MT em (1) produz ~(p v q) = ~p ^ ~q, donde ~p (SIMP). Válido.",
+          "source": "Lista de Exercícios — Argumentos e Regras de Inferência, item d)"
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Item (e). p: cliente é culpado, q: a faca estava na gaveta, r: Jason viu a faca, s: a faca estava lá em 10/10, t: o martelo estava no celeiro. Monte a premissa \"Ou a faca não estava na gaveta ou Jason viu a faca\".",
+          "promptBox": "2ª premissa de (e)",
+          "tokens": ["~", "q", "v", "r", "→", "^"],
+          "correctSequence": ["~", "q", "v", "r"],
+          "hint": "\"Ou … ou …\" é disjunção v; negue só o q.",
+          "explanation": "\"A faca não estava na gaveta\" é ~q; \"ou Jason viu a faca\" é v r. Logo ~q v r.",
+          "source": "Lista de Exercícios — Argumentos e Regras de Inferência, item e)"
+        },
+        {
+          "kind": "proof-step",
+          "title": "Item (e) — fecho",
+          "instruction": "Depois de chegar a (7) ~q, complete a linha (8), a conclusão \"meu cliente é inocente\", de (1) p → q e (7) ~q.",
+          "proofState": [
+            { "line": 1, "text": "p → q", "rule": "P" },
+            { "line": 6, "text": "~s", "rule": "4,5 MT" },
+            { "line": 7, "text": "~q", "rule": "2,~r SD" }
+          ],
+          "exprOptions": ["~p", "p", "~q", "q"],
+          "ruleOptions": ["MP", "MT", "SD", "SH"],
+          "correctExpr": 0,
+          "correctRule": 1,
+          "explanation": "De (1) p → q e (7) ~q, Modus tollens conclui (8) ~p: o cliente é inocente (aqui \"inocente\" = não culpado, por bivalência). A cadeia completa é: de (4) s → (q ^ t) e (5) ~t, AD + MT dão ~s; ~s → ~r dá ~r; com (2) ~q v r, SD dá ~q. Válido.",
+          "source": "Lista de Exercícios — Argumentos e Regras de Inferência, item e)"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Item (f). p: cozinheiro é inocente, q: governanta é culpada, r: mordomo é culpado. Julgue a validade.",
+          "statement": "O argumento (f) é inválido, porque a disjunção exclusiva não permite concluir nada.",
+          "subtext": "\"…mas não os dois\" é (r v q) ^ ~(r ^ q).",
+          "isTrue": false,
+          "explanation": "Falso — o argumento é válido. De (r v q) ^ ~(r ^ q) e r sai ~q; com p → q, Modus tollens dá ~p, ou seja, o cozinheiro NÃO é inocente (é culpado). Ressalva: a prova usa o princípio da bivalência (culpado ≡ não inocente); sem essa premissa extra o texto do enunciado fica ambíguo, assim como o \"a cozinheiro\" do original.",
+          "source": "Lista de Exercícios — Argumentos e Regras de Inferência, item f)"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Item (f). De \"ou o mordomo é culpado ou a governanta é culpada, mas não os dois\" (r v q) ^ ~(r ^ q) e \"o mordomo não é inocente\" (r), o que segue?",
+          "options": [
+            { "text": "~q — a governanta não é culpada.", "isCorrect": true },
+            { "text": "q — a governanta é culpada.", "isCorrect": false },
+            { "text": "~r — o mordomo é inocente.", "isCorrect": false },
+            { "text": "r ^ q — os dois são culpados.", "isCorrect": false }
+          ],
+          "explanation": "Sabemos r. De (r v q) ^ ~(r ^ q) vem ~(r ^ q) = ~r v ~q; com r, o Silogismo disjuntivo elimina ~r e sobra ~q.",
+          "source": "Lista de Exercícios — Argumentos e Regras de Inferência, item f)",
+          "art": "proofColumns"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Item (f). De \"se o cozinheiro é inocente, então a governanta é a culpada\" (p → q) e ~q, qual regra conclui ~p (o cozinheiro é culpado)?",
+          "options": [
+            { "text": "Modus tollens (MT)", "isCorrect": true },
+            { "text": "Modus ponens (MP)", "isCorrect": false },
+            { "text": "Silogismo disjuntivo (SD)", "isCorrect": false },
+            { "text": "Dilema construtivo (DC)", "isCorrect": false }
+          ],
+          "explanation": "Modus tollens: de p → q e ~q, nega-se o antecedente e se obtém ~p — o cozinheiro não é inocente, é culpado. Fecha a prova de (f).",
+          "source": "Lista de Exercícios — Argumentos e Regras de Inferência, item f)",
+          "mascot": "boole",
+          "say": "MT fecha o caso dos três suspeitos."
+        }
+      ]
+    }
+  ]
+}

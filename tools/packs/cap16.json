@@ -1,0 +1,184 @@
+{
+  "lessons": [
+    {
+      "id": "c16_quantificadores",
+      "title": "Quantificadores: todo, algum, nenhum e existe único",
+      "unitTitle": "Capítulo 16 — Quantificadores",
+      "char": "boole",
+      "icon": "infinity",
+      "steps": [
+        {
+          "kind": "theory",
+          "title": "Quantificador universal (∀): quando Vp = A",
+          "content": "Seja p(x) uma sentença aberta no conjunto não vazio A e Vp o seu conjunto-verdade. Dizemos <b>(∀x ∈ A)(p(x))</b> — \"para todo x de A, p(x)\" — quando <b>Vp = A</b>, isto é, todos os elementos satisfazem p. A sigla ∀ (um A invertido) transforma a sentença aberta em <b>proposição</b>: ela vale V se Vp = A e F se Vp ≠ A. O caso \"todo P é Q\" é uma <b>condicional restrita</b>: <b>∀x(P(x) → Q(x))</b>, porque \"Todo gato é mamífero\" só fala dos que são gatos. Exemplos do livro: (∀x)(x é mortal) é V no universo H dos seres humanos; (∀n ∈ N)(n + 5 > 3) é V pois Vp = N.",
+          "table": null,
+          "art": "vennQuant",
+          "source": "Alencar Filho, Cap. 16, seção 1"
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Traduza: \"Todo gato é mamífero\", com G(x): 'x é gato' e M(x): 'x é mamífero'.",
+          "promptBox": "Todo gato é mamífero = ?",
+          "tokens": ["∀x", "(", "G(x)", "→", "M(x)", ")", "∃x", "∧", "∨", "~"],
+          "correctSequence": ["∀x", "(", "G(x)", "→", "M(x)", ")"],
+          "hint": "Universal afirmativo: use ∀ e conecte as duas condições com 'se... então'.",
+          "explanation": "\"Todo P é Q\" é a condicional restrita ∀x(P(x) → Q(x)): só os gatos são testados. Montar com ∧ seria um erro — ∀x(G(x) ∧ M(x)) afirmaria que <b>tudo</b> é gato e mamífero ao mesmo tempo.",
+          "source": "Alencar Filho, Cap. 16, seção 1; adaptado de: Lista Quantificadores (Profa. Kelly Gazolli), item 'Todos os gatos são pardos'",
+          "mascot": "bit",
+          "say": "Todo? Então é 'se... então', nunca 'e'."
+        },
+        {
+          "kind": "choice",
+          "instruction": "No universo indicado, qual das proposições universais é VERDADEIRA?",
+          "options": [
+            { "text": "(∀n ∈ N)(n + 5 > 3)", "isCorrect": true },
+            { "text": "(∀n ∈ N)(n + 3 > 7)", "isCorrect": false },
+            { "text": "(∀x ∈ R)(x² > 0)", "isCorrect": false },
+            { "text": "(∀x ∈ R)(x + 2 = x)", "isCorrect": false }
+          ],
+          "explanation": "Em N, n + 5 > 3 vale para todo natural, então Vp = N e a universal é V. Já n + 3 > 7 falha para n = 1, 2, 3, 4 (Vp = {5, 6, ...} ≠ N); x² > 0 falha em x = 0; e x + 2 = x não tem solução nenhuma.",
+          "source": "Alencar Filho, Cap. 16, seção 1, exemplos (1) e (2)",
+          "art": "numberLine"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Verdadeiro ou falso?",
+          "statement": "Em A = {3, 5, 7}, a proposição (∀x ∈ A)(x é primo) equivale à conjunção (3 é primo) ∧ (5 é primo) ∧ (7 é primo).",
+          "subtext": null,
+          "isTrue": true,
+          "explanation": "Num universo finito, o quantificador universal vira uma sequência de conjunções: (∀x ∈ A)p(x) ⇔ p(a₁) ∧ ... ∧ p(aₙ). Aqui 3, 5 e 7 são todos primos, então a conjunção — e a proposição — é verdadeira.",
+          "source": "Alencar Filho, Cap. 16, seção 1 (universo finito A = {3, 5, 7})"
+        },
+        {
+          "kind": "theory",
+          "title": "Quantificador existencial (∃): quando Vp ≠ ∅",
+          "content": "Dizemos <b>(∃x ∈ A)(p(x))</b> — \"existe x em A tal que p(x)\" / \"algum x de A é p\" — quando <b>Vp ≠ ∅</b>, isto é, pelo menos um elemento satisfaz p. O símbolo ∃ (um E invertido) gera uma proposição que vale V se Vp ≠ ∅ e F se Vp = ∅. \"Algum P é Q\" é uma <b>conjunção restrita</b>: <b>∃x(P(x) ∧ Q(x))</b>. Num universo finito, ∃ vira <b>disjunção</b>: (∃x ∈ {3,4,5})(x é par) ⇔ 3 é par ∨ 4 é par ∨ 5 é par. Exemplos: (∃x)(x vive na Lua) é F no universo H; \"x > x²\" é V em R mas F em N; (∃n ∈ N)(n + 4 < 8) é V.",
+          "table": null,
+          "art": "openSentence",
+          "source": "Alencar Filho, Cap. 16, seção 2"
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Traduza: \"Algum aluno é trabalhador\", com A(x): 'x é aluno' e T(x): 'x é trabalhador'.",
+          "promptBox": "Algum aluno é trabalhador = ?",
+          "tokens": ["∃x", "(", "A(x)", "∧", "T(x)", ")", "∀x", "→", "∨", "~"],
+          "correctSequence": ["∃x", "(", "A(x)", "∧", "T(x)", ")"],
+          "hint": "Existencial afirmativo: use ∃ e una as duas condições com 'e'.",
+          "explanation": "\"Algum P é Q\" exige que exista um indivíduo que seja P <b>e</b> Q ao mesmo tempo: ∃x(P(x) ∧ Q(x)). Usar a condicional ∃x(A(x) → T(x)) é a armadilha — ela fica verdadeira bastando existir algo que não é aluno.",
+          "source": "adaptado de: Lista Quantificadores (Profa. Kelly Gazolli), item 'homens trabalhadores e simpáticos'; Alencar Filho, Cap. 16, seção 2"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Com G(x): 'x é gato' e P(x): 'x é pardo', qual é a tradução correta de \"Algum gato é pardo\"?",
+          "options": [
+            { "text": "∃x (G(x) ∧ P(x))", "isCorrect": true },
+            { "text": "∃x (G(x) → P(x))", "isCorrect": false },
+            { "text": "∀x (G(x) → P(x))", "isCorrect": false },
+            { "text": "∀x (G(x) ∧ P(x))", "isCorrect": false }
+          ],
+          "explanation": "Existencial afirmativo é a conjunção restrita ∃x(G(x) ∧ P(x)). A versão ∃x(G(x) → P(x)) é falsa-amiga: vale sempre que existir algo que não é gato. ∀x(G(x) → P(x)) traduziria \"todo gato é pardo\". Analogamente, \"existe número primo par\" é ∃x(Primo(x) ∧ Par(x)) e vale V em N, pois 2 satisfaz as duas.",
+          "source": "Alencar Filho, Cap. 16, seção 2; adaptado de: Lista Quantificadores (Profa. Kelly Gazolli)"
+        },
+        {
+          "kind": "theory",
+          "title": "Negação de quantificadores (De Morgan)",
+          "content": "A negação <b>troca ∀ por ∃</b> (e vice-versa) e nega o predicado. Valem as <b>segundas regras de De Morgan</b>: <br/>~(∀x ∈ A)(p(x)) ⇔ (∃x ∈ A)(~p(x)) <br/>~(∃x ∈ A)(p(x)) ⇔ (∀x ∈ A)(~p(x)) <br/>Ex.: negar \"Todo aluno da turma A é bem comportado\" dá \"Existe um aluno da turma A que não é bem comportado\", ou seja, \"Nem todo aluno é bem comportado\". <b>Não</b> é ~(∀x p) ⇔ ∀x ~p — esquecer de trocar o quantificador é o erro clássico.",
+          "table": null,
+          "art": "quantNegation",
+          "source": "Alencar Filho, Cap. 16, seção 5",
+          "mascot": "boole",
+          "say": "Negou? Troca ∀ por ∃ e joga o ~ no predicado."
+        },
+        {
+          "kind": "tokens",
+          "instruction": "Niegue \"Todo gato é mamífero\" (G(x) → M(x)) montando \"Nem todo gato é mamífero\".",
+          "promptBox": "~(∀x)(G(x) → M(x)) = ?",
+          "tokens": ["∃x", "(", "G(x)", "∧", "~", "M(x)", ")", "∀x", "→", "∨"],
+          "correctSequence": ["∃x", "(", "G(x)", "∧", "~", "M(x)", ")"],
+          "hint": "Troque ∀ por ∃, troque a condicional por conjunção e negue só o consequente.",
+          "explanation": "Negar ∀x(G→M) gera ∃x~(G→M). Como ~(p → q) ⇔ p ∧ ~q, o resultado é ∃x(G(x) ∧ ~M(x)): existe um gato que não é mamífero. Manter ∀ ou a condicional seria o erro ~(∀x p) ⇔ ∀x ~p.",
+          "source": "Alencar Filho, Cap. 16, seção 5, exemplos (1) e (2)"
+        },
+        {
+          "kind": "multi",
+          "instruction": "Marque TODAS as negações corretamente formuladas:",
+          "options": [
+            "~[(∀x ∈ R)(x² ≥ 0)] é (∃x ∈ R)(x² < 0)",
+            "~[Todo aluno é aprovado] é [Nenhum aluno é aprovado]",
+            "~[(∃x ∈ N)(x é primo par)] é (∀x ∈ N)(x não é primo par)",
+            "~[Algum gato é pardo] é [Todo gato é pardo]",
+            "~[(∀n ∈ N)(n + 3 > 7)] é (∃n ∈ N)(n + 3 ≤ 7)"
+          ],
+          "correct": [0, 2, 4],
+          "explanation": "Nos itens 0, 2 e 4 o quantificador foi trocado (∀↔∃) e o predicado negado, incluindo a passagem '> 7' → '≤ 7'. O item 1 erra ao negar \"todo\" por \"nenhum\" (o certo é \"algum... não\"); o item 3 erra ao negar \"algum\" por \"todo\" (o certo é \"nenhum\").",
+          "source": "Alencar Filho, Cap. 16, seção 5, exemplos (1), (2), (4) e (5)"
+        },
+        {
+          "kind": "counterexample",
+          "instruction": "A proposição (∀x ∈ A)(x é primo) é falsa para A = {2, 3, 4, 5, 6, 7}. Selecione os contraexemplos:",
+          "items": [
+            { "id": 1, "shape": "circle", "color": "blue", "label": "x = 2" },
+            { "id": 2, "shape": "square", "color": "red", "label": "x = 4", "isCounter": true },
+            { "id": 3, "shape": "circle", "color": "blue", "label": "x = 5" },
+            { "id": 4, "shape": "square", "color": "red", "label": "x = 6", "isCounter": true }
+          ],
+          "explanation": "Contraexemplo é um elemento de A que torna p(x) falsa, testemunhando ~(∀x)p(x) ⇔ (∃x)~p(x). 4 = 2·2 e 6 = 2·3 são compostos (não primos), então bastam para refutar a universal; 2 e 5 são primos e não servem.",
+          "source": "Alencar Filho, Cap. 16, seção 6; adaptado de: Cap. 16, exercício 12, item (b)",
+          "art": "numberLine"
+        },
+        {
+          "kind": "choice",
+          "instruction": "Com G(x): 'x é gato' e P(x): 'x é pardo', assinale a tradução de \"Nenhum gato é pardo\".",
+          "options": [
+            { "text": "∀x (G(x) → ~P(x))", "isCorrect": true },
+            { "text": "∃x (G(x) ∧ ~P(x))", "isCorrect": false },
+            { "text": "∀x (G(x) ∧ ~P(x))", "isCorrect": false },
+            { "text": "∃x (G(x) → P(x))", "isCorrect": false }
+          ],
+          "explanation": "\"Nenhum A é B\" afirma conjuntos <b>disjuntos</b>: todo gato é <b>não</b>-pardo, ou seja ∀x(G(x) → ~P(x)). A alternativa ∃x(G(x) ∧ ~P(x)) é outra frase — \"Algum gato <b>não</b> é pardo\" — que só exige a existência de um contraexemplo, não a exclusão total.",
+          "source": "Alencar Filho, Cap. 16, seções 1 e 5; adaptado de: Lista Quantificadores (Profa. Kelly Gazolli), item 'Nenhum gato é pardo'"
+        },
+        {
+          "kind": "match",
+          "instruction": "Ligue cada enunciado categórico à sua forma simbólica (com o predicado indicado):",
+          "pairs": [
+            { "left": "Todo aluno é aprovado", "right": "∀x (aluno(x) → aprovado(x))" },
+            { "left": "Algum aluno é aprovado", "right": "∃x (aluno(x) ∧ aprovado(x))" },
+            { "left": "Nenhum aluno é aprovado", "right": "∀x (aluno(x) → ~aprovado(x))" },
+            { "left": "Existe um e um só natural com x² − 9 = 0", "right": "(∃!x ∈ N)(x² − 9 = 0)" }
+          ],
+          "explanation": "Todo = condicional com ∀; algum = conjunção com ∃; nenhum = condicional com predicado negado (∀x(A → ~B)). O símbolo ∃! é o quantificador existencial de unicidade (\"existe um e um só\"): em N, x² − 9 = 0 só tem a raiz x = 3.",
+          "source": "Alencar Filho, Cap. 16, seções 1, 2, 4 e 5"
+        },
+        {
+          "kind": "venn",
+          "instruction": "Pinte a região que torna verdadeira \"Algum aluno é trabalhador\" (aluno(x) ∧ trabalhador(x)):",
+          "title": "Particular afirmativo",
+          "targetRegion": "intersection",
+          "explanation": "∃x(aluno(x) ∧ trabalhador(x)) pede um elemento que esteja nos dois conjuntos ao mesmo tempo, então basta a interseção ser não vazia. Se os conjuntos fossem disjuntos (interseção vazia), a frase seria falsa.",
+          "source": "Alencar Filho, Cap. 16, seção 2; adaptado de: Material Enunciados Categóricos (Profa. Kelly Gazolli)"
+        },
+        {
+          "kind": "theory",
+          "title": "Quantificação dupla (por enquanto, só a ideia)",
+          "content": "Quando duas variáveis e dois quantificadores aparecem numa mesma frase, um quantificador entra no <b>escopo</b> do outro. A <b>ordem importa</b> quando os quantificadores são <b>diferentes</b>: \"Todos gostam de alguém\" é ∀x∃y(gosta(x,y)), mas \"Existe alguém de quem todos gostam\" é ∃y∀x(gosta(x,y)) — não dizem o mesmo. Quando são <b>iguais</b> (∀∀ ou ∃∃), trocar a ordem não muda o sentido. O <b>cálculo do valor lógico</b> dessas sentenças num domínio dado fica para o <b>Cap. 17</b>; por aqui só traduzimos e comparamos os sentidos.",
+          "table": null,
+          "art": "nestedQuant",
+          "source": "adaptado de: Material Quantificação Múltipla (Profa. Kelly Gazolli); Alencar Filho, Cap. 16, seção 4"
+        },
+        {
+          "kind": "swipe",
+          "instruction": "Verdadeiro ou falso?",
+          "statement": "\"∀x∃y (x gosta de y)\" ('todos gostam de alguém') e \"∃y∀x (x gosta de y)' ('existe alguém de quem todos gostam') significam a mesma coisa.",
+          "subtext": null,
+          "isTrue": false,
+          "explanation": "Com quantificadores diferentes, a ordem muda o sentido. Em ∀x∃y cada pessoa pode ter o seu próprio 'alguém'; em ∃y∀x uma única pessoa precisa agradar a todos. O cálculo do valor lógico dessas fórmulas é assunto do Cap. 17.",
+          "source": "adaptado de: Material Quantificação Múltipla (Profa. Kelly Gazolli), 'Todos gostam de alguém'",
+          "art": "nestedQuant",
+          "mascot": "migo",
+          "say": "∀ antes de ∃? A ordem muda tudo!"
+        }
+      ]
+    }
+  ]
+}

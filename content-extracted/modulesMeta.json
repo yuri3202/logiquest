@@ -1,0 +1,94 @@
+[
+  {
+    "id": "mod1",
+    "badge": "Módulo 1 • Cap. 1 e 2 Alencar Filho",
+    "title": "Proposições, Conectivos & Tradução PT ⇄ Lógica",
+    "desc": "Princípios fundamentais, conectivos, Word Bank Duolingo e código lógico Migo.",
+    "color": "emerald",
+    "char": "bit",
+    "lessons": [
+      "u1_proposicoes",
+      "u1_traducao_pt",
+      "boss_m1"
+    ]
+  },
+  {
+    "id": "mod2",
+    "badge": "Módulo 2 • Cap. 3 e 4 Alencar Filho + AVA IFES",
+    "title": "Tabelas-Verdade, Diagrama Sagital & De Morgan",
+    "desc": "Tabelas de 4 e 8 linhas, Questões 1 e 5 do AVA IFES, Tautologias e Contradições.",
+    "color": "indigo",
+    "char": "turing",
+    "lessons": [
+      "u2_tabelas",
+      "u2_demorgan_ifes",
+      "u2_complexa_ifes",
+      "boss_m2"
+    ]
+  },
+  {
+    "id": "mod3",
+    "badge": "Módulo 3 • Cap. 5, 6, 7 e 8 Alencar Filho",
+    "title": "Implicação (⇒), Equivalência (⇔), Álgebra & FNC/FND",
+    "desc": "Contrapositiva, Conectivos de Scheffer (↓, ↑), Dualidade e Formas Normais.",
+    "color": "purple",
+    "char": "boole",
+    "lessons": [
+      "u3_implicacao_equiv",
+      "u3_algebra_prop",
+      "boss_m3"
+    ]
+  },
+  {
+    "id": "mod4",
+    "badge": "Módulo 4 • Cap. 9, 10, 11 e 12 Alencar Filho",
+    "title": "Argumentos, As 10 Regras de Inferência & Sofismas",
+    "desc": "Modus Ponens, Modus Tollens, Silogismos, Dilemas, Inconsistência e Contra-Exemplo.",
+    "color": "amber",
+    "char": "turing",
+    "lessons": [
+      "u4_argumentos",
+      "u4_regras_inferencia",
+      "boss_m4"
+    ]
+  },
+  {
+    "id": "mod5",
+    "badge": "Módulo 5 • Cap. 8 e 13 + Lista Oficial AVA IFES",
+    "title": "Método Dedutivo Completo (1a, 1b, 2a, 2b, 2c)",
+    "desc": "Todas as questões da lista do IFES, Demonstração Condicional (DC) e Indireta (DI).",
+    "color": "rose",
+    "char": "boole",
+    "lessons": [
+      "u5_dedutivo_ifes1",
+      "u5_dedutivo_ifes2",
+      "u5_demonstracao_cond_ind",
+      "boss_m5"
+    ]
+  },
+  {
+    "id": "mod6",
+    "badge": "Módulo 6 • Cap. 14, 15, 16 e 17 Alencar Filho",
+    "title": "Sentenças Abertas, Conjuntos Venn & Quantificadores",
+    "desc": "Conjuntos-verdade Vp, Diagramas de Venn, ∀, ∃, ∃! e Quantificação Múltipla.",
+    "color": "cyan",
+    "char": "sofia",
+    "lessons": [
+      "u6_sentencas_abertas",
+      "u6_conjuntos_venn",
+      "u6_quantificadores",
+      "boss_m6"
+    ]
+  },
+  {
+    "id": "mod7",
+    "badge": "Módulo 7 • PDF da Profa. Kelly Gazolli",
+    "title": "Quantificação Múltipla • Relações, Escopo e Tradução",
+    "desc": "Questões interativas baseadas em todas as sentenças e exemplos do PDF, com explicações e desafios progressivos.",
+    "color": "purple",
+    "char": "sofia",
+    "lessons": [
+      "u7_quantificacao_multipla"
+    ]
+  }
+]

@@ -1,0 +1,414 @@
+{
+  "boss_m1": [
+    {
+      "type": "multiple-choice",
+      "badge": "Prova Final M1 • Conectivos",
+      "instruction": "Qual conectivo torna uma proposição composta FALSA unicamente quando a primeira proposição é verdadeira e a segunda é falsa?",
+      "options": [
+        {
+          "text": "Condicional (p → q)",
+          "isCorrect": true
+        },
+        {
+          "text": "Conjunção (p ∧ q)",
+          "isCorrect": false
+        },
+        {
+          "text": "Bicondicional (p ↔ q)",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "A condicional p → q só é falsa no caso V → F (\"Vera Fischer é Falsa\")."
+    },
+    {
+      "type": "translation-choice",
+      "badge": "Prova Final M1 • Tradução",
+      "instruction": "Traduza para linguagem simbólica: \"Não é verdade que estudo e trabalho.\"",
+      "options": [
+        {
+          "text": "~(p ∧ q)",
+          "isCorrect": true
+        },
+        {
+          "text": "~p ∧ ~q",
+          "isCorrect": false
+        },
+        {
+          "text": "~p → q",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "\"Não é verdade que\" nega a expressão inteira colocada entre parênteses: ~(p ∧ q)."
+    },
+    {
+      "type": "multiple-choice",
+      "badge": "Prova Final M1 • Princípios",
+      "instruction": "O Princípio da Não-Contradição estabelece que:",
+      "options": [
+        {
+          "text": "Uma proposição não pode ser verdadeira e falsa simultaneamente",
+          "isCorrect": true
+        },
+        {
+          "text": "Toda proposição tem que ser falsa",
+          "isCorrect": false
+        },
+        {
+          "text": "Uma proposição pode ter três valores de verdade",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Pelo princípio fundamental da lógica bivalente, uma proposição jamais é V e F ao mesmo tempo."
+    },
+    {
+      "type": "translation-choice",
+      "badge": "Prova Final M1 • Tradução Inversa",
+      "instruction": "O que significa a fórmula \"p <u>∨</u> q\"?",
+      "options": [
+        {
+          "text": "\"Ou p ou q, mas não ambos\"",
+          "isCorrect": true
+        },
+        {
+          "text": "\"p e q ao mesmo tempo\"",
+          "isCorrect": false
+        },
+        {
+          "text": "\"Se p então q\"",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "<u>∨</u> simboliza a disjunção exclusiva (aut latino)."
+    }
+  ],
+  "boss_m2": [
+    {
+      "type": "multiple-choice",
+      "badge": "Prova Final M2 • Tautologia",
+      "instruction": "Uma proposição composta é dita TAUTOLÓGICA quando:",
+      "options": [
+        {
+          "text": "Sua tabela-verdade encerra exclusivamente o valor V",
+          "isCorrect": true
+        },
+        {
+          "text": "Tem metade das linhas V e metade F",
+          "isCorrect": false
+        },
+        {
+          "text": "É sempre falsa",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Tautologias são proposições logicamente verdadeiras independentemente do valor das variáveis."
+    },
+    {
+      "type": "multiple-choice",
+      "badge": "Prova Final M2 • De Morgan",
+      "instruction": "A negação lógica de ~(p ∨ q) equivale a:",
+      "options": [
+        {
+          "text": "~p ∧ ~q",
+          "isCorrect": true
+        },
+        {
+          "text": "~p ∨ ~q",
+          "isCorrect": false
+        },
+        {
+          "text": "p ∧ q",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "1ª Lei de De Morgan: a negação da disjunção vira a conjunção das negações."
+    },
+    {
+      "type": "multiple-choice",
+      "badge": "Prova Final M2 • Linhas",
+      "instruction": "A tabela-verdade da proposição complexa P(p, q, r) da Questão 1 do IFES contém quantas linhas?",
+      "options": [
+        {
+          "text": "8 linhas",
+          "isCorrect": true
+        },
+        {
+          "text": "6 linhas",
+          "isCorrect": false
+        },
+        {
+          "text": "4 linhas",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Por conter 3 variáveis simples (p, q, r), temos 2³ = 8 linhas."
+    }
+  ],
+  "boss_m3": [
+    {
+      "type": "multiple-choice",
+      "badge": "Prova Final M3 • Contrapositiva",
+      "instruction": "A contrapositiva exata da proposição condicional p → q é:",
+      "options": [
+        {
+          "text": "~q → ~p",
+          "isCorrect": true
+        },
+        {
+          "text": "q → p",
+          "isCorrect": false
+        },
+        {
+          "text": "~p → ~q",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "A contrapositiva inverte e nega ambos os lados, mantendo estrita equivalência lógica."
+    },
+    {
+      "type": "multiple-choice",
+      "badge": "Prova Final M3 • Condicional",
+      "instruction": "A condicional p → q pode ser reescrita sem o símbolo → como:",
+      "options": [
+        {
+          "text": "~p ∨ q",
+          "isCorrect": true
+        },
+        {
+          "text": "~p ∧ q",
+          "isCorrect": false
+        },
+        {
+          "text": "p ∧ ~q",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Essa é a equivalência fundamental da condicional: p → q ⇔ ~p ∨ q."
+    },
+    {
+      "type": "multiple-choice",
+      "badge": "Prova Final M3 • Idempotência",
+      "instruction": "Pela Lei da Idempotência, a expressão p ∧ p equivale a:",
+      "options": [
+        {
+          "text": "p",
+          "isCorrect": true
+        },
+        {
+          "text": "V",
+          "isCorrect": false
+        },
+        {
+          "text": "p²",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "p ∧ p e p ∨ p equivalem rigorosamente a p."
+    }
+  ],
+  "boss_m4": [
+    {
+      "type": "multiple-choice",
+      "badge": "Prova Final M4 • Modus Tollens",
+      "instruction": "Dado o argumento: p → q, ~q ⊢ ~p. Qual é o nome dessa regra de inferência?",
+      "options": [
+        {
+          "text": "Modus Tollens (MT)",
+          "isCorrect": true
+        },
+        {
+          "text": "Modus Ponens (MP)",
+          "isCorrect": false
+        },
+        {
+          "text": "Silogismo Hipotético",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Modus Tollens (\"o modo que nega negando\"): negar o consequente acarreta negar o antecedente."
+    },
+    {
+      "type": "multiple-choice",
+      "badge": "Prova Final M4 • Silogismo Hipotético",
+      "instruction": "Dadas as premissas p → q e q → r, qual conclusão é garantida por Silogismo Hipotético?",
+      "options": [
+        {
+          "text": "p → r",
+          "isCorrect": true
+        },
+        {
+          "text": "p ∧ r",
+          "isCorrect": false
+        },
+        {
+          "text": "r → p",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "O Silogismo Hipotético expressa a transitividade da condicional."
+    },
+    {
+      "type": "multiple-choice",
+      "badge": "Prova Final M4 • Sofisma",
+      "instruction": "Se alguém conclui que \"p é verdade\" a partir de \"p → q\" e \"q\", essa pessoa cometeu:",
+      "options": [
+        {
+          "text": "Sofisma de Afirmação do Consequente",
+          "isCorrect": true
+        },
+        {
+          "text": "Modus Ponens Válido",
+          "isCorrect": false
+        },
+        {
+          "text": "Dilema Construtivo",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Afirmar o consequente não prova o antecedente."
+    }
+  ],
+  "boss_m5": [
+    {
+      "type": "multiple-choice",
+      "badge": "Prova Final M5 • Questão 1 IFES",
+      "instruction": "Na demonstração de p ∧ q ⇒ p ∨ q, qual é a primeira regra de inferência aplicada sobre p ∧ q?",
+      "options": [
+        {
+          "text": "Simplificação (para obter p)",
+          "isCorrect": true
+        },
+        {
+          "text": "Modus Tollens",
+          "isCorrect": false
+        },
+        {
+          "text": "Contraposição",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Simplificação extrai p da conjunção. Em seguida, por Adição deduz-se p ∨ q."
+    },
+    {
+      "type": "multiple-choice",
+      "badge": "Prova Final M5 • Redução ao Absurdo",
+      "instruction": "Uma demonstração indireta atinge seu objetivo com sucesso quando:",
+      "options": [
+        {
+          "text": "Deduz uma contradição explícita (A ∧ ~A)",
+          "isCorrect": true
+        },
+        {
+          "text": "Deduz uma tautologia",
+          "isCorrect": false
+        },
+        {
+          "text": "Termina com premissas em branco",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "A obtenção de uma contradição refuta a hipótese do absurdo e valida a conclusão desejada."
+    },
+    {
+      "type": "multiple-choice",
+      "badge": "Prova Final M5 • Questão 2 IFES",
+      "instruction": "A equivalência ~p → p ⇔ p é historicamente conhecida na lógica matemática como:",
+      "options": [
+        {
+          "text": "Regra de Clavius",
+          "isCorrect": true
+        },
+        {
+          "text": "Regra de Peano",
+          "isCorrect": false
+        },
+        {
+          "text": "Teorema de Gödel",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "A demonstração dedutiva de ~p → p ⇔ p é a célebre Regra de Clavius (Cap. 6 §3 Alencar Filho)."
+    }
+  ],
+  "boss_m6": [
+    {
+      "type": "multiple-choice",
+      "badge": "Prova Final M6 • Negação de Quantificador",
+      "instruction": "Qual é a negação exata da sentença universal ∀x P(x)?",
+      "options": [
+        {
+          "text": "∃x (~P(x))",
+          "isCorrect": true
+        },
+        {
+          "text": "∀x (~P(x))",
+          "isCorrect": false
+        },
+        {
+          "text": "~∃x P(x)",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Negar que todos satisfazem P(x) é afirmar que existe pelo menos um que não satisfaz."
+    },
+    {
+      "type": "multiple-choice",
+      "badge": "Prova Final M6 • Conjuntos & Lógica",
+      "instruction": "Se x ∈ (A ∪ B), qual conectivo liga as sentenças x ∈ A e x ∈ B?",
+      "options": [
+        {
+          "text": "Disjunção inclusiva (∨)",
+          "isCorrect": true
+        },
+        {
+          "text": "Conjunção (∧)",
+          "isCorrect": false
+        },
+        {
+          "text": "Bicondicional (↔)",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "A união de conjuntos corresponde rigorosamente à disjunção lógica (ou inclusivo)."
+    },
+    {
+      "type": "multiple-choice",
+      "badge": "Prova Final M6 • Unicidade",
+      "instruction": "O símbolo ∃!x P(x) lê-se:",
+      "options": [
+        {
+          "text": "\"Existe um e um só x tal que P(x)\"",
+          "isCorrect": true
+        },
+        {
+          "text": "\"Para todo x diferente de 1\"",
+          "isCorrect": false
+        },
+        {
+          "text": "\"Não existe nenhum x\"",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "∃! é o quantificador de existência e unicidade."
+    },
+    {
+      "type": "multiple-choice",
+      "badge": "Prova Final M6 • Trinômio de Euler (Pág. 183)",
+      "instruction": "Qual valor inteiro positivo serve como contra-exemplo para refutar (∀x ∈ ℤ⁺)(x² + x + 41 é primo)?",
+      "options": [
+        {
+          "text": "x = 40 (pois 40² + 40 + 41 = 41² que é composto)",
+          "isCorrect": true
+        },
+        {
+          "text": "x = 1",
+          "isCorrect": false
+        },
+        {
+          "text": "x = 2",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Para x = 40, temos 40(40+1) + 41 = 41 × 41 = 41², que é divisível por 41!"
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+[
+  {
+    "id": "u1_proposicoes",
+    "title": "Proposições, Valores Lógicos & Conectivos",
+    "steps": 5,
+    "counts": {
+      "theory": 1,
+      "swipe-tf": 1,
+      "mimo-code": 1,
+      "multiple-choice": 2
+    }
+  },
+  {
+    "id": "u1_traducao_pt",
+    "title": "Tradução Duolingo: Português ⇄ Símbolos",
+    "steps": 5,
+    "counts": {
+      "theory": 1,
+      "word-bank": 2,
+      "translation-choice": 2
+    }
+  },
+  {
+    "id": "u2_tabelas",
+    "title": "Tabelas-Verdade, Diagrama Sagital & Tautologias",
+    "steps": 3,
+    "counts": {
+      "theory": 1,
+      "sagittal-visual": 1,
+      "multiple-choice": 1
+    }
+  },
+  {
+    "id": "u2_demorgan_ifes",
+    "title": "Tabelas-Verdade das Regras de De Morgan",
+    "steps": 2,
+    "counts": {
+      "multi-truth-table": 2
+    }
+  },
+  {
+    "id": "u2_complexa_ifes",
+    "title": "Equivalência Complexa de 8 Linhas (p, q, r)",
+    "steps": 3,
+    "counts": {
+      "theory": 1,
+      "truth-table": 1,
+      "multi-truth-table": 1
+    }
+  },
+  {
+    "id": "u3_implicacao_equiv",
+    "title": "Implicação (⇒), Associadas & Scheffer (↓, ↑)",
+    "steps": 3,
+    "counts": {
+      "theory": 1,
+      "match-pairs": 1,
+      "multiple-choice": 1
+    }
+  },
+  {
+    "id": "u3_algebra_prop",
+    "title": "Álgebra, Negação de Condicional & FNC/FND",
+    "steps": 3,
+    "counts": {
+      "theory": 1,
+      "word-bank": 1,
+      "multiple-choice": 1
+    }
+  },
+  {
+    "id": "u4_argumentos",
+    "title": "Argumentos, Sofismas & Prova de Não-Validade",
+    "steps": 2,
+    "counts": {
+      "theory": 1,
+      "swipe-tf": 1
+    }
+  },
+  {
+    "id": "u4_regras_inferencia",
+    "title": "As 10 Regras de Inferência & Deduções Formais",
+    "steps": 2,
+    "counts": {
+      "match-pairs": 1,
+      "deductive-builder": 1
+    }
+  },
+  {
+    "id": "u5_dedutivo_ifes1",
+    "title": "Método Dedutivo: Implicações 1a e 1b",
+    "steps": 2,
+    "counts": {
+      "deductive-builder": 2
+    }
+  },
+  {
+    "id": "u5_dedutivo_ifes2",
+    "title": "Método Dedutivo: Equivalências 2a, 2b e 2c",
+    "steps": 3,
+    "counts": {
+      "deductive-builder": 3
+    }
+  },
+  {
+    "id": "u5_demonstracao_cond_ind",
+    "title": "Demonstração Condicional (DC) & Indireta (DI)",
+    "steps": 2,
+    "counts": {
+      "theory": 1,
+      "deductive-builder": 1
+    }
+  },
+  {
+    "id": "u6_sentencas_abertas",
+    "title": "Sentenças Abertas & Conjunto-Verdade (Vₚ)",
+    "steps": 2,
+    "counts": {
+      "theory": 1,
+      "multiple-choice": 1
+    }
+  },
+  {
+    "id": "u6_conjuntos_venn",
+    "title": "Operações em Sentenças Abertas & Diagramas de Venn",
+    "steps": 3,
+    "counts": {
+      "theory": 1,
+      "venn-interactive": 1,
+      "multiple-choice": 1
+    }
+  },
+  {
+    "id": "u6_quantificadores",
+    "title": "Quantificadores (∀, ∃, ∃!), Negação & Contra-Exemplo",
+    "steps": 3,
+    "counts": {
+      "theory": 1,
+      "counterexample-visual": 1,
+      "word-bank": 1
+    }
+  },
+  {
+    "id": "u7_quantificacao_multipla",
+    "title": "Quantificação Múltipla: do português aos símbolos",
+    "steps": 18,
+    "counts": {
+      "theory": 2,
+      "translation-choice": 12,
+      "multiple-choice": 4
+    }
+  }
+]

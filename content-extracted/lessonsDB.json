@@ -1,0 +1,1599 @@
+{
+  "u1_proposicoes": {
+    "id": "u1_proposicoes",
+    "unitTitle": "Módulo 1 • Cap. 1 Alencar Filho",
+    "title": "Proposições, Valores Lógicos & Conectivos",
+    "char": "bit",
+    "icon": "fa-lightbulb",
+    "steps": [
+      {
+        "type": "theory",
+        "badge": "Capítulo 1 • Págs. 11 a 15 Alencar Filho",
+        "title": "Conceito de Proposição e os 2 Axiomas da Lógica",
+        "content": "Chama-se <b>proposição</b> todo conjunto de palavras ou símbolos que exprimem um pensamento de sentido completo e que possui um único valor lógico: <b>Verdade (V)</b> ou <b>Falsidade (F)</b>.<br><br>\n                        • <b>1. Princípio da Não-Contradição:</b> Uma proposição não pode ser V e F ao mesmo tempo.<br>\n                        • <b>2. Princípio do Terceiro Excluído:</b> Toda proposição ou é V ou é F, nunca um terceiro caso (Lógica Bivalente).",
+        "table": [
+          [
+            "p: \"O número 17 é primo\"",
+            "V(p) = V",
+            "Ex. 1a Cap. 1"
+          ],
+          [
+            "q: \"Fortaleza é capital do Maranhão\"",
+            "V(q) = F",
+            "Ex. 1b Cap. 1"
+          ],
+          [
+            "r: \"sen(π/2) = 1\"",
+            "V(r) = V",
+            "Ex. 1d Cap. 1"
+          ]
+        ]
+      },
+      {
+        "type": "swipe-tf",
+        "badge": "Julgamento Rápido Estilo DuoCards • Cap. 1 Ex. 1",
+        "instruction": "Julgue a proposição matemática do livro (Cap. 1, Ex. 1d): \"(3 + 5)² = 3² + 5²\"",
+        "statement": "(3 + 5)² = 3² + 5²",
+        "subtext": "Dica: Compare 8² = 64 com 9 + 25 = 34.",
+        "isTrue": false,
+        "explanation": "Falso (F)! (3 + 5)² = 64, enquanto 3² + 5² = 9 + 25 = 34. Logo, V(p) = F."
+      },
+      {
+        "type": "mimo-code",
+        "badge": "Laboratório Estilo Migo/Mimo • Lógica na Programação",
+        "instruction": "Complete o operador lógico no código para verificar se \"x é maior que 0 E x é diferente de 1\" (Cap. 2 Ex. 8):",
+        "codePrefix": "if (x > 0 ",
+        "codeSuffix": " x != 1) {\n  return \"Proposição Verdadeira (p ∧ q)\";\n}",
+        "options": [
+          "∧ (&&)",
+          "∨ (||)",
+          "¬ (!)"
+        ],
+        "correctIndex": 0,
+        "explanation": "Perfeito! Na lógica matemática usamos ∧ (conjunção) e na programação && para exigir que ambas as condições sejam verdadeiras!"
+      },
+      {
+        "type": "multiple-choice",
+        "badge": "Disjunção Inclusiva vs. Exclusiva (Cap. 2 §5)",
+        "instruction": "Na frase Q: \"Mário é alagoano ou gaúcho\", qual conectivo representa corretamente o sentido do \"ou\"?",
+        "options": [
+          {
+            "text": "p <u>∨</u> q (Disjunção Exclusiva - \"aut\" latino)",
+            "isCorrect": true
+          },
+          {
+            "text": "p ∨ q (Disjunção Inclusiva - \"vel\" latino)",
+            "isCorrect": false
+          },
+          {
+            "text": "p ∧ q (Conjunção)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Ninguém pode nascer em Alagoas e no Rio Grande do Sul ao mesmo tempo! Portanto, é uma disjunção exclusiva (p <u>∨</u> q)."
+      },
+      {
+        "type": "multiple-choice",
+        "badge": "Exercício 19 Cap. 2 • Determinação de V(p)",
+        "instruction": "Sabendo que V(q) = F e que a condicional V(p → q) = F, qual é obrigatoriamente o valor lógico V(p)?",
+        "options": [
+          {
+            "text": "V(p) = V",
+            "isCorrect": true
+          },
+          {
+            "text": "V(p) = F",
+            "isCorrect": false
+          },
+          {
+            "text": "Indeterminado",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Uma condicional p → q só é Falsa quando o antecedente p é V e o consequente q é F (V → F = F). Logo, V(p) = V!"
+      }
+    ]
+  },
+  "u1_traducao_pt": {
+    "id": "u1_traducao_pt",
+    "unitTitle": "Módulo 1 • Cap. 2 Exercícios 1 a 11",
+    "title": "Tradução Duolingo: Português ⇄ Símbolos",
+    "char": "bit",
+    "icon": "fa-language",
+    "steps": [
+      {
+        "type": "theory",
+        "badge": "Guia de Tradução • Cap. 2 Págs. 25 e 26",
+        "title": "Como Traduzir Frases do Livro para Símbolos",
+        "content": "Nos exercícios de Edgard de Alencar Filho (Cap. 2, Ex. 1 a 11), observe os padrões:<br>\n                        • <b>\"mas\"</b> tem sempre valor de conjunção (<b>∧</b>).<br>\n                        • <b>\"Não é verdade que...\"</b> ou <b>\"É falso que...\"</b> coloca um <b>~( ... )</b> antes de toda a frase.<br>\n                        • <b>\"Não é nem p nem q\"</b> traduz-se por <b>~p ∧ ~q</b>.<br>\n                        • <b>\"p é condição suficiente para q\"</b> significa <b>p → q</b>.",
+        "table": [
+          [
+            "\"Marcos é alto, mas não é elegante\"",
+            "p ∧ ~q",
+            "Ex. 5b Cap. 2"
+          ],
+          [
+            "\"Não é verdade que Marcos é baixo ou elegante\"",
+            "~(~p ∨ q)",
+            "Ex. 5c Cap. 2"
+          ],
+          [
+            "\"Carlos fala francês ou inglês, mas não alemão\"",
+            "(p ∨ q) ∧ ~r",
+            "Ex. 7a Cap. 2"
+          ]
+        ]
+      },
+      {
+        "type": "word-bank",
+        "badge": "Construtor de Frase Duolingo • Cap. 2 Ex. 5c",
+        "instruction": "Sendo p: \"Marcos é alto\" (~p: baixo) e q: \"Marcos é elegante\", monte a fórmula para: \"Não é verdade que Marcos é baixo ou elegante\"",
+        "promptBox": "\"Não é verdade que Marcos é baixo ou elegante\"",
+        "tokens": [
+          "~",
+          "(",
+          "~p",
+          "∨",
+          "q",
+          ")",
+          "∧",
+          "→"
+        ],
+        "correctSequence": [
+          "~",
+          "(",
+          "~p",
+          "∨",
+          "q",
+          ")"
+        ],
+        "explanation": "Brilhante! \"Não é verdade que\" nega todo o parêntese ~( ... ), e \"baixo ou elegante\" é (~p ∨ q)!"
+      },
+      {
+        "type": "word-bank",
+        "badge": "Construtor Lógico → Português • Cap. 2 Ex. 1e",
+        "instruction": "Sejam p: \"Está frio\" e q: \"Está chovendo\". Traduza para o português a proposição \"p → ~q\" tocando nos blocos:",
+        "promptBox": "Fórmula Simbólica: p → ~q",
+        "tokens": [
+          "Se",
+          "está frio,",
+          "então",
+          "não",
+          "está chovendo.",
+          "e",
+          "ou"
+        ],
+        "correctSequence": [
+          "Se",
+          "está frio,",
+          "então",
+          "não",
+          "está chovendo."
+        ],
+        "explanation": "Exatamente como no gabarito oficial do livro (pág. 193, Ex. 1e): \"Se está frio, então não está chovendo.\""
+      },
+      {
+        "type": "translation-choice",
+        "badge": "Tradução com 3 Variáveis • Cap. 2 Ex. 7c",
+        "instruction": "Sejam p: \"Carlos fala francês\", q: \"fala inglês\" e r: \"fala alemão\". Traduza: \"É falso que Carlos fala francês mas que não fala alemão\":",
+        "options": [
+          {
+            "text": "~(p ∧ ~r)",
+            "isCorrect": true
+          },
+          {
+            "text": "~p ∧ ~r",
+            "isCorrect": false
+          },
+          {
+            "text": "~(p ∨ ~r)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "\"É falso que\" nega a conjunção inteira: ~(p ∧ ~r). Resposta oficial da página 194 do livro!"
+      },
+      {
+        "type": "translation-choice",
+        "badge": "Simbolização Matemática • Cap. 2 Ex. 11b",
+        "instruction": "Simbolize a proposição matemática: \"Se x é menor que 5 e maior que 3, então x é igual a 4\":",
+        "options": [
+          {
+            "text": "x < 5 ∧ x > 3 → x = 4",
+            "isCorrect": true
+          },
+          {
+            "text": "x < 5 ∨ x > 3 → x = 4",
+            "isCorrect": false
+          },
+          {
+            "text": "x = 4 → x < 5 ∧ x > 3",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Pela ordem de precedência (Cap. 3 §6), ∧ é mais forte que →, logo x < 5 ∧ x > 3 → x = 4."
+      }
+    ]
+  },
+  "u2_tabelas": {
+    "id": "u2_tabelas",
+    "unitTitle": "Módulo 2 • Cap. 3 e 4 Alencar Filho",
+    "title": "Tabelas-Verdade, Diagrama Sagital & Tautologias",
+    "char": "turing",
+    "icon": "fa-table-cells",
+    "steps": [
+      {
+        "type": "theory",
+        "badge": "Capítulos 3 e 4 • Págs. 29 a 48",
+        "title": "Teorema de 2ⁿ Linhas, Diagrama Sagital e Precedência",
+        "content": "• <b>Número de linhas:</b> Uma proposição com <i>n</i> variáveis simples tem <b>2ⁿ linhas</b>. Na k-ésima coluna, V e F alternam-se de 2ⁿ⁻ᵏ em 2ⁿ⁻ᵏ.<br>\n                        • <b>Função & Diagrama Sagital:</b> Toda proposição P(p, q) é uma função de U = {VV, VF, FV, FF} em {V, F}.<br>\n                        • <b>Ordem de Precedência (§6):</b> (1º) <b>~</b>  (2º) <b>∧ e ∨</b>  (3º) <b>→</b>  (4º) <b>↔</b>.",
+        "table": [
+          [
+            "~(p ∧ ~q)",
+            "VFVV",
+            "Contingência (Pág. 31)"
+          ],
+          [
+            "~(p ∧ ~p)",
+            "VV",
+            "Tautologia (Não-Contradição)"
+          ],
+          [
+            "p ∧ ~p",
+            "FF",
+            "Contradição (Logicamente Falsa)"
+          ]
+        ]
+      },
+      {
+        "type": "sagittal-visual",
+        "badge": "Arte Interativa • Diagrama Sagital (Pág. 32 Alencar Filho)",
+        "instruction": "Observe o Diagrama Sagital da proposição P(p, q) = ~(p ∧ ~q) (Cap. 3 §4 Ex. 1). Qual par do domínio U é o ÚNICO que aponta para F?",
+        "formula": "P(p, q) = ~(p ∧ ~q)",
+        "mappings": [
+          {
+            "pair": "VV",
+            "to": "V"
+          },
+          {
+            "pair": "VF",
+            "to": "?"
+          },
+          {
+            "pair": "FV",
+            "to": "V"
+          },
+          {
+            "pair": "FF",
+            "to": "V"
+          }
+        ],
+        "options": [
+          {
+            "text": "O par VF aponta para F (pois V ∧ ~F = V ∧ V = V, e ~(V) = F)",
+            "isCorrect": true
+          },
+          {
+            "text": "O par VV aponta para F",
+            "isCorrect": false
+          },
+          {
+            "text": "Todos apontam para V (é uma tautologia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Exato! Na página 32 do livro, P(VV, VF, FV, FF) = VFVV. Apenas VF resulta em F!"
+      },
+      {
+        "type": "multiple-choice",
+        "badge": "Ordem de Precedência • Cap. 3 §6 Pág. 38",
+        "instruction": "Sem parênteses, a proposição \"p → q ↔ s ∧ r\" é classificada como qual operação principal?",
+        "options": [
+          {
+            "text": "Uma Bicondicional (pois ↔ é o conectivo de maior alcance/último a resolver)",
+            "isCorrect": true
+          },
+          {
+            "text": "Uma Condicional (→)",
+            "isCorrect": false
+          },
+          {
+            "text": "Uma Conjunção (∧)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Pela regra de precedência (1º ~, 2º ∧/∨, 3º →, 4º ↔), resolve-se primeiro s∧r, depois p→q e por último a bicondicional ↔!"
+      }
+    ]
+  },
+  "u2_demorgan_ifes": {
+    "id": "u2_demorgan_ifes",
+    "unitTitle": "Módulo 2 • Questão 5 AVA IFES (a e b)",
+    "title": "Tabelas-Verdade das Regras de De Morgan",
+    "char": "boole",
+    "icon": "fa-table",
+    "steps": [
+      {
+        "type": "multi-truth-table",
+        "badge": "Questão 5a do AVA IFES • 1ª Regra de De Morgan",
+        "instruction": "Complete as células [ ? ] na tabela para demonstrar a equivalência ~(p ∨ q) ↔ (~p ∧ ~q):",
+        "headers": [
+          "p",
+          "q",
+          "p ∨ q",
+          "~(p ∨ q)",
+          "~p ∧ ~q",
+          "↔"
+        ],
+        "rows": [
+          [
+            "V",
+            "V",
+            "V",
+            {
+              "ans": "F"
+            },
+            "F",
+            "V"
+          ],
+          [
+            "V",
+            "F",
+            {
+              "ans": "V"
+            },
+            "F",
+            {
+              "ans": "F"
+            },
+            "V"
+          ],
+          [
+            "F",
+            "V",
+            "V",
+            "F",
+            "F",
+            "V"
+          ],
+          [
+            "F",
+            "F",
+            "F",
+            {
+              "ans": "V"
+            },
+            {
+              "ans": "V"
+            },
+            "V"
+          ]
+        ],
+        "explanation": "Perfeito! Como a última coluna (↔) só possui V, fica provado por tabela-verdade que ~(p ∨ q) ⇔ (~p ∧ ~q)."
+      },
+      {
+        "type": "multi-truth-table",
+        "badge": "Questão 5b do AVA IFES • 2ª Regra de De Morgan",
+        "instruction": "Agora complete a tabela-verdade da Questão 5b para demonstrar que ~(p ∧ q) ↔ (~p ∨ ~q):",
+        "headers": [
+          "p",
+          "q",
+          "p ∧ q",
+          "~(p ∧ q)",
+          "~p ∨ ~q",
+          "↔"
+        ],
+        "rows": [
+          [
+            "V",
+            "V",
+            {
+              "ans": "V"
+            },
+            {
+              "ans": "F"
+            },
+            "F",
+            "V"
+          ],
+          [
+            "V",
+            "F",
+            "F",
+            "V",
+            {
+              "ans": "V"
+            },
+            "V"
+          ],
+          [
+            "F",
+            "V",
+            "F",
+            {
+              "ans": "V"
+            },
+            "V",
+            "V"
+          ],
+          [
+            "F",
+            "F",
+            "F",
+            "V",
+            "V",
+            {
+              "ans": "V"
+            }
+          ]
+        ],
+        "explanation": "Questões 5a e 5b do AVA IFES 100% dominadas! Ambas as bicondicionais são tautológicas (VVVV)."
+      }
+    ]
+  },
+  "u2_complexa_ifes": {
+    "id": "u2_complexa_ifes",
+    "unitTitle": "Módulo 2 • Questão 1 Álgebra AVA IFES",
+    "title": "Equivalência Complexa de 8 Linhas (p, q, r)",
+    "char": "turing",
+    "icon": "fa-microchip",
+    "steps": [
+      {
+        "type": "theory",
+        "badge": "Questão 1 Álgebra das Proposições • AVA IFES",
+        "title": "Decompondo a Expressão de 3 Variáveis",
+        "content": "A Questão 1 do IFES pede para demonstrar por tabela-verdade a equivalência:<br>\n                        <b class=\"font-logic text-indigo-300\">~(~p ∧ q → r ∨ p) ↔ q ∧ ~(~r → p)</b><br><br>\n                        Repare que ambos os lados só são <b>Verdadeiros (V)</b> quando:<br>\n                        • No lado esquerdo: a condicional (~p ∧ q) → (r ∨ p) precisa ser <b>FALSA</b> (ou seja, ~p∧q = V e r∨p = F, o que exige <b>p=F, q=V, r=F</b>).<br>\n                        • No lado direito: q ∧ ~(~r → p) exige q=V e (~r → p) = F, o que também ocorre unicamente na linha <b>p=F, q=V, r=F</b>!",
+        "table": [
+          [
+            "Linha 6 (p=F, q=V, r=F)",
+            "Esq = V | Dir = V",
+            "Bicondicional = V"
+          ],
+          [
+            "Demais 7 linhas",
+            "Esq = F | Dir = F",
+            "Bicondicional = V"
+          ],
+          [
+            "Resultado Final",
+            "8 linhas = V",
+            "Equivalência Provada!"
+          ]
+        ]
+      },
+      {
+        "type": "truth-table",
+        "badge": "Questão 1 AVA IFES • Linha Crítica (F, V, F)",
+        "title": "Avaliando o Lado Esquerdo ~(~p ∧ q → r ∨ p)",
+        "instruction": "Na linha p=F, q=V, r=F, sabemos que (~p ∧ q) é V e (r ∨ p) é F. Logo, a condicional (~p ∧ q → r ∨ p) vale F. Qual o valor final após aplicar a negação externa ~( ... )?",
+        "rowContext": {
+          "p": "F",
+          "q": "V",
+          "r": "F",
+          "(~p∧q → r∨p)": "F"
+        },
+        "options": [
+          "V (Verdadeiro)",
+          "F (Falso)"
+        ],
+        "correctIndex": 0,
+        "explanation": "Como o interior do parêntese deu F, a negação externa ~(F) resulta em V! Idêntico ao lado direito na linha (F, V, F)!"
+      },
+      {
+        "type": "multi-truth-table",
+        "badge": "Questão 1 AVA IFES • Tabela Resumida",
+        "instruction": "Complete as linhas-chave da tabela de 8 linhas para confirmar que os dois lados coincidem:",
+        "headers": [
+          "p,q,r",
+          "~(~p∧q→r∨p)",
+          "q∧~(~r→p)",
+          "↔"
+        ],
+        "rows": [
+          [
+            "V,V,V",
+            {
+              "ans": "F"
+            },
+            "F",
+            "V"
+          ],
+          [
+            "F,V,V",
+            "F",
+            {
+              "ans": "F"
+            },
+            "V"
+          ],
+          [
+            "F,V,F",
+            {
+              "ans": "V"
+            },
+            {
+              "ans": "V"
+            },
+            "V"
+          ],
+          [
+            "F,F,F",
+            "F",
+            "F",
+            {
+              "ans": "V"
+            }
+          ]
+        ],
+        "explanation": "Sensacional! Você acaba de provar a questão mais longa de tabela-verdade do AVA IFES!"
+      }
+    ]
+  },
+  "u3_implicacao_equiv": {
+    "id": "u3_implicacao_equiv",
+    "unitTitle": "Módulo 3 • Cap. 5 e 6 Alencar Filho",
+    "title": "Implicação (⇒), Associadas & Scheffer (↓, ↑)",
+    "char": "boole",
+    "icon": "fa-arrows-split-up-and-left",
+    "steps": [
+      {
+        "type": "theory",
+        "badge": "Capítulos 5 e 6 • Págs. 49 a 63",
+        "title": "Associadas da Condicional e Conectivos de Scheffer",
+        "content": "Dada a condicional direta <b>p → q</b>, existem três proposições associadas:<br>\n                        • <b>Recíproca:</b> q → p<br>\n                        • <b>Contrária (Inversa):</b> ~p → ~q<br>\n                        • <b>Contrapositiva:</b> ~q → ~p (Equivalente à direta: <b>p → q ⇔ ~q → ~p</b>!)<br><br>\n                        <b>Conectivos de Scheffer (Cap. 6 §6 e §7):</b><br>\n                        • Negação Conjunta (NOR): <b>p ↓ q ⇔ ~p ∧ ~q</b> (\"nem p nem q\")<br>\n                        • Negação Disjunta (NAND): <b>p ↑ q ⇔ ~p ∨ ~q</b> (\"não p ou não q\")",
+        "table": [
+          [
+            "Direta ⇔ Contrapositiva",
+            "p → q ⇔ ~q → ~p",
+            "Mesma tabela-verdade"
+          ],
+          [
+            "Recíproca ⇔ Contrária",
+            "q → p ⇔ ~p → ~q",
+            "Mesma tabela-verdade"
+          ],
+          [
+            "Regra de Clavius",
+            "~p → p ⇔ p",
+            "Pág. 56 Ex. 2"
+          ]
+        ]
+      },
+      {
+        "type": "match-pairs",
+        "badge": "Jogo de Pares • Cap. 6 Associadas e Equivalências",
+        "instruction": "Conecte cada expressão lógica à sua equivalente exata segundo Alencar Filho:",
+        "pairs": [
+          {
+            "left": "p → q (Contrapositiva)",
+            "right": "~q → ~p"
+          },
+          {
+            "left": "p ↓ q (Scheffer Conjunta)",
+            "right": "~p ∧ ~q"
+          },
+          {
+            "left": "p ↑ q (Scheffer Disjunta)",
+            "right": "~p ∨ ~q"
+          },
+          {
+            "left": "~p → p (Clavius)",
+            "right": "p"
+          }
+        ],
+        "explanation": "Domínio completo do Capítulo 6 de Alencar Filho!"
+      },
+      {
+        "type": "multiple-choice",
+        "badge": "Exercício 5b Cap. 6 Pág. 61",
+        "instruction": "Qual é a \"contrapositiva da recíproca\" da condicional p → q?",
+        "options": [
+          {
+            "text": "~p → ~q (que é a própria Contrária)",
+            "isCorrect": true
+          },
+          {
+            "text": "~q → ~p",
+            "isCorrect": false
+          },
+          {
+            "text": "p → q",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "A recíproca de p → q é q → p. A contrapositiva de q → p inverte e nega: ~p → ~q!"
+      }
+    ]
+  },
+  "u3_algebra_prop": {
+    "id": "u3_algebra_prop",
+    "unitTitle": "Módulo 3 • Cap. 7 e 8 Alencar Filho",
+    "title": "Álgebra, Negação de Condicional & FNC/FND",
+    "char": "boole",
+    "icon": "fa-calculator",
+    "steps": [
+      {
+        "type": "theory",
+        "badge": "Capítulos 7 e 8 • Págs. 67 a 85",
+        "title": "Negação da Condicional, Formas Normais e Dualidade",
+        "content": "• <b>Negação da Condicional (Cap. 7 §4):</b> Como p → q ⇔ ~p ∨ q, por De Morgan temos:<br>\n                        <b class=\"font-logic text-rose-400\">~(p → q) ⇔ p ∧ ~q</b> (Afirma o antecedente E nega o consequente!).<br>\n                        • <b>Forma Normal Conjuntiva (FNC):</b> Conjunção de disjunções, ex: (~p ∨ q) ∧ (p ∨ ~r).<br>\n                        • <b>Forma Normal Disjuntiva (FND):</b> Disjunção de conjunções, ex: (p ∧ ~q) ∨ (~p ∧ r).<br>\n                        • <b>Princípio da Dualidade (Cap. 8 §7):</b> Trocando ∧ por ∨ e <i>t</i> por <i>c</i> em uma equivalência, obtém-se outra equivalência válida!",
+        "table": [
+          [
+            "~(p → q)",
+            "p ∧ ~q",
+            "Nunca negue com outra seta!"
+          ],
+          [
+            "p ∧ (p ∨ q)",
+            "p",
+            "Lei da Absorção"
+          ],
+          [
+            "Dual de p ∧ (p ∨ q) ⇔ p",
+            "p ∨ (p ∧ q) ⇔ p",
+            "Princípio de Dualidade"
+          ]
+        ]
+      },
+      {
+        "type": "word-bank",
+        "badge": "Negação em Linguagem Corrente • Cap. 7 Ex. 4d",
+        "instruction": "Dê a negação de \"Jorge estuda Física (p), mas não Química (~q)\", ou seja, simplifique ~(p ∧ ~q):",
+        "promptBox": "Negar: \"Jorge estuda Física, mas não Química\" ~(p ∧ ~q)",
+        "tokens": [
+          "Jorge",
+          "não estuda Física",
+          "ou",
+          "estuda Química.",
+          "e",
+          "Se"
+        ],
+        "correctSequence": [
+          "Jorge",
+          "não estuda Física",
+          "ou",
+          "estuda Química."
+        ],
+        "explanation": "Por De Morgan e Dupla Negação: ~(p ∧ ~q) ⇔ ~p ∨ ~~q ⇔ ~p ∨ q (\"Jorge não estuda Física ou estuda Química\" - Pág. 199)!"
+      },
+      {
+        "type": "multiple-choice",
+        "badge": "Forma Normal Disjuntiva (FND) • Cap. 8 Ex. 8b",
+        "instruction": "Qual é a Forma Normal Disjuntiva (FND) equivalente à proposição ~(p → q)?",
+        "options": [
+          {
+            "text": "p ∧ ~q",
+            "isCorrect": true
+          },
+          {
+            "text": "~p → ~q",
+            "isCorrect": false
+          },
+          {
+            "text": "~p ∨ q",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Eliminando o símbolo → e aplicando De Morgan, ~(p → q) ⇔ ~(~p ∨ q) ⇔ p ∧ ~q, que já está na FND!"
+      }
+    ]
+  },
+  "u4_argumentos": {
+    "id": "u4_argumentos",
+    "unitTitle": "Módulo 4 • Cap. 9 e 10 Alencar Filho",
+    "title": "Argumentos, Sofismas & Prova de Não-Validade",
+    "char": "turing",
+    "icon": "fa-shield-halved",
+    "steps": [
+      {
+        "type": "theory",
+        "badge": "Capítulos 9 e 10 • Págs. 87 a 110",
+        "title": "Validade, Sofismas e Método de Atribuição de Valores",
+        "content": "Um argumento <b>P₁, P₂, ..., Pₙ ⊢ Q</b> é <b>válido</b> se e somente se a condicional associada <b>(P₁ ∧ P₂ ∧ ... ∧ Pₙ) → Q</b> é tautológica.<br><br>\n                        • <b>Sofisma de Afirmar o Consequente:</b> p → q, q ⊢ p (Falso quando p=F e q=V).<br>\n                        • <b>Sofisma de Negar o Antecedente:</b> p → q, ~p ⊢ ~q (Falso quando p=F e q=V).<br>\n                        • <b>Prova de Não-Validade (Cap. 10 §3):</b> Basta achar UMA atribuição de valores que torne todas as premissas <b>V</b> e a conclusão <b>F</b>!",
+        "table": [
+          [
+            "p → q, p ⊢ q",
+            "Modus Ponens (MP)",
+            "Argumento Válido"
+          ],
+          [
+            "p → q, q ⊢ p",
+            "Afirmar o Consequente",
+            "Sofisma (Inválido)"
+          ],
+          [
+            "p → q, ~p ⊢ ~q",
+            "Negar o Antecedente",
+            "Sofisma (Inválido)"
+          ]
+        ]
+      },
+      {
+        "type": "swipe-tf",
+        "badge": "Desafio do Sofisma • Cap. 10 Ex. 5 (Pág. 111)",
+        "instruction": "Julgue a validade do argumento do livro: \"Se trabalho (p), não estudo (~q). Trabalho ou passo em Física (p ∨ r). Trabalhei (p). Logo, passei em Física (r).\"",
+        "statement": "p → ~q, p ∨ r, p ⊢ r é um Argumento Válido?",
+        "subtext": "Teste com p=V, q=F e r=F!",
+        "isTrue": false,
+        "explanation": "É um SOFISMA (Falso)! Se p=V, q=F e r=F, todas as premissas são Verdadeiras, mas a conclusão r (\"passei em Física\") é Falsa!"
+      }
+    ]
+  },
+  "u4_regras_inferencia": {
+    "id": "u4_regras_inferencia",
+    "unitTitle": "Módulo 4 • Cap. 9, 11 e 12 Alencar Filho",
+    "title": "As 10 Regras de Inferência & Deduções Formais",
+    "char": "turing",
+    "icon": "fa-gavel",
+    "steps": [
+      {
+        "type": "match-pairs",
+        "badge": "Treino de Regras • Cap. 9 §6 Págs. 91 e 92",
+        "instruction": "Conecte cada par de premissas à regra de inferência que deduz sua conclusão:",
+        "pairs": [
+          {
+            "left": "p → q, ~q ⊢ ~p",
+            "right": "Modus Tollens (MT)"
+          },
+          {
+            "left": "p → q, q → r ⊢ p → r",
+            "right": "Silogismo Hipotético (SH)"
+          },
+          {
+            "left": "p ∨ q, ~p ⊢ q",
+            "right": "Silogismo Disjuntivo (SD)"
+          },
+          {
+            "left": "p → q ⊢ p → (p ∧ q)",
+            "right": "Absorção (ABS)"
+          }
+        ],
+        "explanation": "Excelente! Essas regras são os pilares de todas as demonstrações do Capítulo 11!"
+      },
+      {
+        "type": "deductive-builder",
+        "badge": "Dedução Completa • Cap. 11 §2 Ex. 2 (Pág. 113)",
+        "title": "Demonstrar o argumento: p ∧ q, p ∨ r → s ⊢ p ∧ s",
+        "instruction": "Observe os passos 1 a 4 da prova. Complete o Passo 5 aplicando Modus Ponens (MP) nas linhas 2 e 4:",
+        "proofState": [
+          {
+            "line": 1,
+            "text": "p ∧ q",
+            "rule": "Premissa"
+          },
+          {
+            "line": 2,
+            "text": "p ∨ r → s",
+            "rule": "Premissa"
+          },
+          {
+            "line": 3,
+            "text": "p",
+            "rule": "1 - Simplificação (SIMP)"
+          },
+          {
+            "line": 4,
+            "text": "p ∨ r",
+            "rule": "3 - Adição (AD)"
+          }
+        ],
+        "exprOptions": [
+          "s",
+          "r",
+          "~s"
+        ],
+        "ruleOptions": [
+          "2, 4 - Modus Ponens (MP)",
+          "1, 3 - Silogismo Disjuntivo",
+          "2, 3 - Modus Tollens"
+        ],
+        "correctExpr": 0,
+        "correctRule": 0,
+        "explanation": "Perfeito! Tendo \"p ∨ r → s\" (linha 2) e \"p ∨ r\" (linha 4), por Modus Ponens obtemos \"s\". Depois, por Conjunção (3, 5) fechamos \"p ∧ s\"!"
+      }
+    ]
+  },
+  "u5_dedutivo_ifes1": {
+    "id": "u5_dedutivo_ifes1",
+    "unitTitle": "Módulo 5 • Lista AVA IFES Questão 1 (a e b)",
+    "title": "Método Dedutivo: Implicações 1a e 1b",
+    "char": "boole",
+    "icon": "fa-code-branch",
+    "steps": [
+      {
+        "type": "deductive-builder",
+        "badge": "Questão 1a do AVA IFES (Cap. 8 §2 Ex. 7)",
+        "title": "Demonstrar dedutivamente: p ∧ q ⇒ p ∨ q",
+        "instruction": "A partir da premissa p ∧ q na Linha 1, extraia \"p\" na Linha 2 para depois adicionar \"q\":",
+        "proofState": [
+          {
+            "line": 1,
+            "text": "p ∧ q",
+            "rule": "Premissa"
+          }
+        ],
+        "exprOptions": [
+          "p",
+          "p ↔ q",
+          "~p"
+        ],
+        "ruleOptions": [
+          "Simplificação (SIMP) em (1)",
+          "Modus Ponens em (1)",
+          "Adição em (1)"
+        ],
+        "correctExpr": 0,
+        "correctRule": 0,
+        "explanation": "Passo 1 concluído! Agora na Linha 3 basta aplicar Adição (AD) sobre \"p\" para obter \"p ∨ q\"!"
+      },
+      {
+        "type": "deductive-builder",
+        "badge": "Questão 1b do AVA IFES (Cap. 8 §2 Ex. 8)",
+        "title": "Demonstrar dedutivamente: p ⇒ (q → p)",
+        "instruction": "Partindo da premissa \"p\" (Linha 1) e adicionando \"~q\" por Adição (Linha 2: p ∨ ~q), complete a Linha 3 e a Linha 4 para chegar em q → p:",
+        "proofState": [
+          {
+            "line": 1,
+            "text": "p",
+            "rule": "Premissa"
+          },
+          {
+            "line": 2,
+            "text": "p ∨ ~q",
+            "rule": "Adição (AD) em (1)"
+          },
+          {
+            "line": 3,
+            "text": "~q ∨ p",
+            "rule": "Comutativa (COM) em (2)"
+          }
+        ],
+        "exprOptions": [
+          "q → p",
+          "p → q",
+          "~p ∧ q"
+        ],
+        "ruleOptions": [
+          "Equivalência da Condicional (COND) em (3)",
+          "De Morgan em (3)",
+          "Idempotência em (3)"
+        ],
+        "correctExpr": 0,
+        "correctRule": 0,
+        "explanation": "Como ~q ∨ p equivale a q → p pela Lei da Condicional, fica provado que p ⇒ (q → p)!"
+      }
+    ]
+  },
+  "u5_dedutivo_ifes2": {
+    "id": "u5_dedutivo_ifes2",
+    "unitTitle": "Módulo 5 • Lista AVA IFES Questão 2 (a, b, c)",
+    "title": "Método Dedutivo: Equivalências 2a, 2b e 2c",
+    "char": "boole",
+    "icon": "fa-crown",
+    "steps": [
+      {
+        "type": "deductive-builder",
+        "badge": "Questão 2a do AVA IFES • Regra de Clavius",
+        "title": "Demonstrar: (~p → p) ⇔ p",
+        "instruction": "Complete a Linha 4 da demonstração para reduzir p ∨ p para p:",
+        "proofState": [
+          {
+            "line": 1,
+            "text": "~p → p",
+            "rule": "Membro Esquerdo"
+          },
+          {
+            "line": 2,
+            "text": "~(~p) ∨ p",
+            "rule": "Condicional (COND) em (1)"
+          },
+          {
+            "line": 3,
+            "text": "p ∨ p",
+            "rule": "Dupla Negação (DN) em (2)"
+          }
+        ],
+        "exprOptions": [
+          "p",
+          "~p",
+          "T (Tautologia)"
+        ],
+        "ruleOptions": [
+          "Idempotência (ID) em (3)",
+          "De Morgan em (3)",
+          "Absorção em (3)"
+        ],
+        "correctExpr": 0,
+        "correctRule": 0,
+        "explanation": "Questão 2a do AVA IFES resolvida! Pela Lei da Idempotência, p ∨ p ⇔ p."
+      },
+      {
+        "type": "deductive-builder",
+        "badge": "Questão 2b do AVA IFES • Absorção Condicional",
+        "title": "Demonstrar: (p → p ∧ q) ⇔ (p → q)",
+        "instruction": "Complete a Linha 4 sabendo que (~p ∨ p) é uma Tautologia (T) pela Lei do Complemento:",
+        "proofState": [
+          {
+            "line": 1,
+            "text": "p → (p ∧ q)",
+            "rule": "Membro Esquerdo"
+          },
+          {
+            "line": 2,
+            "text": "~p ∨ (p ∧ q)",
+            "rule": "Condicional (COND) em (1)"
+          },
+          {
+            "line": 3,
+            "text": "(~p ∨ p) ∧ (~p ∨ q)",
+            "rule": "Distributiva (DIST) em (2)"
+          },
+          {
+            "line": 4,
+            "text": "T ∧ (~p ∨ q)",
+            "rule": "Complemento (Terc. Excluído) em (3)"
+          }
+        ],
+        "exprOptions": [
+          "p → q",
+          "p ∧ q",
+          "~p"
+        ],
+        "ruleOptions": [
+          "Identidade (Elemento Neutro T) + Condicional",
+          "De Morgan",
+          "Modus Tollens"
+        ],
+        "correctExpr": 0,
+        "correctRule": 0,
+        "explanation": "Questão 2b concluída! T ∧ (~p ∨ q) reduz-se a (~p ∨ q) pela Identidade, que equivale a (p → q)!"
+      },
+      {
+        "type": "deductive-builder",
+        "badge": "Questão 2c do AVA IFES • Distributiva da Condicional",
+        "title": "Demonstrar: (p → q) ∧ (p → r) ⇔ p → (q ∧ r)",
+        "instruction": "A partir da Linha 2: (~p ∨ q) ∧ (~p ∨ r), aplique a Distributiva em evidência na Linha 3:",
+        "proofState": [
+          {
+            "line": 1,
+            "text": "(p → q) ∧ (p → r)",
+            "rule": "Membro Esquerdo"
+          },
+          {
+            "line": 2,
+            "text": "(~p ∨ q) ∧ (~p ∨ r)",
+            "rule": "Condicional (COND) em (1)"
+          }
+        ],
+        "exprOptions": [
+          "~p ∨ (q ∧ r)",
+          "~p ∧ (q ∨ r)",
+          "p → (q ∨ r)"
+        ],
+        "ruleOptions": [
+          "Distributiva (DIST) em (2) (seguida de COND: p → q ∧ r)",
+          "De Morgan em (2)",
+          "Idempotência em (2)"
+        ],
+        "correctExpr": 0,
+        "correctRule": 0,
+        "explanation": "Todas as questões da lista do Método Dedutivo do AVA IFES (1a, 1b, 2a, 2b e 2c) estão 100% resolvidas!"
+      }
+    ]
+  },
+  "u5_demonstracao_cond_ind": {
+    "id": "u5_demonstracao_cond_ind",
+    "unitTitle": "Módulo 5 • Cap. 13 Alencar Filho",
+    "title": "Demonstração Condicional (DC) & Indireta (DI)",
+    "char": "boole",
+    "icon": "fa-brain",
+    "steps": [
+      {
+        "type": "theory",
+        "badge": "Capítulo 13 • Págs. 145 a 152",
+        "title": "Regra DC e Regra DI (Redução ao Absurdo)",
+        "content": "• <b>Demonstração Condicional (Regra DC):</b> Se a conclusão do argumento tem forma condicional <b>A → B</b>, introduzimos <b>A</b> como <i>Premissa Adicional (PA)</i> e deduzimos <b>B</b>.<br><br>\n                        • <b>Demonstração Indireta (Regra DI / Absurdo):</b> Para provar P₁, ..., Pₙ ⊢ Q, introduzimos <b>~Q</b> como <i>Premissa Adicional (PA)</i> e deduzimos uma contradição explícita <b>A ∧ ~A</b>!",
+        "table": [
+          [
+            "Regra DC (Conclusão A → B)",
+            "Adiciona \"A\" (PA)",
+            "Objetivo: deduzir \"B\""
+          ],
+          [
+            "Regra DI (Conclusão Q)",
+            "Adiciona \"~Q\" (PA)",
+            "Objetivo: deduzir \"A ∧ ~A\""
+          ]
+        ]
+      },
+      {
+        "type": "deductive-builder",
+        "badge": "Demonstração Indireta • Cap. 13 §4 Ex. 1 (Pág. 150)",
+        "title": "Provar por Absurdo: p → ~q, r → q ⊢ ~(p ∧ r)",
+        "instruction": "Negando a conclusão ~(p ∧ r), adicionamos \"p ∧ r\" como Premissa Adicional (PA) na Linha 3. Complete a Linha 8 final:",
+        "proofState": [
+          {
+            "line": 1,
+            "text": "p → ~q",
+            "rule": "Premissa"
+          },
+          {
+            "line": 2,
+            "text": "r → q",
+            "rule": "Premissa"
+          },
+          {
+            "line": 3,
+            "text": "p ∧ r",
+            "rule": "Premissa Adicional (PA - Absurdo)"
+          },
+          {
+            "line": 4,
+            "text": "p",
+            "rule": "3 - Simplificação"
+          },
+          {
+            "line": 5,
+            "text": "r",
+            "rule": "3 - Simplificação"
+          },
+          {
+            "line": 6,
+            "text": "~q",
+            "rule": "1, 4 - Modus Ponens"
+          },
+          {
+            "line": 7,
+            "text": "q",
+            "rule": "2, 5 - Modus Ponens"
+          }
+        ],
+        "exprOptions": [
+          "q ∧ ~q (Contradição!)",
+          "p ∨ r",
+          "q → ~q"
+        ],
+        "ruleOptions": [
+          "6, 7 - Conjunção (CONJ) — Contradição!",
+          "6, 7 - Modus Ponens",
+          "Adição"
+        ],
+        "correctExpr": 0,
+        "correctRule": 0,
+        "explanation": "Brilhante! Chegamos à contradição q ∧ ~q, o que refuta a suposição p ∧ r e valida ~(p ∧ r)!"
+      }
+    ]
+  },
+  "u6_sentencas_abertas": {
+    "id": "u6_sentencas_abertas",
+    "unitTitle": "Módulo 6 • Cap. 14 Alencar Filho",
+    "title": "Sentenças Abertas & Conjunto-Verdade (Vₚ)",
+    "char": "ada",
+    "icon": "fa-cube",
+    "steps": [
+      {
+        "type": "theory",
+        "badge": "Capítulo 14 • Págs. 156 a 162",
+        "title": "Sentenças Abertas p(x) e p(x, y)",
+        "content": "Uma expressão <b>p(x)</b> é uma <b>sentença aberta</b> em A se p(a) torna-se uma proposição V ou F para todo <i>a ∈ A</i>.<br><br>\n                        • <b>Conjunto-Verdade:</b> Vₚ = { x ∈ A | p(x) é V }.<br>\n                        • Se <b>Vₚ = A</b>: condição <i>universal</i>.<br>\n                        • Se <b>∅ ⊂ Vₚ ⊂ A</b>: condição <i>possível</i>.<br>\n                        • Se <b>Vₚ = ∅</b>: condição <i>impossível</i>.",
+        "table": [
+          [
+            "x + 1 > 8 em ℕ",
+            "Vₚ = {8, 9, 10, ...}",
+            "Possível (Pág. 157)"
+          ],
+          [
+            "x + 7 < 5 em ℕ",
+            "Vₚ = ∅",
+            "Impossível (Pág. 157)"
+          ],
+          [
+            "x é divisor de 10 em ℕ",
+            "Vₚ = {1, 2, 5, 10}",
+            "Possível (Pág. 157)"
+          ]
+        ]
+      },
+      {
+        "type": "multiple-choice",
+        "badge": "Sentença Aberta com 2 Variáveis • Cap. 14 §4 Ex. 3",
+        "instruction": "Sejam A = {1, 2, 3} e B = {3, 4}. Qual é o conjunto-verdade Vₚ da sentença aberta \"x + 1 < y\" em A × B?",
+        "options": [
+          {
+            "text": "Vₚ = { (1, 3), (1, 4), (2, 4) }",
+            "isCorrect": true
+          },
+          {
+            "text": "Vₚ = { (1, 3), (2, 3), (3, 4) }",
+            "isCorrect": false
+          },
+          {
+            "text": "Vₚ = ∅",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Testando os pares (x,y): 1+1<3 (V), 1+1<4 (V), 2+1<4 (V). Para (2,3) temos 3<3 (F). Logo, {(1,3), (1,4), (2,4)}!"
+      }
+    ]
+  },
+  "u6_conjuntos_venn": {
+    "id": "u6_conjuntos_venn",
+    "unitTitle": "Módulo 6 • Cap. 15 Alencar Filho",
+    "title": "Operações em Sentenças Abertas & Diagramas de Venn",
+    "char": "sofia",
+    "icon": "fa-circle-nodes",
+    "steps": [
+      {
+        "type": "theory",
+        "badge": "Capítulo 15 • Págs. 164 a 173",
+        "title": "A Ponte entre Conectivos Lógicos e Conjuntos",
+        "content": "Dadas duas sentenças abertas p(x) e q(x) em um universo A, seus conjuntos-verdade obedecem às regras:<br>\n                        • <b>Conjunção (p ∧ q):</b> Vₚ∧q = <b>Vₚ ∩ Vq</b> (Interseção)<br>\n                        • <b>Disjunção (p ∨ q):</b> Vₚ∨q = <b>Vₚ ∪ Vq</b> (Reunião/União)<br>\n                        • <b>Negação (~p):</b> V~ₚ = <b>CₐVₚ = Vₚᶜ</b> (Complementar em A)<br>\n                        • <b>Condicional (p → q):</b> Vₚ→q = <b>Vₚᶜ ∪ Vq</b>",
+        "table": [
+          [
+            "V(p ∧ q)",
+            "Vₚ ∩ Vq",
+            "Interseção de conjuntos"
+          ],
+          [
+            "V(p ∨ q)",
+            "Vₚ ∪ Vq",
+            "União de conjuntos"
+          ],
+          [
+            "V(p → q)",
+            "CₐVₚ ∪ Vq",
+            "Complementar de Vₚ unido a Vq"
+          ]
+        ]
+      },
+      {
+        "type": "venn-interactive",
+        "badge": "Laboratório Visual de Venn • Interseção",
+        "title": "Pinte o Conjunto-Verdade V(p ∧ q) = A ∩ B",
+        "instruction": "Toque na região central do Diagrama de Venn que representa os elementos que satisfazem p(x) ∧ q(x):",
+        "targetRegion": "intersection",
+        "explanation": "Perfeito! A interseção A ∩ B corresponde exatamente à conjunção lógica p(x) ∧ q(x)!"
+      },
+      {
+        "type": "multiple-choice",
+        "badge": "Exercício 10 Cap. 15 Pág. 174 • Alencar Filho",
+        "instruction": "Como se exprime o conjunto-verdade da sentença aberta composta \"p(x) → q(x)\" em função de Vₚ e Vq no universo A?",
+        "options": [
+          {
+            "text": "CₐVₚ ∪ Vq (Complementar de Vₚ unido com Vq)",
+            "isCorrect": true
+          },
+          {
+            "text": "Vₚ ∩ Vq",
+            "isCorrect": false
+          },
+          {
+            "text": "Vₚ - Vq",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Como p(x) → q(x) ⇔ ~p(x) ∨ q(x), o conjunto-verdade é V~ₚ ∪ Vq = CₐVₚ ∪ Vq (Pág. 170 do livro)!"
+      }
+    ]
+  },
+  "u6_quantificadores": {
+    "id": "u6_quantificadores",
+    "unitTitle": "Módulo 6 • Cap. 16 e 17 Alencar Filho",
+    "title": "Quantificadores (∀, ∃, ∃!), Negação & Contra-Exemplo",
+    "char": "ada",
+    "icon": "fa-infinity",
+    "steps": [
+      {
+        "type": "theory",
+        "badge": "Capítulos 16 e 17 • Págs. 175 a 190",
+        "title": "Universal, Existencial, Unicidade e 2ªs Regras de De Morgan",
+        "content": "• <b>Universal (∀x ∈ A)(p(x)):</b> Verdadeiro se e só se <b>Vₚ = A</b>.<br>\n                        • <b>Existencial (∃x ∈ A)(p(x)):</b> Verdadeiro se e só se <b>Vₚ ≠ ∅</b>.<br>\n                        • <b>Existência e Unicidade (∃!x ∈ A)(p(x)):</b> Existe um e um só elemento.<br>\n                        • <b>Negação (2ªs Regras de De Morgan):</b><br>\n                        <b>~[(∀x)(p(x))] ⇔ (∃x)(~p(x))</b> e <b>~[(∃x)(p(x))] ⇔ (∀x)(~p(x))</b>.<br>\n                        • <b>Quantificação Múltipla (Cap. 17):</b> ~(∀x)(∃y)(p(x,y)) ⇔ (∃x)(∀y)(~p(x,y)).",
+        "table": [
+          [
+            "(∃!x ∈ ℕ)(x² - 9 = 0)",
+            "Verdadeiro (x = 3)",
+            "Pág. 181 Ex. Unicidade"
+          ],
+          [
+            "∀x ∈ ℤ⁺ (x²+x+41 é primo)",
+            "Falso (Contra-ex: x=40)",
+            "Trinômio de Euler Pág. 183"
+          ],
+          [
+            "~(∀x)(∃y) p(x,y)",
+            "(∃x)(∀y) ~p(x,y)",
+            "Cap. 17 §4 Pág. 190"
+          ]
+        ]
+      },
+      {
+        "type": "counterexample-visual",
+        "badge": "Sandbox Visual • Contra-Exemplo Geométrico",
+        "instruction": "Afirmação Universal: \"∀x (Círculo(x) ∧ Azul(x))\". Toque na figura que serve como contra-exemplo para refutar essa proposição:",
+        "items": [
+          {
+            "id": 1,
+            "shape": "circle",
+            "color": "blue",
+            "label": "Círculo Azul"
+          },
+          {
+            "id": 2,
+            "shape": "square",
+            "color": "red",
+            "label": "Quadrado Vermelho",
+            "isCounter": true
+          },
+          {
+            "id": 3,
+            "shape": "circle",
+            "color": "blue",
+            "label": "Círculo Azul"
+          }
+        ],
+        "explanation": "Exato! Basta um único elemento que não satisfaça a condição (Quadrado Vermelho) para provar que ∀x P(x) é Falsa!"
+      },
+      {
+        "type": "word-bank",
+        "badge": "Negação de Quantificadores Múltiplos • Cap. 17 Ex. 7d",
+        "instruction": "Monte a negação da proposição com quantificadores múltiplos \"~[ (∀x)(∃y) p(x, y) ]\" aplicando as 2ªs Regras de De Morgan:",
+        "promptBox": "Negar: ~[ (∀x)(∃y) p(x, y) ]",
+        "tokens": [
+          "(∃x)",
+          "(∀y)",
+          "(~p(x, y))",
+          "(∀x)",
+          "(∃y)"
+        ],
+        "correctSequence": [
+          "(∃x)",
+          "(∀y)",
+          "(~p(x, y))"
+        ],
+        "explanation": "Perfeito! O ∀x vira ∃x, o ∃y vira ∀y, e nega-se a sentença aberta: (∃x)(∀y)(~p(x, y)) (Pág. 190 de Alencar Filho)!"
+      }
+    ]
+  },
+  "u7_quantificacao_multipla": {
+    "id": "u7_quantificacao_multipla",
+    "unitTitle": "Módulo 7 • PDF Quantificação Múltipla",
+    "title": "Quantificação Múltipla: do português aos símbolos",
+    "char": "sofia",
+    "icon": "fa-people-arrows",
+    "steps": [
+      {
+        "type": "theory",
+        "badge": "PDF • Páginas 2–4",
+        "title": "Construa frases com mais de um quantificador",
+        "content": "<div class=\"rounded-2xl overflow-hidden border border-purple-400/40 mb-3 bg-gradient-to-br from-purple-950 to-indigo-950 p-3 text-center\"><svg viewBox=\"0 0 320 112\" class=\"w-full max-w-sm mx-auto\" role=\"img\" aria-label=\"Gato e rã em cartões de lógica\"><defs><linearGradient id=\"qbg\" x1=\"0\" x2=\"1\"><stop stop-color=\"#8b5cf6\"/><stop offset=\"1\" stop-color=\"#06b6d4\"/></linearGradient></defs><rect x=\"5\" y=\"5\" width=\"310\" height=\"102\" rx=\"18\" fill=\"#111827\" stroke=\"url(#qbg)\" stroke-width=\"2\"/><g transform=\"translate(34 22)\"><circle cx=\"28\" cy=\"30\" r=\"23\" fill=\"#fbbf24\"/><path d=\"M10 14 L7 -1 L22 8 M34 8 L49 -1 L46 16\" fill=\"#fbbf24\" stroke=\"#fbbf24\" stroke-width=\"5\" stroke-linejoin=\"round\"/><circle cx=\"21\" cy=\"28\" r=\"3\" fill=\"#111827\"/><circle cx=\"36\" cy=\"28\" r=\"3\" fill=\"#111827\"/><path d=\"M23 39 Q29 45 35 39\" stroke=\"#111827\" fill=\"none\" stroke-width=\"2\"/></g><text x=\"103\" y=\"37\" fill=\"#c4b5fd\" font-size=\"12\" font-weight=\"800\">∀x</text><text x=\"103\" y=\"57\" fill=\"#fff\" font-size=\"11\">Todo gato é pardo</text><text x=\"103\" y=\"75\" fill=\"#67e8f9\" font-size=\"12\" font-weight=\"800\">∧ ∃x</text><text x=\"157\" y=\"75\" fill=\"#fff\" font-size=\"11\">alguma rã é verde</text></svg></div>\n                        O PDF combina sentenças categóricas com conectivos. Exemplo: “Todos os gatos são pardos e algumas rãs são verdes”. A primeira parte usa <b>∀</b>; a segunda usa <b>∃</b>. O conectivo “e” é representado por <b>∧</b>.<br><br>\n                        <div class=\"bg-slate-900 rounded-xl p-3 font-logic text-center text-cyan-300\">∀x (gato(x) → pardo(x)) ∧ ∃x (rã(x) ∧ verde(x))</div>\n                        <p class=\"mt-3 text-slate-300\">Lembrete visual: <b>∀</b> = para todo; <b>∃</b> = existe pelo menos um; <b>→</b> = se... então; <b>∧</b> = e.</p>",
+        "explanation": "A sentença completa junta duas afirmações por conjunção: uma universal sobre gatos e outra existencial sobre rãs."
+      },
+      {
+        "type": "translation-choice",
+        "badge": "PDF • Página 2 • Tradução",
+        "instruction": "Escolha a representação de “Todos os gatos são pardos e algumas rãs são verdes”.",
+        "options": [
+          {
+            "text": "∀x (gato(x) → pardo(x)) ∧ ∃x (rã(x) ∧ verde(x))",
+            "isCorrect": true
+          },
+          {
+            "text": "∃x (gato(x) ∧ pardo(x)) → ∀x (rã(x) → verde(x))",
+            "isCorrect": false
+          },
+          {
+            "text": "∀x (gato(x) ∧ pardo(x)) ∨ ∃x (rã(x) ∧ verde(x))",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "“Todos os gatos são pardos” é ∀x(gato(x) → pardo(x)); “algumas rãs são verdes” é ∃x(rã(x) ∧ verde(x)). “E” conecta as duas partes."
+      },
+      {
+        "type": "translation-choice",
+        "badge": "PDF • Página 3 • Condicional",
+        "instruction": "Traduza: “Se todos os gatos são brancos, então não existem gatos amarelos”.",
+        "options": [
+          {
+            "text": "∀x (gato(x) → branco(x)) → ¬∃x (gato(x) ∧ amarelo(x))",
+            "isCorrect": true
+          },
+          {
+            "text": "∃x (gato(x) ∧ branco(x)) ∧ ∀x (gato(x) → amarelo(x))",
+            "isCorrect": false
+          },
+          {
+            "text": "∀x (gato(x) → branco(x)) ∧ ∃x (gato(x) ∧ amarelo(x))",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "A frase tem estrutura “Se A, então B”. A parte B é a negação da existência de um gato amarelo."
+      },
+      {
+        "type": "translation-choice",
+        "badge": "PDF • Página 4 • Negação",
+        "instruction": "Qual fórmula corresponde a “Nem todos os gatos são brancos, nem há gatos maiores do que Miau”?",
+        "options": [
+          {
+            "text": "¬∀x (gato(x) → branco(x)) ∧ ¬∃x (gato(x) ∧ maior(x, Miau))",
+            "isCorrect": true
+          },
+          {
+            "text": "∀x (gato(x) → branco(x)) ∨ ∃x maior(x, Miau)",
+            "isCorrect": false
+          },
+          {
+            "text": "¬∃x (gato(x) ∧ branco(x)) → ∀x maior(x, Miau)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "O PDF representa as duas negações ligadas por ∧: não é verdade que todos os gatos sejam brancos e não existe gato maior do que Miau."
+      },
+      {
+        "type": "theory",
+        "badge": "PDF • Páginas 6–8 • Escopo",
+        "title": "A ordem dos quantificadores muda o sentido",
+        "content": "<div class=\"grid grid-cols-1 gap-3\"><div class=\"bg-indigo-950/70 border border-indigo-400/40 rounded-2xl p-3\"><div class=\"text-2xl text-center mb-1\">👥 ❤️ 👤</div><div class=\"font-logic text-center text-cyan-300 text-lg\">∀x ∃y gosta(x,y)</div><p class=\"text-center text-sm font-bold mt-1\">Todos gostam de alguém.</p><p class=\"text-slate-300 mt-1\">Para cada pessoa x, pode existir uma pessoa y de quem x gosta. O y pode variar conforme x.</p></div><div class=\"bg-purple-950/70 border border-purple-400/40 rounded-2xl p-3\"><div class=\"text-2xl text-center mb-1\">🌟 ❤️ 👥</div><div class=\"font-logic text-center text-purple-300 text-lg\">∃y ∀x gosta(x,y)</div><p class=\"text-center text-sm font-bold mt-1\">Existe alguém de quem todos gostam.</p><p class=\"text-slate-300 mt-1\">Há uma pessoa y específica que recebe o gostar de todas as pessoas x.</p></div></div><p class=\"mt-3\">O PDF destaca que a ordem importa quando os quantificadores são diferentes. Já ∃x∃y gosta(x,y) e ∃y∃x gosta(y,x) expressam a mesma ideia existencial.</p>",
+        "explanation": "Compare o escopo: ∀x∃y permite um y diferente para cada x; ∃y∀x exige uma mesma pessoa y de quem todos gostam."
+      },
+      {
+        "type": "translation-choice",
+        "badge": "PDF • Página 6 • Escopo",
+        "instruction": "Como se representa “Todos gostam de alguém”?",
+        "options": [
+          {
+            "text": "∀x ∃y gosta(x,y)",
+            "isCorrect": true
+          },
+          {
+            "text": "∃y ∀x gosta(x,y)",
+            "isCorrect": false
+          },
+          {
+            "text": "∀x ∀y gosta(x,y)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Para cada x, existe algum y de quem x gosta. Isso não afirma que todos gostam da mesma pessoa."
+      },
+      {
+        "type": "translation-choice",
+        "badge": "PDF • Página 7 • Escopo",
+        "instruction": "O que significa ∃y ∀x gosta(x,y)?",
+        "options": [
+          {
+            "text": "Existe alguém de quem todo mundo gosta.",
+            "isCorrect": true
+          },
+          {
+            "text": "Todo mundo gosta de alguém, que pode variar.",
+            "isCorrect": false
+          },
+          {
+            "text": "Existe alguém que não gosta de ninguém.",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "O quantificador ∃y vem primeiro: escolhe-se uma pessoa y e, para todo x, x gosta dessa pessoa."
+      },
+      {
+        "type": "multiple-choice",
+        "badge": "PDF • Página 8 • Conceito",
+        "instruction": "Qual afirmação sobre a ordem dos quantificadores corresponde ao PDF?",
+        "options": [
+          {
+            "text": "A ordem importa quando os quantificadores são diferentes.",
+            "isCorrect": true
+          },
+          {
+            "text": "A ordem nunca altera o significado.",
+            "isCorrect": false
+          },
+          {
+            "text": "∀x∃y e ∃y∀x sempre significam a mesma coisa.",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "O material contrasta ∀x∃y com ∃y∀x e observa que a ordem dos quantificadores diferentes importa."
+      },
+      {
+        "type": "translation-choice",
+        "badge": "PDF • Página 9 • Negação",
+        "instruction": "Selecione a fórmula para “Há alguém que não gosta de ninguém”.",
+        "options": [
+          {
+            "text": "∃x ∀y ¬gosta(x,y)",
+            "isCorrect": true
+          },
+          {
+            "text": "∀x ∃y gosta(x,y)",
+            "isCorrect": false
+          },
+          {
+            "text": "∃x ∃y gosta(x,y)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Existe uma pessoa x tal que, para toda pessoa y, x não gosta de y. O PDF também apresenta ∃x¬∃y gosta(x,y)."
+      },
+      {
+        "type": "translation-choice",
+        "badge": "PDF • Página 9 • Relações familiares",
+        "instruction": "Complete a regra: se x é pai de y e y é pai de z, então x é avô de z.",
+        "options": [
+          {
+            "text": "∀x∀y∀z ((pai(x,y) ∧ pai(y,z)) → avô(x,z))",
+            "isCorrect": true
+          },
+          {
+            "text": "∃x∃y∃z (pai(x,y) → pai(y,z))",
+            "isCorrect": false
+          },
+          {
+            "text": "∀x∀y (avô(x,y) ∧ ∃z pai(x,z))",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "A afirmação vale para quaisquer três indivíduos; por isso há três quantificadores universais. As duas condições de paternidade são ligadas por ∧."
+      },
+      {
+        "type": "translation-choice",
+        "badge": "PDF • Página 10 • Relações familiares",
+        "instruction": "Se x é avô de y, deve existir z tal que x é pai de z e z é pai de y. Qual fórmula preserva esse sentido?",
+        "options": [
+          {
+            "text": "∀x∀y (avô(x,y) → ∃z (pai(x,z) ∧ pai(z,y)))",
+            "isCorrect": true
+          },
+          {
+            "text": "∃z∀x∀y (avô(x,y) ∧ pai(x,z) ∧ pai(z,y))",
+            "isCorrect": false
+          },
+          {
+            "text": "∀x∀y (avô(x,y) ∧ ∀z (pai(x,z) → pai(z,y)))",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Para cada par x,y, se x é avô de y, então existe um z intermediário com as duas relações de paternidade."
+      },
+      {
+        "type": "multiple-choice",
+        "badge": "PDF • Página 11 • Variáveis",
+        "instruction": "O que o material afirma sobre o nome das variáveis?",
+        "options": [
+          {
+            "text": "O nome pode mudar sem alterar o significado, desde que as ocorrências sejam renomeadas corretamente.",
+            "isCorrect": true
+          },
+          {
+            "text": "A variável x sempre representa um objeto diferente de y.",
+            "isCorrect": false
+          },
+          {
+            "text": "Trocar x por w sempre altera a relação expressa.",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "O PDF mostra ∀x∃y gosta(x,y) equivalente a ∀w∃z gosta(w,z): os nomes são apenas marcadores ligados aos quantificadores."
+      },
+      {
+        "type": "multiple-choice",
+        "badge": "PDF • Página 11 • Domínio",
+        "instruction": "Segundo o PDF, ∀x∀y gosta(x,y) afirma que:",
+        "options": [
+          {
+            "text": "Todos gostam de todos, inclusive de si próprios.",
+            "isCorrect": true
+          },
+          {
+            "text": "Cada pessoa gosta somente de outra pessoa diferente de si.",
+            "isCorrect": false
+          },
+          {
+            "text": "Existe apenas uma pessoa de quem todos gostam.",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Variáveis diferentes não obrigam objetos diferentes. Portanto, x e y podem representar a mesma pessoa."
+      },
+      {
+        "type": "multiple-choice",
+        "badge": "PDF • Página 12 • Variáveis ligadas",
+        "instruction": "Qual expressão é apontada como incorreta no PDF para quantificadores justapostos?",
+        "options": [
+          {
+            "text": "∀x ∃X gosta(x,x)",
+            "isCorrect": true
+          },
+          {
+            "text": "∀x ∃y gosta(x,y)",
+            "isCorrect": false
+          },
+          {
+            "text": "∃X gosta(Maria,X) ∧ ∃X gosta(João,X)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "O PDF assinala ∀x∃X gosta(x,x) como incorreta e ∀x∃y gosta(x,y) como correta, pois devem ser usadas variáveis diferentes para quantificadores justapostos."
+      },
+      {
+        "type": "translation-choice",
+        "badge": "PDF • Página 13 • Exercício de tradução",
+        "instruction": "Traduza “Todos os homens gostam de alguma mulher feliz”.",
+        "options": [
+          {
+            "text": "∀x (homem(x) → ∃y (mulher(y) ∧ feliz(y) ∧ gosta(x,y)))",
+            "isCorrect": true
+          },
+          {
+            "text": "∃y∀x (homem(x) ∧ mulher(y) ∧ feliz(y) → gosta(x,y))",
+            "isCorrect": false
+          },
+          {
+            "text": "∀x∃y (homem(y) ∧ mulher(x) ∧ gosta(y,x))",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Para todo x, se x é homem, existe uma y que é mulher, é feliz e de quem x gosta."
+      },
+      {
+        "type": "translation-choice",
+        "badge": "PDF • Página 13 • Exercício de tradução",
+        "instruction": "Traduza “Todos os homens elegantes gostam de todas as mulheres ricas”.",
+        "options": [
+          {
+            "text": "∀x∀y ((homem(x) ∧ elegante(x) ∧ mulher(y) ∧ rica(y)) → gosta(x,y))",
+            "isCorrect": true
+          },
+          {
+            "text": "∃x∃y (homem(x) ∧ elegante(x) ∧ mulher(y) ∧ rica(y) ∧ gosta(x,y))",
+            "isCorrect": false
+          },
+          {
+            "text": "∀x∃y (homem(x) → mulher(y) ∧ rica(y) ∧ gosta(x,y))",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "A frase usa “todos” para os homens elegantes e “todas” para as mulheres ricas: ambos os quantificadores são universais."
+      },
+      {
+        "type": "translation-choice",
+        "badge": "PDF • Página 14 • Exercício de tradução",
+        "instruction": "Traduza “Algumas mulheres gostam de todos os homens elegantes”.",
+        "options": [
+          {
+            "text": "∃x∀y ((mulher(x) ∧ homem(y) ∧ elegante(y)) → gosta(x,y))",
+            "isCorrect": true
+          },
+          {
+            "text": "∀x∃y ((mulher(x) ∧ homem(y) ∧ elegante(y)) → gosta(x,y))",
+            "isCorrect": false
+          },
+          {
+            "text": "∀x∀y (mulher(x) → gosta(y,x))",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "“Algumas mulheres” pede ∃x; “todos os homens elegantes” pede ∀y."
+      },
+      {
+        "type": "translation-choice",
+        "badge": "PDF • Página 14 • Exercício de tradução",
+        "instruction": "Traduza “Algumas mulheres inteligentes gostam de alguns homens trabalhadores e simpáticos”.",
+        "options": [
+          {
+            "text": "∃x∃y (mulher(x) ∧ inteligente(x) ∧ homem(y) ∧ trabalhador(y) ∧ simpático(y) ∧ gosta(x,y))",
+            "isCorrect": true
+          },
+          {
+            "text": "∀x∀y ((mulher(x) ∧ inteligente(x)) → gosta(x,y))",
+            "isCorrect": false
+          },
+          {
+            "text": "∃x∀y (mulher(x) ∧ homem(y) ∧ trabalhador(y) → gosta(x,y))",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "“Algumas mulheres” e “alguns homens” indicam dois quantificadores existenciais. As propriedades são reunidas com ∧."
+      }
+    ]
+  }
+}

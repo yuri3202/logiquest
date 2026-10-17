@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Questão 5a e 5b • Tabelas-Verdade de De Morgan",
+    "sub": "Demonstrar ~(p ∨ q) ↔ (~p ∧ ~q)",
+    "lessonId": "u2_demorgan_ifes",
+    "badge": "Álgebra IFES"
+  },
+  {
+    "title": "Questão 1 • Equivalência Complexa (3 Variáveis)",
+    "sub": "~(~p ∧ q → r ∨ p) ↔ q ∧ ~(~r → p)",
+    "lessonId": "u2_complexa_ifes",
+    "badge": "Álgebra IFES"
+  },
+  {
+    "title": "Questão 1a e 1b • Método Dedutivo (Implicações)",
+    "sub": "1a) p ∧ q ⇒ p ∨ q | 1b) p ⇒ q → p",
+    "lessonId": "u5_dedutivo_ifes1",
+    "badge": "Método Dedutivo"
+  },
+  {
+    "title": "Questão 2a, 2b e 2c • Método Dedutivo (Equivalências)",
+    "sub": "2a) ~p → p ⇔ p (Clavius) | 2b e 2c",
+    "lessonId": "u5_dedutivo_ifes2",
+    "badge": "Método Dedutivo"
+  },
+  {
+    "title": "🏆 Prova Final Módulo 1 • Tradução & Proposições",
+    "sub": "Simulado com questões dinâmicas aleatórias",
+    "lessonId": "boss_m1",
+    "badge": "Boss Exam"
+  },
+  {
+    "title": "🏆 Prova Final Módulo 2 • Tabelas-Verdade",
+    "sub": "Simulado com questões dinâmicas aleatórias",
+    "lessonId": "boss_m2",
+    "badge": "Boss Exam"
+  },
+  {
+    "title": "🏆 Prova Final Módulo 5 • Método Dedutivo Master",
+    "sub": "Simulado com questões dinâmicas aleatórias",
+    "lessonId": "boss_m5",
+    "badge": "Boss Exam"
+  }
+]

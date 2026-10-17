@@ -1,0 +1,205 @@
+[
+  {
+    "cat": "Tradução",
+    "front": "\"Se chove, levo guarda-chuva.\"",
+    "back": "p → q",
+    "rule": "Condicional (Se... então)",
+    "tip": "Chover (p) implica em levar guarda-chuva (q)."
+  },
+  {
+    "cat": "Tradução",
+    "front": "\"Marcos é alto, mas não é elegante.\"",
+    "back": "p ∧ ~q",
+    "rule": "Conjunção com Negação (Cap. 2 Ex. 5b)",
+    "tip": "\"Mas\" tem valor lógico estrito de E (∧)."
+  },
+  {
+    "cat": "Tradução",
+    "front": "\"Nem trabalho nem estudo.\"",
+    "back": "p ↓ q  (ou ~p ∧ ~q)",
+    "rule": "Negação Conjunta de Scheffer (Cap. 6 §6)",
+    "tip": "Equivale também a ~(p ∨ q) por De Morgan."
+  },
+  {
+    "cat": "Equivalência",
+    "front": "~(p ∨ q)",
+    "back": "~p ∧ ~q",
+    "rule": "1ª Lei de De Morgan (Questão 5a IFES)",
+    "tip": "A negação da disjunção vira a conjunção das negações."
+  },
+  {
+    "cat": "Equivalência",
+    "front": "~(p ∧ q)",
+    "back": "~p ∨ ~q",
+    "rule": "2ª Lei de De Morgan (Questão 5b IFES)",
+    "tip": "A negação da conjunção vira a disjunção das negações."
+  },
+  {
+    "cat": "Equivalência",
+    "front": "p → q",
+    "back": "~p ∨ q",
+    "rule": "Lei da Condicional (COND)",
+    "tip": "Nega o antecedente ou mantém o consequente."
+  },
+  {
+    "cat": "Equivalência",
+    "front": "~(p → q)",
+    "back": "p ∧ ~q",
+    "rule": "Negação da Condicional (Cap. 7 §4)",
+    "tip": "Afirma o antecedente E nega o consequente."
+  },
+  {
+    "cat": "Equivalência",
+    "front": "p → q",
+    "back": "~q → ~p",
+    "rule": "Contrapositiva (CP - Cap. 6 §5)",
+    "tip": "Inverte e nega mantendo exata equivalência."
+  },
+  {
+    "cat": "Equivalência",
+    "front": "~p → p",
+    "back": "p",
+    "rule": "Regra de Clavius (Questão 2a IFES)",
+    "tip": "Demonstrado por ~(~p) ∨ p ⇔ p ∨ p ⇔ p."
+  },
+  {
+    "cat": "Equivalência",
+    "front": "p → (p ∧ q)",
+    "back": "p → q",
+    "rule": "Absorção Condicional (Questão 2b IFES)",
+    "tip": "Reduzida usando Distributiva e Elemento Neutro T."
+  },
+  {
+    "cat": "Inferência",
+    "front": "p → q, p ⊢ ?",
+    "back": "q",
+    "rule": "Modus Ponens (MP)",
+    "tip": "Afirma o antecedente para concluir o consequente."
+  },
+  {
+    "cat": "Inferência",
+    "front": "p → q, ~q ⊢ ?",
+    "back": "~p",
+    "rule": "Modus Tollens (MT)",
+    "tip": "Nega o consequente para concluir a negação do antecedente."
+  },
+  {
+    "cat": "Inferência",
+    "front": "p ∨ q, ~p ⊢ ?",
+    "back": "q",
+    "rule": "Silogismo Disjuntivo (SD)",
+    "tip": "Elimina uma das opções da disjunção."
+  },
+  {
+    "cat": "Inferência",
+    "front": "p → q, q → r ⊢ ?",
+    "back": "p → r",
+    "rule": "Silogismo Hipotético (SH)",
+    "tip": "Transitividade da seta condicional."
+  },
+  {
+    "cat": "Conjuntos",
+    "front": "V(p ∧ q)",
+    "back": "Vₚ ∩ Vq",
+    "rule": "Conjunto-Verdade da Conjunção (Cap. 15)",
+    "tip": "Corresponde à interseção dos conjuntos."
+  },
+  {
+    "cat": "Conjuntos",
+    "front": "V(p → q)",
+    "back": "CₐVₚ ∪ Vq",
+    "rule": "Conjunto-Verdade da Condicional (Cap. 15)",
+    "tip": "Complementar de Vₚ unido com Vq."
+  },
+  {
+    "cat": "Conjuntos",
+    "front": "~(∀x P(x))",
+    "back": "∃x (~P(x))",
+    "rule": "2ª Regra de De Morgan (Cap. 16 §5)",
+    "tip": "Negar que todos são equivale a existir ao menos um que não é."
+  },
+  {
+    "cat": "Conjuntos",
+    "front": "~(∀x)(∃y) p(x,y)",
+    "back": "(∃x)(∀y) ~p(x,y)",
+    "rule": "Negação de Quantificação Múltipla (Cap. 17)",
+    "tip": "Inverte ambos os quantificadores e nega o predicado."
+  },
+  {
+    "cat": "Quantificação",
+    "front": "∀x P(x)",
+    "back": "Para todo x, P(x)",
+    "rule": "Quantificador universal",
+    "tip": "A propriedade precisa valer para cada elemento do domínio."
+  },
+  {
+    "cat": "Quantificação",
+    "front": "∃x P(x)",
+    "back": "Existe pelo menos um x com P(x)",
+    "rule": "Quantificador existencial",
+    "tip": "Basta um elemento que satisfaça a propriedade."
+  },
+  {
+    "cat": "Quantificação",
+    "front": "∀x∃y R(x,y)",
+    "back": "Todo x se relaciona com algum y",
+    "rule": "Universal antes do existencial",
+    "tip": "O y pode variar conforme o x."
+  },
+  {
+    "cat": "Quantificação",
+    "front": "∃y∀x R(x,y)",
+    "back": "Existe um y relacionado a todo x",
+    "rule": "Existencial antes do universal",
+    "tip": "O mesmo y precisa funcionar para todos os x."
+  },
+  {
+    "cat": "Quantificação",
+    "front": "¬∀x P(x)",
+    "back": "∃x ¬P(x)",
+    "rule": "Negação do universal",
+    "tip": "“Nem todos” significa que há ao menos uma exceção."
+  },
+  {
+    "cat": "Quantificação",
+    "front": "¬∃x P(x)",
+    "back": "∀x ¬P(x)",
+    "rule": "Negação do existencial",
+    "tip": "“Não existe nenhum” significa que todos falham em P."
+  },
+  {
+    "cat": "Quantificação",
+    "front": "∃x∃y R(x,y)",
+    "back": "∃y∃x R(x,y)",
+    "rule": "Existenciais comutam",
+    "tip": "Dois quantificadores existenciais podem trocar de ordem."
+  },
+  {
+    "cat": "Quantificação",
+    "front": "∀x∀y R(x,y)",
+    "back": "∀y∀x R(x,y)",
+    "rule": "Universais comutam",
+    "tip": "Dois quantificadores universais podem trocar de ordem."
+  },
+  {
+    "cat": "Quantificação",
+    "front": "∀x (G(x) → P(x))",
+    "back": "Todo G é P",
+    "rule": "Tradução de “todos”",
+    "tip": "Use implicação: se x é G, então x é P."
+  },
+  {
+    "cat": "Quantificação",
+    "front": "∃x (G(x) ∧ P(x))",
+    "back": "Algum G é P",
+    "rule": "Tradução de “algum”",
+    "tip": "Use conjunção para exigir as duas propriedades do mesmo objeto."
+  },
+  {
+    "cat": "Quantificação",
+    "front": "∀x∃y Ama(x,y)",
+    "back": "Todo mundo ama alguém",
+    "rule": "Relações entre objetos",
+    "tip": "Cada pessoa pode amar uma pessoa diferente."
+  }
+]
